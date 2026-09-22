@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "enterprise-evaluation-model/1.0.0",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "manifest",
+    "primary_dimensions",
+    "secondary_dimensions",
+    "selection",
+    "notes"
+  ],
+  "properties": {
+    "manifest": {
+      "type": "object"
+    },
+    "primary_dimensions": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "secondary_dimensions": {
+      "type": "array",
+      "minItems": 11,
+      "maxItems": 11
+    },
+    "selection": {
+      "type": "object"
+    },
+    "notes": {
+      "type": "array"
+    }
+  }
+}

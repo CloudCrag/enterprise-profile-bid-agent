@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "enterprise-capability-candidate-review-input/1.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["review_input_schema_version", "semantic_analysis_run_id", "semantic_analysis_content_hash", "review_scope", "review_actor", "decisions"],
+  "properties": {
+    "review_input_schema_version": {"const": "enterprise-capability-candidate-review-input/1.0.0"},
+    "semantic_analysis_run_id": {"type": "string", "minLength": 1},
+    "semantic_analysis_content_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "review_scope": {"enum": ["partial", "full"]},
+    "review_actor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["actor_type", "actor_id"],
+      "properties": {
+        "actor_type": {"const": "human"},
+        "actor_id": {"type": "string", "pattern": ".*\\S.*"}
+      }
+    },
+    "decisions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["candidate_id", "candidate_content_hash", "decision", "reason_code", "reason_summary"],
+        "properties": {
+          "candidate_id": {"type": "string", "pattern": "^semantic-candidate:[a-z_]+:[0-9a-f]{24}$"},
+          "candidate_content_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "decision": {"enum": ["approved", "rejected", "needs_more_evidence"]},
+          "reason_code": {"enum": [
+            "evidence_and_inference_accepted",
+            "evidence_or_inference_rejected",
+            "additional_evidence_required",
+            "duplicate_or_redundant_candidate",
+            "conflicting_candidate",
+            "other_review_reason"
+          ]},
+          "reason_summary": {"type": "string", "minLength": 1, "maxLength": 1000}
+        }
+      }
+    }
+  }
+}

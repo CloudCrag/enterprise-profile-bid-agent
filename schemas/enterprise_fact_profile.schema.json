@@ -1,0 +1,3260 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "enterprise-fact-profile/1.3.0",
+  "title": "Enterprise Fact Profile",
+  "type": "object",
+  "required": [
+    "fact_profile_schema_version",
+    "enterprise",
+    "as_of_date",
+    "as_of_date_status",
+    "facts",
+    "fact_view",
+    "fact_summary",
+    "conflicts",
+    "evidence_index",
+    "source_summary",
+    "warnings",
+    "data_quality_summary",
+    "generated_at_utc"
+  ],
+  "properties": {
+    "fact_profile_schema_version": {
+      "const": "enterprise-fact-profile/1.3.0"
+    },
+    "enterprise": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "unified_social_credit_code": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "internal_enterprise_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "unified_social_credit_code",
+        "internal_enterprise_id"
+      ],
+      "anyOf": [
+        {
+          "required": [
+            "name"
+          ],
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        {
+          "required": [
+            "unified_social_credit_code"
+          ],
+          "properties": {
+            "unified_social_credit_code": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      ]
+    },
+    "as_of_date": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string",
+          "format": "date"
+        }
+      ]
+    },
+    "as_of_date_status": {
+      "enum": [
+        "provided_cli",
+        "provided_input",
+        "not_provided"
+      ]
+    },
+    "facts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/fact"
+      }
+    },
+    "fact_summary": {
+      "type": "object"
+    },
+    "conflicts": {
+      "type": "array"
+    },
+    "evidence_index": {
+      "type": "object"
+    },
+    "source_summary": {
+      "type": "object"
+    },
+    "warnings": {
+      "type": "array"
+    },
+    "data_quality_summary": {
+      "type": "object"
+    },
+    "generated_at_utc": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string",
+          "format": "iso-date-time"
+        }
+      ]
+    },
+    "fact_view": {
+      "type": "object",
+      "required": [
+        "as_of_date",
+        "business_timezone",
+        "view_mode",
+        "included_fact_ids",
+        "excluded_fact_ids",
+        "excluded_summary",
+        "exclusion_reasons"
+      ],
+      "properties": {
+        "as_of_date": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string",
+              "format": "date"
+            }
+          ]
+        },
+        "business_timezone": {
+          "const": "Asia/Shanghai"
+        },
+        "view_mode": {
+          "enum": [
+            "all_known_facts",
+            "as_of"
+          ]
+        },
+        "included_fact_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "excluded_fact_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "excluded_summary": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "future_available_fact_count",
+            "unknown_availability_fact_count",
+            "conflicting_availability_fact_count",
+            "invalid_availability_fact_count"
+          ],
+          "properties": {
+            "future_available_fact_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "unknown_availability_fact_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "conflicting_availability_fact_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "invalid_availability_fact_count": {
+              "type": "integer",
+              "minimum": 0
+            }
+          }
+        },
+        "exclusion_reasons": {
+          "type": "object",
+          "additionalProperties": {
+            "enum": [
+              "future_available_relative_to_as_of_date",
+              "availability_time_unknown",
+              "availability_time_conflicting",
+              "availability_time_invalid"
+            ]
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "fact": {
+      "type": "object",
+      "required": [
+        "fact_id",
+        "fact_content_hash",
+        "fact_type",
+        "fact_schema_version",
+        "enterprise_key",
+        "payload",
+        "source",
+        "temporal",
+        "fact_status",
+        "verification_status",
+        "evidence_ids",
+        "quality_flags",
+        "conflict_group_id",
+        "created_from",
+        "is_mock"
+      ],
+      "properties": {
+        "fact_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "fact_content_hash": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "fact_type": {
+          "enum": [
+            "business_registration",
+            "qualification",
+            "personnel",
+            "personnel_certificate",
+            "performance",
+            "bid_participation",
+            "bid_award",
+            "fulfillment",
+            "buyer_relationship",
+            "risk_penalty_credit",
+            "enterprise_material",
+            "other_enterprise_fact"
+          ]
+        },
+        "fact_schema_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "enterprise_key": {
+          "type": "object",
+          "properties": {
+            "unified_social_credit_code": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "enterprise_name": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "additionalProperties": false,
+          "anyOf": [
+            {
+              "required": [
+                "unified_social_credit_code"
+              ],
+              "properties": {
+                "unified_social_credit_code": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            },
+            {
+              "required": [
+                "enterprise_name"
+              ],
+              "properties": {
+                "enterprise_name": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          ]
+        },
+        "payload": {
+          "type": "object"
+        },
+        "source": {
+          "type": "object",
+          "properties": {
+            "source_type": {
+              "enum": [
+                "crawler",
+                "official_api",
+                "external_data",
+                "user_upload",
+                "manual_review",
+                "legacy_excel",
+                "system_derived"
+              ]
+            },
+            "source_platform": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "source_record_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "source_url": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "dataset_id": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "source_data_category": {
+              "enum": [
+                "business_registration",
+                "qualification_registry",
+                "personnel_registry",
+                "performance_record",
+                "tender_notice",
+                "award_notice",
+                "fulfillment_record",
+                "buyer_relationship",
+                "risk_credit",
+                "enterprise_material",
+                "manual_review",
+                "other"
+              ]
+            },
+            "provider_id": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "api_id": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "api_call_id": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "raw_response_ref": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "source_type",
+            "source_data_category",
+            "source_platform",
+            "source_record_id",
+            "source_url",
+            "dataset_id"
+          ]
+        },
+        "temporal": {
+          "type": "object",
+          "properties": {
+            "published_at": {
+              "oneOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "type": "string",
+                  "format": "date"
+                },
+                {
+                  "type": "string",
+                  "format": "iso-date-time"
+                }
+              ]
+            },
+            "collected_at": {
+              "oneOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "type": "string",
+                  "format": "date"
+                },
+                {
+                  "type": "string",
+                  "format": "iso-date-time"
+                }
+              ]
+            },
+            "verified_at": {
+              "oneOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "type": "string",
+                  "format": "date"
+                },
+                {
+                  "type": "string",
+                  "format": "iso-date-time"
+                }
+              ]
+            },
+            "valid_from": {
+              "oneOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "type": "string",
+                  "format": "date"
+                },
+                {
+                  "type": "string",
+                  "format": "iso-date-time"
+                }
+              ]
+            },
+            "valid_until": {
+              "oneOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "type": "string",
+                  "format": "date"
+                },
+                {
+                  "type": "string",
+                  "format": "iso-date-time"
+                }
+              ]
+            },
+            "observed_at": {
+              "oneOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "type": "string",
+                  "format": "date"
+                },
+                {
+                  "type": "string",
+                  "format": "iso-date-time"
+                }
+              ]
+            },
+            "available_at": {
+              "oneOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "type": "string",
+                  "format": "date"
+                },
+                {
+                  "type": "string",
+                  "format": "iso-date-time"
+                }
+              ]
+            },
+            "availability_basis": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "enum": [
+                "source_published_at",
+                "source_collected_at",
+                "source_observed_at",
+                "user_received_at",
+                "manual_verified_at",
+                "upstream_provided",
+                "unknown",
+                null
+              ]
+            },
+            "availability_status": {
+              "enum": [
+                "known",
+                "unknown",
+                "conflicting"
+              ]
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "published_at",
+            "collected_at",
+            "verified_at",
+            "valid_from",
+            "valid_until",
+            "observed_at",
+            "available_at",
+            "availability_basis",
+            "availability_status"
+          ]
+        },
+        "fact_status": {
+          "enum": [
+            "active",
+            "expired",
+            "revoked",
+            "superseded",
+            "ambiguous",
+            "conflicted",
+            "unknown"
+          ]
+        },
+        "verification_status": {
+          "enum": [
+            "verified",
+            "partially_verified",
+            "unverified",
+            "rejected",
+            "pending_review"
+          ]
+        },
+        "evidence_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "quality_flags": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "conflict_group_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "created_from": {
+          "type": "string",
+          "minLength": 1
+        },
+        "is_mock": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "fact_type": {
+                "const": "business_registration"
+              }
+            },
+            "required": [
+              "fact_type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "payload": {
+                "$ref": "#/$defs/business_registrationPayload"
+              },
+              "fact_schema_version": {
+                "const": "business-registration-fact/1.0.0"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "fact_type": {
+                "const": "qualification"
+              }
+            },
+            "required": [
+              "fact_type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "payload": {
+                "$ref": "#/$defs/qualificationPayload"
+              },
+              "fact_schema_version": {
+                "const": "qualification-fact/1.0.0"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "fact_type": {
+                "const": "personnel"
+              }
+            },
+            "required": [
+              "fact_type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "payload": {
+                "$ref": "#/$defs/personnelPayload"
+              },
+              "fact_schema_version": {
+                "const": "personnel-fact/1.0.0"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "fact_type": {
+                "const": "personnel_certificate"
+              }
+            },
+            "required": [
+              "fact_type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "payload": {
+                "$ref": "#/$defs/personnel_certificatePayload"
+              },
+              "fact_schema_version": {
+                "const": "personnel-certificate-fact/1.0.0"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "fact_type": {
+                "const": "performance"
+              }
+            },
+            "required": [
+              "fact_type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "payload": {
+                "$ref": "#/$defs/performancePayload"
+              },
+              "fact_schema_version": {
+                "const": "performance-fact/1.1.0"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "fact_type": {
+                "const": "bid_participation"
+              }
+            },
+            "required": [
+              "fact_type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "payload": {
+                "$ref": "#/$defs/bid_participationPayload"
+              },
+              "fact_schema_version": {
+                "const": "bid-participation-fact/1.0.0"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "fact_type": {
+                "const": "bid_award"
+              }
+            },
+            "required": [
+              "fact_type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "payload": {
+                "$ref": "#/$defs/bid_awardPayload"
+              },
+              "fact_schema_version": {
+                "const": "bid-award-fact/1.1.0"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "fact_type": {
+                "const": "fulfillment"
+              }
+            },
+            "required": [
+              "fact_type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "payload": {
+                "$ref": "#/$defs/fulfillmentPayload"
+              },
+              "fact_schema_version": {
+                "const": "fulfillment-fact/1.1.0"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "fact_type": {
+                "const": "buyer_relationship"
+              }
+            },
+            "required": [
+              "fact_type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "payload": {
+                "$ref": "#/$defs/buyer_relationshipPayload"
+              },
+              "fact_schema_version": {
+                "const": "buyer-relationship-fact/1.0.0"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "fact_type": {
+                "const": "risk_penalty_credit"
+              }
+            },
+            "required": [
+              "fact_type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "payload": {
+                "$ref": "#/$defs/risk_penalty_creditPayload"
+              },
+              "fact_schema_version": {
+                "const": "risk-penalty-credit-fact/1.0.0"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "fact_type": {
+                "const": "enterprise_material"
+              }
+            },
+            "required": [
+              "fact_type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "payload": {
+                "$ref": "#/$defs/enterprise_materialPayload"
+              },
+              "fact_schema_version": {
+                "const": "enterprise-material-fact/1.0.0"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "fact_type": {
+                "const": "other_enterprise_fact"
+              }
+            },
+            "required": [
+              "fact_type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "payload": {
+                "$ref": "#/$defs/other_enterprise_factPayload"
+              },
+              "fact_schema_version": {
+                "const": "other-enterprise-fact/1.0.0"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "fact_type": {
+                "const": "business_registration"
+              }
+            },
+            "required": [
+              "fact_type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "source": {
+                "properties": {
+                  "source_type": {
+                    "enum": [
+                      "official_api",
+                      "crawler",
+                      "external_data",
+                      "user_upload",
+                      "manual_review"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "fact_type": {
+                "const": "bid_award"
+              }
+            },
+            "required": [
+              "fact_type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "verification_status": {
+                "const": "verified"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "allOf": [
+              {
+                "properties": {
+                  "fact_type": {
+                    "const": "buyer_relationship"
+                  }
+                },
+                "required": [
+                  "fact_type"
+                ]
+              },
+              {
+                "properties": {
+                  "source": {
+                    "properties": {
+                      "source_type": {
+                        "const": "system_derived"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          "then": {
+            "properties": {
+              "payload": {
+                "required": [
+                  "related_fact_ids"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "temporal": {
+                "properties": {
+                  "availability_status": {
+                    "const": "known"
+                  }
+                }
+              }
+            },
+            "required": [
+              "temporal"
+            ]
+          },
+          "then": {
+            "properties": {
+              "temporal": {
+                "properties": {
+                  "available_at": {
+                    "type": "string"
+                  },
+                  "availability_basis": {
+                    "enum": [
+                      "source_published_at",
+                      "source_collected_at",
+                      "source_observed_at",
+                      "user_received_at",
+                      "manual_verified_at",
+                      "upstream_provided"
+                    ]
+                  }
+                },
+                "required": [
+                  "available_at",
+                  "availability_basis"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "temporal": {
+                "properties": {
+                  "availability_status": {
+                    "const": "unknown"
+                  }
+                }
+              }
+            },
+            "required": [
+              "temporal"
+            ]
+          },
+          "then": {
+            "properties": {
+              "temporal": {
+                "properties": {
+                  "available_at": {
+                    "type": "null"
+                  },
+                  "availability_basis": {
+                    "enum": [
+                      null,
+                      "unknown"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "temporal": {
+                "properties": {
+                  "availability_status": {
+                    "const": "conflicting"
+                  }
+                }
+              }
+            },
+            "required": [
+              "temporal"
+            ]
+          },
+          "then": {
+            "properties": {
+              "temporal": {
+                "properties": {
+                  "available_at": {
+                    "type": "null"
+                  },
+                  "availability_basis": {
+                    "enum": [
+                      null,
+                      "unknown"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "fact_type": {
+                "const": "business_registration"
+              }
+            },
+            "required": [
+              "fact_type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "source": {
+                "properties": {
+                  "source_data_category": {
+                    "enum": [
+                      "business_registration",
+                      "enterprise_material",
+                      "manual_review"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "fact_type": {
+                "const": "qualification"
+              }
+            },
+            "required": [
+              "fact_type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "source": {
+                "properties": {
+                  "source_data_category": {
+                    "enum": [
+                      "qualification_registry",
+                      "enterprise_material",
+                      "manual_review"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "fact_type": {
+                "const": "personnel"
+              }
+            },
+            "required": [
+              "fact_type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "source": {
+                "properties": {
+                  "source_data_category": {
+                    "enum": [
+                      "personnel_registry",
+                      "enterprise_material",
+                      "manual_review"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "fact_type": {
+                "const": "personnel_certificate"
+              }
+            },
+            "required": [
+              "fact_type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "source": {
+                "properties": {
+                  "source_data_category": {
+                    "enum": [
+                      "personnel_registry",
+                      "enterprise_material",
+                      "manual_review"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "fact_type": {
+                "const": "performance"
+              }
+            },
+            "required": [
+              "fact_type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "source": {
+                "properties": {
+                  "source_data_category": {
+                    "enum": [
+                      "performance_record",
+                      "enterprise_material",
+                      "manual_review"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "fact_type": {
+                "const": "bid_participation"
+              }
+            },
+            "required": [
+              "fact_type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "source": {
+                "properties": {
+                  "source_data_category": {
+                    "enum": [
+                      "tender_notice",
+                      "award_notice",
+                      "performance_record",
+                      "other"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "fact_type": {
+                "const": "bid_award"
+              }
+            },
+            "required": [
+              "fact_type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "source": {
+                "properties": {
+                  "source_data_category": {
+                    "enum": [
+                      "award_notice",
+                      "enterprise_material",
+                      "manual_review"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "fact_type": {
+                "const": "fulfillment"
+              }
+            },
+            "required": [
+              "fact_type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "source": {
+                "properties": {
+                  "source_data_category": {
+                    "enum": [
+                      "fulfillment_record",
+                      "enterprise_material",
+                      "manual_review"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "fact_type": {
+                "const": "buyer_relationship"
+              }
+            },
+            "required": [
+              "fact_type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "source": {
+                "properties": {
+                  "source_data_category": {
+                    "enum": [
+                      "buyer_relationship",
+                      "performance_record",
+                      "tender_notice",
+                      "award_notice",
+                      "enterprise_material",
+                      "manual_review",
+                      "other"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "fact_type": {
+                "const": "risk_penalty_credit"
+              }
+            },
+            "required": [
+              "fact_type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "source": {
+                "properties": {
+                  "source_data_category": {
+                    "enum": [
+                      "risk_credit",
+                      "enterprise_material",
+                      "manual_review"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "fact_type": {
+                "const": "enterprise_material"
+              }
+            },
+            "required": [
+              "fact_type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "source": {
+                "properties": {
+                  "source_data_category": {
+                    "enum": [
+                      "enterprise_material"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "fact_type": {
+                "const": "other_enterprise_fact"
+              }
+            },
+            "required": [
+              "fact_type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "source": {
+                "properties": {
+                  "source_data_category": {
+                    "enum": [
+                      "business_registration",
+                      "qualification_registry",
+                      "personnel_registry",
+                      "performance_record",
+                      "tender_notice",
+                      "award_notice",
+                      "fulfillment_record",
+                      "buyer_relationship",
+                      "risk_credit",
+                      "enterprise_material",
+                      "manual_review",
+                      "other"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "allOf": [
+              {
+                "properties": {
+                  "fact_type": {
+                    "const": "other_enterprise_fact"
+                  }
+                },
+                "required": [
+                  "fact_type"
+                ]
+              },
+              {
+                "properties": {
+                  "payload": {
+                    "properties": {
+                      "subtype": {
+                        "const": "enterprise_identity_observation"
+                      }
+                    },
+                    "required": [
+                      "subtype"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "then": {
+            "properties": {
+              "source": {
+                "properties": {
+                  "source_data_category": {
+                    "enum": [
+                      "tender_notice",
+                      "award_notice",
+                      "performance_record",
+                      "enterprise_material",
+                      "other"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "business_registrationPayload": {
+      "type": "object",
+      "properties": {
+        "enterprise_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "unified_social_credit_code": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "legal_representative": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "verification_result": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "verification_elements": {
+          "type": [
+            "object",
+            "array",
+            "string",
+            "null"
+          ]
+        },
+        "operation_status_raw": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "normalized_operation_status": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "established_date": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "string",
+              "format": "iso-date-time"
+            }
+          ]
+        },
+        "registered_industry": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "business_scope": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "registered_capital": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "object",
+              "required": [
+                "value"
+              ],
+              "properties": {
+                "value": {
+                  "type": [
+                    "number",
+                    "string",
+                    "null"
+                  ]
+                },
+                "raw_value": {},
+                "value_parse_status": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "unit_raw": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "unit_normalized": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "currency_raw": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "semantic_status": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              },
+              "additionalProperties": false
+            }
+          ]
+        },
+        "paid_in_capital": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "object",
+              "required": [
+                "value"
+              ],
+              "properties": {
+                "value": {
+                  "type": [
+                    "number",
+                    "string",
+                    "null"
+                  ]
+                },
+                "raw_value": {},
+                "value_parse_status": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "unit_raw": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "unit_normalized": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "currency_raw": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "semantic_status": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              },
+              "additionalProperties": false
+            }
+          ]
+        },
+        "enterprise_size_classification": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false,
+      "anyOf": [
+        {
+          "required": [
+            "enterprise_name"
+          ],
+          "properties": {
+            "enterprise_name": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        {
+          "required": [
+            "unified_social_credit_code"
+          ],
+          "properties": {
+            "unified_social_credit_code": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      ]
+    },
+    "qualificationPayload": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "qualification_level": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "certificate_number": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "status": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "issue_date": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "string",
+              "format": "iso-date-time"
+            }
+          ]
+        },
+        "valid_until": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "string",
+              "format": "iso-date-time"
+            }
+          ]
+        },
+        "issuing_authority": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "name"
+      ]
+    },
+    "personnelPayload": {
+      "type": "object",
+      "properties": {
+        "employee_count": {
+          "type": [
+            "integer",
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "social_insurance_count": {
+          "type": [
+            "integer",
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "count_scope": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "person_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "role": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "availability_status": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false,
+      "anyOf": [
+        {
+          "required": [
+            "employee_count"
+          ],
+          "properties": {
+            "employee_count": {
+              "type": [
+                "integer",
+                "number"
+              ],
+              "minimum": 0
+            }
+          }
+        },
+        {
+          "required": [
+            "social_insurance_count"
+          ],
+          "properties": {
+            "social_insurance_count": {
+              "type": [
+                "integer",
+                "number"
+              ],
+              "minimum": 0
+            }
+          }
+        },
+        {
+          "required": [
+            "person_id"
+          ],
+          "properties": {
+            "person_id": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        {
+          "required": [
+            "name"
+          ],
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      ]
+    },
+    "personnel_certificatePayload": {
+      "type": "object",
+      "properties": {
+        "person_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "person_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "certificate_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "certificate_level": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "certificate_number": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "status": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "valid_from": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "string",
+              "format": "iso-date-time"
+            }
+          ]
+        },
+        "valid_until": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "string",
+              "format": "iso-date-time"
+            }
+          ]
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "certificate_name"
+      ],
+      "anyOf": [
+        {
+          "required": [
+            "person_id"
+          ],
+          "properties": {
+            "person_id": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        {
+          "required": [
+            "person_name"
+          ],
+          "properties": {
+            "person_name": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      ]
+    },
+    "performancePayload": {
+      "type": "object",
+      "properties": {
+        "project_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "contract_number": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "buyer_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "industry": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "region": {
+          "oneOf": [
+            {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "original": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "province": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "province_code": {
+                  "type": [
+                    "string",
+                    "integer",
+                    "null"
+                  ]
+                },
+                "city": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "city_code": {
+                  "type": [
+                    "string",
+                    "integer",
+                    "null"
+                  ]
+                },
+                "county": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "county_code": {
+                  "type": [
+                    "string",
+                    "integer",
+                    "null"
+                  ]
+                }
+              },
+              "additionalProperties": false
+            }
+          ]
+        },
+        "contract_amount": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/amount"
+            }
+          ]
+        },
+        "start_date": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "string",
+              "format": "iso-date-time"
+            }
+          ]
+        },
+        "end_date": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "string",
+              "format": "iso-date-time"
+            }
+          ]
+        },
+        "performance_scope": {
+          "type": [
+            "string",
+            "array",
+            "object",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "project_name"
+      ]
+    },
+    "bid_participationPayload": {
+      "type": "object",
+      "properties": {
+        "project_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "project_number": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "announcement_unique_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "project_classification": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "project_industry": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "project_region": {
+          "oneOf": [
+            {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "original": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "province": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "province_code": {
+                  "type": [
+                    "string",
+                    "integer",
+                    "null"
+                  ]
+                },
+                "city": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "city_code": {
+                  "type": [
+                    "string",
+                    "integer",
+                    "null"
+                  ]
+                },
+                "county": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "county_code": {
+                  "type": [
+                    "string",
+                    "integer",
+                    "null"
+                  ]
+                }
+              },
+              "additionalProperties": false
+            }
+          ]
+        },
+        "procurement_method": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "project_budget": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "object",
+              "required": [
+                "value"
+              ],
+              "properties": {
+                "value": {
+                  "type": [
+                    "number",
+                    "string",
+                    "null"
+                  ]
+                },
+                "raw_value": {},
+                "value_parse_status": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "unit_raw": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "unit_normalized": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "currency_raw": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "semantic_status": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              },
+              "additionalProperties": false
+            }
+          ]
+        },
+        "unconfirmed_winning_amount_observation": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "object",
+              "required": [
+                "value"
+              ],
+              "properties": {
+                "value": {
+                  "type": [
+                    "number",
+                    "string",
+                    "null"
+                  ]
+                },
+                "raw_value": {},
+                "value_parse_status": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "unit_raw": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "unit_normalized": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "currency_raw": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "semantic_status": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              },
+              "additionalProperties": false
+            }
+          ]
+        },
+        "role": {
+          "type": "object",
+          "required": [
+            "status"
+          ],
+          "properties": {
+            "status": {
+              "type": "string",
+              "minLength": 1
+            },
+            "raw_value": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "reason": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "additionalProperties": false
+        },
+        "record_status": {
+          "type": "string",
+          "minLength": 1
+        },
+        "duplicate_flags": {
+          "type": "object",
+          "properties": {
+            "exact_duplicate": {
+              "type": "boolean"
+            },
+            "exact_duplicate_occurrence": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "enterprise_announcement_duplicate": {
+              "type": "boolean"
+            },
+            "enterprise_announcement_occurrence": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "buyer_and_agency_raw": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "role"
+      ],
+      "anyOf": [
+        {
+          "required": [
+            "announcement_unique_id"
+          ],
+          "properties": {
+            "announcement_unique_id": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        {
+          "required": [
+            "project_number"
+          ],
+          "properties": {
+            "project_number": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        {
+          "required": [
+            "project_name"
+          ],
+          "properties": {
+            "project_name": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      ]
+    },
+    "bid_awardPayload": {
+      "type": "object",
+      "properties": {
+        "project_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "project_number": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "announcement_unique_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "award_role": {
+          "type": "string",
+          "minLength": 1
+        },
+        "award_amount": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/amount"
+            }
+          ]
+        },
+        "award_date": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "string",
+              "format": "iso-date-time"
+            }
+          ]
+        },
+        "buyer_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "award_role"
+      ],
+      "anyOf": [
+        {
+          "required": [
+            "announcement_unique_id"
+          ],
+          "properties": {
+            "announcement_unique_id": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        {
+          "required": [
+            "project_number"
+          ],
+          "properties": {
+            "project_number": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        {
+          "required": [
+            "project_name"
+          ],
+          "properties": {
+            "project_name": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      ]
+    },
+    "fulfillmentPayload": {
+      "type": "object",
+      "properties": {
+        "contract_number": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "project_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "fulfillment_status": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "acceptance_status": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "delay_days": {
+          "type": [
+            "integer",
+            "number",
+            "null"
+          ]
+        },
+        "breach_record": {
+          "type": [
+            "string",
+            "object",
+            "array",
+            "boolean",
+            "null"
+          ]
+        },
+        "payment_status": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "buyer_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "industry": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "region": {
+          "oneOf": [
+            {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "original": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "province": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "province_code": {
+                  "type": [
+                    "string",
+                    "integer",
+                    "null"
+                  ]
+                },
+                "city": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "city_code": {
+                  "type": [
+                    "string",
+                    "integer",
+                    "null"
+                  ]
+                },
+                "county": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "county_code": {
+                  "type": [
+                    "string",
+                    "integer",
+                    "null"
+                  ]
+                }
+              },
+              "additionalProperties": false
+            }
+          ]
+        },
+        "contract_amount": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/amount"
+            }
+          ]
+        },
+        "start_date": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "string",
+              "format": "iso-date-time"
+            }
+          ]
+        },
+        "end_date": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "string",
+              "format": "iso-date-time"
+            }
+          ]
+        }
+      },
+      "additionalProperties": false,
+      "anyOf": [
+        {
+          "allOf": [
+            {
+              "anyOf": [
+                {
+                  "required": [
+                    "contract_number"
+                  ],
+                  "properties": {
+                    "contract_number": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
+                },
+                {
+                  "required": [
+                    "project_name"
+                  ],
+                  "properties": {
+                    "project_name": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "anyOf": [
+                {
+                  "required": [
+                    "fulfillment_status"
+                  ]
+                },
+                {
+                  "required": [
+                    "acceptance_status"
+                  ]
+                },
+                {
+                  "required": [
+                    "delay_days"
+                  ]
+                },
+                {
+                  "required": [
+                    "breach_record"
+                  ]
+                },
+                {
+                  "required": [
+                    "payment_status"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "buyer_relationshipPayload": {
+      "type": "object",
+      "properties": {
+        "buyer_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "relationship_type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "project_count": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "first_cooperation_at": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "string",
+              "format": "iso-date-time"
+            }
+          ]
+        },
+        "latest_cooperation_at": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "string",
+              "format": "iso-date-time"
+            }
+          ]
+        },
+        "related_fact_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "buyer_name",
+        "relationship_type"
+      ]
+    },
+    "risk_penalty_creditPayload": {
+      "type": "object",
+      "properties": {
+        "category": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "records": {
+          "type": "array"
+        },
+        "severity_raw": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "remediation_status": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "rating_type": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "rating_value": {
+          "type": [
+            "string",
+            "number",
+            "null"
+          ]
+        },
+        "rating_outlook": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "category"
+      ],
+      "anyOf": [
+        {
+          "required": [
+            "status"
+          ]
+        },
+        {
+          "required": [
+            "records"
+          ]
+        },
+        {
+          "required": [
+            "rating_value"
+          ]
+        }
+      ]
+    },
+    "enterprise_materialPayload": {
+      "type": "object",
+      "properties": {
+        "material_type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "document_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "document_hash": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "declared_fields": {
+          "type": [
+            "object",
+            "array",
+            "null"
+          ]
+        },
+        "review_status": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "material_type"
+      ],
+      "anyOf": [
+        {
+          "required": [
+            "document_name"
+          ],
+          "properties": {
+            "document_name": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        {
+          "required": [
+            "document_hash"
+          ],
+          "properties": {
+            "document_hash": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      ]
+    },
+    "other_enterprise_factPayload": {
+      "type": "object",
+      "properties": {
+        "subtype": {
+          "type": "string",
+          "minLength": 1
+        },
+        "enterprise_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "unified_social_credit_code": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "observation_context": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "business_description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "products": {
+          "type": "array"
+        },
+        "product_business_tags": {
+          "type": "array"
+        },
+        "branches": {
+          "type": "array"
+        },
+        "service_regions": {
+          "type": "array"
+        },
+        "value": {},
+        "details": {
+          "type": [
+            "object",
+            "array",
+            "string",
+            "number",
+            "boolean",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "subtype"
+      ],
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "subtype": {
+                "const": "enterprise_identity_observation"
+              }
+            },
+            "required": [
+              "subtype"
+            ]
+          },
+          "then": {
+            "anyOf": [
+              {
+                "required": [
+                  "enterprise_name"
+                ],
+                "properties": {
+                  "enterprise_name": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              },
+              {
+                "required": [
+                  "unified_social_credit_code"
+                ],
+                "properties": {
+                  "unified_social_credit_code": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            ],
+            "required": [
+              "observation_context"
+            ]
+          }
+        }
+      ],
+      "anyOf": [
+        {
+          "required": [
+            "enterprise_name"
+          ],
+          "properties": {
+            "enterprise_name": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        {
+          "required": [
+            "unified_social_credit_code"
+          ],
+          "properties": {
+            "unified_social_credit_code": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        {
+          "required": [
+            "business_description"
+          ],
+          "properties": {
+            "business_description": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        {
+          "required": [
+            "products"
+          ],
+          "properties": {
+            "products": {
+              "type": "array",
+              "minItems": 1
+            }
+          }
+        },
+        {
+          "required": [
+            "product_business_tags"
+          ],
+          "properties": {
+            "product_business_tags": {
+              "type": "array",
+              "minItems": 1
+            }
+          }
+        },
+        {
+          "required": [
+            "branches"
+          ],
+          "properties": {
+            "branches": {
+              "type": "array",
+              "minItems": 1
+            }
+          }
+        },
+        {
+          "required": [
+            "service_regions"
+          ],
+          "properties": {
+            "service_regions": {
+              "type": "array",
+              "minItems": 1
+            }
+          }
+        },
+        {
+          "required": [
+            "value"
+          ],
+          "properties": {
+            "value": {
+              "oneOf": [
+                {
+                  "type": "string",
+                  "minLength": 1
+                },
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "object",
+                  "minProperties": 1
+                },
+                {
+                  "type": "array",
+                  "minItems": 1
+                }
+              ]
+            }
+          }
+        },
+        {
+          "required": [
+            "details"
+          ],
+          "properties": {
+            "details": {
+              "oneOf": [
+                {
+                  "type": "string",
+                  "minLength": 1
+                },
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "object",
+                  "minProperties": 1
+                },
+                {
+                  "type": "array",
+                  "minItems": 1
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "amount": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "raw_value",
+        "value",
+        "unit_raw",
+        "currency_raw",
+        "normalized_value",
+        "normalized_unit",
+        "normalized_currency",
+        "value_parse_status",
+        "semantic_status",
+        "normalization_status"
+      ],
+      "properties": {
+        "raw_value": {
+          "type": [
+            "number",
+            "string",
+            "null"
+          ]
+        },
+        "value": {
+          "type": [
+            "number",
+            "string",
+            "null"
+          ]
+        },
+        "unit_raw": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "currency_raw": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "normalized_value": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "normalized_unit": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "normalized_currency": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "value_parse_status": {
+          "enum": [
+            "parsed",
+            "failed",
+            "unknown"
+          ]
+        },
+        "semantic_status": {
+          "enum": [
+            "confirmed",
+            "ambiguous",
+            "unknown"
+          ]
+        },
+        "normalization_status": {
+          "enum": [
+            "normalized",
+            "missing_unit",
+            "missing_currency",
+            "inconsistent",
+            "not_normalized"
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "normalization_status": {
+                "const": "normalized"
+              }
+            },
+            "required": [
+              "normalization_status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "normalized_value": {
+                "type": "number"
+              },
+              "normalized_unit": {
+                "type": "string",
+                "minLength": 1
+              },
+              "normalized_currency": {
+                "type": "string",
+                "minLength": 1
+              },
+              "value_parse_status": {
+                "const": "parsed"
+              },
+              "semantic_status": {
+                "const": "confirmed"
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

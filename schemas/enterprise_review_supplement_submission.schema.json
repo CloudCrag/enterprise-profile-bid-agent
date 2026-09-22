@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "enterprise-review-supplement-submission/1.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "supplement_id",
+    "review_task_id",
+    "submitted_by",
+    "submitted_at_utc",
+    "answer",
+    "material_refs"
+  ],
+  "properties": {
+    "supplement_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "review_task_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "submitted_by": {
+      "$ref": "enterprise_fact_candidate_submission.schema.json#/$defs/actor"
+    },
+    "submitted_at_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "answer": {},
+    "material_refs": {
+      "type": "array",
+      "items": {
+        "$ref": "enterprise_fact_candidate_submission.schema.json#/$defs/materialReference"
+      }
+    },
+    "note": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}

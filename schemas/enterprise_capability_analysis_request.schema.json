@@ -1,0 +1,160 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "enterprise-capability-analysis-request/1.1.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "request_schema_version",
+    "request_content_hash",
+    "evidence_policy_version",
+    "capability_content_hash",
+    "capability_profile_id",
+    "tag_profile_content_hash",
+    "fact_profile_content_hash",
+    "enterprise",
+    "as_of_date",
+    "requested_capability_types",
+    "allowed_facts",
+    "allowed_tags",
+    "evidence_index",
+    "deterministic_baseline",
+    "analysis_constraints"
+  ],
+  "properties": {
+    "request_schema_version": {
+      "const": "enterprise-capability-analysis-request/1.1.0"
+    },
+    "request_content_hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "enterprise": {
+      "type": "object"
+    },
+    "as_of_date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date"
+    },
+    "requested_capability_types": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "enum": [
+          "industry_capability",
+          "technical_capability",
+          "similar_performance_capability",
+          "regional_delivery_capability",
+          "amount_experience_capability",
+          "personnel_resource_capability",
+          "buyer_relationship_capability",
+          "tender_performance_capability"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "allowed_facts": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "allowed_tags": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "evidence_index": {
+      "type": "object"
+    },
+    "deterministic_baseline": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "capability_profile_id",
+        "capability_content_hash",
+        "capability_domains",
+        "capability_summary"
+      ],
+      "properties": {
+        "capability_profile_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "capability_content_hash": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "capability_domains": {
+          "type": "array",
+          "minItems": 8,
+          "maxItems": 8,
+          "items": {
+            "type": "object"
+          }
+        },
+        "capability_summary": {
+          "type": "object"
+        }
+      }
+    },
+    "analysis_constraints": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "may_create_enterprise_facts",
+        "may_infer_user_preferences",
+        "may_score_enterprise",
+        "may_recommend_projects",
+        "must_reference_fact_ids",
+        "must_reference_evidence_ids",
+        "must_separate_fact_inference_unknown"
+      ],
+      "properties": {
+        "may_create_enterprise_facts": {
+          "const": false
+        },
+        "may_infer_user_preferences": {
+          "const": false
+        },
+        "may_score_enterprise": {
+          "const": false
+        },
+        "may_recommend_projects": {
+          "const": false
+        },
+        "must_reference_fact_ids": {
+          "const": true
+        },
+        "must_reference_evidence_ids": {
+          "const": true
+        },
+        "must_separate_fact_inference_unknown": {
+          "const": true
+        }
+      }
+    },
+    "fact_profile_content_hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "tag_profile_content_hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "capability_profile_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "capability_content_hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "evidence_policy_version": {
+      "const": "enterprise-capability-evidence-policy/1.0.0"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": "enterprise-capability-domain-catalog/1.0.0",
+  "domains": [
+    {"capability_type": "industry_capability", "capability_name": "行业能力"},
+    {"capability_type": "technical_capability", "capability_name": "技术能力"},
+    {"capability_type": "similar_performance_capability", "capability_name": "同类业绩能力"},
+    {"capability_type": "regional_delivery_capability", "capability_name": "地区交付能力"},
+    {"capability_type": "amount_experience_capability", "capability_name": "金额承接能力"},
+    {"capability_type": "personnel_resource_capability", "capability_name": "人员和资源能力"},
+    {"capability_type": "buyer_relationship_capability", "capability_name": "采购人关系"},
+    {"capability_type": "tender_performance_capability", "capability_name": "历史投标表现"}
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "enterprise-profile-gap-analysis-request/1.0.0",
+  "title": "Enterprise Profile Gap Analysis Request",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "gap_analysis_request_schema_version",
+    "request_id",
+    "request_content_hash",
+    "enterprise",
+    "task_context",
+    "generated_at_utc"
+  ],
+  "properties": {
+    "gap_analysis_request_schema_version": {"const": "enterprise-profile-gap-analysis-request/1.0.0"},
+    "request_id": {"type": "string", "minLength": 1},
+    "request_content_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "enterprise": {"$ref": "#/$defs/enterprise"},
+    "task_context": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["task_context_id", "task_goal", "requirements"],
+      "properties": {
+        "task_context_id": {"type": "string", "minLength": 1, "pattern": ".*\\S.*"},
+        "task_goal": {"type": "string", "minLength": 1, "pattern": ".*\\S.*"},
+        "requirements": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/requirement"}
+        }
+      }
+    },
+    "generated_at_utc": {"type": "string", "format": "date-time"}
+  },
+  "$defs": {
+    "enterprise": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "unified_social_credit_code", "internal_enterprise_id"],
+      "properties": {
+        "name": {"type": "string", "minLength": 1},
+        "unified_social_credit_code": {"type": ["string", "null"]},
+        "internal_enterprise_id": {"type": ["string", "null"]}
+      }
+    },
+    "requirementBase": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["requirement_id", "target_layer", "target_code", "importance", "reason"],
+      "properties": {
+        "requirement_id": {"type": "string", "minLength": 1, "pattern": ".*\\S.*"},
+        "target_layer": {"enum": ["fact", "capability", "decision"]},
+        "target_code": {"type": "string", "minLength": 1},
+        "importance": {"enum": ["blocking", "important", "optional"]},
+        "reason": {"type": "string", "minLength": 1, "pattern": ".*\\S.*"}
+      }
+    },
+    "requirement": {
+      "allOf": [
+        {"$ref": "#/$defs/requirementBase"},
+        {
+          "oneOf": [
+            {
+              "properties": {
+                "target_layer": {"const": "fact"},
+                "target_code": {
+                  "enum": [
+                    "business_registration", "qualification", "personnel", "personnel_certificate",
+                    "performance", "bid_participation", "bid_award", "fulfillment",
+                    "buyer_relationship", "risk_penalty_credit", "enterprise_material", "other_enterprise_fact"
+                  ]
+                }
+              }
+            },
+            {
+              "properties": {
+                "target_layer": {"const": "capability"},
+                "target_code": {
+                  "enum": [
+                    "industry_capability", "technical_capability", "similar_performance_capability",
+                    "regional_delivery_capability", "amount_experience_capability",
+                    "personnel_resource_capability", "buyer_relationship_capability", "tender_performance_capability"
+                  ]
+                }
+              }
+            },
+            {
+              "properties": {
+                "target_layer": {"const": "decision"},
+                "target_code": {
+                  "enum": [
+                    "strategic_industries", "strategic_regions", "budget_preference",
+                    "procurement_method_preferences", "consortium_acceptance", "risk_preference",
+                    "max_concurrent_projects", "personnel_resource_constraints", "explicit_exclusions",
+                    "key_buyers", "current_business_goals"
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

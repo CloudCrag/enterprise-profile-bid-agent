@@ -1,0 +1,5 @@
+{
+  "policies": {
+    "LOCAL_PROFILE": {"default_ttl_seconds": 86400}
+  }
+}

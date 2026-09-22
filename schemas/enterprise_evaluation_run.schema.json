@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "enterprise-evaluation-run/2.0.0",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "evaluation_run_schema_version",
+    "run_id",
+    "company_id",
+    "agent_mode",
+    "status",
+    "provider_id",
+    "model_sha256",
+    "active_indicator_codes",
+    "core_indicator_codes",
+    "excluded_indicator_codes",
+    "checkpoint_version",
+    "graph_backend",
+    "trace",
+    "termination_reason",
+    "content_hash"
+  ],
+  "properties": {
+    "evaluation_run_schema_version": {
+      "const": "enterprise-evaluation-run/2.0.0"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "company_id": {
+      "type": "string"
+    },
+    "agent_mode": {
+      "const": "PROFILE_EVALUATION"
+    },
+    "status": {
+      "enum": [
+        "RUNNING",
+        "COMPLETED",
+        "COMPLETED_WITH_PARTIAL_COVERAGE",
+        "WAITING_DATA_PROVIDER",
+        "WAITING_REVIEW",
+        "WAITING_USER_INPUT",
+        "PROVIDER_NOT_CONFIGURED",
+        "CALIBRATION_REQUIRED",
+        "MODEL_POLICY_PENDING",
+        "MANUAL_INTERVENTION_REQUIRED",
+        "FAILED"
+      ]
+    },
+    "provider_id": {
+      "type": "string"
+    },
+    "model_sha256": {
+      "type": "string"
+    },
+    "active_indicator_codes": {
+      "type": "array",
+      "minItems": 44,
+      "maxItems": 44,
+      "uniqueItems": true
+    },
+    "core_indicator_codes": {
+      "type": "array",
+      "minItems": 27,
+      "maxItems": 27,
+      "uniqueItems": true
+    },
+    "excluded_indicator_codes": {
+      "type": "array",
+      "minItems": 16,
+      "maxItems": 16,
+      "uniqueItems": true
+    },
+    "checkpoint_version": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "graph_backend": {
+      "enum": [
+        "UPSTREAM_LANGGRAPH",
+        "OFFLINE_COMPAT_STATEGRAPH"
+      ]
+    },
+    "round_index": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "max_rounds": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "waiting_for": {
+      "type": "array"
+    },
+    "trace": {
+      "type": "array"
+    },
+    "termination_reason": {
+      "type": "string"
+    },
+    "content_hash": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "schema_version": "enterprise-decision-field-catalog/1.0.0",
+  "fields": [
+    {"field_code": "strategic_industries", "field_name": "战略行业"},
+    {"field_code": "strategic_regions", "field_name": "战略地区"},
+    {"field_code": "budget_preference", "field_name": "预算偏好"},
+    {"field_code": "procurement_method_preferences", "field_name": "招标方式偏好"},
+    {"field_code": "consortium_acceptance", "field_name": "是否接受联合体"},
+    {"field_code": "risk_preference", "field_name": "风险偏好"},
+    {"field_code": "max_concurrent_projects", "field_name": "同时可投入项目数量"},
+    {"field_code": "personnel_resource_constraints", "field_name": "人员资源约束"},
+    {"field_code": "explicit_exclusions", "field_name": "明确排除项"},
+    {"field_code": "key_buyers", "field_name": "重点采购人"},
+    {"field_code": "current_business_goals", "field_name": "当前经营目标"}
+  ]
+}

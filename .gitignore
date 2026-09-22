@@ -1,0 +1,17 @@
+.env
+.env.*
+!.env.example
+.venv/
+.venv_*/
+node_modules/
+**/node_modules/
+**/dist/
+*.tsbuildinfo
+**/__pycache__/
+*.py[cod]
+.pytest_cache/
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+runtime_data/
+docs/reference/

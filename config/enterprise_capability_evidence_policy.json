@@ -1,0 +1,61 @@
+{
+  "schema_version": "enterprise-capability-evidence-policy/1.0.0",
+  "domains": {
+    "industry_capability": {
+      "allowed_fact_types": ["business_registration", "bid_participation", "performance", "fulfillment"],
+      "allowed_other_enterprise_fact_subtypes": [],
+      "allowed_tag_codes": ["A1.4", "B1.1"],
+      "allowed_observation_types": ["registered_industry_context", "market_participation_industries", "historical_delivered_project_industries"],
+      "allowed_candidate_kinds": ["registered_industry_context", "market_participation_industry_candidate", "delivered_industry_candidate"]
+    },
+    "technical_capability": {
+      "allowed_fact_types": ["qualification", "personnel_certificate", "performance", "fulfillment", "other_enterprise_fact"],
+      "allowed_other_enterprise_fact_subtypes": ["product_business"],
+      "allowed_tag_codes": ["B2.1", "B4.5"],
+      "allowed_observation_types": ["current_qualification_capabilities", "unverified_qualification_observations", "current_personnel_certificates", "unverified_personnel_certificate_observations", "declared_products_and_services", "verified_technical_experience"],
+      "allowed_candidate_kinds": ["qualification_capability_candidate", "personnel_certificate_candidate", "technical_experience_candidate", "product_business_candidate"]
+    },
+    "similar_performance_capability": {
+      "allowed_fact_types": ["performance", "fulfillment"],
+      "allowed_other_enterprise_fact_subtypes": [],
+      "allowed_tag_codes": [],
+      "allowed_observation_types": ["historical_performance_inventory"],
+      "allowed_candidate_kinds": ["similar_performance_candidate"]
+    },
+    "regional_delivery_capability": {
+      "allowed_fact_types": ["bid_participation", "performance", "fulfillment", "other_enterprise_fact"],
+      "allowed_other_enterprise_fact_subtypes": ["organization_network"],
+      "allowed_tag_codes": ["B1.1", "B4.3"],
+      "allowed_observation_types": ["service_presence_regions", "market_participation_regions", "historical_delivery_regions"],
+      "allowed_candidate_kinds": ["service_presence_region_candidate", "market_participation_region_candidate", "historical_delivery_region_candidate"]
+    },
+    "amount_experience_capability": {
+      "allowed_fact_types": ["performance", "fulfillment", "bid_award"],
+      "allowed_other_enterprise_fact_subtypes": [],
+      "allowed_tag_codes": [],
+      "allowed_observation_types": ["historical_amount_observations", "confirmed_historical_amount_experience"],
+      "allowed_candidate_kinds": ["normalized_amount_experience_candidate"]
+    },
+    "personnel_resource_capability": {
+      "allowed_fact_types": ["personnel", "personnel_certificate", "other_enterprise_fact"],
+      "allowed_other_enterprise_fact_subtypes": ["organization_network"],
+      "allowed_tag_codes": ["B4.1", "B4.3"],
+      "allowed_observation_types": ["personnel_counts", "current_personnel_certificates", "unverified_personnel_certificate_observations", "active_branch_resources"],
+      "allowed_candidate_kinds": ["personnel_resource_candidate", "personnel_certificate_candidate", "organization_resource_candidate"]
+    },
+    "buyer_relationship_capability": {
+      "allowed_fact_types": ["buyer_relationship", "performance", "fulfillment", "bid_award"],
+      "allowed_other_enterprise_fact_subtypes": [],
+      "allowed_tag_codes": [],
+      "allowed_observation_types": ["confirmed_buyer_relationship_records"],
+      "allowed_candidate_kinds": ["buyer_relationship_candidate"]
+    },
+    "tender_performance_capability": {
+      "allowed_fact_types": ["bid_participation", "bid_award", "fulfillment"],
+      "allowed_other_enterprise_fact_subtypes": [],
+      "allowed_tag_codes": ["B1.1", "B1.2"],
+      "allowed_observation_types": ["historical_tender_participation_summary"],
+      "allowed_candidate_kinds": ["tender_participation_candidate", "confirmed_award_history_candidate", "confirmed_fulfillment_history_candidate"]
+    }
+  }
+}

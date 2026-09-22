@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "enterprise-evaluation-card/2.0.0",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "evaluation_card_schema_version",
+    "company_id",
+    "enterprise",
+    "identity",
+    "model_status",
+    "score_summary",
+    "primary_dimensions",
+    "secondary_dimensions",
+    "indicator_results",
+    "excluded_indicators",
+    "data_gaps",
+    "notice",
+    "generated_at_utc",
+    "evaluation_profile_hash",
+    "content_hash"
+  ],
+  "properties": {
+    "evaluation_card_schema_version": {
+      "const": "enterprise-evaluation-card/2.0.0"
+    },
+    "company_id": {
+      "type": "string"
+    },
+    "enterprise": {
+      "type": "object"
+    },
+    "identity": {
+      "type": "object"
+    },
+    "model_status": {
+      "type": "object"
+    },
+    "score_summary": {
+      "type": "object"
+    },
+    "primary_dimensions": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "secondary_dimensions": {
+      "type": "array",
+      "minItems": 11,
+      "maxItems": 11
+    },
+    "indicator_results": {
+      "type": "array",
+      "minItems": 44,
+      "maxItems": 44
+    },
+    "excluded_indicators": {
+      "type": "array",
+      "minItems": 16,
+      "maxItems": 16
+    },
+    "data_gaps": {
+      "type": "array"
+    },
+    "notice": {
+      "type": "string"
+    },
+    "generated_at_utc": {
+      "type": "string"
+    },
+    "evaluation_profile_hash": {
+      "type": "string"
+    },
+    "content_hash": {
+      "type": "string"
+    }
+  }
+}

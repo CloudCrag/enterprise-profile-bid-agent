@@ -1,0 +1,175 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "enterprise-indicator-score-result/2.0.0",
+  "title": "IndicatorScoreResult",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "indicator_code",
+    "indicator_name",
+    "selection_status",
+    "primary_code",
+    "secondary_code",
+    "legacy_weight",
+    "active_weight",
+    "scoring_status",
+    "raw_score",
+    "weighted_contribution",
+    "rule_status",
+    "input_features",
+    "evidence_ids",
+    "fact_ids",
+    "api_ids",
+    "missing_fields",
+    "explanation",
+    "low_score_diagnosis",
+    "improvement_suggestion",
+    "redline_note",
+    "model_conflicts",
+    "active",
+    "acquisition_priority",
+    "resolvability",
+    "handler_id"
+  ],
+  "properties": {
+    "indicator_code": {
+      "type": "string",
+      "pattern": "^[ABC][0-9]+\\.[0-9]+$"
+    },
+    "indicator_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "selection_status": {
+      "enum": [
+        "DELETE_CANDIDATE",
+        "RETAINED",
+        "CORE_RETAINED"
+      ]
+    },
+    "primary_code": {
+      "enum": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    "secondary_code": {
+      "type": "string"
+    },
+    "legacy_weight": {
+      "type": "number",
+      "minimum": 0
+    },
+    "active_weight": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "scoring_status": {
+      "enum": [
+        "API_FAILED",
+        "API_PENDING",
+        "CALCULATION_ERROR",
+        "EXCLUDED",
+        "INSUFFICIENT_EVIDENCE",
+        "MISSING_DATA",
+        "MODEL_CONTENT_CONFLICT",
+        "NOT_ACTIVE",
+        "PENDING_RULE",
+        "REVIEW_PENDING",
+        "SCORED",
+        "WEIGHT_POLICY_PENDING"
+      ]
+    },
+    "raw_score": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 100
+    },
+    "weighted_contribution": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "rule_status": {
+      "type": "string"
+    },
+    "input_features": {
+      "type": "object"
+    },
+    "evidence_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "fact_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "api_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "missing_fields": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "explanation": {
+      "type": "string"
+    },
+    "low_score_diagnosis": {
+      "type": "string"
+    },
+    "improvement_suggestion": {
+      "type": "string"
+    },
+    "redline_note": {
+      "type": "string"
+    },
+    "model_conflicts": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "active": {
+      "type": "boolean"
+    },
+    "acquisition_priority": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "enum": [
+        1,
+        2,
+        null
+      ]
+    },
+    "resolvability": {
+      "type": "string"
+    },
+    "handler_id": {
+      "type": "string"
+    }
+  }
+}

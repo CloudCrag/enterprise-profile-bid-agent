@@ -1,0 +1,139 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "enterprise-profile-gap-inventory/1.0.0",
+  "title": "Enterprise Profile Gap Inventory",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "gap_inventory_schema_version", "gap_inventory_id", "gap_inventory_content_hash",
+    "enterprise", "task_context", "source_dependencies", "gaps",
+    "satisfied_requirements", "gap_summary", "warnings", "generated_at_utc"
+  ],
+  "properties": {
+    "gap_inventory_schema_version": {"const": "enterprise-profile-gap-inventory/1.0.0"},
+    "gap_inventory_id": {"type": "string", "minLength": 1},
+    "gap_inventory_content_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "enterprise": {"$ref": "#/$defs/enterprise"},
+    "task_context": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["task_context_id", "task_goal"],
+      "properties": {
+        "task_context_id": {"type": "string", "minLength": 1},
+        "task_goal": {"type": "string", "minLength": 1}
+      }
+    },
+    "source_dependencies": {"$ref": "#/$defs/sourceDependencies"},
+    "gaps": {"type": "array", "items": {"$ref": "#/$defs/gap"}},
+    "satisfied_requirements": {"type": "array", "items": {"$ref": "#/$defs/satisfied"}},
+    "gap_summary": {"$ref": "#/$defs/gapSummary"},
+    "warnings": {"type": "array", "items": {"type": "object"}},
+    "generated_at_utc": {"type": "string", "format": "date-time"}
+  },
+  "$defs": {
+    "enterprise": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "unified_social_credit_code", "internal_enterprise_id"],
+      "properties": {
+        "name": {"type": "string", "minLength": 1},
+        "unified_social_credit_code": {"type": ["string", "null"]},
+        "internal_enterprise_id": {"type": ["string", "null"]}
+      }
+    },
+    "sourceDependencies": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "gap_analysis_request_schema_version", "gap_analysis_request_id", "gap_analysis_request_content_hash",
+        "fact_profile_schema_version", "fact_profile_content_hash",
+        "capability_profile_schema_version", "capability_profile_id", "capability_profile_content_hash",
+        "decision_profile_schema_version", "decision_profile_id", "decision_profile_content_hash"
+      ],
+      "properties": {
+        "gap_analysis_request_schema_version": {"const": "enterprise-profile-gap-analysis-request/1.0.0"},
+        "gap_analysis_request_id": {"type": "string", "minLength": 1},
+        "gap_analysis_request_content_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "fact_profile_schema_version": {"const": "enterprise-fact-profile/1.3.0"},
+        "fact_profile_content_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "capability_profile_schema_version": {"enum": ["enterprise-capability-profile/1.1.0", "enterprise-capability-profile/1.2.0"]},
+        "capability_profile_id": {"type": "string", "minLength": 1},
+        "capability_profile_content_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "decision_profile_schema_version": {"type": ["string", "null"], "enum": ["enterprise-decision-profile/1.0.0", null]},
+        "decision_profile_id": {"type": ["string", "null"]},
+        "decision_profile_content_hash": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "sourceReferences": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["fact_ids", "capability_ids", "decision_profile_id", "evidence_ids"],
+      "properties": {
+        "fact_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "capability_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "decision_profile_id": {"type": ["string", "null"]},
+        "evidence_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true}
+      }
+    },
+    "gap": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "gap_id", "gap_content_hash", "requirement_id", "target_layer", "target_code", "importance",
+        "gap_status", "reason_code", "reason_summary", "source_references", "resolution_type"
+      ],
+      "properties": {
+        "gap_id": {"type": "string", "minLength": 1},
+        "gap_content_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "requirement_id": {"type": "string", "minLength": 1},
+        "target_layer": {"enum": ["fact", "capability", "decision"]},
+        "target_code": {"type": "string", "minLength": 1},
+        "importance": {"enum": ["blocking", "important", "optional"]},
+        "gap_status": {"enum": ["missing", "not_provided", "insufficient_data", "ambiguous", "conflicted", "unknown_availability", "needs_more_evidence", "pending_review"]},
+        "reason_code": {"type": "string", "minLength": 1},
+        "reason_summary": {"type": "string", "minLength": 1},
+        "source_references": {"$ref": "#/$defs/sourceReferences"},
+        "resolution_type": {"enum": ["user_confirmation_required", "verified_fact_required", "supporting_material_required", "conflict_review_required", "capability_review_required"]}
+      }
+    },
+    "satisfied": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "requirement_id", "target_layer", "target_code", "importance", "satisfaction_status",
+        "source_references", "limitation_count", "unknown_count", "limitations"
+      ],
+      "properties": {
+        "requirement_id": {"type": "string", "minLength": 1},
+        "target_layer": {"enum": ["fact", "capability", "decision"]},
+        "target_code": {"type": "string", "minLength": 1},
+        "importance": {"enum": ["blocking", "important", "optional"]},
+        "satisfaction_status": {"const": "satisfied"},
+        "source_references": {"$ref": "#/$defs/sourceReferences"},
+        "limitation_count": {"type": "integer", "minimum": 0},
+        "unknown_count": {"type": "integer", "minimum": 0},
+        "limitations": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "gapSummary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "total_requirement_count", "satisfied_requirement_count", "gap_count",
+        "blocking_gap_count", "important_gap_count", "optional_gap_count",
+        "fact_gap_count", "capability_gap_count", "decision_gap_count"
+      ],
+      "properties": {
+        "total_requirement_count": {"type": "integer", "minimum": 0},
+        "satisfied_requirement_count": {"type": "integer", "minimum": 0},
+        "gap_count": {"type": "integer", "minimum": 0},
+        "blocking_gap_count": {"type": "integer", "minimum": 0},
+        "important_gap_count": {"type": "integer", "minimum": 0},
+        "optional_gap_count": {"type": "integer", "minimum": 0},
+        "fact_gap_count": {"type": "integer", "minimum": 0},
+        "capability_gap_count": {"type": "integer", "minimum": 0},
+        "decision_gap_count": {"type": "integer", "minimum": 0}
+      }
+    }
+  }
+}

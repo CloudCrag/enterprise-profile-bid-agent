@@ -1,0 +1,1662 @@
+{
+  "apis": [
+    {
+      "api_id": "1009",
+      "api_name": "企业模糊搜索",
+      "data_dimension": "企业模糊搜索",
+      "description": "使用关键字模糊查询，返回相关的企业列表，包含企业概要信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=b44e44d1551d364370ac4f5edeee77b0",
+      "enterprise_data_category": "搜索",
+      "output_fields": "总数、内容、注册号、经营状态-工商、经营状态-归一、统一社会信用代码、成立日期、注册资本、机构类型、无用、公司id、组织机构代码、1-公司 2-人、省份、法人、匹配原因、公司名、其他匹配信息、公司名匹配情况、法人匹配情况、匹配类型、匹配内容"
+    },
+    {
+      "api_id": "1019",
+      "api_name": "企业基本信息（含企业档案地址）",
+      "data_dimension": "企业基本信息",
+      "description": "可以通过公司名称、注册号或统一社会信用代码查询企业基本信息，返回企业照面信息、企业档案地址等信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=675b15773abccf87f48afe9bade8c904",
+      "enterprise_data_category": "工商信息",
+      "output_fields": "公司名称、企业类型、法定代表人、注册资本、注册码、企业地址经营范围、登记机关、登记状态、成立时间、企业信用代码、所在省份、营业日期、截止日期、核准时间、行政区号、市、行政区号、地区、行政区号、企业在水滴页面的url"
+    },
+    {
+      "api_id": "1020",
+      "api_name": "企业基本信息(含联系方式)",
+      "data_dimension": "企业基本信息",
+      "description": "可以通过公司名称、注册号或统一社会信用代码查询企业基本信息，返回企业照面信息、联系方式、国标行业等信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=151aa38089e6e736e2ef85b095eea1cd",
+      "enterprise_data_category": "工商信息",
+      "output_fields": "更新时间，联系方式（地址、电话、邮箱、网址），省份，行政区号，地市，行政区号，地区，行政区号，企业名称，注册号，统一社会信用代码，组织机构代码，法人，法人类型(自然人，非自然人），注册资金，实收注册资金，公司类型，登记机关，注册地址，行业信息，核准时间，经营范围，成立时间，经营状态，营业期限开始时间，营业期限结束时间，曾用名，吊销日期，吊销原因，注销日期，注销原因，行业大类code，行业大类描述，行业中类code，行业中类描述，行业小类code，行业小类描述，行业门类code，行业门类描述，地址，网址，电话号码，邮箱，值，备注，值，备注，值，备注，值，备注"
+    },
+    {
+      "api_id": "1040",
+      "api_name": "企业三要素验证",
+      "data_dimension": "企业三要素验证",
+      "description": "验证公司名，法人，统一信用代码，是否匹配，结果分别标识3要素是否匹配",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=01418a2d27d4d94760df3e89e039df87",
+      "enterprise_data_category": "工商信息",
+      "output_fields": "统一信用代码是否一致、公司名称是否一致、法人名称是否一致(true: 一致， false:不一致)"
+    },
+    {
+      "api_id": "1041",
+      "api_name": "企业二要素验证",
+      "data_dimension": "企业二要素验证",
+      "description": "通过输入统一社会信用代码、企业名称/统一社会信用代码、法人名称，验证两者是否匹配一致。",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=b328bc43074629dbefb6084015ad11f9",
+      "enterprise_data_category": "工商信息",
+      "output_fields": "核验结果：0：统一社会信用代码有误，1：一致，2：不一致"
+    },
+    {
+      "api_id": "1059",
+      "api_name": "查询年报概况",
+      "data_dimension": "年报信息",
+      "description": "可以通过企业名称、注册号、统一社会信用代码查询工商年报概况，返回年报年份、发布时间等信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=4966ba19d0e63cc027013d3906a7f195",
+      "enterprise_data_category": "工商信息",
+      "output_fields": "总数、列表详情、年报年份、是否有详细信息、发布时间"
+    },
+    {
+      "api_id": "1061",
+      "api_name": "企业地址解析",
+      "data_dimension": "企业地址解析",
+      "description": "输入企业地址/监管机构名称，返回所属省、地市、区县",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=b19b830d14dc06ca0b8ddff72ba3ed89",
+      "enterprise_data_category": "工商信息",
+      "output_fields": "省份、行政区号、地市、行政区号、区县、行政区号"
+    },
+    {
+      "api_id": "1092",
+      "api_name": "小微企业验证",
+      "data_dimension": "小微企业核查",
+      "description": "通过搜索关键字核查所查询企业是否为小微企业。",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=d6c503105695289ab9e4af213bb58277",
+      "enterprise_data_category": "工商信息",
+      "output_fields": "核验结果（1-是小微企业，0-不是小微企业）"
+    },
+    {
+      "api_id": "1120",
+      "api_name": "企业基本信息（含主要人员）",
+      "data_dimension": "企业基本信息",
+      "description": "可以通过公司名称或ID获取企业基本信息和主要人员信息，包括公司名称或ID、类型、成立日期、联系方式、主要人员名称、职位等字段的详细信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=f4dc032fecdafca0a0dec798156ec4f0",
+      "enterprise_data_category": "工商信息",
+      "output_fields": "主要人员分类、无用、人员规模、经营开始时间、法人类型，1 人 2 公司、股票名、企业id、是否是小微企业 0不是 1是、股票曾用名、注册号、注册资本、企业名、登记机关、注册地址、行业、核准时间、更新时间、参保人数、企业标签、纳税人识别号、经营范围、英文名、简称、组织机构代码、企业状态、成立日期、股票类型、法人、经营结束时间、实收注册资金、企业类型、省份简称、统一社会信用代码、曾用名、曾用名、股票号、注册资本币种 人民币 美元 欧元 等、实收注册资本币种 人民币 美元 欧元 等、邮箱、网址、企业联系方式、吊销日期、吊销原因、注销日期、注销原因、市、市代码、区、分类、区code、股票信息列表、省份code、枚举值：有限责任公司、股份有限公司、股份合作公司、国有企业、央企、集体所有制、全民所有制、独资企业、有限合伙、普通合伙、外商投资企业、港、澳、台商投资企业、联营企业、私营企业、国民经济行业分类门类、国民经济行业分类大类、国民经济行业分类中类、国民经济行业分类小类、主要人员ID、主要人员名字、职位、1、公司 2、人、股票名字、股票代码、股票历史名、股票类型、股票状态"
+    },
+    {
+      "api_id": "1122",
+      "api_name": "企业基本信息查询",
+      "data_dimension": "企业基本信息",
+      "description": "可以通过公司名称、注册号或统一社会信用代码查询企业基本信息，返回企业照面信息、类型标签、国标行业等信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=503e14aa946bfe8055c5d70a504cf717",
+      "enterprise_data_category": "工商信息",
+      "output_fields": "公司ID、公司名、公司类型、法人、注册资金、注册号、注册地址、经营范围、登记机关、公司状态-工商原始、成立时间、统一信用代码、省份、经营开始时间、经营结束时间、核准日期、省份code、市、市code、区域、区域code、企业状态-归化后、法人类型 1 自然人；2 非自然人；null 其他、所属行业、社保人数、纳税号、组织结构代码、实缴金额、历史名、历史名分号拼接、注册资金币种、吊销日期、吊销原因、注销日期、注销原因、企业人数、行业分类、枚举值：有限责任公司、股份有限公司、股份合作公司、国有企业、央企、集体所有制、全民所有制、独资企业、有限合伙、普通合伙、外商投资企业、港、澳、台商投资企业、联营企业、私营企业、1级分类、2级分类、3级分类、4级分类"
+    },
+    {
+      "api_id": "1156",
+      "api_name": "查询年报详情",
+      "data_dimension": "年报信息",
+      "description": "年报包含企业自己申报的基本信息，网站或网店信息，发起人及出资信息，企业资产状态和股权变更信息等。",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=9e32990b452d2e803720ece09c69d134",
+      "enterprise_data_category": "工商信息",
+      "output_fields": "总数、列表详情、报送年度、是否有详细信息、发布日期、企业基本信息、修改记录、对外投资信息、股东（发起人）及出资信息、对外提供保证担保信息、股权变更信息、网站或网店信息、企业资产状况信息、社保信息、是否有对外担保信息、经营场所、主体类型、注册号、企业名称、经营者姓名、企业联系电话、邮政编码、企业通信地址、电子邮箱、有限责任公司本年度是否发生股东股权转让、企业经营状态、是否有网站或网店、企业是否有投资信息或购买其他公司股权、从业人数、隶属关系、资金数额、经营期限、利润总额、主营业务收入、净利润、纳税总额、负债总额、金融贷款、获得政府扶持资金、补助、资产总额、所有者权益合计、营业总收入、修改事项、变更前内容、变更后内容、变更日期、投资设立企业或购买股权企业名称、注册号、信用代码、股东/发起人、认缴出资额、认缴出资时间、认缴出资方式、实缴出资额、实缴出资时间、实缴出资方式、债权人、债务人、主债权种类、主债权数额、履行债务的期限、保证的期间、保证的方式、保证担保的范围、变更后股权比例、股权变更日期、股东、变更前股权比例、保险种类、名称、保险缴费基数、实际缴费金额、累计欠缴金额、参保人数、网站类型、名称、网址"
+    },
+    {
+      "api_id": "1157",
+      "api_name": "特殊主体基本信息",
+      "data_dimension": "特殊企业基本信息",
+      "description": "查询特殊企业基本信息，主要包含香港公司、社会组织、律所、事业单位、基金会等",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=b935ed07d212ad588c5d37abeda7a349",
+      "enterprise_data_category": "工商信息",
+      "output_fields": "办证机构、经济行业名称、上级主管部门、代码证作废日期、机构状态、组织机构名称、统一社会信用代码、组织机构代码、机构类型、注册资本(万元)、注册日期、法人代表姓名、行政区划、机构地址"
+    },
+    {
+      "api_id": "1221",
+      "api_name": "变更记录",
+      "data_dimension": "变更记录",
+      "description": "助您更快的了解企业的发展历程。企业从成立至今所有的变更记录，包含变更事项、变更前内容和变更后内容。",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=4d61f4cf99d8d01bb0742ceaaf8dc4ee",
+      "enterprise_data_category": "工商信息",
+      "output_fields": "公司名、变更后、变更日期、变更事项、变更前列表"
+    },
+    {
+      "api_id": "1222",
+      "api_name": "企业主要人员",
+      "data_dimension": "主要人员",
+      "description": "查询企业工商的主要人员，包括人员姓名、职务等信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=6069fde70806639c9f754b8e7ca500cc",
+      "enterprise_data_category": "工商信息",
+      "output_fields": "姓名、职务"
+    },
+    {
+      "api_id": "1224",
+      "api_name": "分支机构信息",
+      "data_dimension": "分支机构",
+      "description": "获取从企业分支机构信息，具体信息包含分支机构的企业名称、企业状态和法人信息。",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=a6dbde428d165a5972408a51b28e7ad1",
+      "enterprise_data_category": "工商信息",
+      "output_fields": "总数、列表详情、公司ID、分支企业名称、分支企业工商状态、分支归一化状态、分支法人、分支法人ID不维护、分支省份、分支省份简称、分支成立时间"
+    },
+    {
+      "api_id": "1228",
+      "api_name": "企业股东信息",
+      "data_dimension": "股东信息",
+      "description": "可以通过公司名称获取股东信息括股东名、出资比例、出资金额、股东总数等字段的详细信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=b8e3147bbae8813e1a15603f81a6ec89",
+      "enterprise_data_category": "工商信息",
+      "output_fields": "总数、股东信息（对应表id、公司id、人员id、logo、股东名、简称、实缴明细（出资金额、出资时间、占比、实缴方式）、认缴明细（出资金额、出资时间、占比、认缴方式）、股东自然人标记、股东类型、工商股东类型、出资比例、证照/证件类型、证照/证件编号、股东国别、实缴出资额、认缴出资额、持股数、股东进入日期、币种）"
+    },
+    {
+      "api_id": "1229",
+      "api_name": "企业对外投资信息",
+      "data_dimension": "对外投资",
+      "description": "查询企业对外投资情况，包含所投资企业类型，出资比例，注册号，法人名称，注册资本等。",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=f6f9fdcdd4d54f2fbafbc07b00bfaa50",
+      "enterprise_data_category": "工商信息",
+      "output_fields": "社会统一信用代码、企业类型、出资比列、公司Logo、KeyNo、企业名称、注册号、法人名称、注册资本、成立日期、状态"
+    },
+    {
+      "api_id": "1230",
+      "api_name": "企业存在核验",
+      "data_dimension": "企业存在核验",
+      "description": "核查一家企业是否存在",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=8a971921ea1315ac446ca95a863ed8fc",
+      "enterprise_data_category": "工商信息",
+      "output_fields": "核验结果，0-不存在；1-存在"
+    },
+    {
+      "api_id": "1237",
+      "api_name": "企业所属行业",
+      "data_dimension": "国民经济行业",
+      "description": "通过搜索关键字获取所查询的企业相关的行业信息，返回该企业的行业门类、大类、中类和小类信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=55f0aabfa95d8697dacf6dd6f1fbfa20",
+      "enterprise_data_category": "工商信息",
+      "output_fields": "行业大类code、行业大类描述、行业中类code、行业中类描述、行业小类code、行业小类描述、行业门类code、行业门类描述"
+    },
+    {
+      "api_id": "1238",
+      "api_name": "总公司信息",
+      "data_dimension": "总公司",
+      "description": "核查企业所属总公司/母公司信息，包含总公司的成立日期、状态、注册资本、法人信息等信息。",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=3156f9a5912b6978188484f44e484193",
+      "enterprise_data_category": "工商信息",
+      "output_fields": "企业KeyNo、企业名称、法人信息、成立日期、状态、注册资本、统一信用代码、注册号、组织机构代码、法人id、法人名称 "
+    },
+    {
+      "api_id": "1239",
+      "api_name": "企业logo",
+      "data_dimension": "企业无水印logo",
+      "description": "通过查询公司名称获取公司无水印logo",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=4433cbe16b4fe908d2d088d91205d907",
+      "enterprise_data_category": "工商信息",
+      "output_fields": "logourl"
+    },
+    {
+      "api_id": "1240",
+      "api_name": "企业电话匹配",
+      "data_dimension": "企业电话匹配",
+      "description": "通过电话号与企业名称核查该电话是否为企业电话号",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=0f3972f50b04f9d49e2b2adc32859593",
+      "enterprise_data_category": "工商信息",
+      "output_fields": "公司名称、法人名称、成立时间、企业状态、注册号、统一社会信用码、公司keyNo"
+    },
+    {
+      "api_id": "1243",
+      "api_name": "工商公示股东",
+      "data_dimension": "股东信息",
+      "description": "查询企业工商股东信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=f69dcca89fcabea04a23a222a6f683f2",
+      "enterprise_data_category": "工商信息",
+      "output_fields": "返回列表中记录总数、企业股东及出资信息列表、总实缴、股东姓名、企业证照号、认缴出资列表、出资时间、认缴出资额、出资方式、总认缴、股比、类型、实缴出资列表、出资时间、实缴出资额、出资方式、股东类型"
+    },
+    {
+      "api_id": "1244",
+      "api_name": "曾用名",
+      "data_dimension": "获取曾用名",
+      "description": "通过公司名称查询企业曾用名",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=0777851e3a6306d72a96a51db41b6a23",
+      "enterprise_data_category": "工商信息",
+      "output_fields": "曾用名、当前名"
+    },
+    {
+      "api_id": "1245",
+      "api_name": "企业经纬度信息",
+      "data_dimension": "企业经纬度",
+      "description": "可以通过公司名称或ID获取企业经纬度信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=e2cf3cdcf0181266cc0783b2678f308f",
+      "enterprise_data_category": "工商信息",
+      "output_fields": "公司id，企业名称，注册地址，省，经度，纬度，区县，市"
+    },
+    {
+      "api_id": "1255",
+      "api_name": "公司公示-股权变更",
+      "data_dimension": "公司公示-股权变更",
+      "description": "可以通过公司名称或ID获取企业股权变更信息，股权变更包括变更前后的股东名、变更时间等字段的详细信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=e6329d10e10afbc0520ae78093ce5a04",
+      "enterprise_data_category": "工商信息",
+      "output_fields": "total，items，公司id，股东名，变更后，logo，变更前，股东id，类型，1-公司 2-人，变更时间"
+    },
+    {
+      "api_id": "1256",
+      "api_name": "公司公示-股东出资",
+      "data_dimension": "公司公示-股东出资",
+      "description": "可以通过公司名称获取股东及出资信息，股东及出资信息包括股东名、出资比例、出资金额、股东总数等字段的详细信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=6aa2e1f34673fa4393149005d78c5c0a",
+      "enterprise_data_category": "工商信息",
+      "output_fields": "总数，股东出资信息，认缴，股东名，实缴，logo，公司Id，类型，1-公司 2-人，金额，认缴形式，认缴时间，占比，实缴金额，实缴形式，实缴时间"
+    },
+    {
+      "api_id": "1257",
+      "api_name": "企业性质查询",
+      "data_dimension": "企业性质",
+      "description": "通过搜索关键字查询企业性质 （大陆企业，社会组织，香港企业，台湾企业，机关单位，事业单位，律师事务所）",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=0f91f05f70fdcc38d273f825e523f32c",
+      "enterprise_data_category": "工商信息",
+      "output_fields": "企业性质（1, 大陆企业，2 社会组织，3 香港企业，4 台湾企业，5 机关单位，6 事业单位，7 律师事务所）"
+    },
+    {
+      "api_id": "1270",
+      "api_name": "企业名称税号核验",
+      "data_dimension": "企业名称税号核验",
+      "description": "通过输入企业名称、税号，查询企业是否存在，返回企业状态、企业曾用名、最新名称、企业税号等信息。",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=da9718f2a115c84e61d3795d50576efa",
+      "enterprise_data_category": "工商信息",
+      "output_fields": "核验结果：0：企业不存在，1：企业存在、信息列表（当verifyResult=0时，返回null）、企业曾用名称、变更日期、企业税号（即：统一社会信用代码）、企业状态、最新企业名称、企业曾用名、企业注册号"
+    },
+    {
+      "api_id": "1284",
+      "api_name": "企业类型查询",
+      "data_dimension": "企业类型查询",
+      "description": "可以通过企业名称获取企业类型信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=27dd9283ccaa3f37f245a509d968f574",
+      "enterprise_data_category": "工商信息",
+      "output_fields": "企业类型"
+    },
+    {
+      "api_id": "1285",
+      "api_name": "纳税人识别号",
+      "data_dimension": "纳税人识别号",
+      "description": "可以通过公司名称获取企业纳税人识别号",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=363e8ea8ada33ad992c748a477a01d17",
+      "enterprise_data_category": "工商信息",
+      "output_fields": "纳税人识别号"
+    },
+    {
+      "api_id": "1360",
+      "api_name": "工商信息核验",
+      "data_dimension": "工商信息核验",
+      "description": "核验企业详情：企业基本照面信息、股东信息、主要人员、分支机构、变更信息、行业分类等信息。",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=90c3f028ade3d6a18f6f26b30ee35839",
+      "enterprise_data_category": "工商信息",
+      "output_fields": "营业期限至，发照日期，组织机构代码，是否上市，证券号，证券类型，曾用名，Logo地址，企业类型 1-个体户，2-农民专业合作社，3-企业，4-其他，实缴资本，投资人及出资信息，主要人员，分支机构，变更信息，联系信息，行业分类数据，区域，参保人数，英文名，人员规模，最新企业年报中的联系方式，企业类型数组(10有限责任公司、20股份有限公司、30国企、40外商投资企业、50个人独资企业、60合伙制企业、70个体工商户、80联营企业、90集体所有制、100有限合伙、110普通合伙)，根据此字段获取详细信息（公司/人员），公司名称，注册号，登记机关，法人，成立日期，注销日期，状态，省份，更新日期，信用代码，注册资本，类型，地址，营业范围，营业期限始，注册资本币种，法人类型（自然人/公司），电子邮箱，企业通讯地址，企业联系电话，名称，变更日期，股东标签数组（大股东、实际控制人、最终受益人、有股权出质），最终受益股份，keyno，投资人，投资人类型，出资比例，认缴出资额，认缴出资时间，认出资方式，实出资方式，实缴出资额，实缴时间，股东出资金额（数值），名称，职位，公司KeyNo，法人信息，注册号，名称，登记机关，社会统一信用代码，变更前内容，变更后内容，变更日期，变更事项，联系电话，邮箱，网址，网址名称，网址地址，行业门类code，行业门类描述，行业大类code，行业大类描述，行业中类code，行业中类描述，行业小类code，行业小类描述，省份，城市，区域"
+    },
+    {
+      "api_id": "1366",
+      "api_name": "企业全维度信息",
+      "data_dimension": "企业全维度信息",
+      "description": "本接口用于查询企业全维度信息数据，包含的维度有：工商基本信息、分支机构、企业变更、纳税信息、联系信息、企业高管、行业信息、公司清算信息、动产抵押、曾用名、股东信息、行政处罚、行政许可、股权出质、企业抽查检查、失信被执行、被执行",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=ec09c949189c324eaef873e4bf3037e1",
+      "enterprise_data_category": "工商信息",
+      "output_fields": "工商基本信息（法人名、成立日期、吊销日期、企业状态、省份、社会统一信用代码、注册资本、企业类型、地址、经营范围、营业开始日期、营业结束日期、发照日期、组织机构代码、是否上市(0为未上市，1为上市、上市公司代码、上市类型、内部keyNo、公司名称、注册号、登记机关）、分支机构（注册号、名称、登记机关、社会统一信用代码、法人姓名）、企业变更（变更事项、变更前内容、变更后内容、变更日期）、纳税信息（纳税人识别号、纳税人名称、评价年度、信用等级）、联系信息（网站名称、网站地址、联系电话、联系邮箱）、企业高管（姓名、职务）、经营异常（列入经营异常名录原因、列入日期、移出经营异常名录原因、移出日期、作出决定机关、移除决定机关）、行业信息（国民经济行业分类大类名称、国民经济行业分类小类名称）、公司清算信息（清算组负责人、清算组成员）、动产抵押（登记编号、登记时间、公示时间、登记机关、被担保债权数额、状态）、曾用名（曾用名、变更日期）、股东信息（股东、股东类型、出资比例、认缴出资额、认缴出资时间、认缴出资方式、实缴出资额、实缴时间、实际出资方式）、行政处罚（行政处罚决定书文号、违法行为类型、行政处罚决定机关名称、行政处罚内容、作出行政处罚决定日期、作出行政公示日期、备注）、行政许可（项目名称、地域、决定日期、决定文书号）、股权出质（质权登记编号、出质人、出质人证照编号、质权人、质权人证照编号、出质股权数额、股权出质设立登记日期、公示时间、出质状态）、企业抽查检查（登记编号、检查实施机关、类型、日期、结果、备注）、失信（公司名称、立案日期、立案文书号、组织机构代码、执行依据文号、发布时间、被执行人的履约情况、行为备注、执行法院）、被执行（状态、身份证号码/组织机构代码、官网系统ID、名称、立案时间、立案号、执行法院、标的）"
+    },
+    {
+      "api_id": "2020",
+      "api_name": "裁判文书核查",
+      "data_dimension": "裁判文书",
+      "description": "输入公司名称或ID可以查询企业法律诉讼信息，法律诉讼包括案件名称、案由、案件身份、案号等字段的详细信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=99340da24540970e3fd648291dc21307",
+      "enterprise_data_category": "司法风险",
+      "output_fields": "数据是否存在（1-存在，0-不存在）、uuid、第三人、被告、原告、其他当事人、法院、案由、原文链接地址、案号、裁判文书id、标题、摘要、发布时间、裁判日期、水滴显示url、案件类型、文书类型、内部主键ID、代理人、案件结果、案件金额（元）、省份、地市、区县、审理程序名称、裁判年份、总数"
+    },
+    {
+      "api_id": "2035",
+      "api_name": "信用中国行政处罚核查",
+      "data_dimension": "行政处罚",
+      "description": "通过搜索关键字（公司名称、注册号或社会统一信用代码）查询企业信用中国行政处罚",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=f3da06a672a94d617290c8840ff62819",
+      "enterprise_data_category": "经营风险",
+      "output_fields": "记录总数、行政处罚记录、数据更新时间、暂扣或吊销证照名称及编号、行政处罚决定书文号、处罚名称 | 违法行为类型、处罚状态、处罚类别、处罚结果 | 处罚内容、处罚事由 | 违法事实、处罚依据、罚款金额（万元）、收违法所得、没收非法财物的金额（万元）、区域、作出行政处罚决定日期、作出行政处罚决定机关名称"
+    },
+    {
+      "api_id": "2050",
+      "api_name": "被执行人详情",
+      "data_dimension": "被执行人",
+      "description": "返回包括但不限于案号、立案信息、关联对象、执行法院、执行标的等信息,核查企业是否存在被执行情况，协助风险管控",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=a693f8d6516ef640b589151147f27e96",
+      "enterprise_data_category": "司法风险",
+      "output_fields": "自增主键、被执行人、立案时间、案号、执行法院、执行标的（元）、身份证号码/组织机构代码"
+    },
+    {
+      "api_id": "2052",
+      "api_name": "【自然人】被执行人列表",
+      "data_dimension": "被执行人",
+      "description": "查询自然人的被执行信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=320cf1a676dfa6e758d321989b5d3471",
+      "enterprise_data_category": "司法风险",
+      "output_fields": "执行法院，执行标的（元），主键，立案时间，案号"
+    },
+    {
+      "api_id": "2062",
+      "api_name": "失信被执行人核查（含自然人）",
+      "data_dimension": "失信",
+      "description": "查询失信被执行人信息，支持用名称、证件号、名称证件号组合, 以及参数的md5、sha256查询",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=db2572d1f0c641747d2bea3d7a946693",
+      "enterprise_data_category": "司法风险",
+      "output_fields": "数据信息、总数、被执行人的履行情况、失信被执行人具体情形、发布时间、立案时间、已履行部分、未履行部分、是否删除 (0.未删除 1.已删除)、更新时间、主键号码、案号、失信被执行人名称、性别 (0. 女 1. 男 -1. 不存在)、年龄、证件号码／组织机构代码、企业法人姓名、执行法院、地域名称、标识自然人或企业法人（0-自然人 1-企业）、执行依据文号、作出执行依据单位、法律生效文书确定的义务"
+    },
+    {
+      "api_id": "2068",
+      "api_name": "被执行人核查",
+      "data_dimension": "被执行人",
+      "description": "返回包括但不限于案号、立案信息、关联对象、执行法院、执行标的等信息,核查企业是否存在被执行情况，协助风险管控",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=73e551d9a779f590a1dd3775a044b911",
+      "enterprise_data_category": "司法风险",
+      "output_fields": "执行法院、执行标的（元）、主键、立案时间、案号"
+    },
+    {
+      "api_id": "2069",
+      "api_name": "公示催告",
+      "data_dimension": "公示催告",
+      "description": "可以通过公司名称或ID获取总数、发布机构、持票人、出票人id、票据类型、信息ID、申请人id、出票日、票号、出票人、票面金额、处理类型、持票人（公司）id、申请人、公告日期、公告催告id、公告内容、付款银行、到期日",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=cbaf5672384370fa066c69886f47274d",
+      "enterprise_data_category": "司法风险",
+      "output_fields": "总数、发布机构、持票人、出票人id、票据类型、信息ID、申请人id、出票日、票号、出票人、票面金额、处理类型、持票人（公司）id、申请人、公告日期、公告催告id、公告内容、付款银行、到期日"
+    },
+    {
+      "api_id": "2071",
+      "api_name": "开庭公告详情",
+      "data_dimension": "开庭公告",
+      "description": "查询企业开庭公告，公告信息包括被告/被上诉人、法院、原告/上诉人、开庭日期、案由、内部ID、案号等信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=ef849298becea6ef3d8ce5aa4a88b665",
+      "enterprise_data_category": "司法风险",
+      "output_fields": "省份、案由、排期日期、法院、承办部门、法庭、审判长/主审人、开庭日期、案号、原告/申请人、被告/被申请人"
+    },
+    {
+      "api_id": "2074",
+      "api_name": "司法拍卖核查",
+      "data_dimension": "司法拍卖",
+      "description": "可以通过关键字（公司名称、注册号或社会统一信用代码）核查企业司法拍卖公告信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=d0d2184e50803cf209da2736d0ea0bfb",
+      "enterprise_data_category": "司法风险",
+      "output_fields": "总数、拍卖起止时间、拍卖标的、拍卖阶段、执行法院、公告标题、公告日期、竞买公告、起拍价、评估价、竞买须知链接、标的物介绍链接、标的物位置、图片链接集合、附件链接集合"
+    },
+    {
+      "api_id": "2092",
+      "api_name": "质押明细详情",
+      "data_dimension": "股权质押",
+      "description": "通过id查询质押明细详情",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=3e9571ab513fc8df55a2b65c994b81a1",
+      "enterprise_data_category": "经营风险",
+      "output_fields": "占总股本比例（%）、股东id、质押原因、质押股份市值（元）、质押机构的id、股票代码、质押机构的Logo链接地址、质押移除日期、日收盘价（元）、质押股数（单位股）、0代表人，1代表公司、质押id、股东、占所持股份比例（%）、公告日期、股东类型 0-人 1-公司、质押机构简称、质押机构、公司id、质押开始日期、状态"
+    },
+    {
+      "api_id": "2095",
+      "api_name": "质押走势",
+      "data_dimension": "股权质押",
+      "description": "可以通过公司名称或ID获取质押趋势集合（日期、质押比例）",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=f7ab715a0b0d260987b3a9bba1ec31d5",
+      "enterprise_data_category": "经营风险",
+      "output_fields": "质押趋势集合（日期、质押比例）"
+    },
+    {
+      "api_id": "2096",
+      "api_name": "质押比例",
+      "data_dimension": "股权质押",
+      "description": "可以通过公司名称获取股权质押比例信息，股权质押比例信息包括股票代码、近一年涨跌幅、质押比例、质押股数、质押市值、质押笔数等字段的详细信息",
+      "documentation_url": "",
+      "enterprise_data_category": "经营风险",
+      "output_fields": "质押比例信息对象（交易日期、股票代码、近一年涨跌幅、质押股数（股）、无限售股质押数（股）、质押笔数、交易日期、所属行业、限售股质押数（股）、股票简称、质押比例、企业id、质押市值（元））"
+    },
+    {
+      "api_id": "2097",
+      "api_name": "质押明细核查",
+      "data_dimension": "股权质押",
+      "description": "可以通过公司名称或ID获取股权质押明细信息，股权质押走势信息包括股东名称、质押股份数量、质押股份市值等字段的详细信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=e8d89290f53ada813fdff4f3c52fc60a",
+      "enterprise_data_category": "经营风险",
+      "output_fields": "总数、 搜索关键字（公司名称、注册号或社会统一信用代码）、每页条数（默认20条，最大20条）、当前页数（默认第1页）、股东id、质押股份市值（元）、质押移除日期，毫秒级的时间戳，可能为null、0代表人，1代表公司、质押股数（单位股）、质押id、股东名、公司id、占所持股份比例（%）、质押开始日期、公告日期、状态"
+    },
+    {
+      "api_id": "2149",
+      "api_name": "终本案件详情",
+      "data_dimension": "终本案件",
+      "description": "核查企业是否存在终本案件，助力风险管控",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=39dd6736ffccccd734ea47d4f6327eef",
+      "enterprise_data_category": "司法风险",
+      "output_fields": "案件id、案号、被执行人信息（KeyNo、名称）、身份证号码/组织机构代码、执法法院、立案日期、终本日期、执行标的、未履行金额"
+    },
+    {
+      "api_id": "2151",
+      "api_name": "环保处罚详情",
+      "data_dimension": "环保处罚",
+      "description": "核查企业是否存在环保处罚信息，助力风险管控",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=afa570531a52823d79e5034e46d96061",
+      "enterprise_data_category": "经营风险",
+      "output_fields": "处罚单位、执行情况、行政相对人情况（KeyNo、名称）、环保处罚id、决定书文号、违法类型、处罚事由、处罚依据、处罚结果、处罚日期"
+    },
+    {
+      "api_id": "2158",
+      "api_name": "终本案件核查",
+      "data_dimension": "终本案件",
+      "description": "核查企业是否存在终本案件，助力风险管控",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=e60dcb7e276e35df1ee8f0c1044ab48b",
+      "enterprise_data_category": "司法风险",
+      "output_fields": "案件id、案号、执行法院、终本日期、立案日期、执行标的、未履行金额"
+    },
+    {
+      "api_id": "2159",
+      "api_name": "环保处罚核查",
+      "data_dimension": "环保处罚",
+      "description": "核查企业是否存在环保处罚信息，助力风险管控",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=649938f77b580294136521999049825c",
+      "enterprise_data_category": "经营风险",
+      "output_fields": "id、决定书文号、处罚日期、违法类型、处罚单位"
+    },
+    {
+      "api_id": "2169",
+      "api_name": "立案信息核查",
+      "data_dimension": "立案信息",
+      "description": "可以通过公司名称等获取立案信息，立案信息包括案件编号、案由、立案时间、案件原被告双方信息等字段的详细信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=8e23224f6e209a596df20a8d0186145c",
+      "enterprise_data_category": "司法风险",
+      "output_fields": "总数、数据信息、立案时间（时间戳）、案件状态、来源、案件详情、案件类型、源链接、被告人/被告/被上诉人/被申请人、承办法官、开始时间（时间戳）、承办部门、地区、公诉人/原告/上诉人/申请人、法官助理、法院、案号、案由、结案时间（时间戳）、第三人、创建时间（时间戳）、当事人id、当事人、id、公司id"
+    },
+    {
+      "api_id": "2171",
+      "api_name": "开庭公告核查",
+      "data_dimension": "开庭公告",
+      "description": "查询企业开庭公告，公告信息。包括被告/被上诉人、法院、原告/上诉人、开庭日期、案由、内部ID、案号等信息。",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=c95ad0b4596cf42234b435b1dd08dd7d",
+      "enterprise_data_category": "司法风险",
+      "output_fields": "案号、被告/被上诉人、法院、原告/上诉人、开庭日期、案由、内部ID"
+    },
+    {
+      "api_id": "2172",
+      "api_name": "询价评估核查",
+      "data_dimension": "询价评估信息",
+      "description": "可以通过公司名称等获取询价评估信息，询价评估信息包括标的物名称、当事人姓名、评估机构名称等字段的详细信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=dd59c3a85b8d0be087ef36b932b98f38",
+      "enterprise_data_category": "司法风险",
+      "output_fields": "数据信息、总数、摇号日期（时间戳）、标的物名称、标的物所有人名称、案号、选定评估机构评估结果、法院、财产类型、1-公司 2-人、当事人id（无用）、确定参考价方式 2:网询询价,3:委托评估,4:定向询价、机构名、机构id"
+    },
+    {
+      "api_id": "2173",
+      "api_name": "询价评估结果核查",
+      "data_dimension": "询价评估信息",
+      "description": "可以通过公司名称等，查出询价评估结果。包含：标的物名称、被执行人名称、发布日期、案号、评估结果等信息。",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=7b1865f3105c8df3c0ba2d3eff69f3be",
+      "enterprise_data_category": "司法风险",
+      "output_fields": "总数量、数据信息、标的物名称、标的物所有人、被执行人名称、发布日期、案号、一级财产类型、二级财产类型、确定参考价方式、法院、评估结果、评估机构、评估金额（元）"
+    },
+    {
+      "api_id": "2174",
+      "api_name": "注销备案核查",
+      "data_dimension": "注销备案",
+      "description": "可以通过企业名称、注册号或统一社会信用代码核实企业是否存在注销备案的情况。",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=881afd0ae2c92c279c0e0c4c3841c29b",
+      "enterprise_data_category": "经营风险",
+      "output_fields": "数据信息、注销原因、清算组办公地址、清算组联系电话、清算组负责人、清算组成员、企业名称、统一社会信用代码、登记机关、清算组备案日期、清算组成立日期、企业名称、统一社会信用代码、登记机关、公告期、公告内容、债权申报联系人、债权申报联系电话、债权申报地址、清算组备案信息、债权人公告信息、已发布；已撤销"
+    },
+    {
+      "api_id": "2178",
+      "api_name": "送达公告核查",
+      "data_dimension": "送达公告",
+      "description": "可以通过公司名称等获取送达公告信息，送达公告信息包括公告名称、法院名称、公告内容、发布日期等字段的详细信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=787a3e25c0bd46c255ddd855c8dbf4b0",
+      "enterprise_data_category": "司法风险",
+      "output_fields": "总数、数据信息、公告名称、法院名称、发布日期（时间戳）、内容、案号、案由、公诉人/原告/上诉人/申请人、被告人/被告/被上诉人/被申请人、审理程序、公告类型名称、名称、企业id、名称、企业id"
+    },
+    {
+      "api_id": "2190",
+      "api_name": "企业司法风险扫描",
+      "data_dimension": "司法风险扫描",
+      "description": "通过查询关键字获取企业当前司法风险条目数",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=1868af1287eddb6b52195f0667f372c0",
+      "enterprise_data_category": "司法风险",
+      "output_fields": "开庭公告条目数、裁判文书条目数、被执行人条目数、失信被执行人条目数、法院公告条目数、终本案件条目数、立案信息条目数、限制高消费条目数"
+    },
+    {
+      "api_id": "2201",
+      "api_name": "法院公告核查",
+      "data_dimension": "法院公告核查",
+      "description": "可以通过公司名称或ID获取企业法院公告，法院公告信息包括执行法院、案件内容、公告类型、刊登日期、公司名、当事人等字段的详细信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=8b73dcdfae39460ee47920f9cd383eac",
+      "enterprise_data_category": "司法风险",
+      "output_fields": "总数，列表，法官，法官电话，手机号，原告，当事人，公司列表，省份，刊登日期，刊登版面，案由，原始url链接，ID，公告ID，公告号，公告状态号，公告类型，公告类型名称，案件号，案件内容，法院名，处理等级，处理等级名称，1-公司 2-人，人或公司id，人或公司名"
+    },
+    {
+      "api_id": "2248",
+      "api_name": "限制高消费核查（限制消费令）",
+      "data_dimension": "限制高消费",
+      "description": "核查企业主要人员是否存在限制高消费现象",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=6e2eb1510bcb5fc472182c98b6baa0e0",
+      "enterprise_data_category": "司法风险",
+      "output_fields": "主键id、案号、关联对象、立案日期、企业KeyNo、限制令对象、关联对象KeyNo"
+    },
+    {
+      "api_id": "2250",
+      "api_name": "限制出境核查",
+      "data_dimension": "限制出境",
+      "description": "可以通过企业名称、注册号或统一社会信用代码获取所查询企业的限制出境被执行人信息，返回包括但不限于案号、限制出境对象、申请执行人、执行标的金额、承办法院等信息。",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=6ca3d78590276ba969689341dd294264",
+      "enterprise_data_category": "司法风险",
+      "output_fields": "总数、列表、案号、限制出境对象、被执行人、被执行人地址、申请执行人、执行标的金额（元）、承办法院、承办法院联系方式、发布日期"
+    },
+    {
+      "api_id": "3001",
+      "api_name": "简易注销核查",
+      "data_dimension": "简易注销",
+      "description": "可以通过公司名称获取企业简易注销公告信息，企业简易注销公告信息包括全体投资人承诺书、异议信息、简易注销结果等字段的详细信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=d25fdf6021670903689fb72a4f949967",
+      "enterprise_data_category": "经营风险",
+      "output_fields": "注销结果、公告内容、异议内容、记录总数、企业名称、统一社会信用代码/注册号、公告期、结束日期、承诺书地址、简易注销id（无用）、登记机关、描述、简易注销结果日期、简易注销结果、描述、异议内容、异议时间、异议申请人"
+    },
+    {
+      "api_id": "3013",
+      "api_name": "清算信息核查",
+      "data_dimension": "清算信息",
+      "description": "可以通过公司名称获取企业清算信息，企业清算信息包括清算组负责人、清算组成员",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=6b10d1e480c34aa110ec72825e0e16c3",
+      "enterprise_data_category": "经营风险",
+      "output_fields": "清算组负责人，清算组成员"
+    },
+    {
+      "api_id": "3034",
+      "api_name": "行政处罚核查",
+      "data_dimension": "行政处罚",
+      "description": "通过搜索关键字（公司名称、注册号或社会统一信用代码）查询企业行政处罚信息，行政处罚信息包括：处罚日期、决定书文号、违法行为类型、处罚内容、处罚单位、数据来源等信息。",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=b3d6e80fd89b1f71fa60a1ff0b2e0475",
+      "enterprise_data_category": "经营风险",
+      "output_fields": "行政处罚记录、记录总数、收违法所得、没收非法财物的金额（万元）（source=信用中国时，返回数据）、区域（source=信用中国时，返回数据）、数据来源、行政处罚决定书文号、违法行为类型、做出处罚决定机关名称、处罚内容、作出行政处罚决定日期（时间戳）、处罚依据、违法事实、处罚种类、罚款金额（万元）、作出行政公示日期（时间戳）（source=国家市场监督管理总局时，返回数据）、备注（source=国家市场监督管理总局时，返回数据）、处罚状态（source=信用中国时，返回数据）"
+    },
+    {
+      "api_id": "3038",
+      "api_name": "严重违法核查",
+      "data_dimension": "严重违法",
+      "description": "核查企业是否存在严重违法信息，助力风险管控。返回包括但不限于违法类型、列入时间、列入机关、移除原因、移除机关、移除时间等信息。",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=f71e94cddbdce870439c947cc0260c39",
+      "enterprise_data_category": "经营风险",
+      "output_fields": "数据信息、类型、列入原因、列入时间、列入决定机关、移除原因、移除时间、移除决定机关、更新时间"
+    },
+    {
+      "api_id": "3063",
+      "api_name": "司法协助详情",
+      "data_dimension": "司法协助",
+      "description": "根据司法协助ID获取司法协助详情，判断司法协助类型，包括股权变更、股权冻结、结解除冻结、司法协助续行、股权数额、司法冻结失效及对应的详细信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=a38e8c9dce4812c6a2802698872df29a",
+      "enterprise_data_category": "司法风险",
+      "output_fields": "司法冻结失效（失效日期、失效原因）、司法协助基本详情（执行通知书文号、对应表id、股权数额、类型|状态、执行法院、被执行人）、股权冻结（被执行人证照号码、被执行人、冻结期限至、执行裁定书文号、被执行人持有股权、其它投资权益的数额、冻结期限、执行事项、执行法院、冻结期限自、执行通知书文号、被执行人证照种类、冻结公示日期）、解除冻结（执行法院、执行通知书文号、解除冻结日期、被执行人证照种类、公示日期、被执行人证照号码、被执行人、执行裁定书文号、被执行人持有股权、其它投资权益的数额、执行事项）、司法协助续行（被执行人证照号码、被执行人、续行冻结期限至、执行裁定书文号、被执行人持有股权数额、续行冻结期限、执行事项、执行法院、续行冻结期限自、执行通知书文号、被执行人证照种类、公示日期）、股权变更（执行裁定书文号、被执行人持有股权数额、执行事项、执行法院、执行通知书文号、被执行人证照种类、被执行人证照号码、受让人证照号码、受让人证照种类、被执行人、受让人）"
+    },
+    {
+      "api_id": "3083",
+      "api_name": "破产重组详情",
+      "data_dimension": "破产重组",
+      "description": "查询企业破产重组详细信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=5e2e42ac85684549370cc61e76aa70f8",
+      "enterprise_data_category": "司法风险",
+      "output_fields": "案号，案件类型，主要负责人，管理机构，经办法院， 公开日期，申请人，被申请人"
+    },
+    {
+      "api_id": "3095",
+      "api_name": "欠税公告核查",
+      "data_dimension": "企业欠税公告",
+      "description": "核查企业是否存在欠税公告情况，助力风险管控。返回包括欠税公告、纳税人识别号、证件号码、经营地点、欠税税种、欠税余额等字段",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=a34cc30508568944f75d97d4f0e97fa5",
+      "enterprise_data_category": "经营风险",
+      "output_fields": "总数，数据信息，税务类型，证件号码，欠税税种，纳税人类型，法人证件名称，纳税人名称，经营地点，税务机关，注册类型，法人或负责人名称，欠税所属期起，欠税所属期止，纳税人识别号，当前新发生欠税余额，欠税金额，发布时间，欠税余额"
+    },
+    {
+      "api_id": "3097",
+      "api_name": "司法协助核查",
+      "data_dimension": "司法协助",
+      "description": "通过公司名称或ID获取司法协助信息，司法协助信息包括执行法院、案件内容、被执行人名称等字段的详细信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=008e6b5fca51b95d1b09c65f8904f83e",
+      "enterprise_data_category": "司法风险",
+      "output_fields": "对应表id、股权数额、类型|状态、执行法院、被执行人、执行通知书文号"
+    },
+    {
+      "api_id": "3099",
+      "api_name": "破产重组核查",
+      "data_dimension": "破产重组",
+      "description": "可以通过企业名称、注册号或统一社会信用代码查询企业破产重组概要信息，包含案号、公开日期、申请人、被申请人",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=268325a44a562f1762589182cd3fe770",
+      "enterprise_data_category": "司法风险",
+      "output_fields": "确认标识：存在/不存在，案号，公开日期，申请人，被申请人"
+    },
+    {
+      "api_id": "3144",
+      "api_name": "动产抵押核查",
+      "data_dimension": "动产抵押",
+      "description": "核查企业是否存在动产抵押信息，助力风险管控。返回包括但不限于登记信息、抵押物详细信息、抵押权人信息、被担保债权情况、债务人履行债务期限等信息。",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=38abbc275ff29cb3bb4802d0134c0e2b",
+      "enterprise_data_category": "经营风险",
+      "output_fields": "总数、详情列表、基本信息、抵押权人信息、抵押物信息、变更信息、被担保债权数额、注销日期、公示日期、登记日期、备注、被担保债权种类、概况备注（已废弃）、概况债务人履行债务的期限（已废弃）、概况数额（已废弃）、登记机关、登记编号、概况担保的范围（已废弃）、担保范围、概况种类（已废弃）、债务人履行债务的期限、表id、注销原因、状态、公司省份、更新时间、抵押权人证照/证件类型、抵押权人名称、证照/证件号码、名称、所有权归属、备注、数量、质量、状况、所在地等情况、变更内容、变更日期"
+    },
+    {
+      "api_id": "3146",
+      "api_name": "重大税收违法核查",
+      "data_dimension": "重大税收违法核查",
+      "description": "查询重大税收违法案件",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=78080a0d1e690512a30b474a24a516ed",
+      "enterprise_data_category": "经营风险",
+      "output_fields": "负有直接责任的财务负责人证件类型、负有直接责任的财务负责人证件号码、负有直接责任的中介机构信息及其从业人员信息、案件性质、主要违法事实、相关法律依据及税务处理处罚情况、所属税务机关、数据原始连接、公司id、纳税人名称、id、案件上报期、统一社会信用代码、纳税人识别码"
+    },
+    {
+      "api_id": "3213",
+      "api_name": "经营异常核查",
+      "data_dimension": "经营异常",
+      "description": "核查企业经营异常情况，判断企业是否有列入经营异常的情况，返回包括列入经营异常原因、列入日期、移出经营异常原因、移出日期等工商异常数据。",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=305c72c37f3c9399f4347d279bf10a4a",
+      "enterprise_data_category": "经营风险",
+      "output_fields": "数据信息、总数、作出决定机关、 移除决定机关、列入经营异常名录原因、列入日期、移出经营异常名录原因、移出日期、更新时间"
+    },
+    {
+      "api_id": "4011",
+      "api_name": "招投标详情",
+      "data_dimension": "招投标",
+      "description": "查询关键字查找招投标信息详情",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=d8d3708af771378166f63f9d84970326",
+      "enterprise_data_category": "经营信息",
+      "output_fields": "原文链接、发布日期、标题、数据信息"
+    },
+    {
+      "api_id": "4017",
+      "api_name": "企业招投标信息【增值版】",
+      "data_dimension": "招投标",
+      "description": "可以通过公司名称或ID获取企业招投标信息，招投标信息包括采购人、发布时间、正文信息等字段的详细信息",
+      "documentation_url": "",
+      "enterprise_data_category": "经营信息",
+      "output_fields": ""
+    },
+    {
+      "api_id": "4019",
+      "api_name": "税务评级",
+      "data_dimension": "税务评级",
+      "description": "企业纳税等级信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=3b0a8ae906bfaa4c5d180183b18905a9",
+      "enterprise_data_category": "经营信息",
+      "output_fields": "纳税人识别号、纳税人名称、评价年度、信用等级、评价单位、类型（0 国税 1 地税）"
+    },
+    {
+      "api_id": "4025",
+      "api_name": "招聘列表",
+      "data_dimension": "招聘信息",
+      "description": "查询该企业招聘信息查询、招聘职位、职位描述、招聘要求、学历、经验等。",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=18eccae10f631488319d4793d67cbb7c",
+      "enterprise_data_category": "经营信息",
+      "output_fields": "数据信息、总数、公司ID、企业名称、职位Title、招聘开始日期、月薪、所在城市、所在区、经验、学历、招聘截止日期、企业ID"
+    },
+    {
+      "api_id": "4026",
+      "api_name": "招聘详情",
+      "data_dimension": "招聘信息",
+      "description": "企业招聘信息查询、招聘职位、职位描述、招聘要求、学历、经验等",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=58365181f8748e2d6dd8cc7cc782f13e",
+      "enterprise_data_category": "经营信息",
+      "output_fields": "公司名、企业KeyNo、职位Title、来源、城市、薪资、职位描述、学历、经验、外网链接Url、所在区、id、招聘开始日期、招聘结束日期"
+    },
+    {
+      "api_id": "4043",
+      "api_name": "新闻舆情列表",
+      "data_dimension": "新闻资讯",
+      "description": "可通过公司名称获取企业新闻资讯列表，包括新闻源、企业情感属性、文章标题等字段",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=396d17c3f5b8021b678d32b7b109997b",
+      "enterprise_data_category": "经营信息",
+      "output_fields": "总数、数据信息、详情id、公司全称、公司id、公司简称/原始名称、股票代码、文章标题、新闻源、来源链接、发布时间、企业情感属性：0中性，1正面，2负面"
+    },
+    {
+      "api_id": "4044",
+      "api_name": "新闻舆情详情",
+      "data_dimension": "新闻资讯",
+      "description": "可通过新闻资讯详情id获取新闻详情信息，包括文章标题、简介、新闻情感属性等字段",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=b0f7600045c0659076332c072fad22cb",
+      "enterprise_data_category": "经营信息",
+      "output_fields": "数据信息、文章标题、发布时间、简介、新闻源、来源链接、新闻情感属性：0中性，1正面，2负面、相关企业信息、公司名、简称、公司ID、股票代码"
+    },
+    {
+      "api_id": "4054",
+      "api_name": "双随机抽查详情",
+      "data_dimension": "双随机抽查",
+      "description": "可以通过双随机抽查ID获取企业双随机抽查详情，企业双随机抽查详情包括检查事项、检查结果等字段的详细信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=2e78b859d03d1fa526cc18cf805f7a94",
+      "enterprise_data_category": "经营信息",
+      "output_fields": "记录数、检查结果记录、检查事项、检查结果"
+    },
+    {
+      "api_id": "4068",
+      "api_name": "抽查检查核查",
+      "data_dimension": "抽查检查",
+      "description": "可以通过企业名称、注册号或统一社会信用代码核查企业抽查检查信息，抽查检查信息包括类型、结果、实施机关等字段的详细信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=a5ce7f1756dc96ce4db4262c84e55232",
+      "enterprise_data_category": "经营风险",
+      "output_fields": "日期，检查实施机关，类型，结果"
+    },
+    {
+      "api_id": "4069",
+      "api_name": "行政许可-工商",
+      "data_dimension": "行政许可",
+      "description": "可以通过公司名称获取企业工商局的行政许可信息，企业行政许可信息包括行政许可决定文书号、许可文件名称、许可机关等字段的详细信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=a18cf855a7427ff831edf60dfdf763e2",
+      "enterprise_data_category": "经营信息",
+      "output_fields": "描述、记录总数、行政许可记录、许可书文编号、许可文件名称、有效期自、有效期至、许可范围内容、发证机关"
+    },
+    {
+      "api_id": "4078",
+      "api_name": "科技型企业标签",
+      "data_dimension": "企业标签",
+      "description": "可以通过企业名称、注册号、统一社会信用代码等，查询科技型企业标签，科技型企业标签包含：科技型中小企业、高新技术企业、专精特新中小企业等",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=c770f4af08552d28e076331878722a86",
+      "enterprise_data_category": "经营信息",
+      "output_fields": "企业基本信息、注册号、法定代表人、登记状态、企业类型、企业名称、统一社会信用代码、标签详情、标签名称，枚举值：科技型中小企业、高新技术企业、专精特新中小企业、众创空间、科技企业孵化器、技术创新示范企业、隐形冠军企业、技术先进型服务企业、独角兽企业、民营科技企业、瞪羚企业、企业技术中心、科技小巨人企业、雏鹰企业、专精特新小巨人企业、创新型中小企业、工程技术研究中心、制造业单项冠军企业、科改示范企业、创新型领军企业、知识产权示范企业、知识产权优势企业、子标签名称，仅有值时返回，枚举值：国家级制造业单项冠军企业、国家技术创新示范企业、中国独角兽企业、省级独角兽企业、省级瞪羚企业、省级技术先进型服务企业、省级创新型领军企业、省级创新型中小企业、国家级知识产权示范企业、省级知识产权示范企业、国家级知识产权优势企业、省级知识产权优势企业、国家级高新技术企业、国家级科技型中小企业、省级专精特新中小企业、省级隐形冠军企业、省级民营科技企业、省级科技小巨人企业、省级雏鹰企业、国家级专精特新小巨人企业、省级专精特新小巨人企业"
+    },
+    {
+      "api_id": "4079",
+      "api_name": "规模以上企业",
+      "data_dimension": "规模以上企业",
+      "description": "可以通过企业名称、注册号、统一社会信用代码等，核验企业是否为规模以上企业，归上企业类型包含：资质内建筑业、房地产开发和经营业、限额以上批发和零售业、规模以上工业、规模以上服务业、限额以上住宿和餐饮业",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=2f145ff3b2b9d51d7521a1bc46f439da",
+      "enterprise_data_category": "经营信息",
+      "output_fields": "企业名称、统一社会信用代码、注册号、法定代表人、成立日期、归上企业类型，枚举值：资质内建筑业、房地产开发和经营业、限额以上批发和零售业、规模以上工业、规模以上服务业、限额以上住宿和餐饮业"
+    },
+    {
+      "api_id": "4085",
+      "api_name": "双随机抽查",
+      "data_dimension": "双随机抽查",
+      "description": "可以通过公司名称获取企业双随机抽查信息，企业双随机抽查信息包括抽查类型、抽查机关等字段的详细信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=c05952b450734c070387a50610aa0e93",
+      "enterprise_data_category": "经营信息",
+      "output_fields": "记录总数、双随机抽查检查列表、抽查计划编号、抽查计划名称、抽查类型、抽查机关、详情id、抽查任务编号、抽查任务名称、抽查完成日期"
+    },
+    {
+      "api_id": "4099",
+      "api_name": "进出口信用记录",
+      "data_dimension": "进出口信用记录",
+      "description": "可以通过公司名称获取企业进出口信用信息，企业进出口信用信息包括海关注册编码、注册海关、经营类别等字段的详细信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=6fe325e3962441fdfe81f0734945a967",
+      "enterprise_data_category": "经营信息",
+      "output_fields": "信用等级，处罚信息，基本信息，信用等级，认证证书编码，认证时间，处罚日期，行政处罚决定书编号，当事人，案件性质，行业种类，年报情况，报关有效期，信用等级，海关注销标识，经济区划，经营类别，行政区划，注册日期，海关注册号，特殊贸易区域，注册海关，跨境贸易电子商务类型"
+    },
+    {
+      "api_id": "4102",
+      "api_name": "企业信用评级",
+      "data_dimension": "企业信用评级",
+      "description": "查询企业信用评级信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=9e2de47c650bb91732d2e94959c7c8f8",
+      "enterprise_data_category": "经营信息",
+      "output_fields": "总数、债券信息列表、评级展望 、评级时间、评级公司id、评级公司、债券信用等级、评级公司的logo、评级公司简称、主体等级"
+    },
+    {
+      "api_id": "4119",
+      "api_name": "债券信息",
+      "data_dimension": "债券信息",
+      "description": "可以通过公司名称获企业发行债券信息，债券信息包括发行日期、债券名称、债券代码、债券类型等字段的详细信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=20d2e390a7552e80fa48aaa7a6384195",
+      "enterprise_data_category": "经营信息",
+      "output_fields": "总数，债券信息列表，注，更新时间，债券名称，债券号，债劵摘牌日，债劵期限，上市交易日，债券类型，计息方式，创建时间，信用评级机构，债项评级，托管机构，行权日期，行权类型，票面利率(%)，面值，流通范围，对应表id，利差(BP)，发行价格(元)，付息频率，计划发行量(亿)，债劵到期日，债劵发行日，发行人，实际发行量(亿)，参考利率，备注，债券起息日"
+    },
+    {
+      "api_id": "4132",
+      "api_name": "招投标信息垂搜【增值版】",
+      "data_dimension": "招投标",
+      "description": "通过标题，采购人，供应商、省份、信息类型等维度查询招投标信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=90773ac1f9712ee3e95c00eece8f1948",
+      "enterprise_data_category": "经营信息",
+      "output_fields": "项目区域-省份、项目区域-省份-行政区划代码、项目区域-城市、项目区域-城市-行政区划代码、项目区域-区县、项目区域-区县-行政区划代码、项目预算-金额、项目预算-金额单位、中标总金额、中标总金额单位、标书获取开始时间、标书获取截止时间、报名开始时间、报名截止时间、投标开始时间、投标结束时间、开标时间、预计采购时间、合同编号、报价有效期-起、报价有效期-止、标书售价(金额数字)、标书售价(金额单位)、报名费(金额数字)、报名费(金额单位)、投标保证金(金额数字)、投标保证金(金额单位)、CA缴纳费用(金额数字)、CA缴纳费用(金额单位)、招标代理服务费(金额数字)、招标代理服务费(金额单位)、履约保证金(金额数字)、履约保证金(金额单位)、招投标公告原文链接、采购单位&代理机构、中标企业&候选单位、联系方式-采购单位&代理机构、联系方式-中标企业&候选单位、招投标公告唯一标识、公告发布时间、公告标题、项目编号、项目名称、公告类型、公告类型编码、行业分类、采购方式、采购方式编码、招投标阶段、招投标阶段编码、标的物类型"
+    },
+    {
+      "api_id": "4134",
+      "api_name": "招投标正文链接",
+      "data_dimension": "招投标",
+      "description": "可以通过uid查询招投标正文临时链接（生成后24小时内有效），支持使用4132接口的uid或4017接口的uuid作为输入参数查询。",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=62ed96cced93913d66963b317a6ca1b4",
+      "enterprise_data_category": "经营信息",
+      "output_fields": "临时正文链接"
+    },
+    {
+      "api_id": "4135",
+      "api_name": "招投标列表",
+      "data_dimension": "招投标",
+      "description": "查询关键字查找招投标信息列表。",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=cabac239f8b66c2d334980d314d882db",
+      "enterprise_data_category": "经营信息",
+      "output_fields": "数据信息、招投标主键、标题、发布时间、所属地区、项目分类"
+    },
+    {
+      "api_id": "4401",
+      "api_name": "建筑资质-资质资格详情",
+      "data_dimension": "建筑资质",
+      "description": "可以通过建筑资质资格ID获取建筑资质资格详情，包括资质资格和证书信息",
+      "documentation_url": "",
+      "enterprise_data_category": "建筑资质",
+      "output_fields": "资质资格(发证机关、证书有效期、发证日期、资质类别、资质证书号、资质名称)、 "
+    },
+    {
+      "api_id": "4408",
+      "api_name": "建筑市场-参与单位",
+      "data_dimension": "建筑市场",
+      "description": "查询四库业绩的参与人员及单位信息，返回包括但不限于人员名称、企业",
+      "documentation_url": "",
+      "enterprise_data_category": "建筑资质",
+      "output_fields": ""
+    },
+    {
+      "api_id": "4409",
+      "api_name": "建筑市场-招投标信息",
+      "data_dimension": "建筑市场",
+      "description": "查询建筑企业所建筑项目的招投标信息，返回包括但不限于招标类型、招",
+      "documentation_url": "",
+      "enterprise_data_category": "建筑资质",
+      "output_fields": ""
+    },
+    {
+      "api_id": "4410",
+      "api_name": "建筑市场-施工图",
+      "data_dimension": "建筑市场",
+      "description": "查询四库业绩的施工图审查信息，返回包括但不限于审图合格编号、勘察",
+      "documentation_url": "",
+      "enterprise_data_category": "建筑资质",
+      "output_fields": ""
+    },
+    {
+      "api_id": "4411",
+      "api_name": "建筑市场-合同登记信息",
+      "data_dimension": "建筑市场",
+      "description": "查询建筑企业所建筑项目的合同登记信息，返回包括但不限于合同类别、",
+      "documentation_url": "",
+      "enterprise_data_category": "建筑资质",
+      "output_fields": ""
+    },
+    {
+      "api_id": "4413",
+      "api_name": "建筑市场-施工许可",
+      "data_dimension": "建筑市场",
+      "description": "查询四库业绩的施工许可信息，返回包括但不限于施工许可证编号、建设用地规划许可证编号、施工图审查合格书编号、发证日期等信息。",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=445499871bfc54e546cab9387ba22455",
+      "enterprise_data_category": "建筑资质",
+      "output_fields": "返回总数、详情、项目编号、工程名称、施工许可证编号、省级施工许可证编号、项目代码、建设用地规划许可证编号、建设工程规划许可证编号、中标通知书编号、施工图审查合格书编号、合同工期（天）、项目经理、项目经理所属单位、总监理工程师、总监理所属单位、合同金额（万元）、面积（平方米）、长度（米）、跨度（米）、建设规模、发证日期、记录登记时间"
+    },
+    {
+      "api_id": "4414",
+      "api_name": "建筑市场-竣工验收",
+      "data_dimension": "建筑市场",
+      "description": "查询四库业绩的竣工验收信息，返回包括但不限于竣工验收备案编号、勘",
+      "documentation_url": "",
+      "enterprise_data_category": "建筑资质",
+      "output_fields": ""
+    },
+    {
+      "api_id": "4415",
+      "api_name": "建筑资质-资质资格",
+      "data_dimension": "建筑资质",
+      "description": "可以通过公司名称获取建筑资质资格信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=74253f0a3b54669f9c9ca90b843f7aee",
+      "enterprise_data_category": "建筑资质",
+      "output_fields": "总数、发证机关、证书有效期、资格id、发证日期、资质类别、资质证书号、资质名称、发证机关id"
+    },
+    {
+      "api_id": "4416",
+      "api_name": "建筑资质-注册人员",
+      "data_dimension": "建筑资质",
+      "description": "可以通过公司名称或ID获取总数、人员id、注册号（执业印章号）、注册类别、姓名、注册专业",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=4e07677d3f0aa533060b834fbc694118",
+      "enterprise_data_category": "建筑资质",
+      "output_fields": "总数、人员id、注册号（执业印章号）、注册类别、姓名、注册专业"
+    },
+    {
+      "api_id": "4417",
+      "api_name": "建筑资质-工程项目",
+      "data_dimension": "建筑资质",
+      "description": "可以通过公司名称或ID获取总数、项目编号、项目类别、建设单位、项目id、建设单位ID、项目名称、项目属地",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=da72e58945ed0e88a3fdc736be19b401",
+      "enterprise_data_category": "建筑资质",
+      "output_fields": "总数、项目编号、项目类别、建设单位、项目id、建设单位ID、项目名称、项目属地"
+    },
+    {
+      "api_id": "4418",
+      "api_name": "建筑资质-不良行为",
+      "data_dimension": "建筑资质",
+      "description": "可以通过公司名称或ID获取总数、诚信记录编号、查看事由、实施部门（文号）、发布有效期、决定内容2、id、决定内容、标签、诚信记录主体、决定日期、文号",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=0f7a4137520d5e0ab185c51453214684",
+      "enterprise_data_category": "建筑资质",
+      "output_fields": "总数、诚信记录编号、查看事由、实施部门（文号）、发布有效期、决定内容2、id、决定内容、标签、诚信记录主体、决定日期、文号"
+    },
+    {
+      "api_id": "4419",
+      "api_name": "建筑市场-黑名单",
+      "data_dimension": "建筑市场",
+      "description": "查询建筑市场黑名单信息，返回包括但不限于企业名称、企业统一代码、黑名单认定依据、列入黑名单日期、移除黑名单日期等信息。",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=c26cfc4c5aabbbd74c4191ceae022010",
+      "enterprise_data_category": "建筑资质",
+      "output_fields": "返回总数、详情、企业名称、企业统一代码、企业id、黑名单认定依据、列入黑名单日期（格式为 yyyy-MM-dd，如“2021-01-01”）、移除黑名单日期（格式为 yyyy-MM-dd，如“2021-01-01”）、省份"
+    },
+    {
+      "api_id": "4420",
+      "api_name": "建筑资质-规划核验信息",
+      "data_dimension": "建筑资质",
+      "description": "规划核验信息，包括建设单位、项目名称、建设位置、验收日期等",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=0037753c2d37018ee8e2201ffccb6d3d",
+      "enterprise_data_category": "建筑资质",
+      "output_fields": "总数、详情列表、验收日期、建设单位ID、id、建设单位、文号、项目名称、建设位置"
+    },
+    {
+      "api_id": "5015",
+      "api_name": "企业证书详情查询",
+      "data_dimension": "企业证书",
+      "description": "本接口用于根据id查询企业证书详细数据",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=7725f796a086d4b8e708827500065739",
+      "enterprise_data_category": "经营信息",
+      "output_fields": "证书编号、证书内容详情，json格式：{明细字段分类:{中文字段名:数据值}、企业名称、证书类型、有效起始日期、有效截止日期、发证日期、id"
+    },
+    {
+      "api_id": "5016",
+      "api_name": "医疗器械备案与许可查询（药监局）",
+      "data_dimension": "药监局",
+      "description": "通过备案编号或许可证编号，查询备案或许可详情，包括医疗器械经营企业备案、医疗器械经营企业许可、境内与进口医疗器械备案与备案历史、医疗器械生产企业备案、医疗器械生产企业许可",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=27c6711f5988776887fe0dba8051e7cd",
+      "enterprise_data_category": "知识产权",
+      "output_fields": "查询编号的详情数据，根据输入参数的编号返回相应的字段，具体情况可见detail二级参数、detail：医疗器械生产企业（备案）（生产地址、生产范围、备案部门、备案日期、状态、证书状态码、原始链接URL、证书类别id、备案凭证编号、企业名称、法定代表人、企业负责人、住所）、detail：医疗器械经营企业（备案）（证书类别id、备案编号、企业名称、法定代表人、企业负责人、住所、经营场所、经营方式、经营范围、库房地址、备案部门、备案日期、状态、证书状态码、原始链接URL）、detail：医疗器械经营企业（许可）（证书类别id、许可证编号、企业名称、法定代表人、企业负责人、住所、经营场所、经营方式、经营范围、库房地址、发证部门、发证日期、有效期限、状态、证书状态码、原始链接URL）、detail：境内与进口医疗器械（备案与备案历史）（证书类别id、备案号、备案人名称/代理人名称、备案人名称、备案人注册地址、生产地址、代理人、代理人注册地址、产品名称/产品分类名称、型号规格/包装规格、产品描述/主要组成成分、预期用途、产品存储及有效期、备案单位、备案日期、变更情况、备注、状态、证书状态码、原始链接URL）、detail：医疗器械生产企业（许可）（证书类别id、许可证编号、企业名称、法定代表人、企业负责人、住所、生产地址、生产范围、发证部门、发证日期、有效期限、状态、证书状态码、原始链接URL）"
+    },
+    {
+      "api_id": "5018",
+      "api_name": "电信许可",
+      "data_dimension": "企业证书",
+      "description": "可以通过公司名称或ID获取企业电信许可信息，企业电信许可信息包括客户、销售占比、销售金额、报告期等字段的详细信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=2ca4a7aa077a85c00c6cd2c65b48b2e6",
+      "enterprise_data_category": "经营信息",
+      "output_fields": "是否有效、用户投诉量、许可证业务种类、注册资本、企业性质、企业名、注册属地、业务及其覆盖范围、注册地址、用户投诉回复率、股票代码、法人、法人id、企业id、统一社会信用代码、上市情况、许可证编号、客户服务投诉电话"
+    },
+    {
+      "api_id": "5019",
+      "api_name": "资质证书",
+      "data_dimension": "企业证书",
+      "description": "分页查询公司资质证书概要信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=278847d0be59771c551ed5e4ac69875d",
+      "enterprise_data_category": "经营信息",
+      "output_fields": "总数、列表、结束时间 date字符串 2024-01-01、开始时间 date字符串 2024-01-01 （不维护）、发证日期 date字符串 2024-01-01、证书编号、数据id，用于查询详情、证书类型"
+    },
+    {
+      "api_id": "5024",
+      "api_name": "商标信息查询",
+      "data_dimension": "商标",
+      "description": "可以通过注册号或国际分类获取商标信息详情，商标信息详情包括商标国际分类、商标名称、商标申请日期、商标申请人、商标注册地址、商标合作申请人、商标申请人（英文）、商标地址（英文）、商标初审公告期号、商标初审公告日期、商标注册公告期号、商标注册公告日期、商标专用权期限期限、商标代理/办理机构等字段的信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=367f493a4f519e248e269b2fd69ca02f",
+      "enterprise_data_category": "知识产权",
+      "output_fields": "商标类型 0-普通商标 1-特殊商标 2-集体商标 3-证明商标 4-立体商标 5-声音商标 6-集体（地理标志） 7-证明（地理标志）、后期指定日期、国际注册日期、优先权日期、商标类似群、1=商标已注册;2=商标无效;3=初审公告;4=等待实质审查;5=商标申请中;6=商标异议中;7=驳回复审中;8=商标其他情形;、图片文件的地址。格式：\"https://filecdn.shuidi.cn/img/upload/{pic_url}/0x0.jpg\"；商标图片样例：https://filecdn.shuidi.cn/img/upload/images_tm/9e/34/3a/9e343a25d54a8398e1740824a8cd4c63.jpg/0x0.jpg、国际分类名、商标流程列表、商标服务类型、注册号、国际分类、注册号_cls、商标名、申请日期、申请年份、申请人中文、申请人地址中文、共有申请人1、共有申请人2、申请人英文、申请人地址英文、初审公告期号、初审公告日期、注册公告期号、注册公告日期、专用权期限开始日期、专用权期限结束日期、商标形式(立体1，声音2，颜色商标4，立体商标;颜色商标5，声音商标;颜色商标6)、是否共有商标(否0，是1)、流程编码、流程名称、 流程日期、类型编码、类型名称"
+    },
+    {
+      "api_id": "5025",
+      "api_name": "商标信息详情",
+      "data_dimension": "商标",
+      "description": "查询某一商标的有关信息，通过商标申请号或注册号查询有关商标在业务流程中的状态，用户可以按商标号、商标、申请人名称等方式",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=c227e70a84ca7f854b996e235833ad4a",
+      "enterprise_data_category": "知识产权",
+      "output_fields": "申请人地址中文、申请人地址英文、初审公告期号、初审公告日期、共有申请人1、2、指定颜色、注册公告期号、注册公告日期、后期指定日期、国际注册日期、优先权日期、专用权期限、商标注册流程、商品/服务、主键、注册号、国际分类、商标名、申请日期、申请人中文、申请人英文、代理人名称、商标状态、流程状态代码、流程状态描述、是否有图片、图片地址、是否共有商标、商标类型、商标形式、类似群"
+    },
+    {
+      "api_id": "5026",
+      "api_name": "商标信息列表",
+      "data_dimension": "商标",
+      "description": "用户可以按商标号、商标、申请人名称等方式，查询某一商标的列表信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=f4b9ad9e08a1217bb5021436cd73dbd3",
+      "enterprise_data_category": "知识产权",
+      "output_fields": "自增主键、注册号、国际分类、商标名、申请日期、申请人中文、申请人英文、代理人名称、商标状态、流程状态代码、流程状态描述、图片地址"
+    },
+    {
+      "api_id": "5035",
+      "api_name": "专利质押",
+      "data_dimension": "专利质押",
+      "description": "可以通过企业名称、注册号、统一社会信用代码，查询企业的专利质押数据，包括专利质押状态、登记号、登记生效日、出质人、质权人、变更日期、变更事项等",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=587e366b2573a9878322d103cd9ddfd2",
+      "enterprise_data_category": "知识产权",
+      "output_fields": "总数、列表、企业名称、专利质押状态、登记号、登记生效日、出质人、质权人、解除日期、专利质押变更信息、变更日期、变更事项、变更前、变更后、专利基本信息、申请号、专利名称、申请日期、专利状态、授权公告日、事务数据、事务数据公告日、事务数据类型、事务数据详情"
+    },
+    {
+      "api_id": "5036",
+      "api_name": "专利信息列表",
+      "data_dimension": "专利信息",
+      "description": "查询企业或某技术的专利，帮助用户掌握相同技术领域的发展状况，为规避他人知识产权和调整研发方向提供参考",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=37e043ba09a342c3dc85a76f8b77561f",
+      "enterprise_data_category": "知识产权",
+      "output_fields": "总数、列表详情、专利代理机构、申请人、主键Id、主分类号、申请号、申请日期、最新公告号、最新公告的公告日、专利类型（发明、实用新型、外观设计）、专利状态、分类（不维护）、标题、发明人"
+    },
+    {
+      "api_id": "5037",
+      "api_name": "专利多重查询",
+      "data_dimension": "专利信息",
+      "description": "可以通过关键字、ipc分类、专利类型、日期范围、申请人/权利人检索专利列表，返回相关专利信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=745ece15e8399407f4679ea5a6251775",
+      "enterprise_data_category": "知识产权",
+      "output_fields": "总数、列表、专利名称、专利类型、专利申请日期、专利国际分类号列表、代理机构、申请人/权利人列表、发明人列表、专利法律状态、专利公告列表、公开公告号、公开公告日、专利申请号、匹配原因、匹配字段、匹配值"
+    },
+    {
+      "api_id": "5038",
+      "api_name": "专利详情查询",
+      "data_dimension": "专利信息",
+      "description": "可以通过专利申请号查询专利详细数据，包含专利申请日期、代理机构、专利类型、法律状态等",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=8d75ddd1c8ccd4f3af3805bcd7989c82",
+      "enterprise_data_category": "知识产权",
+      "output_fields": "专利代理机构、申请人/专利权人、分类号、主分类号、专利申请号、专利申请日期、最新公告号、最新公告的公告日、专利类型（发明、实用新型、外观设计）、专利法律（事务）状态、专利名称、发明人、法律状态历史记录、专利代理人、法律（事务）状态变更日、专利图片、摘要介绍、相关权利人、授权日期、授权公告号、失效日期、是否预期失效日期、维持年限、申请人/权利人地址信息"
+    },
+    {
+      "api_id": "5039",
+      "api_name": "专利公告全文",
+      "data_dimension": "专利信息",
+      "description": "可以通过专利公告号获取国内专利公告全文文本文件",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=27c721b1daa8739a8240f6004235d1b3",
+      "enterprise_data_category": "知识产权",
+      "output_fields": "权利要求书链接（保留字段）、说明书链接（保留字段）、说明书附图、图片名称、图片链接、专利公告文件链接"
+    },
+    {
+      "api_id": "5043",
+      "api_name": "作品著作权",
+      "data_dimension": "著作权",
+      "description": "查询全国企业著作权、软件著作权信息。包括作品著作权人、类别、软件全称、简称、作品名称、登记号、登记日期、首次发布日期、创作完成日期等信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=1a66a49611d491de3b249e4b2ced859b",
+      "enterprise_data_category": "知识产权",
+      "output_fields": "作品著作权人，类别，作品名称，登记号，登记日期，首次发布日期，创作完成日期"
+    },
+    {
+      "api_id": "5053",
+      "api_name": "软件著作权",
+      "data_dimension": "著作权",
+      "description": "查询软件著作权信息查询。包含软件全称、简称、作品名称、登记号、登记日期、首次发布日期、创作完成日期等信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=908fec7b7260ddb40c89105c143b626a",
+      "enterprise_data_category": "知识产权",
+      "output_fields": "分类号，发布日期，版本号，登记号，登记批准日期，软件全称，软件简称，软件著作权人"
+    },
+    {
+      "api_id": "5073",
+      "api_name": "标准信息",
+      "data_dimension": "标准信息",
+      "description": "标准信息是指企业参与制定国家、行业、企业、团体、地方的标准。参与标准制定的意义在于提高企业在同行业和市场的知名度，引导同行业的发展方向，提高本企业产品的市场认同度。  ",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=43ca771d705d5f176f7da5d2ea818c7a",
+      "enterprise_data_category": "知识产权",
+      "output_fields": "返回记录总数、List<Object>、标准号、标准类型、标准属性、标准名称、起草单位、发布日期，精确到天，如“2020-03-17”、标准状态"
+    },
+    {
+      "api_id": "5074",
+      "api_name": "行业标准信息",
+      "data_dimension": "标准信息",
+      "description": "可查询行业标准信息，包含标准名称、标准编号、起草单位、起草人、发布日期等信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=f6406cfc37b1afdc23b1c4bc1064af8e",
+      "enterprise_data_category": "知识产权",
+      "output_fields": "返回记录总数、数据信息、行业分类、标准类别、备案月报、适用范围、被以下标准代替、代替以下标准、企业名称、企业id、官网原始起草单位、起草人、标准类型（默认行业标准）、标准属性、标准名称、标准编号、发布日期、废止日期、实施日期、批准日期、备案日期、标准状态、行业领域、备案号、修制定、中国标准分类号、国际标准分类号、技术归口、技术归口id、批准发布部门、批准发布部门id"
+    },
+    {
+      "api_id": "5075",
+      "api_name": "国家标准信息",
+      "data_dimension": "标准信息",
+      "description": "可查询国家标准信息,包含标准名称、标准编号、起草单位、起草人、发布日期等数据",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=9297c6803fe53556824c75bb83d57738",
+      "enterprise_data_category": "知识产权",
+      "output_fields": "返回记录总数、List<Object>、企业名称、企业id、官网原始起草单位、起草人、标准类型（默认国家标准）、标准属性、标准名称、标准编号、发布日期、废止日期、实施日期、标准状态、中国标准分类号、国际标准分类号、归口单位、归口单位id、执行单位、执行单位id、主管部门、主管部门id、标准类别、采标情况、相似标准、被以下标准代替、代替以下标准、标准编号、标准名称、标准编号、标准名称、替代情况、标准编号、标准名称、替代情况"
+    },
+    {
+      "api_id": "6022",
+      "api_name": "参股控股",
+      "data_dimension": "上市公司信息",
+      "description": "可以通过公司名称或ID获取上市公司参股控股股东信息，参股控股股东信息包括参股控股关联公司、参股关系、参股比例、投资金额、被参股公司净利润等",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=d444f7c791948e880b886248e428ca43",
+      "enterprise_data_category": "上市公司",
+      "output_fields": "总数，items，参控关系，id，被参控公司净利润(元)，是否报表合并，关联公司名称，公司id，被参股公司主营业务，参控比例，投资金额(元)，类型 1公司 2 人"
+    },
+    {
+      "api_id": "6023",
+      "api_name": "分红情况",
+      "data_dimension": "上市公司信息",
+      "description": "可以通过公司名称或ID获取上市公司分红情况信息，分红情况信息包括董事会日期、股东大会日期、实施日期、分红方案说明、分红率等",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=3a81eef727511621542717a1f9ad28cb",
+      "enterprise_data_category": "上市公司",
+      "output_fields": "total，items，方案进度，股东大会日期，A股除权除息日，股利支付率(%)，实施日期，A股股权登记日，董事会日期，分红率(%)，分红方案说明"
+    },
+    {
+      "api_id": "6025",
+      "api_name": "上市公司企业简介",
+      "data_dimension": "上市公司信息",
+      "description": "可以通过公司名称或ID获取上市公司企业简介，上市公司企业简介包括公司全称、曾用名、工商登记号、注册资本、所属行业、主要人员、控股股东、实际控制人、最终控制人、主营业务等",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=13a6ed45d3fca009d415f5af05408c6a",
+      "enterprise_data_category": "上市公司",
+      "output_fields": "最终控股，行业，董秘，业务，英文名，介绍，电话，法人，董事长，邮编，控股股东，传真，网址，员工数量，主营业务，股票编号，公司名，注册资金，曾用股票名称，省份，地址，股票名，总经理，实际控股，总经理，总经理id，类型 1公司 2 人，董秘id，类型 1公司 2 人，董秘，法人，董事长，邮编，法人id，类型 1公司 2 人，法人，董事长id，类型 1公司 2 人，董事长"
+    },
+    {
+      "api_id": "6027",
+      "api_name": "十大股东（十大流通股东）",
+      "data_dimension": "上市公司信息",
+      "description": "可以通过公司名称或ID获取上市公司十大股东和十大流通股东信息，十大股东和十大流通股东信息包括机构或基金、持有数量、持股变化、占股本比例、实际增减持、股份类型等",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=6c8f8b75d5d9dc6023d2316db50ab4dd",
+      "enterprise_data_category": "上市公司",
+      "output_fields": "日期列表，股东列表，日期，占股本比例（%），无用，公司id，累计占股本比例（%），无用，类型，总股数，类型 1公司 2 人，id，公司名，实际增减持（%），排序，持股变化(万股)，持股数量，股票类型，持股变化，公布时间"
+    },
+    {
+      "api_id": "6028",
+      "api_name": "配股情况",
+      "data_dimension": "上市公司信息",
+      "description": "可以通过公司名称或ID获取上市公司配股情况信息，配股情况信息包括方案进度、配股代码、配股简称、实际配股比例、每套配股价格、实际募集资金净额等",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=ff5260d8bd5b693647f1d9b7938e2629",
+      "enterprise_data_category": "上市公司",
+      "output_fields": "total，items，除权日，实际配股比例，方案进度，实际募集资金净额，证监会核准公告日，董事会公告日，股权登记日，配股上市日，发审委公告日，每股配股价格，预案配股比例上限，配股号，配股简称，配股年份，股东大会公告日，缴款起止日，预案募资金额上限"
+    },
+    {
+      "api_id": "6032",
+      "api_name": "上市公司利润表",
+      "data_dimension": "上市公司信息",
+      "description": "可以通过公司名称或ID获取上市公司利润表数据，利润表数据包括营业总收入、营业总成本、其他经营收益、营业利润等",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=281aab9599f981c69e70eda6bd481622",
+      "enterprise_data_category": "上市公司",
+      "output_fields": "年份、利润详情、年度、值、归属于母公司所有者的综合收益总额、扣除非经常性损益后的净利润、年度、财务费用、营业收入、利润总额、营业总成本、销售费用、管理费用、营业利润、资产减值损失、综合收益总额、加:投资收益、研发费用、营业税金及附加、基本每股收益、减:所得税费用、营业总收入、净利润、其中:归属于母公司股东的净利润、其中:对联营企业和合营企业的投资收益、营业成本、加:营业外收入、其他经营收益、减:营业外支出、加:公允价值变动收益、少数股东损益、稀释每股收益、其他综合收益、归属于母公司股东的其他综合收益、归属于少数股东的其他综合收益、归属于少数股东的综合收益总额"
+    },
+    {
+      "api_id": "6033",
+      "api_name": "上市公司资产负债表",
+      "data_dimension": "上市公司信息",
+      "description": "可以通过公司名称或ID获取上市公司资产负债表数据，资产负债表数据包括流动资产、流动资产合计、非流动资产等",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=217d2ddb58e31b67d7310ae272bdb3b5",
+      "enterprise_data_category": "上市公司",
+      "output_fields": "年份列表、资产负债详情、固定资产、应付利息、应收账款、货币资金、预收款项、非流动资产合计、其他流动资产、盈余公积、非流动负债合计、应收票据、其他应收款、资本公积、股东权益合计、负债合计、以公允价值计量且其变动计入当期损益的金融资产、其中:交易性金融资产、可供出售金融资产、长期股权投资、商誉、短期借款、应付账款、一年内到期的非流动负债、其他流动负债、长期借款、应付债券、预计负债、递延所得税负债、其他非流动负债、少数股东权益、应交税费、长期待摊费用、流动资产合计、资产总计、预付款项、应付股利、其他非流动资产、在建工程、应付票据、流动负债合计、季度、存货、归属于母公司股东权益合计、无形资产、实收资本（或股本）、其他应付款、未分配利润、应付职工薪酬、递延所得税资产、负债和股东权益合计、投资性房地产、年度、值"
+    },
+    {
+      "api_id": "6034",
+      "api_name": "上市公司现金流量表",
+      "data_dimension": "上市公司信息",
+      "description": "可以通过公司名称或ID获取上市公司现金流量表数据，现金流量表数据包括经营活动产生的现金流量、经营活动现金流小计、经营活动现金流出小计、经营活动产生的现金流量净额、投资活动产生的现金流量等",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=93aae50d1322cc883c28b09ad80fe838",
+      "enterprise_data_category": "上市公司",
+      "output_fields": "现金流详情、年份列表、支付的各项税费、支付其他与经营活动有关的现金、投资活动现金流入小计、年度、经营活动现金流出小计、投资支付的现金、经营活动产生的现金流量净额、投资活动现金流出小计、加:期初现金及现金等价物余额、投资活动产生的现金流量净额、现金及现金等价物净增加额、购建固定资产、无形资产和其他长期资产支付的现金、期末现金及现金等价物余额、筹资活动产生的现金流量净额、收到其他与经营活动有关的现金、购买商品、接受劳务支付的现金、收回投资收到的现金、支付其他与筹资活动有关的现金、筹资活动现金流入小计、筹资活动现金流出小计、取得借款收到的现金、取得投资收益收到的现金、处置固定资产、无形资产和其他长期资产收回的现金净额、支付给职工以及为职工支付的现金、汇率变动对现金及现金等价物的影响、偿还债务支付的现金、经营活动现金流入小计、销售商品、提供劳务收到的现金、收到其他与投资活动有关的现金、分配股利、利润或偿付利息支付的现金、处置子公司及其他营业单位收到的现金净额、取得子公司及其他营业单位支付的现金净额、子公司吸收少数股东投资收到的现金、吸收投资收到的现金、发行债券收到的现金、收到其他与筹资活动有关的现金、子公司支付给少数股东的股利、利润、年度、值"
+    },
+    {
+      "api_id": "7110",
+      "api_name": "董监高在外投资任职",
+      "data_dimension": "董监高在外投资任职信息",
+      "description": "企业董监高人员所有对外投资、在外任职以及担任法定代表人的信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=15ac9831c83713224687302b4493875f",
+      "enterprise_data_category": "关联关系",
+      "output_fields": "状态、区域、行业、类型说明、统一信用代码、注册号、成立日期、公司类型、企业名称、法人名称、法人头衔、注册资本、行业门类Code、行业大类描述、行业大类Code、行业门类描述、值、关系类型、类型说明、省、市、区"
+    },
+    {
+      "api_id": "7111",
+      "api_name": "人所有角色",
+      "data_dimension": "董监高在外投资任职信息",
+      "description": "企业董监高人员所有对外投资、在外任职以及担任法定代表人的信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=4d3dec263a1c7ff6f019d6732a92f201",
+      "enterprise_data_category": "关联关系",
+      "output_fields": "类型（固定值sh）、认缴出资额、法人名称、统一信用代码、注册号、持股比例、注册资本、公司名称、省份简称、法人类型：1-人、2-公司、成立日期、经营状态、担任法人的公司、担任高管的公司、担任股东的公司、关联到所有企业数量、是否已全部返回。1全部返回，0已返回前1000个企业、法人类型：1-人、2-公司、注册资本、公司名称、省份简称、成立日期、经营状态、类型（固定值lp）、法人名称、统一信用代码、注册号、省份简称、成立日期、经营状态、职位、法人类型：1-人、2-公司、注册资本、法人名称、公司名称、统一信用代码、注册号"
+    },
+    {
+      "api_id": "7112",
+      "api_name": "人所有历史角色",
+      "data_dimension": "董监高在外投资任职信息",
+      "description": "企业董监高人员所有历史对外投资、在外任职以及担任法定代表人的信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=88e20607b8b7ad4db91d2df5428313f6",
+      "enterprise_data_category": "关联关系",
+      "output_fields": "类型（固定值sh）、认缴出资额、法人名称、统一信用代码、注册号、持股比例、注册资本、公司名称、省份简称、法人类型：1-人、2-公司、成立日期、经营状态、担任法人的公司、担任高管的公司、担任股东的公司、关联到所有企业数量、是否已全部返回。1全部返回，0已返回前1000个企业、法人类型：1-人、2-公司、注册资本、公司名称、省份简称、成立日期、经营状态、类型（固定值lp）、法人名称、统一信用代码、注册号、省份简称、成立日期、经营状态、职位、法人类型：1-人、2-公司、注册资本、法人名称、公司名称、统一信用代码、注册号"
+    },
+    {
+      "api_id": "7113",
+      "api_name": "人所有公司",
+      "data_dimension": "董监高在外投资任职信息",
+      "description": "可以通过公司名称和人名获取企业人员的所有相关公司，包括其担任法人、股东、董监高的公司信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=5df6d117bed3099a86b8f9757bc9cc9b",
+      "enterprise_data_category": "关联关系",
+      "output_fields": "总数、是否已全部返回、省份简称、开业时间、经营状态、类型、公司id、注册资本、公司名、统一信用代码、注册号"
+    },
+    {
+      "api_id": "7208",
+      "api_name": "司法协助详情-人员",
+      "data_dimension": "人员司法风险",
+      "description": "可通过公司名称和人员名称获取人员的当前司法协助详情信息，包括股权变更、股权冻结、解除冻结、续行冻结、冻结失效及对应的详细信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=577d522a05240c2411e0fa029881445b",
+      "enterprise_data_category": "人员风险",
+      "output_fields": "数据信息，执行裁定书文号，被执行人持有股权、其它投资权益的数额，执行事项，执行法院，执行通知书文号，被执行人公司id，解除冻结日期，被执行人类型1公司，2人，被执行人证照种类，公示日期，被执行人证照号码，被执行人id，被执行人，被执行人证照号码，被执行人id，id号，被执行人，续行冻结期限至，执行裁定书文号，被执行人持有股权数额，续行冻结期限，执行事项，执行法院，续行冻结期限自，执行通知书文号，执行人公司id，执行人类型，2-人，1-公司，被执行人证照种类，公示日期，股权变更，司法冻结失效，司法协助基本详情（废弃），股权冻结，解除冻结，司法协助续行，受让人类型(0 人，1公司)，执行通知书文号，执行人公司id，执行人类型，2-人，1-公司，被执行人证照种类，被执行人证照号码，受让人证照号码，id号，协助执行日期，被执行人id，受让人证照种类，被执行人，受让人，执行裁定书文号，被执行人持有股权数额，执行事项，执行法院，失效日期，失效原因，被执行人证照号码，被执行人id，被执行人，冻结期限至，执行裁定书文号，被执行人持有股权、其它投资权益的数额，冻结期限，执行事项，执行法院，冻结期限自，执行通知书文号，被执行人公司id，被执行人类型1公司，2人，被执行人证照种类，冻结公示日期"
+    },
+    {
+      "api_id": "7211",
+      "api_name": "个人企业图谱简版",
+      "data_dimension": "个人企业图谱简版",
+      "description": "查询个人在外投资任职的企业信息",
+      "documentation_url": "https://filehuoshan.shuidi.cn/file/upload/files_1/2d/4b/bb/24/2d4bbb247ea82db5627e8147227e7013/7211-%E4%B8%AA%E4%BA%BA%E4%BC%81%E4%B8%9A%E5%9B%BE%E8%B0%B1%E7%AE%80%E7%89%88.pdf",
+      "enterprise_data_category": "个人企业图谱简版",
+      "output_fields": "数据信息、企业类型、省份简称、注册资本金额（单位：万）、企业状态、成立日期（注册日期）、注册资本、行业、主要人员、法人类型，1 人 2 公司、注册资本币种 人民币 美元 欧元 等、法人姓名、注册号、统一社会信用代码、企业名、股东类型、出资时间、占比、出资金额、股东名、任职信息、主要人员名称、1-公司 2-人、职位、查询人对应的企业名、查询人名称、查询人与这家企业的关联：sh：股 东；lp：法人；tm：高管、查询人作为股东所在公司的基本信息、查询人持股信息"
+    },
+    {
+      "api_id": "7230",
+      "api_name": "被执行人-人员",
+      "data_dimension": "人员司法风险",
+      "description": "可以通过公司名称和人名查询人员被执行情况",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=116aedeff8a75bd9046550803287b06a",
+      "enterprise_data_category": "人员风险",
+      "output_fields": "被执行人名称、身份证号／组织机构代码、执行法院、案号、执行标的（元）、立案日期"
+    },
+    {
+      "api_id": "7231",
+      "api_name": "历史被执行人-人员",
+      "data_dimension": "人员司法风险",
+      "description": "可以通过公司名称和人名查询人员被执行情况",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=f034e8396a8b6ed4815f6734d5f16136",
+      "enterprise_data_category": "人员风险",
+      "output_fields": "总数，数据信息，被执行人名称，身份证号／组织机构代码，执行法院，案号，执行标的（元），立案日期。时间戳，样例：1572364800000"
+    },
+    {
+      "api_id": "7232",
+      "api_name": "失信被执行人-人员",
+      "data_dimension": "人员司法风险",
+      "description": "可以通过公司名称和人名查询人员失信情况",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=2e82ed2c538cf75be4e3530e05eb3618",
+      "enterprise_data_category": "人员风险",
+      "output_fields": "总数、数据信息、已履行部分、失信人名称、失信被执行人行为具体情形、案号、身份证号码/组织机构代码、履行情况、立案时间、发布时间、做出执行的依据单位、生效法律文书确定的义务、执行依据文号、法人、负责人姓名、省份地区、法院、未履行部分、法定负责人/主要负责人信息、失信人类型，0代表人，1代表公司"
+    },
+    {
+      "api_id": "7233",
+      "api_name": "历史失信被执行人-人员",
+      "data_dimension": "人员司法风险",
+      "description": "可以通过公司名称和人名查询历史人员失信情况",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=276d11d471ea706776117c77d7533dd5",
+      "enterprise_data_category": "人员风险",
+      "output_fields": "总数，数据信息，已履行部分，失信人名称，失信被执行人行为具体情形，案号，身份证号码/组织机构代码，履行情况，立案时间，  发布时间，做出执行的依据单位，生效法律文书确定的义务，执行依据文号，法人、负责人姓名，省份地区，法院，未履行部分，法定负责人/主要负责人信息，失信人类型，0代表人，1代表公司，角色，脱敏证件号，法人姓名"
+    },
+    {
+      "api_id": "7234",
+      "api_name": "裁判文书-人员",
+      "data_dimension": "人员司法风险",
+      "description": "可通过公司名称和人员名称获取人员的裁判文书信息，裁判文书信息包括法院名称、案号、公布时间、裁判日期、当事人信息、文书id等信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=b3c9bc7347419a054913a312086ccebb",
+      "enterprise_data_category": "人员风险",
+      "output_fields": "总数，数据信息，公布时间，案件文书标题，法院名称，案号，裁判日期，安检类型（ms：民事案件；xs：刑事案件；xz行政；pc赔偿案件；zx：执行案件；gx：管辖案件；gsx：国际司法协助案件；qsx：区际司法协助案件；other：其他。），当事人信息，当事人名称，案件角色，文书id，案由"
+    },
+    {
+      "api_id": "7235",
+      "api_name": "历史裁判文书-人员（董监高）",
+      "data_dimension": "人员司法风险",
+      "description": "可通过公司名称和人员名称获取人员的历史裁判文书信息，裁判文书信息包括法院名称、案号、公布时间、裁判日期、当事人信息、文书id等信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=dcbe3df05b14acad98837a8560ab52a1",
+      "enterprise_data_category": "人员风险",
+      "output_fields": "总数、列表、当事人信息、发布时间、裁判文书标题、法院名称、案号、裁判日期、案件类型（ms：民事案件；xs：刑事案件；xz 行政；pc 赔偿案件；zx：执行案件；gx：管辖案件；gsx：国际司法协助案件；qsx：区际司法协助案件；other：其他。）、id、案由"
+    },
+    {
+      "api_id": "7236",
+      "api_name": "限制高消费-人员",
+      "data_dimension": "人员司法风险",
+      "description": "可通过公司名称和人员名称获取人员的当前限制消费令信息，限制消费令信息包括执行法院、案号、被执行人名称等字段的详细信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=fb513fa11e9dde2b8dc2058a53eb43bd",
+      "enterprise_data_category": "人员风险",
+      "output_fields": "总数，数据信息，案号，企业信息，企业id，企业信息简称，限制消费者名称，限制消费者id，申请人信息，申请人id，立案日期，发布日期，pdf文件地址，对应表id"
+    },
+    {
+      "api_id": "7237",
+      "api_name": "历史限制高消费-人员",
+      "data_dimension": "人员司法风险",
+      "description": "可通过公司名称和人员名称获取人员的历史限制消费令信息，限制消费令信息包括执行法院、案号、被执行人名称等字段的详细信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=68752545f2185eb2cea4f9ead5168ed2",
+      "enterprise_data_category": "人员风险",
+      "output_fields": "数据信息，总数，案号，企业信息，企业id，企业信息简称，限制消费者名称，限制消费者id，申请人信息，申请人id，立案日期，发布日期，pdf文件地址，对应表id"
+    },
+    {
+      "api_id": "7238",
+      "api_name": "终本案件-人员",
+      "data_dimension": "人员司法风险",
+      "description": "可通过公司名称和人员名称获取人员的当前终本案件信息，终本案件信息包括执行法院、案号、被执行人名称等字段的详细信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=4deae9e0dacdef3e8d836a6cc5c992f4",
+      "enterprise_data_category": "人员风险",
+      "output_fields": "总数，数据信息，终本案件详情唯一ID，案号，被执行人姓名/名称，身份证号码/组织机构代码，执行法院，被执行人id，立案日期，终本日期，执行标的，未履行金额"
+    },
+    {
+      "api_id": "7239",
+      "api_name": "历史终本案件-人员（董监高）",
+      "data_dimension": "人员司法风险",
+      "description": "可通过公司名称和人员名称获取人员的历史终本案件信息，终本案件信息包括执行法院、案号、被执行人名称等字段的详细信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=136a41d45729893757f3d0a98bb885d5",
+      "enterprise_data_category": "人员风险",
+      "output_fields": "总数、列表、终本案件详情唯一 ID、案号、被执行人姓名 / 名称、身份证号码 / 组织机构代码、执行法院、被执行人 id、立案日期、终本日期、执行标的、未履行金额"
+    },
+    {
+      "api_id": "7240",
+      "api_name": "法院公告-人员",
+      "data_dimension": "人员司法风险",
+      "description": "可通过公司名称和人员名称获取人员的法院公告信息，法院公告信息包括法院、案号、公告号、案件内容等信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=940829d3428f8537cbbde342c25afbea",
+      "enterprise_data_category": "人员风险",
+      "output_fields": "总数，数据信息，内部id，公告id，公告号，公告类型名称，公告类型code，案号，案件内容，法院名，处理等级，处理等级名称，法官，法官电话，手机号，原告，当事人，公司列表，省份，刊登日期，刊登版面，案由，原始url链接"
+    },
+    {
+      "api_id": "7241",
+      "api_name": "司法协助-人员",
+      "data_dimension": "人员司法风险",
+      "description": "可通过公司名称和人员名称获取人员的当前司法协助信息，司法协助信息包括执行法院、股权数额、被执行人名称、股权被执行的企业等信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=0ea5f033cc181c2f19af20e470b0d3ea",
+      "enterprise_data_category": "人员风险",
+      "output_fields": "总数，数据信息，股权数额，执行通知书文号，被执行人，被执行人id，执行人类型，2-人，1-公司，司法协助基本信息id，执行法院，公示日期，股权被公示企业，股权被公示企业id，类型，状态，对应表id"
+    },
+    {
+      "api_id": "7242",
+      "api_name": "历史司法协助-人员（董监高）",
+      "data_dimension": "人员司法风险",
+      "description": "可通过公司名称和人员名称获取人员的历史司法协助信息，司法协助信息包括执行法院、股权数额、被执行人名称、股权被执行的企业等信息",
+      "documentation_url": "",
+      "enterprise_data_category": "人员风险",
+      "output_fields": "总数、列表、股权数额、执行通知书文号、被执行人、被执行人 id、执行人类型，1 - 公司、2 - 人、司法协助基本信息 id、执行法院、公示日期、股权被公示企业、股权被公示企业 id、类型、状态、id"
+    },
+    {
+      "api_id": "7243",
+      "api_name": "立案信息-人员",
+      "data_dimension": "人员司法风险",
+      "description": "可通过公司名称和人员名称获取人员的立案信息，立案信息包括法院、案号、立案时间、当事人等信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=047e7af9e8a3f40e6f711b667811ecb6",
+      "enterprise_data_category": "人员风险",
+      "output_fields": "总数，数据信息，开始时间（时间戳），承办部门，地区，公诉人/原告/上诉人/申请人，法官助理，案号，案由，结案时间（时间戳），第三人，当事人id，当事人，id，立案时间（时间戳），案件状态，被高人/被告/被上诉人/被申请人，承办法官，法院"
+    },
+    {
+      "api_id": "7244",
+      "api_name": "开庭公告-人员",
+      "data_dimension": "人员司法风险",
+      "description": "可通过公司名称和人员名称获取人员的开庭公告信息，开庭公告信息包括法院、案号、原告/上诉人、被告/被上诉人、开庭日期、案由等信息。",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=4a6a84ac12955b04ddd9f82c160c388c",
+      "enterprise_data_category": "人员风险",
+      "output_fields": "总数，数据信息，案号，被告/被上诉人，法院，原告/上诉人，开庭日期，案由，内部id，角色，名称"
+    },
+    {
+      "api_id": "7245",
+      "api_name": "送达公告-人员",
+      "data_dimension": "人员司法风险",
+      "description": "可通过公司名称和人员名称获取人员的送达公告信息，送达公告信息包括法院、案号、案由、发布日期等信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=6d2b65b0d819075a72af940f960e350b",
+      "enterprise_data_category": "人员风险",
+      "output_fields": "总数，数据信息，公告名称，法院名称，发布日期（时间戳），内容，案号，案由，公诉人/原告/上诉人/申请人，被告人/被告/被上诉人/被申请人，审理程序，公告类型名称"
+    },
+    {
+      "api_id": "7250",
+      "api_name": "股权出质-人员（董监高）",
+      "data_dimension": "人员经营风险",
+      "description": "可以通过公司名称和人名查询董监高的股权出质信息，包括出质人、出质股权数额等",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=66aa26a83b0bb78de117379687d4a011",
+      "enterprise_data_category": "人员风险",
+      "output_fields": "总数、列表、登记编号、出质股权标的企业、出质人、出质股权数额、出质人证件号码、质权人、质权人证件号码、状态、股权出质登记日期、公示日期、注销日期、注销原因"
+    },
+    {
+      "api_id": "7251",
+      "api_name": "股权质押-人员（董监高）",
+      "data_dimension": "人员经营风险",
+      "description": "可以通过公司名称和人名查询董监高的股权质押信息，包括质押人、质权股份总数（股）等",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=a5b13881e525065dac6fead7fcfed105",
+      "enterprise_data_category": "人员风险",
+      "output_fields": "总数、列表、质押人、质押人参股的企业名称、质押股份数量（股）、质押股份市值（元）、状态、公告日期、质押原因、质押目的、质押开始日期、质押结束日期、股票代码、股票简称、占股东持股比例 (%)、占总股东比例 (%)、质押机构、质押日收盘价（元）、预警线（估算）、平仓线（估算）"
+    },
+    {
+      "api_id": "8048",
+      "api_name": "企业受益股东",
+      "data_dimension": "受益股东",
+      "description": "可以通过关键字和人名查询企业受益股东的受益股份（直接或间接持股1%以上），返回受益股东的名称、受益类型、受益股份、受益链路等信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=4a22a4b512ad8953a70aab018450ea6f",
+      "enterprise_data_category": "关联关系",
+      "output_fields": "数量、企业名称、受益股东详情、受益股东名称、受益股东ID、受益类型（3-关键决策人员，4-法定代表人/负责人，6-直接或间接持股超过1%）。同时符合多个的，中间用英文逗号隔开，如：3,4,6。、是否为自然人，0-非自然人、1-自然人、担任的职位、全部受益路径"
+    },
+    {
+      "api_id": "8051",
+      "api_name": "实际控制人",
+      "data_dimension": "实际控制人",
+      "description": "企业疑似实际控制人关系图谱查询",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=6e51faee7209eea127632da0e5797577",
+      "enterprise_data_category": "关联关系",
+      "output_fields": "实控人数据详情，起始节点名称，起始节点类型。0非自然人，1自然人，结束节点，结束节点名称，结束节点类型。0非自然人，1自然人，关系类型。INVEST 投资关系，OWN法定代表人关系，BRANCH 分总公司，路径序号。从0开始，依次向下穿透，持股比例，起始节点id，实控人名称，0非自然人，1自然人，表决权，全部控制路径，实控人id"
+    },
+    {
+      "api_id": "8052",
+      "api_name": "受益所有人",
+      "data_dimension": "受益所有人",
+      "description": "查询企业受益所有人链路信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=96d1eb9531e4b5f23a1977ae801faeb8",
+      "enterprise_data_category": "关联关系",
+      "output_fields": "受益所有人详情，受益人名称，0非自然人，1自然人，受益股份，全部受益路径，受益所有人id，受益类型（1直接或间接持股，3关键决策人员，4法定代表人/负责人）。同时符合多个的，中间用英文逗号隔开，如：1,3,4。，受益人担任的职位，起始节点id，起始节点名称，起始节点类型。1自然人，2非自然人，结束节点，结束节点名称，结束节点类型。1自然人，2非自然人，关系类型。 INVEST 投资关系，OWN法定代表人关系，BRANCH 分总公司，路径序号。从0开始，依次向下穿透，持股比例，当前链路受益股份，单条受益链路"
+    },
+    {
+      "api_id": "8055",
+      "api_name": "人员控制企业",
+      "data_dimension": "人员控制企业",
+      "description": "可以通过公司名称、人名获取人员控股企业信息",
+      "documentation_url": "",
+      "enterprise_data_category": "关联关系",
+      "output_fields": "总数、受控企业名称、受控企业id、控制路径投资比例、 "
+    },
+    {
+      "api_id": "11014",
+      "api_name": "竞品信息",
+      "data_dimension": "竞品信息",
+      "description": "可以通过公司名称获取企业竞品信息，企业竞品信息包括竞品名称、行业、业务等字段的详细信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=ff575cb08e840c82138fa30ea07a3a76",
+      "enterprise_data_category": "企业发展",
+      "output_fields": "总数，数据信息，行业，logo，logo存放位置，竞品名，地区，产品，当前轮次，投资时间，估值，业务范围，公司名，时间"
+    },
+    {
+      "api_id": "11016",
+      "api_name": "融资信息",
+      "data_dimension": "融资信息",
+      "description": "通过搜索关键字查询相关的融资信息，了解企业的融资轮次、融资金额、产品名称、投资方等信息。",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=3fac90aba8c664020883c127c59468c1",
+      "enterprise_data_category": "企业发展",
+      "output_fields": "数据信息、公司名、融资时间、披露时间、投资企业、金额、新闻标题、新闻url、轮次、投资比例、估值"
+    },
+    {
+      "api_id": "11018",
+      "api_name": "投资机构",
+      "data_dimension": "投资机构",
+      "description": "可以通过公司名称获企业相关投资机构信息，投资机构信息包括机构名称、成立日期、简介等字段的详细信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=21c63d1b1a878f0ff1a58ac504556f62",
+      "enterprise_data_category": "企业发展",
+      "output_fields": "总数、详情列表、机构名、城市、机构id、logo、简介、成立年份"
+    },
+    {
+      "api_id": "11020",
+      "api_name": "投资事件",
+      "data_dimension": "投资事件",
+      "description": "可以通过公司名称获取企业投资事件信息，企业投资事件信息包括投资事件轮次、金额等字段的详细信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=d00444f76e012d247e25481a32f9ca7a",
+      "enterprise_data_category": "企业发展",
+      "output_fields": "总数、列表详情、公司对应表id、logo、地区、业务范围、行业、logo存放位置、投资时间 毫秒数、产品名、id、公司id、公司名、金额、轮次、投资公司、投资公司、产品公司名"
+    },
+    {
+      "api_id": "11021",
+      "api_name": "投资动态",
+      "data_dimension": "投资动态",
+      "description": "可以通过投资机构名称获取投资信息，包含投资金额、融资轮次、相关新闻等字段的详细信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=f0140e2e687df47084b2136b30cb4b8e",
+      "enterprise_data_category": "企业发展",
+      "output_fields": "总数、列表、投资金额、产品名称、产品 logo、融资轮次、投资时间、新闻来源、产品 id、新闻标题"
+    },
+    {
+      "api_id": "11022",
+      "api_name": "供应商",
+      "data_dimension": "供应商",
+      "description": "可以通过企业名称、注册号或统一社会信用代码获取企业相关供应商信息，包含年份、供应商名称、采购金额、采购占比等",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=ea44538029c8995fccaeff65b36a3cef",
+      "enterprise_data_category": "企业发展",
+      "output_fields": "总数、列表、总年份、年份、供应商id、供应商名称、采购金额（万元）、采购占比、关联关系、报告期、来源、来源id、年份、数量"
+    },
+    {
+      "api_id": "11023",
+      "api_name": "客户",
+      "data_dimension": "客户",
+      "description": "可以通过企业名称、注册号或统一社会信用代码获取企业相关客户信息，包含年份、客户名、销售金额、销售占比等",
+      "documentation_url": "",
+      "enterprise_data_category": "企业发展",
+      "output_fields": "总数、列表、总年份、年份、年份、客户 ID、客户名、销售金额（万元）、销售占比、关联关系、报告期、来源、来源 id"
+    },
+    {
+      "api_id": "11024",
+      "api_name": "企业业务",
+      "data_dimension": "企业业务",
+      "description": "可以通过公司名称获取企业业务信息，企业业务信息包括主要业务、业务分类、业务介绍等字段的详细信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=ec9441ae5c911f881be3c5ea273dbcd2",
+      "enterprise_data_category": "企业发展",
+      "output_fields": "总数，数据信息，公司名，无用，融资轮次，行业，logo，logo存放位置，产品名，成立时间，业务范围，简介，地区"
+    },
+    {
+      "api_id": "11113",
+      "api_name": "私募基金-会员信息",
+      "data_dimension": "私募基金",
+      "description": "可以通过公司名称获取相关私募基金会员信息，包括是否为中国证券投资基金业协会会员、当前会员类型、入会时间等字段的相关信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=984c54b83005c479d17eb8077f7a9ee9",
+      "enterprise_data_category": "企业发展",
+      "output_fields": "入会时间、企业id、是否为会员（中国证券投资基金业协会）、当前会员类型"
+    },
+    {
+      "api_id": "11115",
+      "api_name": "私募基金-产品信息",
+      "data_dimension": "私募基金",
+      "description": "可以通过公司名称获取相关私募基金产品信息，包括暂行办法实施前/后成立的基金产品名称、基金编号等字段的相关信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=8748372b0bf94acc199c0f0a4b37e93b",
+      "enterprise_data_category": "企业发展",
+      "output_fields": "总数、列表、额外信息、产品名称、季报、月报、基金编号、年报、半年报、成立时间、备案时间、基金备案阶段、基金类型、币种、基金管理人名称、管理类型、托管人名称、运作状态、公司ID"
+    },
+    {
+      "api_id": "12018",
+      "api_name": "历史股东信息",
+      "data_dimension": "股东信息",
+      "description": "可以通过公司名称获取企业历史股东信息，股东信息包括股东名、出资比例、出资金额、股东总数等字段的详细信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=865c73643edc2ddc0db6e32fe8a44a8f",
+      "enterprise_data_category": "工商信息",
+      "output_fields": "总数、总数、股东信息（对应表id、公司id、人员id、logo、股东名、简称、实缴明细（出资金额、出资时间、占比、实缴方式）、认缴明细（出资金额、出资时间、占比、认缴方式）、股东类型"
+    },
+    {
+      "api_id": "12033",
+      "api_name": "工商行政处罚核查",
+      "data_dimension": "行政处罚",
+      "description": "查询企业行政处罚信息和详情",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=11f5e8269b1af347680e29aee9b94a19",
+      "enterprise_data_category": "经营风险",
+      "output_fields": "行政处罚决定书文号、违法行为类型、行政处罚决定机关名称、行政处罚内容、作出行政处罚决定日期、作出行政公示日期、备注、更新时间"
+    },
+    {
+      "api_id": "12043",
+      "api_name": "失信被执行人核查",
+      "data_dimension": "失信",
+      "description": "核查是否存在失信被执行情况，通过此信息进行风险管控。核查该企业的具体失信情况及履行情况，返回包括但不限于案号、立案信息、失信行为、执行法院、执行标的等信息。",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=bfaaee732c219fa23c37ba5e17cb9c7a",
+      "enterprise_data_category": "司法风险",
+      "output_fields": "数据信息、主键、立案时间、案号、执行法院、被执行人的履行情况、发布时间、执行依据文号、失信人名称、生效法律文书确定的义务、失信被执行人行为具体情形、更新时间"
+    },
+    {
+      "api_id": "12125",
+      "api_name": "历史对外投资信息",
+      "data_dimension": "对外投资",
+      "description": "可以通过公司名称获取历史对外投资信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=45ff5e7769fd1885084b4d545705f324",
+      "enterprise_data_category": "工商信息",
+      "output_fields": "总数、公司类型、经营范围、logo、占比、简称、成立日期、经营状态、法人、评分、法人id、金额、公司id、行业、注册资本、公司名称、省份简称、统一社会信用代码、法人类型 0-无法人 1-人 2-企业、扣非净利润(元)、净利率(%)、摊薄净资产收益率(%)、实际税率(%)、预收款/营业收入、总资产周转率(次)、归属净利润滚动环比增长(%)、存货周转天数(天)、营业总收入(元)、每股未分配利润(元)、稀释每股收益(元)、每股净资产(元)、扣非每股收益(元)、每股公积金(元)、毛利润（元）、经营现金流/营业收入"
+    },
+    {
+      "api_id": "12221",
+      "api_name": "历史主要人员",
+      "data_dimension": "主要人员",
+      "description": "可以通过公司名称或ID获取历史主要人员信息，历史主要人员信息包括法人名、变更时间、主要人员名、变更时间、股东名、退股时间等字段的信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=55abd69effb87d1a26e689253efc696d",
+      "enterprise_data_category": "工商信息",
+      "output_fields": "历史法定代表人列表、名称、id、人员hcgid、卸任时间、历史董监高列表（二维数组）、人员名称、id、人员hcgid、卸任时间、logo、关系类型、关联公司数量、无用、历史股东列表、名称、id、人员hcgid、卸任时间"
+    },
+    {
+      "api_id": "12247",
+      "api_name": "历史限制高消费核查（限制消费令）",
+      "data_dimension": "限制高消费",
+      "description": "核查企业主要人员历史是否存在限制高消费现象。",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=8c2f84f5549ee917729d4e64d177d6af",
+      "enterprise_data_category": "司法风险",
+      "output_fields": "主键id、案号、关联对象、立案日期、企业KeyNo、限制令对象、关联对象KeyNo、性别、企业证件号、原文链接"
+    },
+    {
+      "api_id": "12315",
+      "api_name": "历史经营异常核查",
+      "data_dimension": "经营异常",
+      "description": "核查企业历史经营异常情况，判断企业是否有历史列入经营异常的情况，返回包括列入经营异常原因、列入日期、移出经营异常原因、移出日期等工商异常数据。",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=97c2fcb1f841183a31813df06f1888b7",
+      "enterprise_data_category": "经营风险",
+      "output_fields": "数据信息，作出决定机关， 移除决定机关，列入经营异常名录原因，列入日期，移出经营异常名录原因，移出日期"
+    },
+    {
+      "api_id": "12316",
+      "api_name": "历史动产抵押核查",
+      "data_dimension": "动产抵押",
+      "description": "核查企业历史是否存在动产抵押信息，助力风险管控。返回包括但不限于登记信息、抵押物详细信息、抵押权人信息、被担保债权情况、债务人履行债务期限等信息。",
+      "documentation_url": "http://openapi.shuidi.cn/index.html#/detail?digest=e18d8373ff14a1fcc485462e1092b20e",
+      "enterprise_data_category": "经营风险",
+      "output_fields": "总数、详情列表、基本信息、抵押权人信息、抵押物信息、变更信息、被担保债权数额、注销日期、公示日期、登记日期、备注、被担保债权种类、概况备注（已废弃）、概况债务人履行债务的期限（已废弃）、概况数额（已废弃）、登记机关、登记编号、概况担保的范围（已废弃）、担保范围、概况种类（已废弃）、债务人履行债务的期限、表id、注销原因、状态、公司省份、抵押权人证照/证件类型、抵押权人名称、证照/证件号码、名称、所有权归属、备注、数量、质量、状况、所在地等情况、变更内容、变更日期"
+    },
+    {
+      "api_id": "12317",
+      "api_name": "历史行政处罚核查",
+      "data_dimension": "行政处罚",
+      "description": "查询企业历史行政处罚信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=15397afff08becf1de0fa8d10c8a810b",
+      "enterprise_data_category": "经营风险",
+      "output_fields": "行政处罚记录、记录总数、收违法所得、没收非法财物的金额（万元）（source=信用中国时，返回数据）、区域（source=信用中国时，返回数据）、数据来源、行政处罚决定书文号、违法行为类型、做出处罚决定机关名称、处罚内容、作出行政处罚决定日期（时间戳）、处罚依据、违法事实、处罚种类、罚款金额（万元）、作出行政公示日期（时间戳）（source=国家市场监督管理总局时，返回数据）、备注（source=国家市场监督管理总局时，返回数据）、处罚状态（source=信用中国时，返回数据）"
+    },
+    {
+      "api_id": "12361",
+      "api_name": "历史司法协助详情",
+      "data_dimension": "司法协助",
+      "description": "根据历史司法协助ID获取历史的司法协助详情，判断司法协助类型，历史司法协助详情包括股权变更、股权冻结、结解除冻结、司法协助续行、股权数额、司法冻结失效及对应的详细信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=9e2d262eb6168984f36d69446f87dd23",
+      "enterprise_data_category": "司法风险",
+      "output_fields": "总数、司法协助基本信息id、被执行人、被执行人公司id、对应表id、类型|状态、被执行人类型，2-人，1-公司、执行法院、被执行人人员id、公示日期、股权被执行的企业、股权被执行的企业id、执行通知书文号、唯一标识符、股权数额"
+    },
+    {
+      "api_id": "12363",
+      "api_name": "历史司法协助核查",
+      "data_dimension": "司法协助",
+      "description": "可以通过公司名称获取企业历史的司法协助信息，历史司法协助信息包括执行法院、案件内容、被执行人名称等字段信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=bfe5fc01dade63be2a1a8ae73cea4325",
+      "enterprise_data_category": "司法风险",
+      "output_fields": "总数、列表、司法协助基本信息 id、被执行人、被执行人公司 id、对应表 id、类型 | 状态、被执行人类型，2 - 人，1 - 公司、执行法院、被执行人人员 id、公示日期、股权被执行的企业、股权被执行的企业 id、执行通知书文号、唯一标识符、股权数额"
+    },
+    {
+      "api_id": "12401",
+      "api_name": "历史商标信息",
+      "data_dimension": "商标",
+      "description": "可以通过公司名称获取历史的商标有关信息，历史商标信息包括商标图片、注册号、国际分类等字段信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=8b7bd5d8c5b2b71e80cd6b3167e791cb",
+      "enterprise_data_category": "知识产权",
+      "output_fields": "总数，数据信息，注册号，商标名，图标，无用，申请日期，国际分类code，商标id，国际分类，申请人，状态"
+    },
+    {
+      "api_id": "12453",
+      "api_name": "历史行政许可-工商",
+      "data_dimension": "行政许可",
+      "description": "可以通过公司名称获取企业工商局的历史行政许可信息，企业行政许可信息包括行政许可决定文书号、许可文件名称、许可机关等字段的详细信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=5d321e0a4904f1f69c50a0d93e2a3a96",
+      "enterprise_data_category": "经营信息",
+      "output_fields": "总数、数据详情、许可书文编号、许可文件名称、有效期自、有效期至、许可范围内容、发证机关"
+    },
+    {
+      "api_id": "12512",
+      "api_name": "历史失信被执行人核查",
+      "data_dimension": "失信",
+      "description": "通过公司名称关键字查询企业历史的失信情况，历史失信信息包括失信人名称、组织机构代码、履行情况、失信行为具体情形等信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=c3e8b5989c61b6f7d6632de11a818f28",
+      "enterprise_data_category": "司法风险",
+      "output_fields": "失信人名称、法人、负责人姓名、执行依据文号、省份地区、身份证号码/组织机构代码、法院、发布时间、失信人类型，0代表人，1代表公司、做出执行的依据单位、生效法律文书确定的义务、履行情况、立案时间、案号、失信被执行人行为具体情形"
+    },
+    {
+      "api_id": "12523",
+      "api_name": "历史被执行人核查",
+      "data_dimension": "被执行人",
+      "description": "通过搜索关键词公司名称获取企业历史的被执行人信息，历史被执行人信息包括执行法院、案件内容、执行标的、被执行人名称、组织机构代码等信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=29083bbc088e34a7d2e4011a3355c7d1",
+      "enterprise_data_category": "司法风险",
+      "output_fields": "执行法院、被执行人名称、身份证号／组织机构代码、案号、创建时间、执行标的"
+    },
+    {
+      "api_id": "12533",
+      "api_name": "历史裁判文书核查",
+      "data_dimension": "裁判文书",
+      "description": "查询企业过往法律诉讼列表信息",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=e81b121fedcb0d4252a79a89b2ae62cd",
+      "enterprise_data_category": "司法风险",
+      "output_fields": "Id值、执行法院、案件名称、案件金额（元）、文书类型、裁判日期、案由、发布时间、案件编号、案件类型、涉案人员角色、当事人类型、年份"
+    },
+    {
+      "api_id": "20059",
+      "api_name": "企业规模划型",
+      "data_dimension": "企业规模划型",
+      "description": "查询企业规模，企业规模分为：大型、中型、小型、微型",
+      "documentation_url": "https://openapi.shuidi.cn/index.html#/detail?digest=687ef5dd9198d705bab36886a3c789ee",
+      "enterprise_data_category": "工商信息",
+      "output_fields": "规模，枚举值：大型、中型、小型、微型"
+    }
+  ],
+  "schema_version": "enterprise-api-catalog/1.0.0",
+  "source_sha256": "9ecc758e0de3668a0d1da27ca036044e3319106d7deed94ad7cdbcd92083a5fb"
+}

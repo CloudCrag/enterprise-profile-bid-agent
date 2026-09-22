@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "enterprise-company-identity/1.0.0",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "external_company_id",
+    "company_name",
+    "unified_social_credit_code",
+    "provider_id",
+    "source_reference"
+  ],
+  "properties": {
+    "external_company_id": {
+      "type": "string"
+    },
+    "company_id": {
+      "type": "string"
+    },
+    "company_name": {
+      "type": "string"
+    },
+    "unified_social_credit_code": {
+      "type": "string"
+    },
+    "legal_representative": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "region": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "operating_status": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "provider_id": {
+      "type": "string"
+    },
+    "source_reference": {
+      "type": "string"
+    },
+    "identity_status": {
+      "enum": [
+        "CANDIDATE",
+        "CONFIRMED",
+        "LOCAL_CONTEXT"
+      ]
+    }
+  }
+}

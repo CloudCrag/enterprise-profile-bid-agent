@@ -1,0 +1,624 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "enterprise-profile-question-response-receipt/1.0.0",
+  "title": "Enterprise Profile Question Response Receipt",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "question_response_receipt_schema_version",
+    "question_response_receipt_id",
+    "question_response_receipt_content_hash",
+    "enterprise",
+    "source_dependencies",
+    "submission_mode",
+    "coverage_status",
+    "submitted_by",
+    "submitted_at_utc",
+    "recorded_response_items",
+    "not_in_submission_question_items",
+    "receipt_summary",
+    "warnings",
+    "generated_at_utc"
+  ],
+  "properties": {
+    "question_response_receipt_schema_version": {
+      "const": "enterprise-profile-question-response-receipt/1.0.0"
+    },
+    "question_response_receipt_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "question_response_receipt_content_hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "enterprise": {
+      "$ref": "#/$defs/enterprise"
+    },
+    "source_dependencies": {
+      "$ref": "#/$defs/sourceDependencies"
+    },
+    "submission_mode": {
+      "enum": [
+        "partial_current_batch",
+        "full_current_batch"
+      ]
+    },
+    "coverage_status": {
+      "enum": [
+        "partial_current_batch",
+        "full_current_batch"
+      ]
+    },
+    "submitted_by": {
+      "$ref": "#/$defs/submittedBy"
+    },
+    "submitted_at_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "recorded_response_items": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/responseItem"
+      }
+    },
+    "not_in_submission_question_items": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/notInSubmission"
+      }
+    },
+    "receipt_summary": {
+      "$ref": "#/$defs/receiptSummary"
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "generated_at_utc": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "$defs": {
+    "sourceDependencies": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "question_response_submission_schema_version",
+        "question_response_submission_id",
+        "question_response_submission_content_hash",
+        "question_plan_schema_version",
+        "question_plan_id",
+        "question_plan_content_hash",
+        "question_plan_request_schema_version",
+        "question_plan_request_id",
+        "question_plan_request_content_hash",
+        "gap_inventory_schema_version",
+        "gap_inventory_id",
+        "gap_inventory_content_hash",
+        "gap_analysis_request_schema_version",
+        "gap_analysis_request_id",
+        "gap_analysis_request_content_hash",
+        "fact_profile_schema_version",
+        "fact_profile_content_hash",
+        "capability_profile_schema_version",
+        "capability_profile_id",
+        "capability_profile_content_hash",
+        "decision_profile_schema_version",
+        "decision_profile_id",
+        "decision_profile_content_hash"
+      ],
+      "properties": {
+        "question_response_submission_schema_version": {
+          "const": "enterprise-profile-question-response-submission/1.0.0"
+        },
+        "question_response_submission_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "question_response_submission_content_hash": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "question_plan_schema_version": {
+          "const": "enterprise-profile-question-plan/1.0.0"
+        },
+        "question_plan_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "question_plan_content_hash": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "question_plan_request_schema_version": {
+          "const": "enterprise-profile-question-plan-request/1.0.0"
+        },
+        "question_plan_request_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "question_plan_request_content_hash": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "gap_inventory_schema_version": {
+          "const": "enterprise-profile-gap-inventory/1.0.0"
+        },
+        "gap_inventory_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "gap_inventory_content_hash": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "gap_analysis_request_schema_version": {
+          "const": "enterprise-profile-gap-analysis-request/1.0.0"
+        },
+        "gap_analysis_request_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "gap_analysis_request_content_hash": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "fact_profile_schema_version": {
+          "const": "enterprise-fact-profile/1.3.0"
+        },
+        "fact_profile_content_hash": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "capability_profile_schema_version": {
+          "enum": [
+            "enterprise-capability-profile/1.1.0",
+            "enterprise-capability-profile/1.2.0"
+          ]
+        },
+        "capability_profile_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "capability_profile_content_hash": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "decision_profile_schema_version": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "enterprise-decision-profile/1.0.0",
+            null
+          ]
+        },
+        "decision_profile_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "decision_profile_content_hash": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    },
+    "notInSubmission": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "question_item_id",
+        "question_item_content_hash",
+        "gap_id",
+        "requirement_id",
+        "target_layer",
+        "target_code",
+        "not_in_submission_reason"
+      ],
+      "properties": {
+        "question_item_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "question_item_content_hash": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "gap_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "requirement_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "target_layer": {
+          "enum": [
+            "fact",
+            "capability",
+            "decision"
+          ]
+        },
+        "target_code": {
+          "type": "string",
+          "minLength": 1
+        },
+        "not_in_submission_reason": {
+          "const": "not_submitted_in_current_event"
+        }
+      }
+    },
+    "receiptSummary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "question_count_in_plan",
+        "response_item_count",
+        "provided_response_count",
+        "unable_to_provide_count",
+        "decision_confirmation_count",
+        "structured_value_count",
+        "conflict_selection_count",
+        "clarification_count",
+        "response_with_material_count",
+        "unique_material_count",
+        "not_in_submission_count",
+        "covers_full_current_batch"
+      ],
+      "properties": {
+        "question_count_in_plan": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "response_item_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "provided_response_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "unable_to_provide_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "decision_confirmation_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "structured_value_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "conflict_selection_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "clarification_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "response_with_material_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "unique_material_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "not_in_submission_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "covers_full_current_batch": {
+          "type": "boolean"
+        }
+      }
+    },
+    "enterprise": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "unified_social_credit_code",
+        "internal_enterprise_id"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "unified_social_credit_code": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "internal_enterprise_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "submittedBy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "actor_type",
+        "actor_id",
+        "display_name"
+      ],
+      "properties": {
+        "actor_type": {
+          "const": "user"
+        },
+        "actor_id": {
+          "type": "string",
+          "pattern": ".*\\S.*"
+        },
+        "display_name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": ".*\\S.*"
+        }
+      }
+    },
+    "materialReference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "material_id",
+        "material_content_sha256",
+        "original_filename",
+        "media_type",
+        "size_bytes"
+      ],
+      "properties": {
+        "material_id": {
+          "type": "string",
+          "pattern": ".*\\S.*"
+        },
+        "material_content_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "original_filename": {
+          "type": "string",
+          "pattern": ".*\\S.*"
+        },
+        "media_type": {
+          "type": "string",
+          "pattern": ".*\\S.*"
+        },
+        "size_bytes": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "decisionConfirmationAnswer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "answer_type",
+        "decision_confirmation_input"
+      ],
+      "properties": {
+        "answer_type": {
+          "const": "decision_confirmation"
+        },
+        "decision_confirmation_input": {
+          "type": "object"
+        }
+      }
+    },
+    "structuredValueAnswer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "answer_type",
+        "value",
+        "user_note"
+      ],
+      "properties": {
+        "answer_type": {
+          "const": "structured_value"
+        },
+        "value": {
+          "type": [
+            "string",
+            "number",
+            "boolean",
+            "object",
+            "array"
+          ]
+        },
+        "user_note": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": ".*\\S.*"
+        }
+      }
+    },
+    "conflictSelectionAnswer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "answer_type",
+        "selected_source_reference_ids",
+        "selection_note"
+      ],
+      "properties": {
+        "answer_type": {
+          "const": "conflict_selection"
+        },
+        "selected_source_reference_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "selection_note": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": ".*\\S.*"
+        }
+      }
+    },
+    "clarificationAnswer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "answer_type",
+        "clarification_text",
+        "structured_context"
+      ],
+      "properties": {
+        "answer_type": {
+          "const": "clarification"
+        },
+        "clarification_text": {
+          "type": "string",
+          "pattern": ".*\\S.*"
+        },
+        "structured_context": {
+          "type": [
+            "object",
+            "null"
+          ]
+        }
+      }
+    },
+    "answer": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/decisionConfirmationAnswer"
+        },
+        {
+          "$ref": "#/$defs/structuredValueAnswer"
+        },
+        {
+          "$ref": "#/$defs/conflictSelectionAnswer"
+        },
+        {
+          "$ref": "#/$defs/clarificationAnswer"
+        }
+      ]
+    },
+    "responseItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "response_item_id",
+        "response_item_content_hash",
+        "question_item_id",
+        "question_item_content_hash",
+        "gap_id",
+        "gap_content_hash",
+        "requirement_id",
+        "target_layer",
+        "target_code",
+        "response_outcome",
+        "answer",
+        "material_references",
+        "unable_to_provide_note",
+        "response_status"
+      ],
+      "properties": {
+        "response_item_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "response_item_content_hash": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "question_item_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "question_item_content_hash": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "gap_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "gap_content_hash": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "requirement_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "target_layer": {
+          "enum": [
+            "fact",
+            "capability",
+            "decision"
+          ]
+        },
+        "target_code": {
+          "type": "string",
+          "minLength": 1
+        },
+        "response_outcome": {
+          "enum": [
+            "provided",
+            "unable_to_provide"
+          ]
+        },
+        "answer": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/answer"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "material_references": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/materialReference"
+          }
+        },
+        "unable_to_provide_note": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": ".*\\S.*"
+        },
+        "response_status": {
+          "const": "submitted"
+        }
+      }
+    }
+  }
+}

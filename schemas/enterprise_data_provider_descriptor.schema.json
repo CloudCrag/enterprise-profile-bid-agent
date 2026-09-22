@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "enterprise-data-provider-descriptor/1.0.0",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "provider_id",
+    "provider_version",
+    "display_name",
+    "is_mock",
+    "capabilities"
+  ],
+  "properties": {
+    "provider_id": {
+      "type": "string"
+    },
+    "provider_version": {
+      "type": "string"
+    },
+    "display_name": {
+      "type": "string"
+    },
+    "is_mock": {
+      "type": "boolean"
+    },
+    "capabilities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "health": {
+      "type": "string"
+    },
+    "configured": {
+      "type": "boolean"
+    }
+  }
+}

@@ -1,0 +1,163 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "enterprise-capability-analysis-response/1.1.0",
+  "type": "object",
+  "additionalProperties": false,
+  "$defs": {
+    "candidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "capability_type",
+        "candidate_kind",
+        "candidate_subject",
+        "candidate_value",
+        "inference_summary",
+        "support_status",
+        "source_fact_ids",
+        "source_tag_codes",
+        "evidence_ids",
+        "limitations",
+        "unknowns",
+        "review_status"
+      ],
+      "properties": {
+        "capability_type": {
+          "enum": [
+            "industry_capability",
+            "technical_capability",
+            "similar_performance_capability",
+            "regional_delivery_capability",
+            "amount_experience_capability",
+            "personnel_resource_capability",
+            "buyer_relationship_capability",
+            "tender_performance_capability"
+          ]
+        },
+        "candidate_subject": {
+          "type": "string",
+          "minLength": 1
+        },
+        "inference_summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "support_status": {
+          "enum": [
+            "partially_supported",
+            "ambiguous"
+          ]
+        },
+        "source_fact_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "source_tag_codes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "evidence_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "unknowns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "candidate_kind": {
+          "type": "string",
+          "minLength": 1
+        },
+        "candidate_value": {
+          "type": "object"
+        },
+        "review_status": {
+          "const": "pending_review"
+        }
+      }
+    },
+    "rejected": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "capability_type",
+        "candidate_subject",
+        "reason"
+      ],
+      "properties": {
+        "capability_type": {
+          "enum": [
+            "industry_capability",
+            "technical_capability",
+            "similar_performance_capability",
+            "regional_delivery_capability",
+            "amount_experience_capability",
+            "personnel_resource_capability",
+            "buyer_relationship_capability",
+            "tender_performance_capability"
+          ]
+        },
+        "candidate_subject": {
+          "type": "string"
+        },
+        "reason": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "required": [
+    "response_schema_version",
+    "request_content_hash",
+    "capability_candidates",
+    "rejected_or_unsupported_candidates",
+    "global_unknowns"
+  ],
+  "properties": {
+    "response_schema_version": {
+      "const": "enterprise-capability-analysis-response/1.1.0"
+    },
+    "request_content_hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "capability_candidates": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/candidate"
+      }
+    },
+    "rejected_or_unsupported_candidates": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/rejected"
+      }
+    },
+    "global_unknowns": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

@@ -1,0 +1,368 @@
+{
+  "schema_version": "enterprise-fact-type-catalog/1.3.0",
+  "fact_types": [
+    {
+      "fact_type": "business_registration",
+      "fact_schema_version": "business-registration-fact/1.0.0",
+      "description": "工商主体、经营状态、成立日期、工商行业、经营范围和资本登记事实。",
+      "payload_fields": [
+        "enterprise_name",
+        "unified_social_credit_code",
+        "legal_representative",
+        "verification_result",
+        "verification_elements",
+        "operation_status_raw",
+        "normalized_operation_status",
+        "established_date",
+        "registered_industry",
+        "business_scope",
+        "registered_capital",
+        "paid_in_capital",
+        "enterprise_size_classification"
+      ],
+      "minimum_payload_requirements": [
+        "enterprise_name或unified_social_credit_code至少一项",
+        "source_type不能为legacy_excel或system_derived"
+      ],
+      "allowed_source_data_categories": [
+        "business_registration",
+        "enterprise_material",
+        "manual_review"
+      ]
+    },
+    {
+      "fact_type": "qualification",
+      "fact_schema_version": "qualification-fact/1.0.0",
+      "description": "企业资质、许可或证书事实，保留资质等级、发证和有效期。",
+      "payload_fields": [
+        "name",
+        "qualification_level",
+        "certificate_number",
+        "status",
+        "issue_date",
+        "valid_until",
+        "issuing_authority"
+      ],
+      "minimum_payload_requirements": [
+        "name"
+      ],
+      "allowed_source_data_categories": [
+        "qualification_registry",
+        "enterprise_material",
+        "manual_review"
+      ]
+    },
+    {
+      "fact_type": "personnel",
+      "fact_schema_version": "personnel-fact/1.0.0",
+      "description": "企业人员或人员汇总事实。",
+      "payload_fields": [
+        "employee_count",
+        "social_insurance_count",
+        "count_scope",
+        "person_id",
+        "name",
+        "role",
+        "availability_status"
+      ],
+      "minimum_payload_requirements": [
+        "employee_count、social_insurance_count、person_id或name至少一项"
+      ],
+      "allowed_source_data_categories": [
+        "personnel_registry",
+        "enterprise_material",
+        "manual_review"
+      ]
+    },
+    {
+      "fact_type": "personnel_certificate",
+      "fact_schema_version": "personnel-certificate-fact/1.0.0",
+      "description": "人员持有的职业、执业或项目要求证书事实。",
+      "payload_fields": [
+        "person_id",
+        "person_name",
+        "certificate_name",
+        "certificate_level",
+        "certificate_number",
+        "status",
+        "valid_from",
+        "valid_until"
+      ],
+      "minimum_payload_requirements": [
+        "certificate_name",
+        "person_id或person_name至少一项"
+      ],
+      "allowed_source_data_categories": [
+        "personnel_registry",
+        "enterprise_material",
+        "manual_review"
+      ]
+    },
+    {
+      "fact_type": "performance",
+      "fact_schema_version": "performance-fact/1.1.0",
+      "description": "历史合同、案例或同类项目业绩事实。",
+      "payload_fields": [
+        "project_name",
+        "contract_number",
+        "buyer_name",
+        "industry",
+        "region",
+        "contract_amount",
+        "start_date",
+        "end_date",
+        "performance_scope"
+      ],
+      "minimum_payload_requirements": [
+        "project_name"
+      ],
+      "allowed_source_data_categories": [
+        "performance_record",
+        "enterprise_material",
+        "manual_review"
+      ]
+    },
+    {
+      "fact_type": "bid_participation",
+      "fact_schema_version": "bid-participation-fact/1.0.0",
+      "description": "历史招投标参与记录，不在角色不足时推断中标。",
+      "payload_fields": [
+        "project_name",
+        "project_number",
+        "announcement_unique_id",
+        "project_classification",
+        "project_industry",
+        "project_region",
+        "procurement_method",
+        "project_budget",
+        "role",
+        "record_status",
+        "duplicate_flags",
+        "buyer_and_agency_raw"
+      ],
+      "minimum_payload_requirements": [
+        "announcement_unique_id、project_number或project_name至少一项",
+        "role.status"
+      ],
+      "allowed_source_data_categories": [
+        "tender_notice",
+        "award_notice",
+        "performance_record",
+        "other"
+      ]
+    },
+    {
+      "fact_type": "bid_award",
+      "fact_schema_version": "bid-award-fact/1.1.0",
+      "description": "具有明确中标或成交角色证据的结果事实。",
+      "payload_fields": [
+        "project_name",
+        "project_number",
+        "announcement_unique_id",
+        "award_role",
+        "award_amount",
+        "award_date",
+        "buyer_name"
+      ],
+      "minimum_payload_requirements": [
+        "announcement_unique_id、project_number或project_name至少一项",
+        "award_role",
+        "verification_status必须为verified"
+      ],
+      "allowed_source_data_categories": [
+        "award_notice",
+        "enterprise_material",
+        "manual_review"
+      ]
+    },
+    {
+      "fact_type": "fulfillment",
+      "fact_schema_version": "fulfillment-fact/1.1.0",
+      "description": "合同履约、验收、延期、违约或回款事实。",
+      "payload_fields": [
+        "contract_number",
+        "project_name",
+        "fulfillment_status",
+        "acceptance_status",
+        "delay_days",
+        "breach_record",
+        "payment_status",
+        "buyer_name",
+        "industry",
+        "region",
+        "contract_amount",
+        "start_date",
+        "end_date"
+      ],
+      "minimum_payload_requirements": [
+        "contract_number或project_name至少一项",
+        "至少一项履约字段"
+      ],
+      "allowed_source_data_categories": [
+        "fulfillment_record",
+        "enterprise_material",
+        "manual_review"
+      ]
+    },
+    {
+      "fact_type": "buyer_relationship",
+      "fact_schema_version": "buyer-relationship-fact/1.0.0",
+      "description": "企业与采购人之间经证据支持的合作关系事实。",
+      "payload_fields": [
+        "buyer_name",
+        "relationship_type",
+        "project_count",
+        "first_cooperation_at",
+        "latest_cooperation_at",
+        "related_fact_ids"
+      ],
+      "minimum_payload_requirements": [
+        "buyer_name",
+        "relationship_type",
+        "system_derived来源还需related_fact_ids"
+      ],
+      "allowed_source_data_categories": [
+        "buyer_relationship",
+        "performance_record",
+        "tender_notice",
+        "award_notice",
+        "enterprise_material",
+        "manual_review",
+        "other"
+      ]
+    },
+    {
+      "fact_type": "risk_penalty_credit",
+      "fact_schema_version": "risk-penalty-credit-fact/1.0.0",
+      "description": "失信、处罚、经营异常、破产清算及其他信用风险事实。",
+      "payload_fields": [
+        "category",
+        "status",
+        "records",
+        "severity_raw",
+        "remediation_status",
+        "rating_type",
+        "rating_value",
+        "rating_outlook"
+      ],
+      "minimum_payload_requirements": [
+        "category",
+        "status、records或rating_value至少一项"
+      ],
+      "allowed_source_data_categories": [
+        "risk_credit",
+        "enterprise_material",
+        "manual_review"
+      ]
+    },
+    {
+      "fact_type": "enterprise_material",
+      "fact_schema_version": "enterprise-material-fact/1.0.0",
+      "description": "企业上传或人工补充材料的可追溯事实。",
+      "payload_fields": [
+        "material_type",
+        "document_name",
+        "document_hash",
+        "declared_fields",
+        "review_status"
+      ],
+      "minimum_payload_requirements": [
+        "material_type",
+        "document_name或document_hash至少一项"
+      ],
+      "allowed_source_data_categories": [
+        "enterprise_material"
+      ]
+    },
+    {
+      "fact_type": "other_enterprise_fact",
+      "fact_schema_version": "other-enterprise-fact/1.0.0",
+      "description": "暂未专门建模但确属企业事实的数据，必须带subtype。",
+      "payload_fields": [
+        "subtype",
+        "business_description",
+        "products",
+        "product_business_tags",
+        "branches",
+        "service_regions",
+        "value"
+      ],
+      "minimum_payload_requirements": [
+        "subtype",
+        "除subtype外至少一项具体业务内容"
+      ],
+      "subtype_requirements": {
+        "enterprise_identity_observation": [
+          "enterprise_name或unified_social_credit_code至少一项",
+          "observation_context"
+        ]
+      },
+      "allowed_source_data_categories": [
+        "business_registration",
+        "qualification_registry",
+        "personnel_registry",
+        "performance_record",
+        "tender_notice",
+        "award_notice",
+        "fulfillment_record",
+        "buyer_relationship",
+        "risk_credit",
+        "enterprise_material",
+        "manual_review",
+        "other"
+      ]
+    }
+  ],
+  "source_types": [
+    "crawler",
+    "official_api",
+    "external_data",
+    "user_upload",
+    "manual_review",
+    "legacy_excel",
+    "system_derived"
+  ],
+  "source_data_categories": [
+    "business_registration",
+    "qualification_registry",
+    "personnel_registry",
+    "performance_record",
+    "tender_notice",
+    "award_notice",
+    "fulfillment_record",
+    "buyer_relationship",
+    "risk_credit",
+    "enterprise_material",
+    "manual_review",
+    "other"
+  ],
+  "availability": {
+    "fields": [
+      "available_at",
+      "availability_basis",
+      "availability_status"
+    ],
+    "availability_basis": [
+      "source_published_at",
+      "source_collected_at",
+      "source_observed_at",
+      "user_received_at",
+      "manual_verified_at",
+      "upstream_provided",
+      "unknown"
+    ],
+    "availability_status": [
+      "known",
+      "unknown",
+      "conflicting"
+    ],
+    "business_timezone": "Asia/Shanghai"
+  },
+  "amount_contract": {
+    "schema_ref": "enterprise_fact_profile.schema.json#/$defs/amount",
+    "normalized_unit_example": "yuan",
+    "normalized_currency_example": "CNY",
+    "exchange_rate_conversion": "not_performed",
+    "unit_inference": "not_performed"
+  }
+}

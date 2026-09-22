@@ -1,0 +1,15 @@
+# Unified Python runtime: host enterprise profile + R6 bid decision service.
+# R6 LangGraph / Checkpoint / Pydantic versions are the compatibility floor.
+openpyxl==3.1.5
+jsonschema==4.25.1
+pytest==9.0.2
+python-dotenv==1.2.2
+fastapi==0.128.2
+uvicorn==0.48.0
+httpx==0.28.1
+langgraph==1.2.9
+langgraph-checkpoint==4.1.1
+langgraph-checkpoint-sqlite==3.1.0
+pydantic==2.13.4
+tzdata==2025.2
+pymysql==1.1.2

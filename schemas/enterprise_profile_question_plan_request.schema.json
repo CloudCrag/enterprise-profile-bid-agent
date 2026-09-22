@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "enterprise-profile-question-plan-request/1.0.0",
+  "title": "Enterprise Profile Question Plan Request",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "question_plan_request_schema_version", "question_plan_request_id",
+    "question_plan_request_content_hash", "enterprise", "gap_inventory_id",
+    "gap_inventory_content_hash", "planning_options", "generated_at_utc"
+  ],
+  "properties": {
+    "question_plan_request_schema_version": {"const": "enterprise-profile-question-plan-request/1.0.0"},
+    "question_plan_request_id": {"type": "string", "minLength": 1},
+    "question_plan_request_content_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "enterprise": {"$ref": "#/$defs/enterprise"},
+    "gap_inventory_id": {"type": "string", "minLength": 1},
+    "gap_inventory_content_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "planning_options": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["max_questions_per_batch", "include_optional"],
+      "properties": {
+        "max_questions_per_batch": {"type": "integer", "minimum": 1},
+        "include_optional": {"type": "boolean"}
+      }
+    },
+    "generated_at_utc": {"type": "string", "format": "date-time"}
+  },
+  "$defs": {
+    "enterprise": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "unified_social_credit_code", "internal_enterprise_id"],
+      "properties": {
+        "name": {"type": "string", "minLength": 1},
+        "unified_social_credit_code": {"type": ["string", "null"]},
+        "internal_enterprise_id": {"type": ["string", "null"]}
+      }
+    }
+  }
+}

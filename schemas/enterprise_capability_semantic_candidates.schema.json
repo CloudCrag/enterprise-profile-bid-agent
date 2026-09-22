@@ -1,0 +1,368 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "enterprise-capability-semantic-candidates/1.1.0",
+  "type": "object",
+  "additionalProperties": false,
+  "$defs": {
+    "candidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "candidate_id",
+        "candidate_content_hash",
+        "capability_type",
+        "candidate_kind",
+        "candidate_subject",
+        "candidate_value",
+        "inference_summary",
+        "support_status",
+        "source_fact_ids",
+        "source_tag_codes",
+        "evidence_ids",
+        "limitations",
+        "unknowns",
+        "review_status"
+      ],
+      "properties": {
+        "candidate_id": {
+          "type": "string",
+          "pattern": "^semantic-candidate:[a-z_]+:[0-9a-f]{24}$"
+        },
+        "candidate_content_hash": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "capability_type": {
+          "enum": [
+            "industry_capability",
+            "technical_capability",
+            "similar_performance_capability",
+            "regional_delivery_capability",
+            "amount_experience_capability",
+            "personnel_resource_capability",
+            "buyer_relationship_capability",
+            "tender_performance_capability"
+          ]
+        },
+        "candidate_kind": {
+          "type": "string",
+          "minLength": 1
+        },
+        "candidate_subject": {
+          "type": "string",
+          "minLength": 1
+        },
+        "candidate_value": {
+          "type": "object"
+        },
+        "inference_summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "support_status": {
+          "enum": [
+            "partially_supported",
+            "ambiguous"
+          ]
+        },
+        "source_fact_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "source_tag_codes": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "evidence_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "unknowns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "review_status": {
+          "const": "pending_review"
+        }
+      }
+    },
+    "rejected": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "capability_type",
+        "candidate_subject",
+        "reason"
+      ],
+      "properties": {
+        "capability_type": {
+          "enum": [
+            "industry_capability",
+            "technical_capability",
+            "similar_performance_capability",
+            "regional_delivery_capability",
+            "amount_experience_capability",
+            "personnel_resource_capability",
+            "buyer_relationship_capability",
+            "tender_performance_capability"
+          ]
+        },
+        "candidate_subject": {
+          "type": "string"
+        },
+        "reason": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "required": [
+    "semantic_candidates_schema_version",
+    "semantic_analysis_run_id",
+    "semantic_analysis_content_hash",
+    "enterprise",
+    "as_of_date",
+    "source_dependencies",
+    "provider",
+    "run_status",
+    "capability_candidates",
+    "rejected_or_unsupported_candidates",
+    "global_unknowns",
+    "review_status",
+    "audit_summary",
+    "evidence_index",
+    "generated_at_utc"
+  ],
+  "properties": {
+    "semantic_candidates_schema_version": {
+      "const": "enterprise-capability-semantic-candidates/1.1.0"
+    },
+    "semantic_analysis_run_id": {
+      "type": "string",
+      "pattern": "^semantic-run:[0-9a-f]{24}$"
+    },
+    "semantic_analysis_content_hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "enterprise": {
+      "type": "object"
+    },
+    "as_of_date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date"
+    },
+    "source_dependencies": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "analysis_request_schema_version",
+        "analysis_request_content_hash",
+        "capability_profile_schema_version",
+        "capability_profile_id",
+        "capability_content_hash",
+        "prompt_schema_version",
+        "prompt_content_hash",
+        "evidence_policy_version"
+      ],
+      "properties": {
+        "analysis_request_schema_version": {
+          "const": "enterprise-capability-analysis-request/1.1.0"
+        },
+        "analysis_request_content_hash": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "capability_profile_schema_version": {
+          "const": "enterprise-capability-profile/1.1.0"
+        },
+        "capability_profile_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "capability_content_hash": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "prompt_schema_version": {
+          "const": "enterprise-capability-semantic-prompt/1.0.0"
+        },
+        "prompt_content_hash": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "evidence_policy_version": {
+          "const": "enterprise-capability-evidence-policy/1.0.0"
+        }
+      }
+    },
+    "provider": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "provider_name",
+        "provider_mode",
+        "model_name"
+      ],
+      "properties": {
+        "provider_name": {
+          "enum": [
+            "zhipu"
+          ]
+        },
+        "provider_mode": {
+          "enum": [
+            "external"
+          ]
+        },
+        "model_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "run_status": {
+      "const": "succeeded"
+    },
+    "capability_candidates": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/candidate"
+      }
+    },
+    "rejected_or_unsupported_candidates": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/rejected"
+      }
+    },
+    "global_unknowns": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "review_status": {
+      "const": "pending_review"
+    },
+    "audit_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "provider_name",
+        "provider_mode",
+        "model_name",
+        "prompt_version",
+        "request_content_hash",
+        "prompt_content_hash",
+        "response_content_hash",
+        "started_at_utc",
+        "finished_at_utc",
+        "duration_ms",
+        "attempt_count",
+        "network_used",
+        "validation_result",
+        "configuration_source"
+      ],
+      "properties": {
+        "provider_name": {
+          "enum": [
+            "zhipu"
+          ]
+        },
+        "provider_mode": {
+          "enum": [
+            "external"
+          ]
+        },
+        "model_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "prompt_version": {
+          "const": "enterprise-capability-semantic-prompt/1.0.0"
+        },
+        "request_content_hash": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "prompt_content_hash": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "response_content_hash": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "started_at_utc": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "finished_at_utc": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "duration_ms": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "attempt_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "network_used": {
+          "type": "boolean"
+        },
+        "validation_result": {
+          "const": "passed"
+        },
+        "configuration_source": {
+          "enum": [
+            "default",
+            "environment",
+            "cli"
+          ]
+        }
+      }
+    },
+    "generated_at_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "evidence_index": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object"
+      }
+    }
+  }
+}

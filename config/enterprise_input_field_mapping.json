@@ -1,0 +1,209 @@
+{
+  "mappings": [
+    {
+      "category": "enterprise_identity",
+      "handling_rule": "supplier_role",
+      "source_column": "A",
+      "source_header": "单位名称",
+      "target_field": "company_name"
+    },
+    {
+      "category": "enterprise_identity",
+      "handling_rule": "supplier_role",
+      "source_column": "B",
+      "source_header": "信用代码",
+      "target_field": "unified_social_credit_code"
+    },
+    {
+      "category": "role",
+      "handling_rule": "do_not_infer_award",
+      "source_column": "C",
+      "source_header": "类别",
+      "target_field": "enterprise_role"
+    },
+    {
+      "category": "enterprise_contact",
+      "handling_rule": "unverified_contact",
+      "source_column": "D",
+      "source_header": "负责人",
+      "target_field": "contact_person"
+    },
+    {
+      "category": "enterprise_contact",
+      "handling_rule": "unverified_contact",
+      "source_column": "E",
+      "source_header": "联系电话",
+      "target_field": "contact_phone"
+    },
+    {
+      "category": "enterprise_contact",
+      "handling_rule": "unverified_address",
+      "source_column": "F",
+      "source_header": "地址",
+      "target_field": "registered_or_contact_address"
+    },
+    {
+      "category": "project",
+      "handling_rule": "source_field",
+      "source_column": "G",
+      "source_header": "项目标题",
+      "target_field": "project_title"
+    },
+    {
+      "category": "project",
+      "handling_rule": "source_field",
+      "source_column": "AZ",
+      "source_header": "项目编号",
+      "target_field": "project_code"
+    },
+    {
+      "category": "project",
+      "handling_rule": "source_field",
+      "source_column": "BA",
+      "source_header": "项目名称",
+      "target_field": "project_name"
+    },
+    {
+      "category": "project",
+      "handling_rule": "source_field",
+      "source_column": "K",
+      "source_header": "项目区域-省份",
+      "target_field": "project_province"
+    },
+    {
+      "category": "project",
+      "handling_rule": "source_field",
+      "source_column": "M",
+      "source_header": "项目区域-城市",
+      "target_field": "project_city"
+    },
+    {
+      "category": "project",
+      "handling_rule": "source_field",
+      "source_column": "O",
+      "source_header": "项目区域-区县",
+      "target_field": "project_district"
+    },
+    {
+      "category": "project",
+      "handling_rule": "source_field",
+      "source_column": "I",
+      "source_header": "所属地区",
+      "target_field": "project_region_text"
+    },
+    {
+      "category": "project",
+      "handling_rule": "source_field",
+      "source_column": "J",
+      "source_header": "项目分类",
+      "target_field": "project_category"
+    },
+    {
+      "category": "project",
+      "handling_rule": "source_field",
+      "source_column": "BD",
+      "source_header": "行业分类",
+      "target_field": "industry_category"
+    },
+    {
+      "category": "money",
+      "handling_rule": "requires_unit_normalization",
+      "source_column": "Q",
+      "source_header": "项目预算-金额",
+      "target_field": "budget_amount_raw"
+    },
+    {
+      "category": "money",
+      "handling_rule": "requires_unit_normalization",
+      "source_column": "R",
+      "source_header": "项目预算-金额单位",
+      "target_field": "budget_unit"
+    },
+    {
+      "category": "money",
+      "handling_rule": "award_context_only",
+      "source_column": "S",
+      "source_header": "中标总金额",
+      "target_field": "award_amount_raw"
+    },
+    {
+      "category": "money",
+      "handling_rule": "award_context_only",
+      "source_column": "T",
+      "source_header": "中标总金额单位",
+      "target_field": "award_amount_unit"
+    },
+    {
+      "category": "time",
+      "handling_rule": "excel_serial_to_datetime",
+      "source_column": "Y",
+      "source_header": "投标开始时间",
+      "target_field": "bid_start_time"
+    },
+    {
+      "category": "time",
+      "handling_rule": "excel_serial_to_datetime",
+      "source_column": "Z",
+      "source_header": "投标结束时间",
+      "target_field": "bid_end_time"
+    },
+    {
+      "category": "time",
+      "handling_rule": "excel_serial_to_datetime",
+      "source_column": "AA",
+      "source_header": "开标时间",
+      "target_field": "opening_time"
+    },
+    {
+      "category": "party_mixed",
+      "handling_rule": "must_split_with_role",
+      "source_column": "AS",
+      "source_header": "采购单位&代理机构",
+      "target_field": "buyer_and_agent_raw"
+    },
+    {
+      "category": "party_mixed",
+      "handling_rule": "never_treat_all_as_winner",
+      "source_column": "AT",
+      "source_header": "中标企业&候选单位",
+      "target_field": "award_and_candidate_companies_raw"
+    },
+    {
+      "category": "source",
+      "handling_rule": "source_field",
+      "source_column": "AR",
+      "source_header": "招投标公告原文链接",
+      "target_field": "source_url"
+    },
+    {
+      "category": "source",
+      "handling_rule": "preferred_unique_key",
+      "source_column": "AW",
+      "source_header": "招投标公告唯一标识",
+      "target_field": "source_record_id"
+    },
+    {
+      "category": "project",
+      "handling_rule": "source_field",
+      "source_column": "BB",
+      "source_header": "公告类型",
+      "target_field": "notice_type"
+    },
+    {
+      "category": "project",
+      "handling_rule": "source_field",
+      "source_column": "BG",
+      "source_header": "招投标阶段",
+      "target_field": "tender_stage"
+    }
+  ],
+  "role_safety_rules": [
+    "采购单位&代理机构不得作为供应商企业事实。",
+    "中标企业&候选单位为混合字段，未提供明确角色标记前不得拆成已核验中标事实。",
+    "类别为投标人时只能建立投标参与候选，不代表最终中标。",
+    "Excel 行数不能直接等于中标次数；同一公告可能有多个投标人行。"
+  ],
+  "schema_version": "enterprise-input-field-mapping/1.0.0",
+  "source_file": "企业画像需要数据20260722.xlsx",
+  "source_sha256": "4439e5320eed90995633a6967f947337479bb9165699206637eeecd4a8c3d4e6"
+}

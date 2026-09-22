@@ -1,0 +1,204 @@
+{
+  "notes": [
+    {
+      "code": "MODEL_STRUCTURE_NOTE_PENDING_CONFIRMATION",
+      "source_cell": "E64",
+      "source_sheet": "指标模型",
+      "status": "PENDING_CONFIRMATION",
+      "text": "信用需要增加二级纬度-行业"
+    },
+    {
+      "code": "WEIGHT_POLICY_CONFLICT",
+      "source_cell": "H66",
+      "source_sheet": "指标模型",
+      "status": "PUBLICATION_POLICY_PENDING",
+      "structured_primary_weights": {
+        "A": 20.0,
+        "B": 50.0,
+        "C": 30.0
+      },
+      "text": "行业67%-公共信用（国家）33%"
+    },
+    {
+      "code": "MODEL_CONTENT_CONFLICT",
+      "indicator_code": "A1.5",
+      "rule_name": "联系方式与经营地址可验证性",
+      "source_name": "经营地区",
+      "status": "FORMAL_SCORING_PAUSED"
+    }
+  ],
+  "schema_version": "evaluation-model-notes/1.0.0",
+  "theory_references": [
+    {
+      "citation": "GB/T 23794-2023《企业信用评价指标》",
+      "level": "国家标准",
+      "standard": "GB/T 23794-2023《企业信用评价指标》",
+      "support": "支撑企业信用评价指标设置、信用信息类别、指标权重与等级划分。",
+      "title": "",
+      "type": "国家标准",
+      "url": "https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=7B14277185736C1EC2D30CB92F3E060C"
+    },
+    {
+      "citation": "GB/T 23793-2017《合格供应商信用评价规范》",
+      "level": "国家标准",
+      "standard": "GB/T 23793-2017《合格供应商信用评价规范》",
+      "support": "支撑供应商场景下的信用、履约能力、履约行为和评价流程。",
+      "title": "",
+      "type": "国家标准",
+      "url": "https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=57622480D6017A7C8BC50B10C42D594B"
+    },
+    {
+      "citation": "GB/T 45255-2025《公共信用综合评价规范》",
+      "level": "国家标准",
+      "standard": "GB/T 45255-2025《公共信用综合评价规范》",
+      "support": "支撑公共信用、司法、行政、税务、履约践诺、守信激励和失信惩戒指标。",
+      "title": "",
+      "type": "国家标准",
+      "url": "https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=F81ADC3455BC9689DBDCA7C74872903C"
+    },
+    {
+      "citation": "GB/T 31953-2023《企业信用评价报告编制指南》",
+      "level": "国家标准",
+      "standard": "GB/T 31953-2023《企业信用评价报告编制指南》",
+      "support": "支撑报告结构、证据披露、评价说明和动态修正机制。",
+      "title": "",
+      "type": "国家标准",
+      "url": "https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=84EDF28CC946F9211B6A3FFD767452A7"
+    },
+    {
+      "citation": "Kaplan, R. S., & Norton, D. P. (1992). The Balanced Scorecard—Measures that Drive Performance. Harvard Business Review, 70(1), 71-79.",
+      "level": "HBR经典管理论文",
+      "standard": "",
+      "support": "支撑不能只看财务，应同时看客户/市场、内部流程、学习成长和财务绩效的多维画像。",
+      "title": "The Balanced Scorecard—Measures that Drive Performance",
+      "type": "论文/文章",
+      "url": "https://www.hbs.edu/faculty/Pages/item.aspx?num=9161"
+    },
+    {
+      "citation": "Barney, J. (1991). Firm Resources and Sustained Competitive Advantage. Journal of Management, 17(1), 99-120.",
+      "level": "战略管理高被引论文",
+      "standard": "",
+      "support": "支撑把资质、专利、商标、标准、组织能力和客户资源纳入企业长期竞争力画像。",
+      "title": "Firm Resources and Sustained Competitive Advantage",
+      "type": "论文/文章",
+      "url": "https://journals.sagepub.com/doi/10.1177/014920639101700108"
+    },
+    {
+      "citation": "Teece, D. J., Pisano, G., & Shuen, A. (1997). Dynamic Capabilities and Strategic Management. Strategic Management Journal, 18(7), 509-533.",
+      "level": "战略管理顶刊论文",
+      "standard": "",
+      "support": "支撑创新资质、研发平台、招聘活跃、市场变化适应能力等动态能力指标。",
+      "title": "Dynamic Capabilities and Strategic Management",
+      "type": "论文/文章",
+      "url": "https://sms.onlinelibrary.wiley.com/doi/abs/10.1002/%28SICI%291097-0266%28199708%2918%3A7%3C509%3A%3AAID-SMJ882%3E3.0.CO%3B2-Z"
+    },
+    {
+      "citation": "Jensen, M. C., & Meckling, W. H. (1976). Theory of the Firm: Managerial Behavior, Agency Costs and Ownership Structure. Journal of Financial Economics, 3(4), 305-360.",
+      "level": "公司金融/治理经典论文",
+      "standard": "",
+      "support": "支撑股权结构、实控人、受益所有人、董监高、关联交易和治理透明指标。",
+      "title": "Theory of the Firm: Managerial Behavior, Agency Costs and Ownership Structure",
+      "type": "论文/文章",
+      "url": "https://www.sciencedirect.com/science/article/pii/0304405X7690026X"
+    },
+    {
+      "citation": "Beaver, W. H. (1966). Financial Ratios as Predictors of Failure. Journal of Accounting Research, 4, 71-111.",
+      "level": "会计/财务困境经典论文",
+      "standard": "",
+      "support": "支撑用财务和偿债相关指标预测企业失败风险。",
+      "title": "Financial Ratios as Predictors of Failure",
+      "type": "论文/文章",
+      "url": "https://ideas.repec.org/a/bla/joares/v4y1966ip71-111.html"
+    },
+    {
+      "citation": "Altman, E. I. (1968). Financial Ratios, Discriminant Analysis and the Prediction of Corporate Bankruptcy. Journal of Finance, 23, 589-609.",
+      "level": "金融学经典论文",
+      "standard": "",
+      "support": "支撑资本结构、偿债能力、营运效率和违约风险指标。",
+      "title": "Financial Ratios, Discriminant Analysis and the Prediction of Corporate Bankruptcy",
+      "type": "论文/文章",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1111/j.1540-6261.1968.tb00843.x"
+    },
+    {
+      "citation": "Ohlson, J. A. (1980). Financial Ratios and the Probabilistic Prediction of Bankruptcy. Journal of Accounting Research, 18(1), 109-131.",
+      "level": "会计研究经典论文",
+      "standard": "",
+      "support": "支撑把企业风险预测从单一规则升级为概率化、多变量评价。",
+      "title": "Financial Ratios and the Probabilistic Prediction of Bankruptcy",
+      "type": "论文/文章",
+      "url": "https://ideas.repec.org/a/bla/joares/v18y1980i1p109-131.html"
+    },
+    {
+      "citation": "Dickson, G. W. (1966). An Analysis of Vendor Selection Systems and Decisions. Journal of Purchasing, 2(1), 5-17.",
+      "level": "供应商选择经典论文",
+      "standard": "",
+      "support": "支撑质量、交付、历史绩效、财务、管理能力等供应商多指标评价。",
+      "title": "An Analysis of Vendor Selection Systems and Decisions",
+      "type": "论文/文章",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1111/j.1745-493X.1966.tb00818.x"
+    },
+    {
+      "citation": "Ho, W., Xu, X., & Dey, P. K. (2010). Multi-criteria decision making approaches for supplier evaluation and selection: A literature review. European Journal of Operational Research, 202(1), 16-24.",
+      "level": "运筹/供应链高水平综述",
+      "standard": "",
+      "support": "支撑用多准则决策方法构建供应商评价指标体系和权重体系。",
+      "title": "Multi-criteria decision making approaches for supplier evaluation and selection: A literature review",
+      "type": "论文/文章",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0377221709003403"
+    },
+    {
+      "citation": "Kraljic, P. (1983). Purchasing Must Become Supply Management. Harvard Business Review, 61, 109-117.",
+      "level": "HBR供应管理经典论文",
+      "standard": "",
+      "support": "支撑把供应商风险、市场能力和战略重要性纳入采购画像。",
+      "title": "Purchasing Must Become Supply Management",
+      "type": "论文/文章",
+      "url": "https://hbr.org/1983/09/purchasing-must-become-supply-management"
+    },
+    {
+      "citation": "Freeman, R. E. (1984). Strategic Management: A Stakeholder Approach. Pitman.",
+      "level": "利益相关者理论经典著作",
+      "standard": "",
+      "support": "支撑把客户、供应商、员工、监管方、公众声誉和社会责任纳入企业画像。",
+      "title": "Strategic Management: A Stakeholder Approach",
+      "type": "经典著作",
+      "url": "https://www.cambridge.org/core/books/strategic-management/1D8E6762F42A7D4B7D9E5E7AA5805B2D"
+    },
+    {
+      "citation": "Carter, C. R., & Rogers, D. S. (2008). A framework of sustainable supply chain management: Moving toward new theory. International Journal of Physical Distribution & Logistics Management, 38(5), 360-387.",
+      "level": "可持续供应链论文",
+      "standard": "",
+      "support": "支撑环保、安全、社会责任、利益相关方反馈和可持续供应能力指标。",
+      "title": "A framework of sustainable supply chain management: Moving toward new theory",
+      "type": "论文/文章",
+      "url": "https://www.emerald.com/ijpdlm/article/38/5/360/161669/A-framework-of-sustainable-supply-chain-management"
+    },
+    {
+      "citation": "Saaty, R. W. (1987). The analytic hierarchy process—what it is and how it is used. Mathematical Modelling, 9(3-5), 161-176.",
+      "level": "多准则决策方法论文",
+      "standard": "",
+      "support": "支撑三层指标体系的层次化建模、专家权重校准和一致性检验。",
+      "title": "The analytic hierarchy process—what it is and how it is used",
+      "type": "论文/文章",
+      "url": "https://www.sciencedirect.com/science/article/pii/0270025587904738"
+    },
+    {
+      "citation": "ISO 31000:2018 Risk management — Guidelines.",
+      "level": "国际风险管理标准",
+      "standard": "ISO 31000:2018 Risk management — Guidelines",
+      "support": "支撑风险识别、分析、评价、处置、监测和沟通的闭环模型。",
+      "title": "",
+      "type": "国际标准",
+      "url": "https://www.iso.org/standard/65694.html"
+    },
+    {
+      "citation": "G20/OECD Principles of Corporate Governance 2023.",
+      "level": "国际公司治理原则",
+      "standard": "G20/OECD Principles of Corporate Governance 2023",
+      "support": "支撑治理透明、股东权利、披露、董事会责任、可持续与韧性治理指标。",
+      "title": "",
+      "type": "国际治理原则",
+      "url": "https://www.oecd.org/en/publications/2023/09/g20-oecd-principles-of-corporate-governance-2023_60836fcb.html"
+    }
+  ]
+}

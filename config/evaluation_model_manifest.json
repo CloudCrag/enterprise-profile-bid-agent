@@ -1,0 +1,41 @@
+{
+  "active_indicator_count": 44,
+  "compiler": "scripts/compile_enterprise_evaluation_model.py",
+  "core_indicator_count": 27,
+  "excluded_indicator_count": 16,
+  "indicator_count": 60,
+  "legacy_weight_total": 100.0,
+  "model_conflicts": [
+    "MODEL_STRUCTURE_NOTE_PENDING_CONFIRMATION",
+    "WEIGHT_POLICY_CONFLICT",
+    "MODEL_CONTENT_CONFLICT"
+  ],
+  "non_delete_legacy_weight_total": 77.0,
+  "official_total_score_available": false,
+  "primary_dimension_count": 3,
+  "publication_policy": "POLICY_NOT_CONFIRMED",
+  "retained_indicator_count": 17,
+  "schema_version": "enterprise-evaluation-model/1.0.0",
+  "secondary_dimension_count": 11,
+  "selection_counts": {
+    "CORE_RETAINED": 27,
+    "DELETE_CANDIDATE": 16,
+    "RETAINED": 17
+  },
+  "source_file": "企业画像评价度量模型(6).xlsx",
+  "source_sha256": "9ecc758e0de3668a0d1da27ca036044e3319106d7deed94ad7cdbcd92083a5fb",
+  "validations": {
+    "a1_5_conflict_detected": true,
+    "api_ids_normalized": true,
+    "indicator_count": true,
+    "legacy_weight_total": true,
+    "non_delete_legacy_weight_total": true,
+    "primary_dimension_count": true,
+    "rule_count_matches": true,
+    "secondary_dimension_count": true,
+    "selection_counts": true,
+    "structure_note_preserved": true,
+    "unique_indicator_codes": true,
+    "weight_conflict_detected": true
+  }
+}

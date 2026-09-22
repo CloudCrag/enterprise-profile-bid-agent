@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "enterprise-source-trust-decision/1.0.0",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "provider_id",
+    "api_id",
+    "policy"
+  ],
+  "properties": {
+    "provider_id": {
+      "type": "string"
+    },
+    "api_id": {
+      "type": "string"
+    },
+    "policy": {
+      "enum": [
+        "REVIEW_REQUIRED",
+        "AUTO_VERIFIED",
+        "SAMPLE_REVIEW",
+        "REJECTED_SOURCE"
+      ]
+    },
+    "source_authority": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "schema_validation": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "response_signature_status": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "confidence": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "conflict_status": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}

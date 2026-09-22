@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "enterprise-decision-context-reconfirmation-request/1.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "run_id",
+    "strategy",
+    "requested_by",
+    "requested_at_utc",
+    "field_codes"
+  ],
+  "properties": {
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "strategy": {
+      "enum": [
+        "STRICT_BLOCK",
+        "PAUSE_DECISION_LAYER"
+      ]
+    },
+    "requested_by": {
+      "$ref": "enterprise_fact_candidate_submission.schema.json#/$defs/actor"
+    },
+    "requested_at_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "field_codes": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "budget_preference",
+          "consortium_acceptance",
+          "current_business_goals",
+          "explicit_exclusions",
+          "key_buyers",
+          "max_concurrent_projects",
+          "personnel_resource_constraints",
+          "procurement_method_preferences",
+          "risk_preference",
+          "strategic_industries",
+          "strategic_regions"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "enterprise-capability-semantic-prompt/1.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "prompt_schema_version",
+    "prompt_content_hash",
+    "request_content_hash",
+    "evidence_policy_version",
+    "system_instruction",
+    "task_instruction",
+    "response_contract",
+    "safety_constraints",
+    "analysis_input"
+  ],
+  "properties": {
+    "prompt_schema_version": {"const": "enterprise-capability-semantic-prompt/1.0.0"},
+    "prompt_content_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "request_content_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "evidence_policy_version": {"const": "enterprise-capability-evidence-policy/1.0.0"},
+    "system_instruction": {"type": "string", "minLength": 1},
+    "task_instruction": {"type": "string", "minLength": 1},
+    "response_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "response_schema_version",
+        "candidate_review_status",
+        "allowed_candidate_support_statuses",
+        "must_return_single_json_object",
+        "markdown_not_allowed",
+        "extra_text_not_allowed"
+      ],
+      "properties": {
+        "response_schema_version": {"const": "enterprise-capability-analysis-response/1.1.0"},
+        "candidate_review_status": {"const": "pending_review"},
+        "allowed_candidate_support_statuses": {
+          "type": "array",
+          "const": ["partially_supported", "ambiguous"]
+        },
+        "must_return_single_json_object": {"const": true},
+        "markdown_not_allowed": {"const": true},
+        "extra_text_not_allowed": {"const": true}
+      }
+    },
+    "safety_constraints": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "allowed_capability_types_only",
+        "may_create_enterprise_facts",
+        "may_modify_enterprise_facts",
+        "may_infer_user_preferences",
+        "may_score_enterprise",
+        "may_rank_enterprise",
+        "may_recommend_projects",
+        "may_decide_eligibility",
+        "may_predict_winning_probability",
+        "may_analyze_competition",
+        "may_treat_bid_participation_as_fulfillment",
+        "may_treat_registered_industry_as_delivered_industry",
+        "may_treat_branch_region_as_delivery_region",
+        "may_guess_amount_unit",
+        "may_guess_currency",
+        "must_reference_allowed_fact_ids",
+        "must_reference_allowed_evidence_ids",
+        "must_follow_evidence_policy"
+      ],
+      "properties": {
+        "allowed_capability_types_only": {"const": true},
+        "may_create_enterprise_facts": {"const": false},
+        "may_modify_enterprise_facts": {"const": false},
+        "may_infer_user_preferences": {"const": false},
+        "may_score_enterprise": {"const": false},
+        "may_rank_enterprise": {"const": false},
+        "may_recommend_projects": {"const": false},
+        "may_decide_eligibility": {"const": false},
+        "may_predict_winning_probability": {"const": false},
+        "may_analyze_competition": {"const": false},
+        "may_treat_bid_participation_as_fulfillment": {"const": false},
+        "may_treat_registered_industry_as_delivered_industry": {"const": false},
+        "may_treat_branch_region_as_delivery_region": {"const": false},
+        "may_guess_amount_unit": {"const": false},
+        "may_guess_currency": {"const": false},
+        "must_reference_allowed_fact_ids": {"const": true},
+        "must_reference_allowed_evidence_ids": {"const": true},
+        "must_follow_evidence_policy": {"const": true}
+      }
+    },
+    "analysis_input": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "enterprise",
+        "as_of_date",
+        "requested_capability_types",
+        "allowed_facts",
+        "allowed_tags",
+        "evidence_index",
+        "deterministic_baseline"
+      ],
+      "properties": {
+        "enterprise": {"type": "object"},
+        "as_of_date": {"type": ["string", "null"], "format": "date"},
+        "requested_capability_types": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}},
+        "allowed_facts": {"type": "array", "items": {"type": "object"}},
+        "allowed_tags": {"type": "array", "items": {"type": "object"}},
+        "evidence_index": {"type": "object"},
+        "deterministic_baseline": {"type": "object"}
+      }
+    }
+  }
+}

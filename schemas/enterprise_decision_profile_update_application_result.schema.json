@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "enterprise-decision-profile-update-application-result/1.0.0",
+  "title": "Enterprise Decision Profile Update Application Result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "application_result_schema_version",
+    "application_result_id",
+    "application_result_content_hash",
+    "enterprise",
+    "source_dependencies",
+    "selected_candidate_ids",
+    "aggregate_confirmation_input",
+    "result_decision_profile",
+    "application_summary",
+    "application_status",
+    "warnings",
+    "generated_at_utc"
+  ],
+  "properties": {
+    "application_result_schema_version": {"const": "enterprise-decision-profile-update-application-result/1.0.0"},
+    "application_result_id": {"type": "string", "pattern": "^enterprise-decision-profile-update-application-result:.+:[0-9a-f]{16}$"},
+    "application_result_content_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "enterprise": {"type": "object", "minProperties": 1},
+    "source_dependencies": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "application_request_schema_version", "application_request_id", "application_request_content_hash",
+        "response_processing_worklist_schema_version", "response_processing_worklist_id", "response_processing_worklist_content_hash",
+        "base_decision_profile_schema_version", "base_decision_profile_id", "base_decision_profile_content_hash"
+      ],
+      "properties": {
+        "application_request_schema_version": {"const": "enterprise-decision-profile-update-application-request/1.0.0"},
+        "application_request_id": {"type": "string", "minLength": 1},
+        "application_request_content_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "response_processing_worklist_schema_version": {"const": "enterprise-profile-response-processing-worklist/1.0.0"},
+        "response_processing_worklist_id": {"type": "string", "minLength": 1},
+        "response_processing_worklist_content_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "base_decision_profile_schema_version": {"type": ["string", "null"]},
+        "base_decision_profile_id": {"type": ["string", "null"]},
+        "base_decision_profile_content_hash": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "selected_candidate_ids": {
+      "type": "array", "minItems": 1, "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "aggregate_confirmation_input": {"type": "object"},
+    "result_decision_profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["decision_profile_schema_version", "decision_profile_id", "decision_profile_content_hash", "profile_version"],
+      "properties": {
+        "decision_profile_schema_version": {"const": "enterprise-decision-profile/1.0.0"},
+        "decision_profile_id": {"type": "string", "minLength": 1},
+        "decision_profile_content_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "profile_version": {"type": "integer", "minimum": 1}
+      }
+    },
+    "application_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["selected_candidate_count", "updated_field_count", "updated_field_codes"],
+      "properties": {
+        "selected_candidate_count": {"type": "integer", "minimum": 1},
+        "updated_field_count": {"type": "integer", "minimum": 1},
+        "updated_field_codes": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}}
+      }
+    },
+    "application_status": {"const": "decision_profile_updated"},
+    "warnings": {"type": "array", "items": {"type": "string"}},
+    "generated_at_utc": {"type": "string", "format": "date-time"}
+  }
+}

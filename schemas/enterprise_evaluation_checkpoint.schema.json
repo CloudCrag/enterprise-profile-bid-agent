@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "enterprise-evaluation-checkpoint/1.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "run_id",
+    "checkpoint_version",
+    "saved_at_utc",
+    "state"
+  ],
+  "properties": {
+    "run_id": {
+      "type": "string"
+    },
+    "checkpoint_version": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "saved_at_utc": {
+      "type": "string"
+    },
+    "state": {
+      "type": "object"
+    }
+  }
+}

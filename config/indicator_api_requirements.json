@@ -1,0 +1,1391 @@
+{
+  "requirements": {
+    "A1.1": [
+      {
+        "api_id": "1040",
+        "api_name": "企业三要素验证",
+        "catalog_found": true,
+        "required_output_fields": "统一信用代码是否一致、公司名称是否一致、法人名称是否一致、核验结果、企业状态"
+      },
+      {
+        "api_id": "1041",
+        "api_name": "企业二要素验证",
+        "catalog_found": true,
+        "required_output_fields": "统一信用代码是否一致、公司名称是否一致、法人名称是否一致、核验结果、企业状态"
+      },
+      {
+        "api_id": "1230",
+        "api_name": "企业存在核验",
+        "catalog_found": true,
+        "required_output_fields": "统一信用代码是否一致、公司名称是否一致、法人名称是否一致、核验结果、企业状态"
+      },
+      {
+        "api_id": "1270",
+        "api_name": "企业名称税号核验",
+        "catalog_found": true,
+        "required_output_fields": "统一信用代码是否一致、公司名称是否一致、法人名称是否一致、核验结果、企业状态"
+      },
+      {
+        "api_id": "1360",
+        "api_name": "工商信息核验",
+        "catalog_found": true,
+        "required_output_fields": "统一信用代码是否一致、公司名称是否一致、法人名称是否一致、核验结果、企业状态"
+      }
+    ],
+    "A1.2": [
+      {
+        "api_id": "1122",
+        "api_name": "企业基本信息查询",
+        "catalog_found": true,
+        "required_output_fields": "公司状态、企业状态、成立时间、经营开始时间、营业期限、吊销/注销日期"
+      },
+      {
+        "api_id": "1020",
+        "api_name": "企业基本信息(含联系方式)",
+        "catalog_found": true,
+        "required_output_fields": "公司状态、企业状态、成立时间、经营开始时间、营业期限、吊销/注销日期"
+      },
+      {
+        "api_id": "1019",
+        "api_name": "企业基本信息(含企业档案地址)",
+        "catalog_found": true,
+        "required_output_fields": "公司状态、企业状态、成立时间、经营开始时间、营业期限、吊销/注销日期"
+      },
+      {
+        "api_id": "1366",
+        "api_name": "企业全维度信息",
+        "catalog_found": true,
+        "required_output_fields": "公司状态、企业状态、成立时间、经营开始时间、营业期限、吊销/注销日期"
+      }
+    ],
+    "A1.3": [
+      {
+        "api_id": "1122",
+        "api_name": "企业基本信息查询",
+        "catalog_found": true,
+        "required_output_fields": "注册资金、实缴金额、认缴出资额、实缴出资额、出资时间、出资比例"
+      },
+      {
+        "api_id": "1020",
+        "api_name": "企业基本信息(含联系方式)",
+        "catalog_found": true,
+        "required_output_fields": "注册资金、实缴金额、认缴出资额、实缴出资额、出资时间、出资比例"
+      },
+      {
+        "api_id": "1256",
+        "api_name": "公司公示-股东出资",
+        "catalog_found": true,
+        "required_output_fields": "注册资金、实缴金额、认缴出资额、实缴出资额、出资时间、出资比例"
+      },
+      {
+        "api_id": "1228",
+        "api_name": "企业股东信息",
+        "catalog_found": true,
+        "required_output_fields": "注册资金、实缴金额、认缴出资额、实缴出资额、出资时间、出资比例"
+      }
+    ],
+    "A1.4": [
+      {
+        "api_id": "1122",
+        "api_name": "企业基本信息查询",
+        "catalog_found": true,
+        "required_output_fields": "经营范围、所属行业、行业门类/大类/中类/小类、企业业务、产品名、产品分类"
+      },
+      {
+        "api_id": "1237",
+        "api_name": "企业所属行业",
+        "catalog_found": true,
+        "required_output_fields": "经营范围、所属行业、行业门类/大类/中类/小类、企业业务、产品名、产品分类"
+      },
+      {
+        "api_id": "11024",
+        "api_name": "企业业务",
+        "catalog_found": true,
+        "required_output_fields": "经营范围、所属行业、行业门类/大类/中类/小类、企业业务、产品名、产品分类"
+      },
+      {
+        "api_id": "4094",
+        "api_name": "产品信息",
+        "catalog_found": false,
+        "required_output_fields": "经营范围、所属行业、行业门类/大类/中类/小类、企业业务、产品名、产品分类"
+      }
+    ],
+    "A1.5": [
+      {
+        "api_id": "1020",
+        "api_name": "企业基本信息(含联系方式)",
+        "catalog_found": true,
+        "required_output_fields": "电话、邮箱、网址、注册地址、经纬度、电话数据来源、同电话企业"
+      },
+      {
+        "api_id": "4140",
+        "api_name": "企业联系方式",
+        "catalog_found": false,
+        "required_output_fields": "电话、邮箱、网址、注册地址、经纬度、电话数据来源、同电话企业"
+      },
+      {
+        "api_id": "1240",
+        "api_name": "企业电话匹配",
+        "catalog_found": true,
+        "required_output_fields": "电话、邮箱、网址、注册地址、经纬度、电话数据来源、同电话企业"
+      },
+      {
+        "api_id": "1245",
+        "api_name": "企业经纬度信息",
+        "catalog_found": true,
+        "required_output_fields": "电话、邮箱、网址、注册地址、经纬度、电话数据来源、同电话企业"
+      },
+      {
+        "api_id": "8043",
+        "api_name": "同电话企业",
+        "catalog_found": false,
+        "required_output_fields": "电话、邮箱、网址、注册地址、经纬度、电话数据来源、同电话企业"
+      }
+    ],
+    "A1.6": [
+      {
+        "api_id": "1059",
+        "api_name": "查询年报概况",
+        "catalog_found": true,
+        "required_output_fields": "年报年份、发布时间、企业资产状况、社保信息、股东出资、网站网店、对外担保"
+      },
+      {
+        "api_id": "1156",
+        "api_name": "查询年报详情",
+        "catalog_found": true,
+        "required_output_fields": "年报年份、发布时间、企业资产状况、社保信息、股东出资、网站网店、对外担保"
+      }
+    ],
+    "A2.1": [
+      {
+        "api_id": "1228",
+        "api_name": "企业股东信息",
+        "catalog_found": true,
+        "required_output_fields": "股东名、出资比例、认缴明细、实缴明细、出资时间、股东类型、历史股东"
+      },
+      {
+        "api_id": "1243",
+        "api_name": "工商公示股东",
+        "catalog_found": true,
+        "required_output_fields": "股东名、出资比例、认缴明细、实缴明细、出资时间、股东类型、历史股东"
+      },
+      {
+        "api_id": "1256",
+        "api_name": "公司公示-股东出资",
+        "catalog_found": true,
+        "required_output_fields": "股东名、出资比例、认缴明细、实缴明细、出资时间、股东类型、历史股东"
+      },
+      {
+        "api_id": "12018",
+        "api_name": "历史股东信息",
+        "catalog_found": true,
+        "required_output_fields": "股东名、出资比例、认缴明细、实缴明细、出资时间、股东类型、历史股东"
+      }
+    ],
+    "A2.2": [
+      {
+        "api_id": "8051",
+        "api_name": "实际控制人",
+        "catalog_found": true,
+        "required_output_fields": "实际控制人、受益所有人、受益股东、控制路径、控制比例、人员控制企业"
+      },
+      {
+        "api_id": "8052",
+        "api_name": "受益所有人",
+        "catalog_found": true,
+        "required_output_fields": "实际控制人、受益所有人、受益股东、控制路径、控制比例、人员控制企业"
+      },
+      {
+        "api_id": "8048",
+        "api_name": "企业受益股东",
+        "catalog_found": true,
+        "required_output_fields": "实际控制人、受益所有人、受益股东、控制路径、控制比例、人员控制企业"
+      },
+      {
+        "api_id": "8055",
+        "api_name": "人员控制企业",
+        "catalog_found": true,
+        "required_output_fields": "实际控制人、受益所有人、受益股东、控制路径、控制比例、人员控制企业"
+      }
+    ],
+    "A2.3": [
+      {
+        "api_id": "1222",
+        "api_name": "企业主要人员",
+        "catalog_found": true,
+        "required_output_fields": "姓名、职务、主要人员分类、历史法定代表人、历史董监高、卸任时间"
+      },
+      {
+        "api_id": "12221",
+        "api_name": "历史主要人员",
+        "catalog_found": true,
+        "required_output_fields": "姓名、职务、主要人员分类、历史法定代表人、历史董监高、卸任时间"
+      },
+      {
+        "api_id": "1120",
+        "api_name": "企业基本信息(含主要人员)",
+        "catalog_found": true,
+        "required_output_fields": "姓名、职务、主要人员分类、历史法定代表人、历史董监高、卸任时间"
+      }
+    ],
+    "A2.4": [
+      {
+        "api_id": "1221",
+        "api_name": "变更记录",
+        "catalog_found": true,
+        "required_output_fields": "变更日期、变更事项、变更前后内容、历史人员、股权变更、曾用名"
+      },
+      {
+        "api_id": "12221",
+        "api_name": "历史主要人员",
+        "catalog_found": true,
+        "required_output_fields": "变更日期、变更事项、变更前后内容、历史人员、股权变更、曾用名"
+      },
+      {
+        "api_id": "1255",
+        "api_name": "公司公示-股权变更",
+        "catalog_found": true,
+        "required_output_fields": "变更日期、变更事项、变更前后内容、历史人员、股权变更、曾用名"
+      },
+      {
+        "api_id": "1244",
+        "api_name": "曾用名",
+        "catalog_found": true,
+        "required_output_fields": "变更日期、变更事项、变更前后内容、历史人员、股权变更、曾用名"
+      }
+    ],
+    "A2.5": [
+      {
+        "api_id": "1229",
+        "api_name": "企业对外投资信息",
+        "catalog_found": true,
+        "required_output_fields": "投资企业、出资比例、投资状态、总公司、分支机构、分支状态"
+      },
+      {
+        "api_id": "12125",
+        "api_name": "历史对外投资信息",
+        "catalog_found": true,
+        "required_output_fields": "投资企业、出资比例、投资状态、总公司、分支机构、分支状态"
+      },
+      {
+        "api_id": "1238",
+        "api_name": "总公司信息",
+        "catalog_found": true,
+        "required_output_fields": "投资企业、出资比例、投资状态、总公司、分支机构、分支状态"
+      },
+      {
+        "api_id": "1224",
+        "api_name": "分支机构信息",
+        "catalog_found": true,
+        "required_output_fields": "投资企业、出资比例、投资状态、总公司、分支机构、分支状态"
+      }
+    ],
+    "A2.6": [
+      {
+        "api_id": "7110",
+        "api_name": "董监高在外投资任职",
+        "catalog_found": true,
+        "required_output_fields": "关联公司、任职投资、历史角色、企业图谱、关联数量"
+      },
+      {
+        "api_id": "7111",
+        "api_name": "人所有角色",
+        "catalog_found": true,
+        "required_output_fields": "关联公司、任职投资、历史角色、企业图谱、关联数量"
+      },
+      {
+        "api_id": "7112",
+        "api_name": "人所有历史角色",
+        "catalog_found": true,
+        "required_output_fields": "关联公司、任职投资、历史角色、企业图谱、关联数量"
+      },
+      {
+        "api_id": "7113",
+        "api_name": "人所有公司",
+        "catalog_found": true,
+        "required_output_fields": "关联公司、任职投资、历史角色、企业图谱、关联数量"
+      },
+      {
+        "api_id": "7211",
+        "api_name": "个人企业图谱简版",
+        "catalog_found": true,
+        "required_output_fields": "关联公司、任职投资、历史角色、企业图谱、关联数量"
+      }
+    ],
+    "A2.7": [
+      {
+        "api_id": "1244",
+        "api_name": "曾用名",
+        "catalog_found": true,
+        "required_output_fields": "曾用名、当前名、历史名、匹配原因、企业档案地址、Logo地址"
+      },
+      {
+        "api_id": "1001",
+        "api_name": "企业名模糊搜索",
+        "catalog_found": false,
+        "required_output_fields": "曾用名、当前名、历史名、匹配原因、企业档案地址、Logo地址"
+      },
+      {
+        "api_id": "1009",
+        "api_name": "企业模糊搜索",
+        "catalog_found": true,
+        "required_output_fields": "曾用名、当前名、历史名、匹配原因、企业档案地址、Logo地址"
+      },
+      {
+        "api_id": "1019",
+        "api_name": "企业基本信息(含企业档案地址)",
+        "catalog_found": true,
+        "required_output_fields": "曾用名、当前名、历史名、匹配原因、企业档案地址、Logo地址"
+      },
+      {
+        "api_id": "1239",
+        "api_name": "企业logo",
+        "catalog_found": true,
+        "required_output_fields": "曾用名、当前名、历史名、匹配原因、企业档案地址、Logo地址"
+      }
+    ],
+    "A3.1": [
+      {
+        "api_id": "4102",
+        "api_name": "企业信用评级",
+        "catalog_found": true,
+        "required_output_fields": "主体等级、债券信用等级、评级公司、评级时间、评级展望、债项评级"
+      },
+      {
+        "api_id": "4119",
+        "api_name": "债券信息",
+        "catalog_found": true,
+        "required_output_fields": "主体等级、债券信用等级、评级公司、评级时间、评级展望、债项评级"
+      }
+    ],
+    "A3.2": [
+      {
+        "api_id": "4019",
+        "api_name": "税务评级",
+        "catalog_found": true,
+        "required_output_fields": "纳税人识别号、纳税人名称、评价年度、信用等级、评价单位、类型"
+      }
+    ],
+    "A3.3": [
+      {
+        "api_id": "5019",
+        "api_name": "资质证书",
+        "catalog_found": true,
+        "required_output_fields": "证书类型、证书编号、证书状态、发证日期、有效起始日期、有效截止日期"
+      },
+      {
+        "api_id": "5015",
+        "api_name": "企业证书详情查询",
+        "catalog_found": true,
+        "required_output_fields": "证书类型、证书编号、证书状态、发证日期、有效起始日期、有效截止日期"
+      }
+    ],
+    "A3.4": [
+      {
+        "api_id": "4069",
+        "api_name": "行政许可-工商",
+        "catalog_found": true,
+        "required_output_fields": "许可书文编号、许可文件名称、许可范围、有效期自/至、许可机关、数据更新时间"
+      },
+      {
+        "api_id": "4084",
+        "api_name": "行政许可-信用中国",
+        "catalog_found": false,
+        "required_output_fields": "许可书文编号、许可文件名称、许可范围、有效期自/至、许可机关、数据更新时间"
+      },
+      {
+        "api_id": "12453",
+        "api_name": "历史行政许可-工商",
+        "catalog_found": true,
+        "required_output_fields": "许可书文编号、许可文件名称、许可范围、有效期自/至、许可机关、数据更新时间"
+      },
+      {
+        "api_id": "12454",
+        "api_name": "历史行政许可-信用中国",
+        "catalog_found": false,
+        "required_output_fields": "许可书文编号、许可文件名称、许可范围、有效期自/至、许可机关、数据更新时间"
+      }
+    ],
+    "A3.5": [
+      {
+        "api_id": "4078",
+        "api_name": "科技型企业标签",
+        "catalog_found": true,
+        "required_output_fields": "标签名称、登记状态、企业类型、规模以上企业、园区等级、园区注册企业数"
+      },
+      {
+        "api_id": "4082",
+        "api_name": "企业经济成分标签",
+        "catalog_found": false,
+        "required_output_fields": "标签名称、登记状态、企业类型、规模以上企业、园区等级、园区注册企业数"
+      },
+      {
+        "api_id": "4079",
+        "api_name": "规模以上企业",
+        "catalog_found": true,
+        "required_output_fields": "标签名称、登记状态、企业类型、规模以上企业、园区等级、园区注册企业数"
+      },
+      {
+        "api_id": "4088",
+        "api_name": "园区信息",
+        "catalog_found": false,
+        "required_output_fields": "标签名称、登记状态、企业类型、规模以上企业、园区等级、园区注册企业数"
+      }
+    ],
+    "A3.6": [
+      {
+        "api_id": "4043",
+        "api_name": "新闻舆情列表",
+        "catalog_found": true,
+        "required_output_fields": "新闻标题、来源、发布时间、正文、企业关联、舆情情感/类型"
+      },
+      {
+        "api_id": "4044",
+        "api_name": "新闻舆情详情",
+        "catalog_found": true,
+        "required_output_fields": "新闻标题、来源、发布时间、正文、企业关联、舆情情感/类型"
+      }
+    ],
+    "A3.7": [
+      {
+        "api_id": "1366",
+        "api_name": "企业全维度信息",
+        "catalog_found": true,
+        "required_output_fields": "工商基本信息、统一社会信用代码、注册资本、状态、地址、经营范围、匹配原因"
+      },
+      {
+        "api_id": "1122",
+        "api_name": "企业基本信息查询",
+        "catalog_found": true,
+        "required_output_fields": "工商基本信息、统一社会信用代码、注册资本、状态、地址、经营范围、匹配原因"
+      },
+      {
+        "api_id": "1020",
+        "api_name": "企业基本信息(含联系方式)",
+        "catalog_found": true,
+        "required_output_fields": "工商基本信息、统一社会信用代码、注册资本、状态、地址、经营范围、匹配原因"
+      },
+      {
+        "api_id": "1009",
+        "api_name": "企业模糊搜索",
+        "catalog_found": true,
+        "required_output_fields": "工商基本信息、统一社会信用代码、注册资本、状态、地址、经营范围、匹配原因"
+      }
+    ],
+    "B1.1": [
+      {
+        "api_id": "4135",
+        "api_name": "招投标列表",
+        "catalog_found": true,
+        "required_output_fields": "发布时间、标题、公告类型、项目区域、预算金额、正文信息、项目详情"
+      },
+      {
+        "api_id": "4017",
+        "api_name": "企业招投标信息增值版",
+        "catalog_found": true,
+        "required_output_fields": "发布时间、标题、公告类型、项目区域、预算金额、正文信息、项目详情"
+      },
+      {
+        "api_id": "4132",
+        "api_name": "招投标信息垂搜增值版",
+        "catalog_found": true,
+        "required_output_fields": "发布时间、标题、公告类型、项目区域、预算金额、正文信息、项目详情"
+      }
+    ],
+    "B1.2": [
+      {
+        "api_id": "4135",
+        "api_name": "招投标列表",
+        "catalog_found": true,
+        "required_output_fields": "中标状态、项目金额、采购人、代理机构、公告类型、正文链接"
+      },
+      {
+        "api_id": "4011",
+        "api_name": "招投标详情",
+        "catalog_found": true,
+        "required_output_fields": "中标状态、项目金额、采购人、代理机构、公告类型、正文链接"
+      },
+      {
+        "api_id": "4017",
+        "api_name": "企业招投标信息增值版",
+        "catalog_found": true,
+        "required_output_fields": "中标状态、项目金额、采购人、代理机构、公告类型、正文链接"
+      },
+      {
+        "api_id": "4134",
+        "api_name": "招投标正文链接",
+        "catalog_found": true,
+        "required_output_fields": "中标状态、项目金额、采购人、代理机构、公告类型、正文链接"
+      }
+    ],
+    "B1.3": [
+      {
+        "api_id": "11023",
+        "api_name": "客户",
+        "catalog_found": true,
+        "required_output_fields": "客户ID、客户名、销售金额、销售占比、报告期、来源"
+      }
+    ],
+    "B1.4": [
+      {
+        "api_id": "11022",
+        "api_name": "供应商",
+        "catalog_found": true,
+        "required_output_fields": "供应商名称、采购金额、采购占比、报告期、来源、年份、数量"
+      }
+    ],
+    "B1.5": [
+      {
+        "api_id": "4099",
+        "api_name": "进出口信用记录",
+        "catalog_found": true,
+        "required_output_fields": "进出口信用等级、处罚信息、认证时间、报关有效期、省市区、分支机构、园区等级"
+      },
+      {
+        "api_id": "1245",
+        "api_name": "企业经纬度信息",
+        "catalog_found": true,
+        "required_output_fields": "进出口信用等级、处罚信息、认证时间、报关有效期、省市区、分支机构、园区等级"
+      },
+      {
+        "api_id": "1224",
+        "api_name": "分支机构信息",
+        "catalog_found": true,
+        "required_output_fields": "进出口信用等级、处罚信息、认证时间、报关有效期、省市区、分支机构、园区等级"
+      },
+      {
+        "api_id": "4088",
+        "api_name": "园区信息",
+        "catalog_found": false,
+        "required_output_fields": "进出口信用等级、处罚信息、认证时间、报关有效期、省市区、分支机构、园区等级"
+      }
+    ],
+    "B2.1": [
+      {
+        "api_id": "5019",
+        "api_name": "资质证书",
+        "catalog_found": true,
+        "required_output_fields": "证书类型、证书状态、有效截止日期、许可范围、行业资质等级"
+      },
+      {
+        "api_id": "5015",
+        "api_name": "企业证书详情查询",
+        "catalog_found": true,
+        "required_output_fields": "证书类型、证书状态、有效截止日期、许可范围、行业资质等级"
+      },
+      {
+        "api_id": "4069",
+        "api_name": "行政许可-工商",
+        "catalog_found": true,
+        "required_output_fields": "证书类型、证书状态、有效截止日期、许可范围、行业资质等级"
+      },
+      {
+        "api_id": "4415",
+        "api_name": "建筑资质-资质资格",
+        "catalog_found": true,
+        "required_output_fields": "证书类型、证书状态、有效截止日期、许可范围、行业资质等级"
+      }
+    ],
+    "B2.2": [
+      {
+        "api_id": "5019",
+        "api_name": "资质证书",
+        "catalog_found": true,
+        "required_output_fields": "认证项目、证书状态、有效起始日期、有效截止日期、发证日期"
+      },
+      {
+        "api_id": "5015",
+        "api_name": "企业证书详情查询",
+        "catalog_found": true,
+        "required_output_fields": "认证项目、证书状态、有效起始日期、有效截止日期、发证日期"
+      }
+    ],
+    "B2.3": [
+      {
+        "api_id": "5018",
+        "api_name": "电信许可",
+        "catalog_found": true,
+        "required_output_fields": "是否有效、业务覆盖范围、医疗器械备案、APP备案、网站备案状态"
+      },
+      {
+        "api_id": "5016",
+        "api_name": "医疗器械备案与许可查询",
+        "catalog_found": true,
+        "required_output_fields": "是否有效、业务覆盖范围、医疗器械备案、APP备案、网站备案状态"
+      },
+      {
+        "api_id": "5064",
+        "api_name": "APP/小程序/快应用备案查询",
+        "catalog_found": false,
+        "required_output_fields": "是否有效、业务覆盖范围、医疗器械备案、APP备案、网站备案状态"
+      },
+      {
+        "api_id": "15064",
+        "api_name": "网站备案域名查询(按企业要素)",
+        "catalog_found": false,
+        "required_output_fields": "是否有效、业务覆盖范围、医疗器械备案、APP备案、网站备案状态"
+      }
+    ],
+    "B2.4": [
+      {
+        "api_id": "5019",
+        "api_name": "资质证书",
+        "catalog_found": true,
+        "required_output_fields": "环境管理认证、环保处罚记录、处罚内容、检查结果、抽查机关"
+      },
+      {
+        "api_id": "2159",
+        "api_name": "环保处罚核查",
+        "catalog_found": true,
+        "required_output_fields": "环境管理认证、环保处罚记录、处罚内容、检查结果、抽查机关"
+      },
+      {
+        "api_id": "2151",
+        "api_name": "环保处罚详情",
+        "catalog_found": true,
+        "required_output_fields": "环境管理认证、环保处罚记录、处罚内容、检查结果、抽查机关"
+      },
+      {
+        "api_id": "4085",
+        "api_name": "双随机抽查",
+        "catalog_found": true,
+        "required_output_fields": "环境管理认证、环保处罚记录、处罚内容、检查结果、抽查机关"
+      }
+    ],
+    "B2.5": [
+      {
+        "api_id": "4085",
+        "api_name": "双随机抽查",
+        "catalog_found": true,
+        "required_output_fields": "抽查计划、抽查机关、检查事项、检查结果、日期、检查实施机关"
+      },
+      {
+        "api_id": "4054",
+        "api_name": "双随机抽查详情",
+        "catalog_found": true,
+        "required_output_fields": "抽查计划、抽查机关、检查事项、检查结果、日期、检查实施机关"
+      },
+      {
+        "api_id": "4068",
+        "api_name": "抽查检查核查",
+        "catalog_found": true,
+        "required_output_fields": "抽查计划、抽查机关、检查事项、检查结果、日期、检查实施机关"
+      }
+    ],
+    "B3.1": [
+      {
+        "api_id": "5036",
+        "api_name": "专利信息列表",
+        "catalog_found": true,
+        "required_output_fields": "专利号、专利名称、专利类型、申请日、专利状态、法律状态"
+      },
+      {
+        "api_id": "5037",
+        "api_name": "专利多重查询",
+        "catalog_found": true,
+        "required_output_fields": "专利号、专利名称、专利类型、申请日、专利状态、法律状态"
+      },
+      {
+        "api_id": "5038",
+        "api_name": "专利详情查询",
+        "catalog_found": true,
+        "required_output_fields": "专利号、专利名称、专利类型、申请日、专利状态、法律状态"
+      },
+      {
+        "api_id": "5039",
+        "api_name": "专利公告全文",
+        "catalog_found": true,
+        "required_output_fields": "专利号、专利名称、专利类型、申请日、专利状态、法律状态"
+      }
+    ],
+    "B3.2": [
+      {
+        "api_id": "5026",
+        "api_name": "商标信息列表",
+        "catalog_found": true,
+        "required_output_fields": "商标名、注册号、国际分类、商标状态、申请日期、历史商标"
+      },
+      {
+        "api_id": "5025",
+        "api_name": "商标信息详情",
+        "catalog_found": true,
+        "required_output_fields": "商标名、注册号、国际分类、商标状态、申请日期、历史商标"
+      },
+      {
+        "api_id": "5024",
+        "api_name": "商标信息查询",
+        "catalog_found": true,
+        "required_output_fields": "商标名、注册号、国际分类、商标状态、申请日期、历史商标"
+      },
+      {
+        "api_id": "12401",
+        "api_name": "历史商标信息",
+        "catalog_found": true,
+        "required_output_fields": "商标名、注册号、国际分类、商标状态、申请日期、历史商标"
+      }
+    ],
+    "B3.3": [
+      {
+        "api_id": "5053",
+        "api_name": "软件著作权",
+        "catalog_found": true,
+        "required_output_fields": "登记批准日期、软件全称、版本号、登记号、作品名称、类别"
+      },
+      {
+        "api_id": "5043",
+        "api_name": "作品著作权",
+        "catalog_found": true,
+        "required_output_fields": "登记批准日期、软件全称、版本号、登记号、作品名称、类别"
+      }
+    ],
+    "B3.4": [
+      {
+        "api_id": "5073",
+        "api_name": "标准信息",
+        "catalog_found": true,
+        "required_output_fields": "标准类型、标准名称、标准号、发布日期、实施日期"
+      },
+      {
+        "api_id": "5075",
+        "api_name": "国家标准信息",
+        "catalog_found": true,
+        "required_output_fields": "标准类型、标准名称、标准号、发布日期、实施日期"
+      },
+      {
+        "api_id": "5074",
+        "api_name": "行业标准信息",
+        "catalog_found": true,
+        "required_output_fields": "标准类型、标准名称、标准号、发布日期、实施日期"
+      }
+    ],
+    "B3.5": [
+      {
+        "api_id": "4078",
+        "api_name": "科技型企业标签",
+        "catalog_found": true,
+        "required_output_fields": "标签名称、认定年度、证书状态、有效期、企业基本信息"
+      },
+      {
+        "api_id": "5019",
+        "api_name": "资质证书",
+        "catalog_found": true,
+        "required_output_fields": "标签名称、认定年度、证书状态、有效期、企业基本信息"
+      }
+    ],
+    "B4.1": [
+      {
+        "api_id": "1120",
+        "api_name": "企业基本信息(含主要人员)",
+        "catalog_found": true,
+        "required_output_fields": "人员规模、参保人数、企业人数、社保信息、职工人数"
+      },
+      {
+        "api_id": "1020",
+        "api_name": "企业基本信息(含联系方式)",
+        "catalog_found": true,
+        "required_output_fields": "人员规模、参保人数、企业人数、社保信息、职工人数"
+      },
+      {
+        "api_id": "1156",
+        "api_name": "查询年报详情",
+        "catalog_found": true,
+        "required_output_fields": "人员规模、参保人数、企业人数、社保信息、职工人数"
+      }
+    ],
+    "B4.2": [
+      {
+        "api_id": "4025",
+        "api_name": "招聘列表",
+        "catalog_found": true,
+        "required_output_fields": "招聘岗位、招聘人数、发布时间、岗位描述、薪资、工作地点"
+      },
+      {
+        "api_id": "4026",
+        "api_name": "招聘详情",
+        "catalog_found": true,
+        "required_output_fields": "招聘岗位、招聘人数、发布时间、岗位描述、薪资、工作地点"
+      }
+    ],
+    "B4.3": [
+      {
+        "api_id": "1224",
+        "api_name": "分支机构信息",
+        "catalog_found": true,
+        "required_output_fields": "分支企业名称、分支状态、分支省份、经纬度、园区名称、是否迁出园区"
+      },
+      {
+        "api_id": "1245",
+        "api_name": "企业经纬度信息",
+        "catalog_found": true,
+        "required_output_fields": "分支企业名称、分支状态、分支省份、经纬度、园区名称、是否迁出园区"
+      },
+      {
+        "api_id": "4088",
+        "api_name": "园区信息",
+        "catalog_found": false,
+        "required_output_fields": "分支企业名称、分支状态、分支省份、经纬度、园区名称、是否迁出园区"
+      },
+      {
+        "api_id": "4071",
+        "api_name": "园区注册企业",
+        "catalog_found": false,
+        "required_output_fields": "分支企业名称、分支状态、分支省份、经纬度、园区名称、是否迁出园区"
+      }
+    ],
+    "B4.4": [
+      {
+        "api_id": "15062",
+        "api_name": "网站备案域名查询",
+        "catalog_found": false,
+        "required_output_fields": "网址、审核日期、状态、域名、备案号、APP服务备案号、网站名称"
+      },
+      {
+        "api_id": "15064",
+        "api_name": "网站备案域名查询(按企业要素)",
+        "catalog_found": false,
+        "required_output_fields": "网址、审核日期、状态、域名、备案号、APP服务备案号、网站名称"
+      },
+      {
+        "api_id": "5064",
+        "api_name": "APP/小程序/快应用备案查询",
+        "catalog_found": false,
+        "required_output_fields": "网址、审核日期、状态、域名、备案号、APP服务备案号、网站名称"
+      },
+      {
+        "api_id": "4140",
+        "api_name": "企业联系方式",
+        "catalog_found": false,
+        "required_output_fields": "网址、审核日期、状态、域名、备案号、APP服务备案号、网站名称"
+      }
+    ],
+    "B4.5": [
+      {
+        "api_id": "4094",
+        "api_name": "产品信息",
+        "catalog_found": false,
+        "required_output_fields": "产品名、产品简称、产品分类、领域、描述、企业业务"
+      },
+      {
+        "api_id": "11024",
+        "api_name": "企业业务",
+        "catalog_found": true,
+        "required_output_fields": "产品名、产品简称、产品分类、领域、描述、企业业务"
+      }
+    ],
+    "B5.1": [
+      {
+        "api_id": "1156",
+        "api_name": "查询年报详情",
+        "catalog_found": true,
+        "required_output_fields": "企业资产状况、营业收入、资产合计、负债合计、现金流量净额"
+      },
+      {
+        "api_id": "6032",
+        "api_name": "上市公司利润表",
+        "catalog_found": true,
+        "required_output_fields": "企业资产状况、营业收入、资产合计、负债合计、现金流量净额"
+      },
+      {
+        "api_id": "6033",
+        "api_name": "上市公司资产负债表",
+        "catalog_found": true,
+        "required_output_fields": "企业资产状况、营业收入、资产合计、负债合计、现金流量净额"
+      },
+      {
+        "api_id": "6034",
+        "api_name": "上市公司现金流量表",
+        "catalog_found": true,
+        "required_output_fields": "企业资产状况、营业收入、资产合计、负债合计、现金流量净额"
+      }
+    ],
+    "B5.2": [
+      {
+        "api_id": "1122",
+        "api_name": "企业基本信息查询",
+        "catalog_found": true,
+        "required_output_fields": "注册资本、实缴资本、规模划型、人员规模、行业分类"
+      },
+      {
+        "api_id": "1256",
+        "api_name": "公司公示-股东出资",
+        "catalog_found": true,
+        "required_output_fields": "注册资本、实缴资本、规模划型、人员规模、行业分类"
+      },
+      {
+        "api_id": "20059",
+        "api_name": "企业规模划型",
+        "catalog_found": true,
+        "required_output_fields": "注册资本、实缴资本、规模划型、人员规模、行业分类"
+      },
+      {
+        "api_id": "1120",
+        "api_name": "企业基本信息(含主要人员)",
+        "catalog_found": true,
+        "required_output_fields": "注册资本、实缴资本、规模划型、人员规模、行业分类"
+      }
+    ],
+    "B5.3": [
+      {
+        "api_id": "11016",
+        "api_name": "融资信息",
+        "catalog_found": true,
+        "required_output_fields": "融资轮次、融资金额、投资事件、投资机构、投资动态"
+      },
+      {
+        "api_id": "11020",
+        "api_name": "投资事件",
+        "catalog_found": true,
+        "required_output_fields": "融资轮次、融资金额、投资事件、投资机构、投资动态"
+      },
+      {
+        "api_id": "11021",
+        "api_name": "投资动态",
+        "catalog_found": true,
+        "required_output_fields": "融资轮次、融资金额、投资事件、投资机构、投资动态"
+      },
+      {
+        "api_id": "11018",
+        "api_name": "投资机构",
+        "catalog_found": true,
+        "required_output_fields": "融资轮次、融资金额、投资事件、投资机构、投资动态"
+      }
+    ],
+    "B5.4": [
+      {
+        "api_id": "4119",
+        "api_name": "债券信息",
+        "catalog_found": true,
+        "required_output_fields": "债券名称、债券号、信用评级机构、债项评级、上市交易日、摘牌日、主体等级"
+      },
+      {
+        "api_id": "4102",
+        "api_name": "企业信用评级",
+        "catalog_found": true,
+        "required_output_fields": "债券名称、债券号、信用评级机构、债项评级、上市交易日、摘牌日、主体等级"
+      }
+    ],
+    "B5.5": [
+      {
+        "api_id": "2097",
+        "api_name": "质押明细核查",
+        "catalog_found": true,
+        "required_output_fields": "质押股数、质押比例、质押市值、动产抵押、专利质押、质押机构"
+      },
+      {
+        "api_id": "2096",
+        "api_name": "质押比例",
+        "catalog_found": true,
+        "required_output_fields": "质押股数、质押比例、质押市值、动产抵押、专利质押、质押机构"
+      },
+      {
+        "api_id": "3144",
+        "api_name": "动产抵押核查",
+        "catalog_found": true,
+        "required_output_fields": "质押股数、质押比例、质押市值、动产抵押、专利质押、质押机构"
+      },
+      {
+        "api_id": "5035",
+        "api_name": "专利质押",
+        "catalog_found": true,
+        "required_output_fields": "质押股数、质押比例、质押市值、动产抵押、专利质押、质押机构"
+      }
+    ],
+    "C1.1": [
+      {
+        "api_id": "12043",
+        "api_name": "失信被执行人核查",
+        "catalog_found": true,
+        "required_output_fields": "案号、立案时间、执行法院、履行情况、失信行为具体情形、发布时间、是否删除"
+      },
+      {
+        "api_id": "2062",
+        "api_name": "失信被执行人核查(含自然人)",
+        "catalog_found": true,
+        "required_output_fields": "案号、立案时间、执行法院、履行情况、失信行为具体情形、发布时间、是否删除"
+      },
+      {
+        "api_id": "12512",
+        "api_name": "历史失信被执行人核查",
+        "catalog_found": true,
+        "required_output_fields": "案号、立案时间、执行法院、履行情况、失信行为具体情形、发布时间、是否删除"
+      }
+    ],
+    "C1.2": [
+      {
+        "api_id": "2068",
+        "api_name": "被执行人核查",
+        "catalog_found": true,
+        "required_output_fields": "执行法院、案号、立案时间、执行标的、被执行人名称、司法风险条目数"
+      },
+      {
+        "api_id": "2050",
+        "api_name": "被执行人详情",
+        "catalog_found": true,
+        "required_output_fields": "执行法院、案号、立案时间、执行标的、被执行人名称、司法风险条目数"
+      },
+      {
+        "api_id": "12523",
+        "api_name": "历史被执行人核查",
+        "catalog_found": true,
+        "required_output_fields": "执行法院、案号、立案时间、执行标的、被执行人名称、司法风险条目数"
+      },
+      {
+        "api_id": "2190",
+        "api_name": "企业司法风险扫描",
+        "catalog_found": true,
+        "required_output_fields": "执行法院、案号、立案时间、执行标的、被执行人名称、司法风险条目数"
+      }
+    ],
+    "C1.3": [
+      {
+        "api_id": "2158",
+        "api_name": "终本案件核查",
+        "catalog_found": true,
+        "required_output_fields": "案号、执行法院、终本日期、立案日期、执行标的、未履行金额"
+      },
+      {
+        "api_id": "2149",
+        "api_name": "终本案件详情",
+        "catalog_found": true,
+        "required_output_fields": "案号、执行法院、终本日期、立案日期、执行标的、未履行金额"
+      }
+    ],
+    "C1.4": [
+      {
+        "api_id": "2248",
+        "api_name": "限制高消费核查",
+        "catalog_found": true,
+        "required_output_fields": "案号、限制令对象、立案日期、限制出境对象、执行标的金额、发布日期"
+      },
+      {
+        "api_id": "12247",
+        "api_name": "历史限制高消费核查",
+        "catalog_found": true,
+        "required_output_fields": "案号、限制令对象、立案日期、限制出境对象、执行标的金额、发布日期"
+      },
+      {
+        "api_id": "2250",
+        "api_name": "限制出境核查",
+        "catalog_found": true,
+        "required_output_fields": "案号、限制令对象、立案日期、限制出境对象、执行标的金额、发布日期"
+      },
+      {
+        "api_id": "7236",
+        "api_name": "限制高消费-人员",
+        "catalog_found": true,
+        "required_output_fields": "案号、限制令对象、立案日期、限制出境对象、执行标的金额、发布日期"
+      }
+    ],
+    "C1.5": [
+      {
+        "api_id": "2020",
+        "api_name": "裁判文书核查",
+        "catalog_found": true,
+        "required_output_fields": "案号、案由、法院、原告/被告、开庭日期、裁判结果、公告内容"
+      },
+      {
+        "api_id": "2171",
+        "api_name": "开庭公告核查",
+        "catalog_found": true,
+        "required_output_fields": "案号、案由、法院、原告/被告、开庭日期、裁判结果、公告内容"
+      },
+      {
+        "api_id": "2169",
+        "api_name": "立案信息核查",
+        "catalog_found": true,
+        "required_output_fields": "案号、案由、法院、原告/被告、开庭日期、裁判结果、公告内容"
+      },
+      {
+        "api_id": "2201",
+        "api_name": "法院公告核查",
+        "catalog_found": true,
+        "required_output_fields": "案号、案由、法院、原告/被告、开庭日期、裁判结果、公告内容"
+      },
+      {
+        "api_id": "2178",
+        "api_name": "送达公告核查",
+        "catalog_found": true,
+        "required_output_fields": "案号、案由、法院、原告/被告、开庭日期、裁判结果、公告内容"
+      }
+    ],
+    "C2.1": [
+      {
+        "api_id": "12033",
+        "api_name": "工商行政处罚核查",
+        "catalog_found": true,
+        "required_output_fields": "处罚决定书文号、违法行为类型、处罚内容、处罚机关、处罚日期、罚款金额"
+      },
+      {
+        "api_id": "2035",
+        "api_name": "信用中国行政处罚核查",
+        "catalog_found": true,
+        "required_output_fields": "处罚决定书文号、违法行为类型、处罚内容、处罚机关、处罚日期、罚款金额"
+      },
+      {
+        "api_id": "3034",
+        "api_name": "行政处罚核查",
+        "catalog_found": true,
+        "required_output_fields": "处罚决定书文号、违法行为类型、处罚内容、处罚机关、处罚日期、罚款金额"
+      },
+      {
+        "api_id": "12317",
+        "api_name": "历史行政处罚核查",
+        "catalog_found": true,
+        "required_output_fields": "处罚决定书文号、违法行为类型、处罚内容、处罚机关、处罚日期、罚款金额"
+      }
+    ],
+    "C2.2": [
+      {
+        "api_id": "3038",
+        "api_name": "严重违法核查",
+        "catalog_found": true,
+        "required_output_fields": "列入原因、列入时间、列入机关、移除原因、移除时间、经营异常记录"
+      },
+      {
+        "api_id": "3213",
+        "api_name": "经营异常核查",
+        "catalog_found": true,
+        "required_output_fields": "列入原因、列入时间、列入机关、移除原因、移除时间、经营异常记录"
+      },
+      {
+        "api_id": "12315",
+        "api_name": "历史经营异常核查",
+        "catalog_found": true,
+        "required_output_fields": "列入原因、列入时间、列入机关、移除原因、移除时间、经营异常记录"
+      }
+    ],
+    "C2.3": [
+      {
+        "api_id": "3146",
+        "api_name": "重大税收违法核查",
+        "catalog_found": true,
+        "required_output_fields": "案件性质、主要违法事实、欠税税种、欠税余额、非正常户、税务评级"
+      },
+      {
+        "api_id": "3095",
+        "api_name": "欠税公告核查",
+        "catalog_found": true,
+        "required_output_fields": "案件性质、主要违法事实、欠税税种、欠税余额、非正常户、税务评级"
+      },
+      {
+        "api_id": "2081",
+        "api_name": "税务非正常户核查",
+        "catalog_found": false,
+        "required_output_fields": "案件性质、主要违法事实、欠税税种、欠税余额、非正常户、税务评级"
+      },
+      {
+        "api_id": "4019",
+        "api_name": "税务评级",
+        "catalog_found": true,
+        "required_output_fields": "案件性质、主要违法事实、欠税税种、欠税余额、非正常户、税务评级"
+      }
+    ],
+    "C2.4": [
+      {
+        "api_id": "2159",
+        "api_name": "环保处罚核查",
+        "catalog_found": true,
+        "required_output_fields": "环保处罚、处罚内容、事故新闻、抽查结果、监管部门"
+      },
+      {
+        "api_id": "2151",
+        "api_name": "环保处罚详情",
+        "catalog_found": true,
+        "required_output_fields": "环保处罚、处罚内容、事故新闻、抽查结果、监管部门"
+      },
+      {
+        "api_id": "4043",
+        "api_name": "新闻舆情列表",
+        "catalog_found": true,
+        "required_output_fields": "环保处罚、处罚内容、事故新闻、抽查结果、监管部门"
+      },
+      {
+        "api_id": "4085",
+        "api_name": "双随机抽查",
+        "catalog_found": true,
+        "required_output_fields": "环保处罚、处罚内容、事故新闻、抽查结果、监管部门"
+      }
+    ],
+    "C2.5": [
+      {
+        "api_id": "3099",
+        "api_name": "破产重组核查",
+        "catalog_found": true,
+        "required_output_fields": "案号、公开日期、申请人、被申请人、清算组、注销备案、简易注销"
+      },
+      {
+        "api_id": "3083",
+        "api_name": "破产重组详情",
+        "catalog_found": true,
+        "required_output_fields": "案号、公开日期、申请人、被申请人、清算组、注销备案、简易注销"
+      },
+      {
+        "api_id": "3013",
+        "api_name": "清算信息核查",
+        "catalog_found": true,
+        "required_output_fields": "案号、公开日期、申请人、被申请人、清算组、注销备案、简易注销"
+      },
+      {
+        "api_id": "2174",
+        "api_name": "注销备案核查",
+        "catalog_found": true,
+        "required_output_fields": "案号、公开日期、申请人、被申请人、清算组、注销备案、简易注销"
+      },
+      {
+        "api_id": "3001",
+        "api_name": "简易注销核查",
+        "catalog_found": true,
+        "required_output_fields": "案号、公开日期、申请人、被申请人、清算组、注销备案、简易注销"
+      }
+    ],
+    "C3.1": [
+      {
+        "api_id": "2097",
+        "api_name": "质押明细核查",
+        "catalog_found": true,
+        "required_output_fields": "质押比例、质押市值、动产抵押、股权数额、冻结期限、状态"
+      },
+      {
+        "api_id": "2096",
+        "api_name": "质押比例",
+        "catalog_found": true,
+        "required_output_fields": "质押比例、质押市值、动产抵押、股权数额、冻结期限、状态"
+      },
+      {
+        "api_id": "3144",
+        "api_name": "动产抵押核查",
+        "catalog_found": true,
+        "required_output_fields": "质押比例、质押市值、动产抵押、股权数额、冻结期限、状态"
+      },
+      {
+        "api_id": "3097",
+        "api_name": "司法协助核查",
+        "catalog_found": true,
+        "required_output_fields": "质押比例、质押市值、动产抵押、股权数额、冻结期限、状态"
+      },
+      {
+        "api_id": "3063",
+        "api_name": "司法协助详情",
+        "catalog_found": true,
+        "required_output_fields": "质押比例、质押市值、动产抵押、股权数额、冻结期限、状态"
+      }
+    ],
+    "C3.2": [
+      {
+        "api_id": "7230",
+        "api_name": "被执行人-人员",
+        "catalog_found": true,
+        "required_output_fields": "人员姓名、案号、风险类型、执行标的、限制令、关联企业、历史风险"
+      },
+      {
+        "api_id": "7232",
+        "api_name": "失信被执行人-人员",
+        "catalog_found": true,
+        "required_output_fields": "人员姓名、案号、风险类型、执行标的、限制令、关联企业、历史风险"
+      },
+      {
+        "api_id": "7236",
+        "api_name": "限制高消费-人员",
+        "catalog_found": true,
+        "required_output_fields": "人员姓名、案号、风险类型、执行标的、限制令、关联企业、历史风险"
+      },
+      {
+        "api_id": "7238",
+        "api_name": "终本案件-人员",
+        "catalog_found": true,
+        "required_output_fields": "人员姓名、案号、风险类型、执行标的、限制令、关联企业、历史风险"
+      },
+      {
+        "api_id": "7244",
+        "api_name": "开庭公告-人员",
+        "catalog_found": true,
+        "required_output_fields": "人员姓名、案号、风险类型、执行标的、限制令、关联企业、历史风险"
+      },
+      {
+        "api_id": "7250",
+        "api_name": "股权出质-人员",
+        "catalog_found": true,
+        "required_output_fields": "人员姓名、案号、风险类型、执行标的、限制令、关联企业、历史风险"
+      },
+      {
+        "api_id": "7251",
+        "api_name": "股权质押-人员",
+        "catalog_found": true,
+        "required_output_fields": "人员姓名、案号、风险类型、执行标的、限制令、关联企业、历史风险"
+      }
+    ],
+    "C3.3": [
+      {
+        "api_id": "4043",
+        "api_name": "新闻舆情列表",
+        "catalog_found": true,
+        "required_output_fields": "新闻标题、来源、发布时间、正文、企业关联、负面类型"
+      },
+      {
+        "api_id": "4044",
+        "api_name": "新闻舆情详情",
+        "catalog_found": true,
+        "required_output_fields": "新闻标题、来源、发布时间、正文、企业关联、负面类型"
+      }
+    ],
+    "C3.4": [
+      {
+        "api_id": "5019",
+        "api_name": "资质证书",
+        "catalog_found": true,
+        "required_output_fields": "有效截止日期、证书状态、许可有效期、历史许可、抽查结果"
+      },
+      {
+        "api_id": "5015",
+        "api_name": "企业证书详情查询",
+        "catalog_found": true,
+        "required_output_fields": "有效截止日期、证书状态、许可有效期、历史许可、抽查结果"
+      },
+      {
+        "api_id": "4069",
+        "api_name": "行政许可-工商",
+        "catalog_found": true,
+        "required_output_fields": "有效截止日期、证书状态、许可有效期、历史许可、抽查结果"
+      },
+      {
+        "api_id": "12453",
+        "api_name": "历史行政许可-工商",
+        "catalog_found": true,
+        "required_output_fields": "有效截止日期、证书状态、许可有效期、历史许可、抽查结果"
+      },
+      {
+        "api_id": "4085",
+        "api_name": "双随机抽查",
+        "catalog_found": true,
+        "required_output_fields": "有效截止日期、证书状态、许可有效期、历史许可、抽查结果"
+      }
+    ],
+    "C3.5": [
+      {
+        "api_id": "11022",
+        "api_name": "供应商",
+        "catalog_found": true,
+        "required_output_fields": "采购金额占比、销售金额占比、客户/供应商名称、项目金额、采购人"
+      },
+      {
+        "api_id": "11023",
+        "api_name": "客户",
+        "catalog_found": true,
+        "required_output_fields": "采购金额占比、销售金额占比、客户/供应商名称、项目金额、采购人"
+      },
+      {
+        "api_id": "4135",
+        "api_name": "招投标列表",
+        "catalog_found": true,
+        "required_output_fields": "采购金额占比、销售金额占比、客户/供应商名称、项目金额、采购人"
+      },
+      {
+        "api_id": "4011",
+        "api_name": "招投标详情",
+        "catalog_found": true,
+        "required_output_fields": "采购金额占比、销售金额占比、客户/供应商名称、项目金额、采购人"
+      }
+    ]
+  },
+  "schema_version": "indicator-api-requirements/1.0.0"
+}

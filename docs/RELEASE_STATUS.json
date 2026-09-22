@@ -1,0 +1,40 @@
+{
+  "release_date": "2026-07-31",
+  "release_round": "V3_FRONTEND_REPAIR",
+  "target_platform": "Windows 10/11",
+  "startup_entry": "start.ps1",
+  "enterprise_source_count": 117,
+  "decision_score_rule": "TEMP-BID-SCORE-V2",
+  "competition_data_mode": "DEMO_EXPLICITLY_LABELLED",
+  "frontend_repairs": {
+    "internal_project_ids_hidden": true,
+    "decision_summary_uses_project_names": true,
+    "competition_opens_new_tab": true,
+    "inline_competition_scroll_removed": true,
+    "action_contrast_fixed": true,
+    "enterprise_evaluation_workspace_restored": true
+  },
+  "enterprise_evaluation_backend": {
+    "scoring_rules_changed": false,
+    "weights_changed": false,
+    "grades_changed": false,
+    "integrity_hash_check": "PASS"
+  },
+  "tests": {
+    "python_compile": "PASS",
+    "python_pytest": "17/17 PASS",
+    "node_api_syntax": "PASS",
+    "node_api_tests": "2/2 PASS",
+    "web_contract_tests": "10/10 PASS",
+    "vue_typescript_check": "PASS",
+    "vite_linux_build": "BLOCKED_BY_MISSING_PLATFORM_OPTIONAL_ROLLUP_PACKAGE"
+  },
+  "live_windows_checks_required": [
+    "PowerShell start.ps1",
+    "manual SSH tunnel",
+    "remote MySQL read-only probe",
+    "real current project query",
+    "real Zhipu GLM probe",
+    "browser check for decision cards, button contrast and new-tab competition page"
+  ]
+}

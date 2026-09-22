@@ -1,0 +1,6 @@
+{
+  "schema_version": "source-trust-policy/1.0.0",
+  "default_policy": "REVIEW_REQUIRED",
+  "rules": [],
+  "note": "No commercial provider is auto-verified until authority, signature and conflict policies are confirmed."
+}

@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "enterprise-decision-profile-update-candidate/1.0.0",
+  "title": "Enterprise Decision Profile Update Candidate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "candidate_schema_version",
+    "candidate_id",
+    "candidate_content_hash",
+    "candidate_type",
+    "target_field",
+    "base_decision_profile_id",
+    "base_decision_profile_content_hash",
+    "confirmation_input",
+    "candidate_status"
+  ],
+  "properties": {
+    "candidate_schema_version": {
+      "const": "enterprise-decision-profile-update-candidate/1.0.0"
+    },
+    "candidate_id": {
+      "type": "string",
+      "pattern": "^enterprise-decision-profile-update-candidate:.+:[0-9a-f]{24}$"
+    },
+    "candidate_content_hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "candidate_type": {
+      "const": "decision_confirmation_input"
+    },
+    "target_field": {
+      "type": "string",
+      "minLength": 1
+    },
+    "base_decision_profile_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "base_decision_profile_content_hash": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "confirmation_input": {
+      "type": "object"
+    },
+    "candidate_status": {
+      "const": "ready_for_decision_profile_update"
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "enterprise-data-acquisition-plan/1.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "acquisition_plan_schema_version",
+    "plan_id",
+    "run_id",
+    "company_id",
+    "deduplication_key",
+    "max_api_calls",
+    "planned_calls",
+    "stop_conditions",
+    "created_at_utc"
+  ],
+  "properties": {
+    "acquisition_plan_schema_version": {
+      "const": "enterprise-data-acquisition-plan/1.0.0"
+    },
+    "plan_id": {
+      "type": "string"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "company_id": {
+      "type": "string"
+    },
+    "deduplication_key": {
+      "type": "string"
+    },
+    "max_api_calls": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "planned_calls": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "stop_conditions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "created_at_utc": {
+      "type": "string"
+    }
+  }
+}

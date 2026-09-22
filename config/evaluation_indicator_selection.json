@@ -1,0 +1,1125 @@
+{
+  "active_set_status": "ACTIVE_SET_44_CONFIRMED",
+  "activity_policy": "44_ACTIVE_16_EXCLUDED",
+  "items": [
+    {
+      "acquisition_priority": null,
+      "active": false,
+      "evaluation_status": "EXCLUDED_BY_MODEL_SELECTION",
+      "indicator_code": "A1.1",
+      "indicator_name": "企业存在与身份核验",
+      "legacy_weight": 1.0,
+      "selection_status": "DELETE_CANDIDATE",
+      "source_fill": {
+        "bgColor": {
+          "indexed": "64"
+        },
+        "fgColor": {
+          "rgb": "FFFFFF00"
+        },
+        "pattern_type": "solid"
+      }
+    },
+    {
+      "acquisition_priority": null,
+      "active": false,
+      "evaluation_status": "EXCLUDED_BY_MODEL_SELECTION",
+      "indicator_code": "A1.2",
+      "indicator_name": "经营状态与存续年限",
+      "legacy_weight": 1.0,
+      "selection_status": "DELETE_CANDIDATE",
+      "source_fill": {
+        "bgColor": {
+          "indexed": "64"
+        },
+        "fgColor": {
+          "rgb": "FFFFFF00"
+        },
+        "pattern_type": "solid"
+      }
+    },
+    {
+      "acquisition_priority": 1,
+      "active": true,
+      "evaluation_status": "ACTIVE",
+      "indicator_code": "A1.3",
+      "indicator_name": "注册资本与实缴资本匹配度",
+      "legacy_weight": 1.0,
+      "selection_status": "CORE_RETAINED",
+      "source_fill": {
+        "bgColor": {
+          "indexed": "64"
+        },
+        "fgColor": {
+          "theme": "4",
+          "tint": "0.4"
+        },
+        "pattern_type": "solid"
+      }
+    },
+    {
+      "acquisition_priority": 1,
+      "active": true,
+      "evaluation_status": "ACTIVE",
+      "indicator_code": "A1.4",
+      "indicator_name": "行业分类与经营范围匹配度",
+      "legacy_weight": 1.0,
+      "selection_status": "CORE_RETAINED",
+      "source_fill": {
+        "bgColor": {
+          "indexed": "64"
+        },
+        "fgColor": {
+          "theme": "4",
+          "tint": "0.4"
+        },
+        "pattern_type": "solid"
+      }
+    },
+    {
+      "acquisition_priority": 1,
+      "active": true,
+      "evaluation_status": "ACTIVE",
+      "indicator_code": "A1.5",
+      "indicator_name": "经营地区",
+      "legacy_weight": 1.0,
+      "selection_status": "CORE_RETAINED",
+      "source_fill": {
+        "bgColor": {
+          "indexed": "64"
+        },
+        "fgColor": {
+          "theme": "4",
+          "tint": "0.4"
+        },
+        "pattern_type": "solid"
+      }
+    },
+    {
+      "acquisition_priority": null,
+      "active": false,
+      "evaluation_status": "EXCLUDED_BY_MODEL_SELECTION",
+      "indicator_code": "A1.6",
+      "indicator_name": "年报连续性与工商公示完整性",
+      "legacy_weight": 1.0,
+      "selection_status": "DELETE_CANDIDATE",
+      "source_fill": {
+        "bgColor": {
+          "indexed": "64"
+        },
+        "fgColor": {
+          "rgb": "FFFFFF00"
+        },
+        "pattern_type": "solid"
+      }
+    },
+    {
+      "acquisition_priority": null,
+      "active": false,
+      "evaluation_status": "EXCLUDED_BY_MODEL_SELECTION",
+      "indicator_code": "A2.1",
+      "indicator_name": "股东结构透明度",
+      "legacy_weight": 1.0,
+      "selection_status": "DELETE_CANDIDATE",
+      "source_fill": {
+        "bgColor": {
+          "indexed": "64"
+        },
+        "fgColor": {
+          "rgb": "FFFFFF00"
+        },
+        "pattern_type": "solid"
+      }
+    },
+    {
+      "acquisition_priority": null,
+      "active": false,
+      "evaluation_status": "EXCLUDED_BY_MODEL_SELECTION",
+      "indicator_code": "A2.2",
+      "indicator_name": "实控人/受益所有人穿透清晰度",
+      "legacy_weight": 1.0,
+      "selection_status": "DELETE_CANDIDATE",
+      "source_fill": {
+        "bgColor": {
+          "indexed": "64"
+        },
+        "fgColor": {
+          "rgb": "FFFFFF00"
+        },
+        "pattern_type": "solid"
+      }
+    },
+    {
+      "acquisition_priority": null,
+      "active": false,
+      "evaluation_status": "EXCLUDED_BY_MODEL_SELECTION",
+      "indicator_code": "A2.3",
+      "indicator_name": "董监高与主要人员完整度",
+      "legacy_weight": 1.0,
+      "selection_status": "DELETE_CANDIDATE",
+      "source_fill": {
+        "bgColor": {
+          "indexed": "64"
+        },
+        "fgColor": {
+          "rgb": "FFFFFF00"
+        },
+        "pattern_type": "solid"
+      }
+    },
+    {
+      "acquisition_priority": 2,
+      "active": true,
+      "evaluation_status": "ACTIVE",
+      "indicator_code": "A2.4",
+      "indicator_name": "历史变更稳定性",
+      "legacy_weight": 1.0,
+      "selection_status": "RETAINED",
+      "source_fill": {
+        "bgColor": {
+          "indexed": "64"
+        },
+        "fgColor": {
+          "theme": "5"
+        },
+        "pattern_type": "solid"
+      }
+    },
+    {
+      "acquisition_priority": null,
+      "active": false,
+      "evaluation_status": "EXCLUDED_BY_MODEL_SELECTION",
+      "indicator_code": "A2.5",
+      "indicator_name": "对外投资与集团结构合理性",
+      "legacy_weight": 1.0,
+      "selection_status": "DELETE_CANDIDATE",
+      "source_fill": {
+        "bgColor": {
+          "indexed": "64"
+        },
+        "fgColor": {
+          "rgb": "FFFFFF00"
+        },
+        "pattern_type": "solid"
+      }
+    },
+    {
+      "acquisition_priority": null,
+      "active": false,
+      "evaluation_status": "EXCLUDED_BY_MODEL_SELECTION",
+      "indicator_code": "A2.6",
+      "indicator_name": "关联方风险隔离",
+      "legacy_weight": 1.0,
+      "selection_status": "DELETE_CANDIDATE",
+      "source_fill": {
+        "bgColor": {
+          "indexed": "64"
+        },
+        "fgColor": {
+          "rgb": "FFFFFF00"
+        },
+        "pattern_type": "solid"
+      }
+    },
+    {
+      "acquisition_priority": 2,
+      "active": true,
+      "evaluation_status": "ACTIVE",
+      "indicator_code": "A2.7",
+      "indicator_name": "名称与历史身份清晰度",
+      "legacy_weight": 1.0,
+      "selection_status": "RETAINED",
+      "source_fill": {
+        "bgColor": {
+          "indexed": "64"
+        },
+        "fgColor": {
+          "theme": "5"
+        },
+        "pattern_type": "solid"
+      }
+    },
+    {
+      "acquisition_priority": 1,
+      "active": true,
+      "evaluation_status": "ACTIVE",
+      "indicator_code": "A3.1",
+      "indicator_name": "企业信用评级/主体评级",
+      "legacy_weight": 1.0,
+      "selection_status": "CORE_RETAINED",
+      "source_fill": {
+        "bgColor": {
+          "indexed": "64"
+        },
+        "fgColor": {
+          "theme": "4",
+          "tint": "0.4"
+        },
+        "pattern_type": "solid"
+      }
+    },
+    {
+      "acquisition_priority": 2,
+      "active": true,
+      "evaluation_status": "ACTIVE",
+      "indicator_code": "A3.2",
+      "indicator_name": "税务信用评级",
+      "legacy_weight": 1.0,
+      "selection_status": "RETAINED",
+      "source_fill": {
+        "bgColor": {
+          "indexed": "64"
+        },
+        "fgColor": {
+          "theme": "5"
+        },
+        "pattern_type": "solid"
+      }
+    },
+    {
+      "acquisition_priority": 1,
+      "active": true,
+      "evaluation_status": "ACTIVE",
+      "indicator_code": "A3.3",
+      "indicator_name": "资质证书公开与有效披露",
+      "legacy_weight": 1.0,
+      "selection_status": "CORE_RETAINED",
+      "source_fill": {
+        "bgColor": {
+          "indexed": "64"
+        },
+        "fgColor": {
+          "theme": "4",
+          "tint": "0.4"
+        },
+        "pattern_type": "solid"
+      }
+    },
+    {
+      "acquisition_priority": 2,
+      "active": true,
+      "evaluation_status": "ACTIVE",
+      "indicator_code": "A3.4",
+      "indicator_name": "行政许可一致性",
+      "legacy_weight": 1.0,
+      "selection_status": "RETAINED",
+      "source_fill": {
+        "bgColor": {
+          "indexed": "64"
+        },
+        "fgColor": {
+          "theme": "5"
+        },
+        "pattern_type": "solid"
+      }
+    },
+    {
+      "acquisition_priority": 2,
+      "active": true,
+      "evaluation_status": "ACTIVE",
+      "indicator_code": "A3.5",
+      "indicator_name": "企业标签、荣誉与正向身份",
+      "legacy_weight": 1.0,
+      "selection_status": "RETAINED",
+      "source_fill": {
+        "bgColor": {
+          "indexed": "64"
+        },
+        "fgColor": {
+          "theme": "5"
+        },
+        "pattern_type": "solid"
+      }
+    },
+    {
+      "acquisition_priority": 2,
+      "active": true,
+      "evaluation_status": "ACTIVE",
+      "indicator_code": "A3.6",
+      "indicator_name": "正面新闻与公共声誉",
+      "legacy_weight": 1.0,
+      "selection_status": "RETAINED",
+      "source_fill": {
+        "bgColor": {
+          "indexed": "64"
+        },
+        "fgColor": {
+          "theme": "5"
+        },
+        "pattern_type": "solid"
+      }
+    },
+    {
+      "acquisition_priority": null,
+      "active": false,
+      "evaluation_status": "EXCLUDED_BY_MODEL_SELECTION",
+      "indicator_code": "A3.7",
+      "indicator_name": "多源数据一致性",
+      "legacy_weight": 1.0,
+      "selection_status": "DELETE_CANDIDATE",
+      "source_fill": {
+        "bgColor": {
+          "indexed": "64"
+        },
+        "fgColor": {
+          "rgb": "FFFFFF00"
+        },
+        "pattern_type": "solid"
+      }
+    },
+    {
+      "acquisition_priority": null,
+      "active": false,
+      "evaluation_status": "EXCLUDED_BY_MODEL_SELECTION",
+      "indicator_code": "B1.1",
+      "indicator_name": "招投标参与活跃度",
+      "legacy_weight": 2.0,
+      "selection_status": "DELETE_CANDIDATE",
+      "source_fill": {
+        "bgColor": {
+          "indexed": "64"
+        },
+        "fgColor": {
+          "rgb": "FFFFFF00"
+        },
+        "pattern_type": "solid"
+      }
+    },
+    {
+      "acquisition_priority": 1,
+      "active": true,
+      "evaluation_status": "ACTIVE",
+      "indicator_code": "B1.2",
+      "indicator_name": "中标/成交能力",
+      "legacy_weight": 2.0,
+      "selection_status": "CORE_RETAINED",
+      "source_fill": {
+        "bgColor": {
+          "indexed": "64"
+        },
+        "fgColor": {
+          "theme": "4",
+          "tint": "0.4"
+        },
+        "pattern_type": "solid"
+      }
+    },
+    {
+      "acquisition_priority": 1,
+      "active": true,
+      "evaluation_status": "ACTIVE",
+      "indicator_code": "B1.3",
+      "indicator_name": "客户资源与客户集中度",
+      "legacy_weight": 2.0,
+      "selection_status": "CORE_RETAINED",
+      "source_fill": {
+        "bgColor": {
+          "indexed": "64"
+        },
+        "fgColor": {
+          "theme": "4",
+          "tint": "0.4"
+        },
+        "pattern_type": "solid"
+      }
+    },
+    {
+      "acquisition_priority": 2,
+      "active": true,
+      "evaluation_status": "ACTIVE",
+      "indicator_code": "B1.4",
+      "indicator_name": "供应商/生态伙伴稳定性",
+      "legacy_weight": 2.0,
+      "selection_status": "RETAINED",
+      "source_fill": {
+        "bgColor": {
+          "indexed": "64"
+        },
+        "fgColor": {
+          "theme": "5"
+        },
+        "pattern_type": "solid"
+      }
+    },
+    {
+      "acquisition_priority": 2,
+      "active": true,
+      "evaluation_status": "ACTIVE",
+      "indicator_code": "B1.5",
+      "indicator_name": "进出口与区域市场能力",
+      "legacy_weight": 2.0,
+      "selection_status": "RETAINED",
+      "source_fill": {
+        "bgColor": {
+          "indexed": "64"
+        },
+        "fgColor": {
+          "theme": "5"
+        },
+        "pattern_type": "solid"
+      }
+    },
+    {
+      "acquisition_priority": 1,
+      "active": true,
+      "evaluation_status": "ACTIVE",
+      "indicator_code": "B2.1",
+      "indicator_name": "经营资质与行业准入有效性",
+      "legacy_weight": 2.0,
+      "selection_status": "CORE_RETAINED",
+      "source_fill": {
+        "bgColor": {
+          "indexed": "64"
+        },
+        "fgColor": {
+          "theme": "4",
+          "tint": "0.4"
+        },
+        "pattern_type": "solid"
+      }
+    },
+    {
+      "acquisition_priority": 1,
+      "active": true,
+      "evaluation_status": "ACTIVE",
+      "indicator_code": "B2.2",
+      "indicator_name": "质量管理体系有效性",
+      "legacy_weight": 2.0,
+      "selection_status": "CORE_RETAINED",
+      "source_fill": {
+        "bgColor": {
+          "indexed": "64"
+        },
+        "fgColor": {
+          "theme": "4",
+          "tint": "0.4"
+        },
+        "pattern_type": "solid"
+      }
+    },
+    {
+      "acquisition_priority": 1,
+      "active": true,
+      "evaluation_status": "ACTIVE",
+      "indicator_code": "B2.3",
+      "indicator_name": "产品/信息安全/特殊许可认证",
+      "legacy_weight": 2.0,
+      "selection_status": "CORE_RETAINED",
+      "source_fill": {
+        "bgColor": {
+          "indexed": "64"
+        },
+        "fgColor": {
+          "theme": "4",
+          "tint": "0.4"
+        },
+        "pattern_type": "solid"
+      }
+    },
+    {
+      "acquisition_priority": 2,
+      "active": true,
+      "evaluation_status": "ACTIVE",
+      "indicator_code": "B2.4",
+      "indicator_name": "环保与绿色合规能力",
+      "legacy_weight": 2.0,
+      "selection_status": "RETAINED",
+      "source_fill": {
+        "bgColor": {
+          "indexed": "64"
+        },
+        "fgColor": {
+          "theme": "5"
+        },
+        "pattern_type": "solid"
+      }
+    },
+    {
+      "acquisition_priority": 2,
+      "active": true,
+      "evaluation_status": "ACTIVE",
+      "indicator_code": "B2.5",
+      "indicator_name": "抽查检查合格率",
+      "legacy_weight": 2.0,
+      "selection_status": "RETAINED",
+      "source_fill": {
+        "bgColor": {
+          "indexed": "64"
+        },
+        "fgColor": {
+          "theme": "5"
+        },
+        "pattern_type": "solid"
+      }
+    },
+    {
+      "acquisition_priority": 1,
+      "active": true,
+      "evaluation_status": "ACTIVE",
+      "indicator_code": "B3.1",
+      "indicator_name": "有效专利数量与质量",
+      "legacy_weight": 2.0,
+      "selection_status": "CORE_RETAINED",
+      "source_fill": {
+        "bgColor": {
+          "indexed": "64"
+        },
+        "fgColor": {
+          "theme": "4",
+          "tint": "0.4"
+        },
+        "pattern_type": "solid"
+      }
+    },
+    {
+      "acquisition_priority": 2,
+      "active": true,
+      "evaluation_status": "ACTIVE",
+      "indicator_code": "B3.2",
+      "indicator_name": "商标资产有效性",
+      "legacy_weight": 2.0,
+      "selection_status": "RETAINED",
+      "source_fill": {
+        "bgColor": {
+          "indexed": "64"
+        },
+        "fgColor": {
+          "theme": "5"
+        },
+        "pattern_type": "solid"
+      }
+    },
+    {
+      "acquisition_priority": 1,
+      "active": true,
+      "evaluation_status": "ACTIVE",
+      "indicator_code": "B3.3",
+      "indicator_name": "软件著作权/作品著作权",
+      "legacy_weight": 2.0,
+      "selection_status": "CORE_RETAINED",
+      "source_fill": {
+        "bgColor": {
+          "indexed": "64"
+        },
+        "fgColor": {
+          "theme": "4",
+          "tint": "0.4"
+        },
+        "pattern_type": "solid"
+      }
+    },
+    {
+      "acquisition_priority": 2,
+      "active": true,
+      "evaluation_status": "ACTIVE",
+      "indicator_code": "B3.4",
+      "indicator_name": "标准参与和行业影响力",
+      "legacy_weight": 2.0,
+      "selection_status": "RETAINED",
+      "source_fill": {
+        "bgColor": {
+          "indexed": "64"
+        },
+        "fgColor": {
+          "theme": "5"
+        },
+        "pattern_type": "solid"
+      }
+    },
+    {
+      "acquisition_priority": 2,
+      "active": true,
+      "evaluation_status": "ACTIVE",
+      "indicator_code": "B3.5",
+      "indicator_name": "科技型标签与创新资质",
+      "legacy_weight": 2.0,
+      "selection_status": "RETAINED",
+      "source_fill": {
+        "bgColor": {
+          "indexed": "64"
+        },
+        "fgColor": {
+          "theme": "5"
+        },
+        "pattern_type": "solid"
+      }
+    },
+    {
+      "acquisition_priority": 1,
+      "active": true,
+      "evaluation_status": "ACTIVE",
+      "indicator_code": "B4.1",
+      "indicator_name": "员工规模与社保支撑",
+      "legacy_weight": 2.0,
+      "selection_status": "CORE_RETAINED",
+      "source_fill": {
+        "bgColor": {
+          "indexed": "64"
+        },
+        "fgColor": {
+          "theme": "4",
+          "tint": "0.4"
+        },
+        "pattern_type": "solid"
+      }
+    },
+    {
+      "acquisition_priority": null,
+      "active": false,
+      "evaluation_status": "EXCLUDED_BY_MODEL_SELECTION",
+      "indicator_code": "B4.2",
+      "indicator_name": "招聘活跃与岗位结构",
+      "legacy_weight": 2.0,
+      "selection_status": "DELETE_CANDIDATE",
+      "source_fill": {
+        "bgColor": {
+          "indexed": "64"
+        },
+        "fgColor": {
+          "rgb": "FFFFFF00"
+        },
+        "pattern_type": "solid"
+      }
+    },
+    {
+      "acquisition_priority": 1,
+      "active": true,
+      "evaluation_status": "ACTIVE",
+      "indicator_code": "B4.3",
+      "indicator_name": "分支机构与服务覆盖",
+      "legacy_weight": 2.0,
+      "selection_status": "CORE_RETAINED",
+      "source_fill": {
+        "bgColor": {
+          "indexed": "64"
+        },
+        "fgColor": {
+          "theme": "4",
+          "tint": "0.4"
+        },
+        "pattern_type": "solid"
+      }
+    },
+    {
+      "acquisition_priority": null,
+      "active": false,
+      "evaluation_status": "EXCLUDED_BY_MODEL_SELECTION",
+      "indicator_code": "B4.4",
+      "indicator_name": "数字化触点与线上可达",
+      "legacy_weight": 2.0,
+      "selection_status": "DELETE_CANDIDATE",
+      "source_fill": {
+        "bgColor": {
+          "indexed": "64"
+        },
+        "fgColor": {
+          "rgb": "FFFFFF00"
+        },
+        "pattern_type": "solid"
+      }
+    },
+    {
+      "acquisition_priority": 1,
+      "active": true,
+      "evaluation_status": "ACTIVE",
+      "indicator_code": "B4.5",
+      "indicator_name": "产品与业务清晰度",
+      "legacy_weight": 2.0,
+      "selection_status": "CORE_RETAINED",
+      "source_fill": {
+        "bgColor": {
+          "indexed": "64"
+        },
+        "fgColor": {
+          "theme": "4",
+          "tint": "0.4"
+        },
+        "pattern_type": "solid"
+      }
+    },
+    {
+      "acquisition_priority": 2,
+      "active": true,
+      "evaluation_status": "ACTIVE",
+      "indicator_code": "B5.1",
+      "indicator_name": "年报财务数据可获得性",
+      "legacy_weight": 2.0,
+      "selection_status": "RETAINED",
+      "source_fill": {
+        "bgColor": {
+          "indexed": "64"
+        },
+        "fgColor": {
+          "theme": "5"
+        },
+        "pattern_type": "solid"
+      }
+    },
+    {
+      "acquisition_priority": 2,
+      "active": true,
+      "evaluation_status": "ACTIVE",
+      "indicator_code": "B5.2",
+      "indicator_name": "资本实力与规模划型",
+      "legacy_weight": 2.0,
+      "selection_status": "RETAINED",
+      "source_fill": {
+        "bgColor": {
+          "indexed": "64"
+        },
+        "fgColor": {
+          "theme": "5"
+        },
+        "pattern_type": "solid"
+      }
+    },
+    {
+      "acquisition_priority": null,
+      "active": false,
+      "evaluation_status": "EXCLUDED_BY_MODEL_SELECTION",
+      "indicator_code": "B5.3",
+      "indicator_name": "融资能力与投资事件",
+      "legacy_weight": 2.0,
+      "selection_status": "DELETE_CANDIDATE",
+      "source_fill": {
+        "bgColor": {
+          "indexed": "64"
+        },
+        "fgColor": {
+          "rgb": "FFFFFF00"
+        },
+        "pattern_type": "solid"
+      }
+    },
+    {
+      "acquisition_priority": null,
+      "active": false,
+      "evaluation_status": "EXCLUDED_BY_MODEL_SELECTION",
+      "indicator_code": "B5.4",
+      "indicator_name": "债券与公开融资信用",
+      "legacy_weight": 2.0,
+      "selection_status": "DELETE_CANDIDATE",
+      "source_fill": {
+        "bgColor": {
+          "indexed": "64"
+        },
+        "fgColor": {
+          "rgb": "FFFFFF00"
+        },
+        "pattern_type": "solid"
+      }
+    },
+    {
+      "acquisition_priority": null,
+      "active": false,
+      "evaluation_status": "EXCLUDED_BY_MODEL_SELECTION",
+      "indicator_code": "B5.5",
+      "indicator_name": "资产融资负担适度性",
+      "legacy_weight": 2.0,
+      "selection_status": "DELETE_CANDIDATE",
+      "source_fill": {
+        "bgColor": {
+          "indexed": "64"
+        },
+        "fgColor": {
+          "rgb": "FFFFFF00"
+        },
+        "pattern_type": "solid"
+      }
+    },
+    {
+      "acquisition_priority": 1,
+      "active": true,
+      "evaluation_status": "ACTIVE",
+      "indicator_code": "C1.1",
+      "indicator_name": "失信被执行人记录",
+      "legacy_weight": 2.0,
+      "selection_status": "CORE_RETAINED",
+      "source_fill": {
+        "bgColor": {
+          "indexed": "64"
+        },
+        "fgColor": {
+          "theme": "4",
+          "tint": "0.4"
+        },
+        "pattern_type": "solid"
+      }
+    },
+    {
+      "acquisition_priority": 2,
+      "active": true,
+      "evaluation_status": "ACTIVE",
+      "indicator_code": "C1.2",
+      "indicator_name": "被执行人及执行标的",
+      "legacy_weight": 2.0,
+      "selection_status": "RETAINED",
+      "source_fill": {
+        "bgColor": {
+          "indexed": "64"
+        },
+        "fgColor": {
+          "theme": "5"
+        },
+        "pattern_type": "solid"
+      }
+    },
+    {
+      "acquisition_priority": 1,
+      "active": true,
+      "evaluation_status": "ACTIVE",
+      "indicator_code": "C1.3",
+      "indicator_name": "终本案件与未履行金额",
+      "legacy_weight": 2.0,
+      "selection_status": "CORE_RETAINED",
+      "source_fill": {
+        "bgColor": {
+          "indexed": "64"
+        },
+        "fgColor": {
+          "theme": "4",
+          "tint": "0.4"
+        },
+        "pattern_type": "solid"
+      }
+    },
+    {
+      "acquisition_priority": null,
+      "active": false,
+      "evaluation_status": "EXCLUDED_BY_MODEL_SELECTION",
+      "indicator_code": "C1.4",
+      "indicator_name": "限制高消费/限制出境",
+      "legacy_weight": 2.0,
+      "selection_status": "DELETE_CANDIDATE",
+      "source_fill": {
+        "bgColor": {
+          "indexed": "64"
+        },
+        "fgColor": {
+          "rgb": "FFFFFF00"
+        },
+        "pattern_type": "solid"
+      }
+    },
+    {
+      "acquisition_priority": 1,
+      "active": true,
+      "evaluation_status": "ACTIVE",
+      "indicator_code": "C1.5",
+      "indicator_name": "诉讼/开庭/法院公告密度",
+      "legacy_weight": 2.0,
+      "selection_status": "CORE_RETAINED",
+      "source_fill": {
+        "bgColor": {
+          "indexed": "64"
+        },
+        "fgColor": {
+          "theme": "4",
+          "tint": "0.4"
+        },
+        "pattern_type": "solid"
+      }
+    },
+    {
+      "acquisition_priority": 1,
+      "active": true,
+      "evaluation_status": "ACTIVE",
+      "indicator_code": "C2.1",
+      "indicator_name": "行政处罚记录",
+      "legacy_weight": 2.0,
+      "selection_status": "CORE_RETAINED",
+      "source_fill": {
+        "bgColor": {
+          "indexed": "64"
+        },
+        "fgColor": {
+          "theme": "4",
+          "tint": "0.4"
+        },
+        "pattern_type": "solid"
+      }
+    },
+    {
+      "acquisition_priority": 1,
+      "active": true,
+      "evaluation_status": "ACTIVE",
+      "indicator_code": "C2.2",
+      "indicator_name": "严重违法与经营异常",
+      "legacy_weight": 2.0,
+      "selection_status": "CORE_RETAINED",
+      "source_fill": {
+        "bgColor": {
+          "indexed": "64"
+        },
+        "fgColor": {
+          "theme": "4",
+          "tint": "0.4"
+        },
+        "pattern_type": "solid"
+      }
+    },
+    {
+      "acquisition_priority": 1,
+      "active": true,
+      "evaluation_status": "ACTIVE",
+      "indicator_code": "C2.3",
+      "indicator_name": "税务违法/欠税/非正常户",
+      "legacy_weight": 2.0,
+      "selection_status": "CORE_RETAINED",
+      "source_fill": {
+        "bgColor": {
+          "indexed": "64"
+        },
+        "fgColor": {
+          "theme": "4",
+          "tint": "0.4"
+        },
+        "pattern_type": "solid"
+      }
+    },
+    {
+      "acquisition_priority": 1,
+      "active": true,
+      "evaluation_status": "ACTIVE",
+      "indicator_code": "C2.4",
+      "indicator_name": "环保处罚与安全生产风险",
+      "legacy_weight": 2.0,
+      "selection_status": "CORE_RETAINED",
+      "source_fill": {
+        "bgColor": {
+          "indexed": "64"
+        },
+        "fgColor": {
+          "theme": "4",
+          "tint": "0.4"
+        },
+        "pattern_type": "solid"
+      }
+    },
+    {
+      "acquisition_priority": 1,
+      "active": true,
+      "evaluation_status": "ACTIVE",
+      "indicator_code": "C2.5",
+      "indicator_name": "破产清算注销风险",
+      "legacy_weight": 2.0,
+      "selection_status": "CORE_RETAINED",
+      "source_fill": {
+        "bgColor": {
+          "indexed": "64"
+        },
+        "fgColor": {
+          "theme": "4",
+          "tint": "0.4"
+        },
+        "pattern_type": "solid"
+      }
+    },
+    {
+      "acquisition_priority": 1,
+      "active": true,
+      "evaluation_status": "ACTIVE",
+      "indicator_code": "C3.1",
+      "indicator_name": "股权质押/动产抵押/司法冻结",
+      "legacy_weight": 2.0,
+      "selection_status": "CORE_RETAINED",
+      "source_fill": {
+        "bgColor": {
+          "indexed": "64"
+        },
+        "fgColor": {
+          "theme": "4",
+          "tint": "0.4"
+        },
+        "pattern_type": "solid"
+      }
+    },
+    {
+      "acquisition_priority": 1,
+      "active": true,
+      "evaluation_status": "ACTIVE",
+      "indicator_code": "C3.2",
+      "indicator_name": "关键人员司法/经营风险",
+      "legacy_weight": 2.0,
+      "selection_status": "CORE_RETAINED",
+      "source_fill": {
+        "bgColor": {
+          "indexed": "64"
+        },
+        "fgColor": {
+          "theme": "4",
+          "tint": "0.4"
+        },
+        "pattern_type": "solid"
+      }
+    },
+    {
+      "acquisition_priority": 2,
+      "active": true,
+      "evaluation_status": "ACTIVE",
+      "indicator_code": "C3.3",
+      "indicator_name": "负面新闻舆情",
+      "legacy_weight": 2.0,
+      "selection_status": "RETAINED",
+      "source_fill": {
+        "bgColor": {
+          "indexed": "64"
+        },
+        "fgColor": {
+          "theme": "5"
+        },
+        "pattern_type": "solid"
+      }
+    },
+    {
+      "acquisition_priority": 1,
+      "active": true,
+      "evaluation_status": "ACTIVE",
+      "indicator_code": "C3.4",
+      "indicator_name": "资质撤销/许可失效预警",
+      "legacy_weight": 2.0,
+      "selection_status": "CORE_RETAINED",
+      "source_fill": {
+        "bgColor": {
+          "indexed": "64"
+        },
+        "fgColor": {
+          "theme": "4",
+          "tint": "0.4"
+        },
+        "pattern_type": "solid"
+      }
+    },
+    {
+      "acquisition_priority": 1,
+      "active": true,
+      "evaluation_status": "ACTIVE",
+      "indicator_code": "C3.5",
+      "indicator_name": "客户/供应商集中异常与供应链风险",
+      "legacy_weight": 2.0,
+      "selection_status": "CORE_RETAINED",
+      "source_fill": {
+        "bgColor": {
+          "indexed": "64"
+        },
+        "fgColor": {
+          "theme": "4",
+          "tint": "0.4"
+        },
+        "pattern_type": "solid"
+      }
+    }
+  ],
+  "legacy_weight_by_selection": {
+    "CORE_RETAINED": 49.0,
+    "DELETE_CANDIDATE": 23.0,
+    "RETAINED": 28.0
+  },
+  "publication_policy": "PUBLICATION_POLICY_PENDING",
+  "schema_version": "evaluation-indicator-selection/1.0.0",
+  "selection_counts": {
+    "CORE_RETAINED": 27,
+    "DELETE_CANDIDATE": 16,
+    "RETAINED": 17
+  }
+}

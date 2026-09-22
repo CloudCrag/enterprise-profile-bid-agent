@@ -1,0 +1,2110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "enterprise-decision-profile/1.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "$defs": {
+    "strategicIndustries": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "industries"
+      ],
+      "properties": {
+        "industries": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "industry_name",
+              "industry_code"
+            ],
+            "properties": {
+              "industry_name": {
+                "type": "string",
+                "pattern": ".*\\S.*"
+              },
+              "industry_code": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "strategicRegions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "regions"
+      ],
+      "properties": {
+        "regions": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "region_name",
+              "region_code"
+            ],
+            "properties": {
+              "region_name": {
+                "type": "string",
+                "pattern": ".*\\S.*"
+              },
+              "region_code": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "budgetPreference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "minimum",
+        "maximum"
+      ],
+      "properties": {
+        "minimum": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "raw_value",
+                "normalized_value",
+                "normalized_unit",
+                "normalized_currency"
+              ],
+              "properties": {
+                "raw_value": {
+                  "type": "string",
+                  "pattern": ".*\\S.*"
+                },
+                "normalized_value": {
+                  "type": [
+                    "number",
+                    "null"
+                  ]
+                },
+                "normalized_unit": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "minLength": 1
+                },
+                "normalized_currency": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "minLength": 1
+                }
+              },
+              "allOf": [
+                {
+                  "if": {
+                    "properties": {
+                      "normalized_value": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "normalized_value"
+                    ]
+                  },
+                  "then": {
+                    "properties": {
+                      "normalized_unit": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "normalized_currency": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    }
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "normalized_value": {
+                        "type": "null"
+                      }
+                    },
+                    "required": [
+                      "normalized_value"
+                    ]
+                  },
+                  "then": {
+                    "properties": {
+                      "normalized_unit": {
+                        "type": "null"
+                      },
+                      "normalized_currency": {
+                        "type": "null"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "maximum": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "raw_value",
+                "normalized_value",
+                "normalized_unit",
+                "normalized_currency"
+              ],
+              "properties": {
+                "raw_value": {
+                  "type": "string",
+                  "pattern": ".*\\S.*"
+                },
+                "normalized_value": {
+                  "type": [
+                    "number",
+                    "null"
+                  ]
+                },
+                "normalized_unit": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "minLength": 1
+                },
+                "normalized_currency": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "minLength": 1
+                }
+              },
+              "allOf": [
+                {
+                  "if": {
+                    "properties": {
+                      "normalized_value": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "normalized_value"
+                    ]
+                  },
+                  "then": {
+                    "properties": {
+                      "normalized_unit": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "normalized_currency": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    }
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "normalized_value": {
+                        "type": "null"
+                      }
+                    },
+                    "required": [
+                      "normalized_value"
+                    ]
+                  },
+                  "then": {
+                    "properties": {
+                      "normalized_unit": {
+                        "type": "null"
+                      },
+                      "normalized_currency": {
+                        "type": "null"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "procurementMethods": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "methods"
+      ],
+      "properties": {
+        "methods": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "method_name",
+              "method_code"
+            ],
+            "properties": {
+              "method_name": {
+                "type": "string",
+                "pattern": ".*\\S.*"
+              },
+              "method_code": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "consortiumAcceptance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "accepted"
+      ],
+      "properties": {
+        "accepted": {
+          "type": "boolean"
+        }
+      }
+    },
+    "riskPreference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "stated_preference",
+        "normalized_code"
+      ],
+      "properties": {
+        "stated_preference": {
+          "type": "string",
+          "pattern": ".*\\S.*"
+        },
+        "normalized_code": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "maxConcurrentProjects": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "maximum"
+      ],
+      "properties": {
+        "maximum": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "personnelConstraints": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "constraints"
+      ],
+      "properties": {
+        "constraints": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "constraint_name",
+              "constraint_value",
+              "unit",
+              "notes"
+            ],
+            "properties": {
+              "constraint_name": {
+                "type": "string",
+                "pattern": ".*\\S.*"
+              },
+              "constraint_value": {
+                "oneOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "boolean"
+                  }
+                ]
+              },
+              "unit": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "notes": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "explicitExclusions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "items"
+      ],
+      "properties": {
+        "items": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "exclusion_subject",
+              "scope_type",
+              "scope_value",
+              "notes"
+            ],
+            "properties": {
+              "exclusion_subject": {
+                "type": "string",
+                "pattern": ".*\\S.*"
+              },
+              "scope_type": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "scope_value": {},
+              "notes": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "keyBuyers": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "buyers"
+      ],
+      "properties": {
+        "buyers": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "buyer_name",
+              "buyer_identifier"
+            ],
+            "properties": {
+              "buyer_name": {
+                "type": "string",
+                "pattern": ".*\\S.*"
+              },
+              "buyer_identifier": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "businessGoals": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "goals"
+      ],
+      "properties": {
+        "goals": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "goal_text",
+              "target_date"
+            ],
+            "properties": {
+              "goal_text": {
+                "type": "string",
+                "pattern": ".*\\S.*"
+              },
+              "target_date": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "date"
+              }
+            }
+          }
+        }
+      }
+    },
+    "enterprise": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "unified_social_credit_code",
+        "internal_enterprise_id"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "unified_social_credit_code": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "internal_enterprise_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "decisionField": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "field_code",
+            "field_name",
+            "confirmation_status",
+            "value",
+            "last_user_update"
+          ],
+          "properties": {
+            "field_code": {
+              "const": "strategic_industries"
+            },
+            "field_name": {
+              "type": "string",
+              "minLength": 1
+            },
+            "confirmation_status": {
+              "enum": [
+                "not_provided",
+                "confirmed"
+              ]
+            },
+            "value": {},
+            "last_user_update": {
+              "oneOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "actor_type",
+                    "actor_id",
+                    "confirmed_at",
+                    "action"
+                  ],
+                  "properties": {
+                    "actor_type": {
+                      "const": "user"
+                    },
+                    "actor_id": {
+                      "type": "string",
+                      "pattern": ".*\\S.*"
+                    },
+                    "confirmed_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "action": {
+                      "enum": [
+                        "set",
+                        "clear"
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "confirmation_status": {
+                    "const": "confirmed"
+                  }
+                },
+                "required": [
+                  "confirmation_status"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "value": {
+                    "$ref": "#/$defs/strategicIndustries"
+                  },
+                  "last_user_update": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "actor_type",
+                      "actor_id",
+                      "confirmed_at",
+                      "action"
+                    ],
+                    "properties": {
+                      "actor_type": {
+                        "const": "user"
+                      },
+                      "actor_id": {
+                        "type": "string",
+                        "pattern": ".*\\S.*"
+                      },
+                      "confirmed_at": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "action": {
+                        "const": "set"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "confirmation_status": {
+                    "const": "not_provided"
+                  }
+                },
+                "required": [
+                  "confirmation_status"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "value": {
+                    "type": "null"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "field_code",
+            "field_name",
+            "confirmation_status",
+            "value",
+            "last_user_update"
+          ],
+          "properties": {
+            "field_code": {
+              "const": "strategic_regions"
+            },
+            "field_name": {
+              "type": "string",
+              "minLength": 1
+            },
+            "confirmation_status": {
+              "enum": [
+                "not_provided",
+                "confirmed"
+              ]
+            },
+            "value": {},
+            "last_user_update": {
+              "oneOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "actor_type",
+                    "actor_id",
+                    "confirmed_at",
+                    "action"
+                  ],
+                  "properties": {
+                    "actor_type": {
+                      "const": "user"
+                    },
+                    "actor_id": {
+                      "type": "string",
+                      "pattern": ".*\\S.*"
+                    },
+                    "confirmed_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "action": {
+                      "enum": [
+                        "set",
+                        "clear"
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "confirmation_status": {
+                    "const": "confirmed"
+                  }
+                },
+                "required": [
+                  "confirmation_status"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "value": {
+                    "$ref": "#/$defs/strategicRegions"
+                  },
+                  "last_user_update": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "actor_type",
+                      "actor_id",
+                      "confirmed_at",
+                      "action"
+                    ],
+                    "properties": {
+                      "actor_type": {
+                        "const": "user"
+                      },
+                      "actor_id": {
+                        "type": "string",
+                        "pattern": ".*\\S.*"
+                      },
+                      "confirmed_at": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "action": {
+                        "const": "set"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "confirmation_status": {
+                    "const": "not_provided"
+                  }
+                },
+                "required": [
+                  "confirmation_status"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "value": {
+                    "type": "null"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "field_code",
+            "field_name",
+            "confirmation_status",
+            "value",
+            "last_user_update"
+          ],
+          "properties": {
+            "field_code": {
+              "const": "budget_preference"
+            },
+            "field_name": {
+              "type": "string",
+              "minLength": 1
+            },
+            "confirmation_status": {
+              "enum": [
+                "not_provided",
+                "confirmed"
+              ]
+            },
+            "value": {},
+            "last_user_update": {
+              "oneOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "actor_type",
+                    "actor_id",
+                    "confirmed_at",
+                    "action"
+                  ],
+                  "properties": {
+                    "actor_type": {
+                      "const": "user"
+                    },
+                    "actor_id": {
+                      "type": "string",
+                      "pattern": ".*\\S.*"
+                    },
+                    "confirmed_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "action": {
+                      "enum": [
+                        "set",
+                        "clear"
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "confirmation_status": {
+                    "const": "confirmed"
+                  }
+                },
+                "required": [
+                  "confirmation_status"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "value": {
+                    "$ref": "#/$defs/budgetPreference"
+                  },
+                  "last_user_update": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "actor_type",
+                      "actor_id",
+                      "confirmed_at",
+                      "action"
+                    ],
+                    "properties": {
+                      "actor_type": {
+                        "const": "user"
+                      },
+                      "actor_id": {
+                        "type": "string",
+                        "pattern": ".*\\S.*"
+                      },
+                      "confirmed_at": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "action": {
+                        "const": "set"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "confirmation_status": {
+                    "const": "not_provided"
+                  }
+                },
+                "required": [
+                  "confirmation_status"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "value": {
+                    "type": "null"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "field_code",
+            "field_name",
+            "confirmation_status",
+            "value",
+            "last_user_update"
+          ],
+          "properties": {
+            "field_code": {
+              "const": "procurement_method_preferences"
+            },
+            "field_name": {
+              "type": "string",
+              "minLength": 1
+            },
+            "confirmation_status": {
+              "enum": [
+                "not_provided",
+                "confirmed"
+              ]
+            },
+            "value": {},
+            "last_user_update": {
+              "oneOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "actor_type",
+                    "actor_id",
+                    "confirmed_at",
+                    "action"
+                  ],
+                  "properties": {
+                    "actor_type": {
+                      "const": "user"
+                    },
+                    "actor_id": {
+                      "type": "string",
+                      "pattern": ".*\\S.*"
+                    },
+                    "confirmed_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "action": {
+                      "enum": [
+                        "set",
+                        "clear"
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "confirmation_status": {
+                    "const": "confirmed"
+                  }
+                },
+                "required": [
+                  "confirmation_status"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "value": {
+                    "$ref": "#/$defs/procurementMethods"
+                  },
+                  "last_user_update": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "actor_type",
+                      "actor_id",
+                      "confirmed_at",
+                      "action"
+                    ],
+                    "properties": {
+                      "actor_type": {
+                        "const": "user"
+                      },
+                      "actor_id": {
+                        "type": "string",
+                        "pattern": ".*\\S.*"
+                      },
+                      "confirmed_at": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "action": {
+                        "const": "set"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "confirmation_status": {
+                    "const": "not_provided"
+                  }
+                },
+                "required": [
+                  "confirmation_status"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "value": {
+                    "type": "null"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "field_code",
+            "field_name",
+            "confirmation_status",
+            "value",
+            "last_user_update"
+          ],
+          "properties": {
+            "field_code": {
+              "const": "consortium_acceptance"
+            },
+            "field_name": {
+              "type": "string",
+              "minLength": 1
+            },
+            "confirmation_status": {
+              "enum": [
+                "not_provided",
+                "confirmed"
+              ]
+            },
+            "value": {},
+            "last_user_update": {
+              "oneOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "actor_type",
+                    "actor_id",
+                    "confirmed_at",
+                    "action"
+                  ],
+                  "properties": {
+                    "actor_type": {
+                      "const": "user"
+                    },
+                    "actor_id": {
+                      "type": "string",
+                      "pattern": ".*\\S.*"
+                    },
+                    "confirmed_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "action": {
+                      "enum": [
+                        "set",
+                        "clear"
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "confirmation_status": {
+                    "const": "confirmed"
+                  }
+                },
+                "required": [
+                  "confirmation_status"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "value": {
+                    "$ref": "#/$defs/consortiumAcceptance"
+                  },
+                  "last_user_update": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "actor_type",
+                      "actor_id",
+                      "confirmed_at",
+                      "action"
+                    ],
+                    "properties": {
+                      "actor_type": {
+                        "const": "user"
+                      },
+                      "actor_id": {
+                        "type": "string",
+                        "pattern": ".*\\S.*"
+                      },
+                      "confirmed_at": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "action": {
+                        "const": "set"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "confirmation_status": {
+                    "const": "not_provided"
+                  }
+                },
+                "required": [
+                  "confirmation_status"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "value": {
+                    "type": "null"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "field_code",
+            "field_name",
+            "confirmation_status",
+            "value",
+            "last_user_update"
+          ],
+          "properties": {
+            "field_code": {
+              "const": "risk_preference"
+            },
+            "field_name": {
+              "type": "string",
+              "minLength": 1
+            },
+            "confirmation_status": {
+              "enum": [
+                "not_provided",
+                "confirmed"
+              ]
+            },
+            "value": {},
+            "last_user_update": {
+              "oneOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "actor_type",
+                    "actor_id",
+                    "confirmed_at",
+                    "action"
+                  ],
+                  "properties": {
+                    "actor_type": {
+                      "const": "user"
+                    },
+                    "actor_id": {
+                      "type": "string",
+                      "pattern": ".*\\S.*"
+                    },
+                    "confirmed_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "action": {
+                      "enum": [
+                        "set",
+                        "clear"
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "confirmation_status": {
+                    "const": "confirmed"
+                  }
+                },
+                "required": [
+                  "confirmation_status"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "value": {
+                    "$ref": "#/$defs/riskPreference"
+                  },
+                  "last_user_update": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "actor_type",
+                      "actor_id",
+                      "confirmed_at",
+                      "action"
+                    ],
+                    "properties": {
+                      "actor_type": {
+                        "const": "user"
+                      },
+                      "actor_id": {
+                        "type": "string",
+                        "pattern": ".*\\S.*"
+                      },
+                      "confirmed_at": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "action": {
+                        "const": "set"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "confirmation_status": {
+                    "const": "not_provided"
+                  }
+                },
+                "required": [
+                  "confirmation_status"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "value": {
+                    "type": "null"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "field_code",
+            "field_name",
+            "confirmation_status",
+            "value",
+            "last_user_update"
+          ],
+          "properties": {
+            "field_code": {
+              "const": "max_concurrent_projects"
+            },
+            "field_name": {
+              "type": "string",
+              "minLength": 1
+            },
+            "confirmation_status": {
+              "enum": [
+                "not_provided",
+                "confirmed"
+              ]
+            },
+            "value": {},
+            "last_user_update": {
+              "oneOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "actor_type",
+                    "actor_id",
+                    "confirmed_at",
+                    "action"
+                  ],
+                  "properties": {
+                    "actor_type": {
+                      "const": "user"
+                    },
+                    "actor_id": {
+                      "type": "string",
+                      "pattern": ".*\\S.*"
+                    },
+                    "confirmed_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "action": {
+                      "enum": [
+                        "set",
+                        "clear"
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "confirmation_status": {
+                    "const": "confirmed"
+                  }
+                },
+                "required": [
+                  "confirmation_status"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "value": {
+                    "$ref": "#/$defs/maxConcurrentProjects"
+                  },
+                  "last_user_update": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "actor_type",
+                      "actor_id",
+                      "confirmed_at",
+                      "action"
+                    ],
+                    "properties": {
+                      "actor_type": {
+                        "const": "user"
+                      },
+                      "actor_id": {
+                        "type": "string",
+                        "pattern": ".*\\S.*"
+                      },
+                      "confirmed_at": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "action": {
+                        "const": "set"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "confirmation_status": {
+                    "const": "not_provided"
+                  }
+                },
+                "required": [
+                  "confirmation_status"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "value": {
+                    "type": "null"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "field_code",
+            "field_name",
+            "confirmation_status",
+            "value",
+            "last_user_update"
+          ],
+          "properties": {
+            "field_code": {
+              "const": "personnel_resource_constraints"
+            },
+            "field_name": {
+              "type": "string",
+              "minLength": 1
+            },
+            "confirmation_status": {
+              "enum": [
+                "not_provided",
+                "confirmed"
+              ]
+            },
+            "value": {},
+            "last_user_update": {
+              "oneOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "actor_type",
+                    "actor_id",
+                    "confirmed_at",
+                    "action"
+                  ],
+                  "properties": {
+                    "actor_type": {
+                      "const": "user"
+                    },
+                    "actor_id": {
+                      "type": "string",
+                      "pattern": ".*\\S.*"
+                    },
+                    "confirmed_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "action": {
+                      "enum": [
+                        "set",
+                        "clear"
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "confirmation_status": {
+                    "const": "confirmed"
+                  }
+                },
+                "required": [
+                  "confirmation_status"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "value": {
+                    "$ref": "#/$defs/personnelConstraints"
+                  },
+                  "last_user_update": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "actor_type",
+                      "actor_id",
+                      "confirmed_at",
+                      "action"
+                    ],
+                    "properties": {
+                      "actor_type": {
+                        "const": "user"
+                      },
+                      "actor_id": {
+                        "type": "string",
+                        "pattern": ".*\\S.*"
+                      },
+                      "confirmed_at": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "action": {
+                        "const": "set"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "confirmation_status": {
+                    "const": "not_provided"
+                  }
+                },
+                "required": [
+                  "confirmation_status"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "value": {
+                    "type": "null"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "field_code",
+            "field_name",
+            "confirmation_status",
+            "value",
+            "last_user_update"
+          ],
+          "properties": {
+            "field_code": {
+              "const": "explicit_exclusions"
+            },
+            "field_name": {
+              "type": "string",
+              "minLength": 1
+            },
+            "confirmation_status": {
+              "enum": [
+                "not_provided",
+                "confirmed"
+              ]
+            },
+            "value": {},
+            "last_user_update": {
+              "oneOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "actor_type",
+                    "actor_id",
+                    "confirmed_at",
+                    "action"
+                  ],
+                  "properties": {
+                    "actor_type": {
+                      "const": "user"
+                    },
+                    "actor_id": {
+                      "type": "string",
+                      "pattern": ".*\\S.*"
+                    },
+                    "confirmed_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "action": {
+                      "enum": [
+                        "set",
+                        "clear"
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "confirmation_status": {
+                    "const": "confirmed"
+                  }
+                },
+                "required": [
+                  "confirmation_status"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "value": {
+                    "$ref": "#/$defs/explicitExclusions"
+                  },
+                  "last_user_update": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "actor_type",
+                      "actor_id",
+                      "confirmed_at",
+                      "action"
+                    ],
+                    "properties": {
+                      "actor_type": {
+                        "const": "user"
+                      },
+                      "actor_id": {
+                        "type": "string",
+                        "pattern": ".*\\S.*"
+                      },
+                      "confirmed_at": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "action": {
+                        "const": "set"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "confirmation_status": {
+                    "const": "not_provided"
+                  }
+                },
+                "required": [
+                  "confirmation_status"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "value": {
+                    "type": "null"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "field_code",
+            "field_name",
+            "confirmation_status",
+            "value",
+            "last_user_update"
+          ],
+          "properties": {
+            "field_code": {
+              "const": "key_buyers"
+            },
+            "field_name": {
+              "type": "string",
+              "minLength": 1
+            },
+            "confirmation_status": {
+              "enum": [
+                "not_provided",
+                "confirmed"
+              ]
+            },
+            "value": {},
+            "last_user_update": {
+              "oneOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "actor_type",
+                    "actor_id",
+                    "confirmed_at",
+                    "action"
+                  ],
+                  "properties": {
+                    "actor_type": {
+                      "const": "user"
+                    },
+                    "actor_id": {
+                      "type": "string",
+                      "pattern": ".*\\S.*"
+                    },
+                    "confirmed_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "action": {
+                      "enum": [
+                        "set",
+                        "clear"
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "confirmation_status": {
+                    "const": "confirmed"
+                  }
+                },
+                "required": [
+                  "confirmation_status"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "value": {
+                    "$ref": "#/$defs/keyBuyers"
+                  },
+                  "last_user_update": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "actor_type",
+                      "actor_id",
+                      "confirmed_at",
+                      "action"
+                    ],
+                    "properties": {
+                      "actor_type": {
+                        "const": "user"
+                      },
+                      "actor_id": {
+                        "type": "string",
+                        "pattern": ".*\\S.*"
+                      },
+                      "confirmed_at": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "action": {
+                        "const": "set"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "confirmation_status": {
+                    "const": "not_provided"
+                  }
+                },
+                "required": [
+                  "confirmation_status"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "value": {
+                    "type": "null"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "field_code",
+            "field_name",
+            "confirmation_status",
+            "value",
+            "last_user_update"
+          ],
+          "properties": {
+            "field_code": {
+              "const": "current_business_goals"
+            },
+            "field_name": {
+              "type": "string",
+              "minLength": 1
+            },
+            "confirmation_status": {
+              "enum": [
+                "not_provided",
+                "confirmed"
+              ]
+            },
+            "value": {},
+            "last_user_update": {
+              "oneOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "actor_type",
+                    "actor_id",
+                    "confirmed_at",
+                    "action"
+                  ],
+                  "properties": {
+                    "actor_type": {
+                      "const": "user"
+                    },
+                    "actor_id": {
+                      "type": "string",
+                      "pattern": ".*\\S.*"
+                    },
+                    "confirmed_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "action": {
+                      "enum": [
+                        "set",
+                        "clear"
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "confirmation_status": {
+                    "const": "confirmed"
+                  }
+                },
+                "required": [
+                  "confirmation_status"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "value": {
+                    "$ref": "#/$defs/businessGoals"
+                  },
+                  "last_user_update": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "actor_type",
+                      "actor_id",
+                      "confirmed_at",
+                      "action"
+                    ],
+                    "properties": {
+                      "actor_type": {
+                        "const": "user"
+                      },
+                      "actor_id": {
+                        "type": "string",
+                        "pattern": ".*\\S.*"
+                      },
+                      "confirmed_at": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "action": {
+                        "const": "set"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "confirmation_status": {
+                    "const": "not_provided"
+                  }
+                },
+                "required": [
+                  "confirmation_status"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "value": {
+                    "type": "null"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "decision_profile_schema_version",
+    "decision_profile_id",
+    "decision_profile_content_hash",
+    "profile_version",
+    "previous_decision_profile_id",
+    "previous_decision_profile_content_hash",
+    "enterprise",
+    "as_of_date",
+    "confirmation_context_dependencies",
+    "generation",
+    "decision_fields",
+    "decision_summary",
+    "warnings",
+    "generated_at_utc"
+  ],
+  "properties": {
+    "decision_profile_schema_version": {
+      "const": "enterprise-decision-profile/1.0.0"
+    },
+    "decision_profile_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "decision_profile_content_hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "profile_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "previous_decision_profile_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "previous_decision_profile_content_hash": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "enterprise": {
+      "$ref": "#/$defs/enterprise"
+    },
+    "as_of_date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date"
+    },
+    "confirmation_context_dependencies": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "fact_profile_schema_version",
+        "fact_profile_content_hash",
+        "capability_profile_schema_version",
+        "capability_profile_id",
+        "capability_profile_content_hash"
+      ],
+      "properties": {
+        "fact_profile_schema_version": {
+          "const": "enterprise-fact-profile/1.3.0"
+        },
+        "fact_profile_content_hash": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "capability_profile_schema_version": {
+          "enum": [
+            "enterprise-capability-profile/1.1.0",
+            "enterprise-capability-profile/1.2.0"
+          ]
+        },
+        "capability_profile_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "capability_profile_content_hash": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    },
+    "generation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "generation_mode",
+        "confirmation_input_schema_version",
+        "confirmation_input_content_hash"
+      ],
+      "properties": {
+        "generation_mode": {
+          "const": "explicit_user_confirmation"
+        },
+        "confirmation_input_schema_version": {
+          "const": "enterprise-decision-confirmation-input/1.0.0"
+        },
+        "confirmation_input_content_hash": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    },
+    "decision_fields": {
+      "type": "array",
+      "minItems": 11,
+      "maxItems": 11,
+      "items": {
+        "$ref": "#/$defs/decisionField"
+      }
+    },
+    "decision_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "total_field_count",
+        "confirmed_field_count",
+        "not_provided_field_count"
+      ],
+      "properties": {
+        "total_field_count": {
+          "const": 11
+        },
+        "confirmed_field_count": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 11
+        },
+        "not_provided_field_count": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 11
+        }
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "generated_at_utc": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

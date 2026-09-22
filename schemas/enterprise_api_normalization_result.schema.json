@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "enterprise-api-normalization-result/1.0.0",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "api_id",
+    "status",
+    "submissions"
+  ],
+  "properties": {
+    "api_id": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "NORMALIZED",
+        "EMPTY_RESULT",
+        "NORMALIZER_NOT_IMPLEMENTED",
+        "INVALID_RESPONSE"
+      ]
+    },
+    "normalizer_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "submissions": {
+      "type": "array"
+    }
+  }
+}

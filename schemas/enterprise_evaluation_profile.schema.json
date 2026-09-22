@@ -1,0 +1,132 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "enterprise-evaluation-profile/2.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "evaluation_profile_schema_version",
+    "company_id",
+    "enterprise",
+    "as_of_date",
+    "model_sha256",
+    "rule_version",
+    "feature_version",
+    "dependencies",
+    "indicator_results",
+    "summary",
+    "publication_status",
+    "generated_at_utc",
+    "content_hash"
+  ],
+  "properties": {
+    "evaluation_profile_schema_version": {
+      "const": "enterprise-evaluation-profile/2.0.0"
+    },
+    "company_id": {
+      "type": "string"
+    },
+    "enterprise": {
+      "type": "object"
+    },
+    "as_of_date": {
+      "type": "string"
+    },
+    "model_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "rule_version": {
+      "type": "string"
+    },
+    "feature_version": {
+      "type": "string"
+    },
+    "dependencies": {
+      "type": "object"
+    },
+    "indicator_results": {
+      "type": "array",
+      "minItems": 60,
+      "maxItems": 60,
+      "items": {
+        "$ref": "enterprise_indicator_score_result.schema.json"
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "scored_indicator_count",
+        "scored_legacy_weight",
+        "observed_legacy_points",
+        "coverage_ratio_on_legacy_model",
+        "normalized_observed_score",
+        "official_total_score",
+        "official_grade",
+        "publication_status"
+      ]
+    },
+    "publication_status": {
+      "enum": ["POLICY_NOT_CONFIRMED", "RULES_CONFIRMED"]
+    },
+    "generated_at_utc": {
+      "type": "string"
+    },
+    "content_hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "evaluation_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "previous_evaluation_version": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 1
+    },
+    "evaluation_run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "active_indicator_results": {
+      "type": "array",
+      "minItems": 44,
+      "maxItems": 44,
+      "items": {
+        "type": "object"
+      }
+    },
+    "excluded_indicator_results": {
+      "type": "array",
+      "minItems": 16,
+      "maxItems": 16,
+      "items": {
+        "type": "object"
+      }
+    },
+    "primary_dimensions": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "object"
+      }
+    },
+    "secondary_dimensions": {
+      "type": "array",
+      "minItems": 11,
+      "maxItems": 11,
+      "items": {
+        "type": "object"
+      }
+    },
+    "data_gaps": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    }
+  }
+}

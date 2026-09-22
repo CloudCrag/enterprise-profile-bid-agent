@@ -1,0 +1,874 @@
+{
+  "schema_version": "enterprise-profile-tag-catalog/1.0.0",
+  "catalog_name": "企业画像60项正式标签集",
+  "source_note": "标签编码、名称和层级来自已确认的企业画像三级指标；本配置不包含任何评价计算信息。",
+  "primary_dimensions": [
+    {
+      "primary_code": "A",
+      "primary_name": "主体可信与治理透明"
+    },
+    {
+      "primary_code": "B",
+      "primary_name": "经营能力与发展质量"
+    },
+    {
+      "primary_code": "C",
+      "primary_name": "信用行为与动态风险"
+    }
+  ],
+  "secondary_dimensions": [
+    {
+      "primary_code": "A",
+      "secondary_code": "A1",
+      "secondary_name": "主体身份与工商稳定"
+    },
+    {
+      "primary_code": "A",
+      "secondary_code": "A2",
+      "secondary_name": "治理透明与关联结构"
+    },
+    {
+      "primary_code": "A",
+      "secondary_code": "A3",
+      "secondary_name": "诚信披露与公共声誉"
+    },
+    {
+      "primary_code": "B",
+      "secondary_code": "B1",
+      "secondary_name": "市场交易与客户能力"
+    },
+    {
+      "primary_code": "B",
+      "secondary_code": "B2",
+      "secondary_name": "资质质量与合规运营"
+    },
+    {
+      "primary_code": "B",
+      "secondary_code": "B3",
+      "secondary_name": "创新知识产权与技术资产"
+    },
+    {
+      "primary_code": "B",
+      "secondary_code": "B4",
+      "secondary_name": "组织供给与服务网络"
+    },
+    {
+      "primary_code": "B",
+      "secondary_code": "B5",
+      "secondary_name": "资本财务与发展资源"
+    },
+    {
+      "primary_code": "C",
+      "secondary_code": "C1",
+      "secondary_name": "司法执行与诉讼风险"
+    },
+    {
+      "primary_code": "C",
+      "secondary_code": "C2",
+      "secondary_name": "行政税务与监管风险"
+    },
+    {
+      "primary_code": "C",
+      "secondary_code": "C3",
+      "secondary_name": "动态关联与声誉风险"
+    }
+  ],
+  "tags": [
+    {
+      "primary_code": "A",
+      "primary_name": "主体可信与治理透明",
+      "secondary_code": "A1",
+      "secondary_name": "主体身份与工商稳定",
+      "tag_code": "A1.1",
+      "tag_name": "企业存在与身份核验",
+      "tag_description": "核验企业是否真实存在，名称、统一社会信用代码、法定代表人等核心身份是否一致。",
+      "is_core": true,
+      "required_data_fields": [
+        "主体核验档位",
+        "核验要素"
+      ],
+      "source_field_hints": [
+        "core_input.identity.verification_category",
+        "core_input.identity.verification_elements",
+        "core_input.identity.legal_representative"
+      ]
+    },
+    {
+      "primary_code": "A",
+      "primary_name": "主体可信与治理透明",
+      "secondary_code": "A1",
+      "secondary_name": "主体身份与工商稳定",
+      "tag_code": "A1.2",
+      "tag_name": "经营状态与存续年限",
+      "tag_description": "判断企业是否处于正常经营状态以及经营持续性。",
+      "is_core": true,
+      "required_data_fields": [
+        "经营状态原文",
+        "经营状态归一化档位",
+        "成立日期",
+        "计算基准日"
+      ],
+      "source_field_hints": [
+        "core_input.operation.status_raw",
+        "core_input.operation.status_category",
+        "core_input.operation.established_date",
+        "as_of_date"
+      ]
+    },
+    {
+      "primary_code": "A",
+      "primary_name": "主体可信与治理透明",
+      "secondary_code": "A1",
+      "secondary_name": "主体身份与工商稳定",
+      "tag_code": "A1.3",
+      "tag_name": "注册资本与实缴资本匹配度",
+      "tag_description": "衡量资本承诺兑现程度和资本真实性。",
+      "is_core": false,
+      "required_data_fields": [],
+      "source_field_hints": []
+    },
+    {
+      "primary_code": "A",
+      "primary_name": "主体可信与治理透明",
+      "secondary_code": "A1",
+      "secondary_name": "主体身份与工商稳定",
+      "tag_code": "A1.4",
+      "tag_name": "行业分类与经营范围匹配度",
+      "tag_description": "衡量企业所属行业、经营范围与目标业务/采购品类是否匹配。",
+      "is_core": true,
+      "required_data_fields": [],
+      "source_field_hints": [
+        "core_input.business.industry",
+        "core_input.business.business_scope",
+        "core_input.business.product_business_tags",
+        "target_project"
+      ]
+    },
+    {
+      "primary_code": "A",
+      "primary_name": "主体可信与治理透明",
+      "secondary_code": "A1",
+      "secondary_name": "主体身份与工商稳定",
+      "tag_code": "A1.5",
+      "tag_name": "联系方式与经营地址可验证性",
+      "tag_description": "核验电话、邮箱、网站、地址、经纬度是否有效且与企业匹配。",
+      "is_core": false,
+      "required_data_fields": [],
+      "source_field_hints": []
+    },
+    {
+      "primary_code": "A",
+      "primary_name": "主体可信与治理透明",
+      "secondary_code": "A1",
+      "secondary_name": "主体身份与工商稳定",
+      "tag_code": "A1.6",
+      "tag_name": "年报连续性与工商公示完整性",
+      "tag_description": "衡量企业年报报送、资产社保股东等公示信息是否连续完整。",
+      "is_core": false,
+      "required_data_fields": [],
+      "source_field_hints": []
+    },
+    {
+      "primary_code": "A",
+      "primary_name": "主体可信与治理透明",
+      "secondary_code": "A2",
+      "secondary_name": "治理透明与关联结构",
+      "tag_code": "A2.1",
+      "tag_name": "股东结构透明度",
+      "tag_description": "衡量股东、持股比例、认缴实缴、出资时间是否完整可查。",
+      "is_core": false,
+      "required_data_fields": [],
+      "source_field_hints": []
+    },
+    {
+      "primary_code": "A",
+      "primary_name": "主体可信与治理透明",
+      "secondary_code": "A2",
+      "secondary_name": "治理透明与关联结构",
+      "tag_code": "A2.2",
+      "tag_name": "实控人/受益所有人穿透清晰度",
+      "tag_description": "识别最终控制人、受益所有人、受益股东和控制路径。",
+      "is_core": false,
+      "required_data_fields": [],
+      "source_field_hints": []
+    },
+    {
+      "primary_code": "A",
+      "primary_name": "主体可信与治理透明",
+      "secondary_code": "A2",
+      "secondary_name": "治理透明与关联结构",
+      "tag_code": "A2.3",
+      "tag_name": "董监高与主要人员完整度",
+      "tag_description": "衡量企业主要人员、董监高、历史主要人员信息是否完整。",
+      "is_core": false,
+      "required_data_fields": [],
+      "source_field_hints": []
+    },
+    {
+      "primary_code": "A",
+      "primary_name": "主体可信与治理透明",
+      "secondary_code": "A2",
+      "secondary_name": "治理透明与关联结构",
+      "tag_code": "A2.4",
+      "tag_name": "历史变更稳定性",
+      "tag_description": "通过工商变更频率和变更事项判断治理和经营稳定性。",
+      "is_core": false,
+      "required_data_fields": [],
+      "source_field_hints": []
+    },
+    {
+      "primary_code": "A",
+      "primary_name": "主体可信与治理透明",
+      "secondary_code": "A2",
+      "secondary_name": "治理透明与关联结构",
+      "tag_code": "A2.5",
+      "tag_name": "对外投资与集团结构合理性",
+      "tag_description": "判断对外投资、总分公司和集团结构是否与业务能力相匹配。",
+      "is_core": false,
+      "required_data_fields": [],
+      "source_field_hints": []
+    },
+    {
+      "primary_code": "A",
+      "primary_name": "主体可信与治理透明",
+      "secondary_code": "A2",
+      "secondary_name": "治理透明与关联结构",
+      "tag_code": "A2.6",
+      "tag_name": "关联方风险隔离",
+      "tag_description": "衡量董监高、实控人及其关联企业是否存在风险外溢。",
+      "is_core": false,
+      "required_data_fields": [],
+      "source_field_hints": []
+    },
+    {
+      "primary_code": "A",
+      "primary_name": "主体可信与治理透明",
+      "secondary_code": "A2",
+      "secondary_name": "治理透明与关联结构",
+      "tag_code": "A2.7",
+      "tag_name": "名称与历史身份清晰度",
+      "tag_description": "识别企业曾用名、历史名称、Logo/档案地址等身份延续性。",
+      "is_core": false,
+      "required_data_fields": [],
+      "source_field_hints": []
+    },
+    {
+      "primary_code": "A",
+      "primary_name": "主体可信与治理透明",
+      "secondary_code": "A3",
+      "secondary_name": "诚信披露与公共声誉",
+      "tag_code": "A3.1",
+      "tag_name": "企业信用评级/主体评级",
+      "tag_description": "使用公开信用评级、主体等级、评级展望衡量外部信用评价结果。",
+      "is_core": false,
+      "required_data_fields": [],
+      "source_field_hints": []
+    },
+    {
+      "primary_code": "A",
+      "primary_name": "主体可信与治理透明",
+      "secondary_code": "A3",
+      "secondary_name": "诚信披露与公共声誉",
+      "tag_code": "A3.2",
+      "tag_name": "税务信用评级",
+      "tag_description": "用纳税信用等级衡量纳税合规和公共信用表现。",
+      "is_core": false,
+      "required_data_fields": [],
+      "source_field_hints": []
+    },
+    {
+      "primary_code": "A",
+      "primary_name": "主体可信与治理透明",
+      "secondary_code": "A3",
+      "secondary_name": "诚信披露与公共声誉",
+      "tag_code": "A3.3",
+      "tag_name": "资质证书公开与有效披露",
+      "tag_description": "衡量证书是否公开、有效、可核验。",
+      "is_core": false,
+      "required_data_fields": [],
+      "source_field_hints": []
+    },
+    {
+      "primary_code": "A",
+      "primary_name": "主体可信与治理透明",
+      "secondary_code": "A3",
+      "secondary_name": "诚信披露与公共声誉",
+      "tag_code": "A3.4",
+      "tag_name": "行政许可一致性",
+      "tag_description": "检查行政许可内容、有效期和经营范围是否一致。",
+      "is_core": false,
+      "required_data_fields": [],
+      "source_field_hints": []
+    },
+    {
+      "primary_code": "A",
+      "primary_name": "主体可信与治理透明",
+      "secondary_code": "A3",
+      "secondary_name": "诚信披露与公共声誉",
+      "tag_code": "A3.5",
+      "tag_name": "企业标签、荣誉与正向身份",
+      "tag_description": "衡量科技型、高新、专精特新、规模以上等正向标签。",
+      "is_core": false,
+      "required_data_fields": [],
+      "source_field_hints": []
+    },
+    {
+      "primary_code": "A",
+      "primary_name": "主体可信与治理透明",
+      "secondary_code": "A3",
+      "secondary_name": "诚信披露与公共声誉",
+      "tag_code": "A3.6",
+      "tag_name": "正面新闻与公共声誉",
+      "tag_description": "用公开新闻舆情判断企业社会声誉和正向影响。",
+      "is_core": false,
+      "required_data_fields": [],
+      "source_field_hints": []
+    },
+    {
+      "primary_code": "A",
+      "primary_name": "主体可信与治理透明",
+      "secondary_code": "A3",
+      "secondary_name": "诚信披露与公共声誉",
+      "tag_code": "A3.7",
+      "tag_name": "多源数据一致性",
+      "tag_description": "比较工商、司法、经营、知识产权等多源字段是否一致。",
+      "is_core": false,
+      "required_data_fields": [],
+      "source_field_hints": []
+    },
+    {
+      "primary_code": "B",
+      "primary_name": "经营能力与发展质量",
+      "secondary_code": "B1",
+      "secondary_name": "市场交易与客户能力",
+      "tag_code": "B1.1",
+      "tag_name": "招投标参与活跃度",
+      "tag_description": "衡量企业参与市场竞争和获取订单机会的活跃程度。",
+      "is_core": true,
+      "required_data_fields": [
+        "招投标记录",
+        "记录有效状态"
+      ],
+      "source_field_hints": [
+        "source_data.tender_records",
+        "source_data.tender_records[].times.published_at",
+        "source_data.tender_records[].record_status",
+        "source_data.tender_records[].duplicate_flags.exact_duplicate_occurrence"
+      ]
+    },
+    {
+      "primary_code": "B",
+      "primary_name": "经营能力与发展质量",
+      "secondary_code": "B1",
+      "secondary_name": "市场交易与客户能力",
+      "tag_code": "B1.2",
+      "tag_name": "中标/成交能力",
+      "tag_description": "衡量中标结果、成交金额和项目质量。",
+      "is_core": true,
+      "required_data_fields": [
+        "企业在公告中的可靠角色"
+      ],
+      "source_field_hints": [
+        "source_data.tender_records[].role.status",
+        "source_data.tender_records[].amounts.winning_total_raw"
+      ]
+    },
+    {
+      "primary_code": "B",
+      "primary_name": "经营能力与发展质量",
+      "secondary_code": "B1",
+      "secondary_name": "市场交易与客户能力",
+      "tag_code": "B1.3",
+      "tag_name": "客户资源与客户集中度",
+      "tag_description": "衡量客户数量、销售占比和客户稳定性。",
+      "is_core": false,
+      "required_data_fields": [],
+      "source_field_hints": []
+    },
+    {
+      "primary_code": "B",
+      "primary_name": "经营能力与发展质量",
+      "secondary_code": "B1",
+      "secondary_name": "市场交易与客户能力",
+      "tag_code": "B1.4",
+      "tag_name": "供应商/生态伙伴稳定性",
+      "tag_description": "衡量采购来源、供应商集中度和生态协同。",
+      "is_core": false,
+      "required_data_fields": [],
+      "source_field_hints": []
+    },
+    {
+      "primary_code": "B",
+      "primary_name": "经营能力与发展质量",
+      "secondary_code": "B1",
+      "secondary_name": "市场交易与客户能力",
+      "tag_code": "B1.5",
+      "tag_name": "进出口与区域市场能力",
+      "tag_description": "衡量国际贸易信用、区域覆盖和市场拓展能力。",
+      "is_core": false,
+      "required_data_fields": [],
+      "source_field_hints": []
+    },
+    {
+      "primary_code": "B",
+      "primary_name": "经营能力与发展质量",
+      "secondary_code": "B2",
+      "secondary_name": "资质质量与合规运营",
+      "tag_code": "B2.1",
+      "tag_name": "经营资质与行业准入有效性",
+      "tag_description": "衡量企业是否具备目标业务所需资质和准入许可。",
+      "is_core": true,
+      "required_data_fields": [],
+      "source_field_hints": [
+        "core_input.qualifications",
+        "target_project.qualification_requirements"
+      ]
+    },
+    {
+      "primary_code": "B",
+      "primary_name": "经营能力与发展质量",
+      "secondary_code": "B2",
+      "secondary_name": "资质质量与合规运营",
+      "tag_code": "B2.2",
+      "tag_name": "质量管理体系有效性",
+      "tag_description": "衡量ISO9001等质量体系认证是否有效。",
+      "is_core": false,
+      "required_data_fields": [],
+      "source_field_hints": []
+    },
+    {
+      "primary_code": "B",
+      "primary_name": "经营能力与发展质量",
+      "secondary_code": "B2",
+      "secondary_name": "资质质量与合规运营",
+      "tag_code": "B2.3",
+      "tag_name": "产品/信息安全/特殊许可认证",
+      "tag_description": "衡量产品认证、信息安全、药监、电信等特殊许可适配性。",
+      "is_core": false,
+      "required_data_fields": [],
+      "source_field_hints": []
+    },
+    {
+      "primary_code": "B",
+      "primary_name": "经营能力与发展质量",
+      "secondary_code": "B2",
+      "secondary_name": "资质质量与合规运营",
+      "tag_code": "B2.4",
+      "tag_name": "环保与绿色合规能力",
+      "tag_description": "衡量环保体系、环保处罚和绿色合规表现。",
+      "is_core": false,
+      "required_data_fields": [],
+      "source_field_hints": []
+    },
+    {
+      "primary_code": "B",
+      "primary_name": "经营能力与发展质量",
+      "secondary_code": "B2",
+      "secondary_name": "资质质量与合规运营",
+      "tag_code": "B2.5",
+      "tag_name": "抽查检查合格率",
+      "tag_description": "衡量双随机抽查、监管检查结果是否合格。",
+      "is_core": false,
+      "required_data_fields": [],
+      "source_field_hints": []
+    },
+    {
+      "primary_code": "B",
+      "primary_name": "经营能力与发展质量",
+      "secondary_code": "B3",
+      "secondary_name": "创新知识产权与技术资产",
+      "tag_code": "B3.1",
+      "tag_name": "有效专利数量与质量",
+      "tag_description": "衡量有效专利数量、类型、法律状态和主营相关性。",
+      "is_core": false,
+      "required_data_fields": [],
+      "source_field_hints": []
+    },
+    {
+      "primary_code": "B",
+      "primary_name": "经营能力与发展质量",
+      "secondary_code": "B3",
+      "secondary_name": "创新知识产权与技术资产",
+      "tag_code": "B3.2",
+      "tag_name": "商标资产有效性",
+      "tag_description": "衡量有效注册商标、品牌覆盖和商标稳定性。",
+      "is_core": false,
+      "required_data_fields": [],
+      "source_field_hints": []
+    },
+    {
+      "primary_code": "B",
+      "primary_name": "经营能力与发展质量",
+      "secondary_code": "B3",
+      "secondary_name": "创新知识产权与技术资产",
+      "tag_code": "B3.3",
+      "tag_name": "软件著作权/作品著作权",
+      "tag_description": "衡量软件、作品等数字化成果沉淀。",
+      "is_core": false,
+      "required_data_fields": [],
+      "source_field_hints": []
+    },
+    {
+      "primary_code": "B",
+      "primary_name": "经营能力与发展质量",
+      "secondary_code": "B3",
+      "secondary_name": "创新知识产权与技术资产",
+      "tag_code": "B3.4",
+      "tag_name": "标准参与和行业影响力",
+      "tag_description": "衡量国家/行业/团体标准参与情况。",
+      "is_core": false,
+      "required_data_fields": [],
+      "source_field_hints": []
+    },
+    {
+      "primary_code": "B",
+      "primary_name": "经营能力与发展质量",
+      "secondary_code": "B3",
+      "secondary_name": "创新知识产权与技术资产",
+      "tag_code": "B3.5",
+      "tag_name": "科技型标签与创新资质",
+      "tag_description": "衡量高新技术、专精特新、科技型中小企业等资质。",
+      "is_core": false,
+      "required_data_fields": [],
+      "source_field_hints": []
+    },
+    {
+      "primary_code": "B",
+      "primary_name": "经营能力与发展质量",
+      "secondary_code": "B4",
+      "secondary_name": "组织供给与服务网络",
+      "tag_code": "B4.1",
+      "tag_name": "员工规模与社保支撑",
+      "tag_description": "衡量人员规模、参保人数和业务规模是否匹配。",
+      "is_core": true,
+      "required_data_fields": [],
+      "source_field_hints": [
+        "core_input.organization.employee_count",
+        "core_input.organization.social_insurance_count"
+      ]
+    },
+    {
+      "primary_code": "B",
+      "primary_name": "经营能力与发展质量",
+      "secondary_code": "B4",
+      "secondary_name": "组织供给与服务网络",
+      "tag_code": "B4.2",
+      "tag_name": "招聘活跃与岗位结构",
+      "tag_description": "衡量招聘需求、岗位结构和扩张/补员能力。",
+      "is_core": false,
+      "required_data_fields": [],
+      "source_field_hints": []
+    },
+    {
+      "primary_code": "B",
+      "primary_name": "经营能力与发展质量",
+      "secondary_code": "B4",
+      "secondary_name": "组织供给与服务网络",
+      "tag_code": "B4.3",
+      "tag_name": "分支机构与服务覆盖",
+      "tag_description": "衡量分支机构、区域覆盖和服务网络。",
+      "is_core": true,
+      "required_data_fields": [],
+      "source_field_hints": [
+        "core_input.organization.branches",
+        "core_input.organization.service_regions"
+      ]
+    },
+    {
+      "primary_code": "B",
+      "primary_name": "经营能力与发展质量",
+      "secondary_code": "B4",
+      "secondary_name": "组织供给与服务网络",
+      "tag_code": "B4.4",
+      "tag_name": "数字化触点与线上可达",
+      "tag_description": "衡量网站备案、APP/小程序备案、官网域名等数字触点。",
+      "is_core": false,
+      "required_data_fields": [],
+      "source_field_hints": []
+    },
+    {
+      "primary_code": "B",
+      "primary_name": "经营能力与发展质量",
+      "secondary_code": "B4",
+      "secondary_name": "组织供给与服务网络",
+      "tag_code": "B4.5",
+      "tag_name": "产品与业务清晰度",
+      "tag_description": "衡量产品信息、业务描述和产品分类是否明确。",
+      "is_core": true,
+      "required_data_fields": [],
+      "source_field_hints": [
+        "core_input.business.products",
+        "core_input.business.business_description",
+        "core_input.business.product_business_tags"
+      ]
+    },
+    {
+      "primary_code": "B",
+      "primary_name": "经营能力与发展质量",
+      "secondary_code": "B5",
+      "secondary_name": "资本财务与发展资源",
+      "tag_code": "B5.1",
+      "tag_name": "年报财务数据可获得性",
+      "tag_description": "衡量资产、负债、收入、利润等财务数据是否可从年报/API或授权报表获得。",
+      "is_core": false,
+      "required_data_fields": [],
+      "source_field_hints": []
+    },
+    {
+      "primary_code": "B",
+      "primary_name": "经营能力与发展质量",
+      "secondary_code": "B5",
+      "secondary_name": "资本财务与发展资源",
+      "tag_code": "B5.2",
+      "tag_name": "资本实力与规模划型",
+      "tag_description": "衡量注册资本、实缴资本、企业规模划型和人员规模。",
+      "is_core": true,
+      "required_data_fields": [],
+      "source_field_hints": [
+        "core_input.scale.registered_capital",
+        "core_input.scale.paid_in_capital",
+        "core_input.scale.enterprise_size_classification",
+        "core_input.organization.employee_count"
+      ]
+    },
+    {
+      "primary_code": "B",
+      "primary_name": "经营能力与发展质量",
+      "secondary_code": "B5",
+      "secondary_name": "资本财务与发展资源",
+      "tag_code": "B5.3",
+      "tag_name": "融资能力与投资事件",
+      "tag_description": "衡量融资记录、投资事件、投资动态和资本市场关注度。",
+      "is_core": false,
+      "required_data_fields": [],
+      "source_field_hints": []
+    },
+    {
+      "primary_code": "B",
+      "primary_name": "经营能力与发展质量",
+      "secondary_code": "B5",
+      "secondary_name": "资本财务与发展资源",
+      "tag_code": "B5.4",
+      "tag_name": "债券与公开融资信用",
+      "tag_description": "衡量债券信息、评级、违约/摘牌等公开融资信用。",
+      "is_core": false,
+      "required_data_fields": [],
+      "source_field_hints": []
+    },
+    {
+      "primary_code": "B",
+      "primary_name": "经营能力与发展质量",
+      "secondary_code": "B5",
+      "secondary_name": "资本财务与发展资源",
+      "tag_code": "B5.5",
+      "tag_name": "资产融资负担适度性",
+      "tag_description": "衡量股权质押、动产抵押、专利质押等资产受限程度。",
+      "is_core": false,
+      "required_data_fields": [],
+      "source_field_hints": []
+    },
+    {
+      "primary_code": "C",
+      "primary_name": "信用行为与动态风险",
+      "secondary_code": "C1",
+      "secondary_name": "司法执行与诉讼风险",
+      "tag_code": "C1.1",
+      "tag_name": "失信被执行人记录",
+      "tag_description": "识别企业是否存在有效或历史失信被执行记录。",
+      "is_core": true,
+      "required_data_fields": [
+        "失信记录档位"
+      ],
+      "source_field_hints": [
+        "core_input.risks.dishonesty_record_category",
+        "core_input.risks.dishonesty_records"
+      ]
+    },
+    {
+      "primary_code": "C",
+      "primary_name": "信用行为与动态风险",
+      "secondary_code": "C1",
+      "secondary_name": "司法执行与诉讼风险",
+      "tag_code": "C1.2",
+      "tag_name": "被执行人及执行标的",
+      "tag_description": "衡量被执行案件数量、金额、时间和履行状态。",
+      "is_core": false,
+      "required_data_fields": [],
+      "source_field_hints": []
+    },
+    {
+      "primary_code": "C",
+      "primary_name": "信用行为与动态风险",
+      "secondary_code": "C1",
+      "secondary_name": "司法执行与诉讼风险",
+      "tag_code": "C1.3",
+      "tag_name": "终本案件与未履行金额",
+      "tag_description": "识别终结本次执行案件和未履行金额。",
+      "is_core": false,
+      "required_data_fields": [],
+      "source_field_hints": []
+    },
+    {
+      "primary_code": "C",
+      "primary_name": "信用行为与动态风险",
+      "secondary_code": "C1",
+      "secondary_name": "司法执行与诉讼风险",
+      "tag_code": "C1.4",
+      "tag_name": "限制高消费/限制出境",
+      "tag_description": "识别企业、法定代表人或关键人员是否被限高/限出境。",
+      "is_core": false,
+      "required_data_fields": [],
+      "source_field_hints": []
+    },
+    {
+      "primary_code": "C",
+      "primary_name": "信用行为与动态风险",
+      "secondary_code": "C1",
+      "secondary_name": "司法执行与诉讼风险",
+      "tag_code": "C1.5",
+      "tag_name": "诉讼/开庭/法院公告密度",
+      "tag_description": "衡量裁判文书、开庭公告、立案、法院公告等诉讼密度和案由性质。",
+      "is_core": false,
+      "required_data_fields": [],
+      "source_field_hints": []
+    },
+    {
+      "primary_code": "C",
+      "primary_name": "信用行为与动态风险",
+      "secondary_code": "C2",
+      "secondary_name": "行政税务与监管风险",
+      "tag_code": "C2.1",
+      "tag_name": "行政处罚记录",
+      "tag_description": "识别工商、信用中国等行政处罚数量、金额和严重程度。",
+      "is_core": true,
+      "required_data_fields": [],
+      "source_field_hints": [
+        "core_input.risks.administrative_penalties",
+        "core_input.risks.penalty_assessment_category",
+        "core_input.risks.penalty_severity_assessment",
+        "core_input.risks.penalty_remediation_status"
+      ]
+    },
+    {
+      "primary_code": "C",
+      "primary_name": "信用行为与动态风险",
+      "secondary_code": "C2",
+      "secondary_name": "行政税务与监管风险",
+      "tag_code": "C2.2",
+      "tag_name": "严重违法与经营异常",
+      "tag_description": "识别严重违法失信名单、经营异常和移出情况。",
+      "is_core": true,
+      "required_data_fields": [
+        "经营异常档位"
+      ],
+      "source_field_hints": [
+        "core_input.risks.abnormal_operation_category",
+        "core_input.risks.abnormal_operation_records"
+      ]
+    },
+    {
+      "primary_code": "C",
+      "primary_name": "信用行为与动态风险",
+      "secondary_code": "C2",
+      "secondary_name": "行政税务与监管风险",
+      "tag_code": "C2.3",
+      "tag_name": "税务违法/欠税/非正常户",
+      "tag_description": "识别重大税收违法、欠税公告和税务非正常户。",
+      "is_core": false,
+      "required_data_fields": [],
+      "source_field_hints": []
+    },
+    {
+      "primary_code": "C",
+      "primary_name": "信用行为与动态风险",
+      "secondary_code": "C2",
+      "secondary_name": "行政税务与监管风险",
+      "tag_code": "C2.4",
+      "tag_name": "环保处罚与安全生产风险",
+      "tag_description": "识别环保处罚、安全事故、产品质量风险和监管曝光。",
+      "is_core": false,
+      "required_data_fields": [],
+      "source_field_hints": []
+    },
+    {
+      "primary_code": "C",
+      "primary_name": "信用行为与动态风险",
+      "secondary_code": "C2",
+      "secondary_name": "行政税务与监管风险",
+      "tag_code": "C2.5",
+      "tag_name": "破产清算注销风险",
+      "tag_description": "识别破产重组、清算、注销备案、简易注销等持续经营风险。",
+      "is_core": true,
+      "required_data_fields": [
+        "破产清算注销档位"
+      ],
+      "source_field_hints": [
+        "core_input.risks.bankruptcy_liquidation_category",
+        "core_input.risks.bankruptcy_liquidation_records"
+      ]
+    },
+    {
+      "primary_code": "C",
+      "primary_name": "信用行为与动态风险",
+      "secondary_code": "C3",
+      "secondary_name": "动态关联与声誉风险",
+      "tag_code": "C3.1",
+      "tag_name": "股权质押/动产抵押/司法冻结",
+      "tag_description": "识别股权质押、动产抵押、司法协助、冻结等资产受限风险。",
+      "is_core": false,
+      "required_data_fields": [],
+      "source_field_hints": []
+    },
+    {
+      "primary_code": "C",
+      "primary_name": "信用行为与动态风险",
+      "secondary_code": "C3",
+      "secondary_name": "动态关联与声誉风险",
+      "tag_code": "C3.2",
+      "tag_name": "关键人员司法/经营风险",
+      "tag_description": "识别法定代表人、董监高等人员被执行、失信、限高、终本、股权质押等风险。",
+      "is_core": false,
+      "required_data_fields": [],
+      "source_field_hints": []
+    },
+    {
+      "primary_code": "C",
+      "primary_name": "信用行为与动态风险",
+      "secondary_code": "C3",
+      "secondary_name": "动态关联与声誉风险",
+      "tag_code": "C3.3",
+      "tag_name": "负面新闻舆情",
+      "tag_description": "识别重大负面新闻、监管曝光、事故和公众争议。",
+      "is_core": false,
+      "required_data_fields": [],
+      "source_field_hints": []
+    },
+    {
+      "primary_code": "C",
+      "primary_name": "信用行为与动态风险",
+      "secondary_code": "C3",
+      "secondary_name": "动态关联与声誉风险",
+      "tag_code": "C3.4",
+      "tag_name": "资质撤销/许可失效预警",
+      "tag_description": "监控证书、行政许可、标签、备案是否临期、失效或撤销。",
+      "is_core": true,
+      "required_data_fields": [],
+      "source_field_hints": [
+        "core_input.qualifications",
+        "core_input.qualification_expiry_threshold_days"
+      ]
+    },
+    {
+      "primary_code": "C",
+      "primary_name": "信用行为与动态风险",
+      "secondary_code": "C3",
+      "secondary_name": "动态关联与声誉风险",
+      "tag_code": "C3.5",
+      "tag_name": "客户/供应商集中异常与供应链风险",
+      "tag_description": "识别客户或供应商高度集中、关系异常或上下游负面风险。",
+      "is_core": false,
+      "required_data_fields": [],
+      "source_field_hints": []
+    }
+  ]
+}

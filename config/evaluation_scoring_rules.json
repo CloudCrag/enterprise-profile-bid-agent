@@ -1,0 +1,550 @@
+{
+  "rules": [
+    {
+      "improvement_suggestion": "先完成主体核验，统一企业名称、税号、法人、注册地址；建立主数据唯一ID。",
+      "indicator_code": "A1.1",
+      "indicator_name": "企业存在与身份核验",
+      "low_score_diagnosis": "主体身份不一致，可能存在错配、冒名、历史名称混淆或数据质量问题。",
+      "model_conflicts": [],
+      "redline_note": "",
+      "scoring_rule": "100=存在且二/三要素全部一致；60=存在但存在轻微信息差异；0=不存在、税号错误或核心身份不一致。"
+    },
+    {
+      "improvement_suggestion": "保持工商正常状态，及时年报；如新设企业，补充核心团队、母公司、项目履约记录。",
+      "indicator_code": "A1.2",
+      "indicator_name": "经营状态与存续年限",
+      "low_score_diagnosis": "主体经营状态或持续经营时间不足，合作稳定性弱。",
+      "model_conflicts": [],
+      "redline_note": "",
+      "scoring_rule": "100=正常经营且存续>=5年；80=正常经营但成立1-5年；40=迁出/停业/状态不稳定；0=吊销、注销、撤销。"
+    },
+    {
+      "improvement_suggestion": "补齐出资信息、实缴凭证和章程；如未实缴，披露实缴计划。",
+      "indicator_code": "A1.3",
+      "indicator_name": "注册资本与实缴资本匹配度",
+      "low_score_diagnosis": "注册资本承诺未充分兑现，可能削弱外部信任。",
+      "model_conflicts": [],
+      "redline_note": "",
+      "scoring_rule": "100=实缴/注册资本>=80%；80=50%-80%；60=30%-50%；40=<30%；0=资本信息缺失或明显异常。"
+    },
+    {
+      "improvement_suggestion": "补充主营产品、业务说明、合同案例、产品目录；必要时变更/扩展经营范围。",
+      "indicator_code": "A1.4",
+      "indicator_name": "行业分类与经营范围匹配度",
+      "low_score_diagnosis": "主营业务边界不清，外部难以判断交付能力。",
+      "model_conflicts": [],
+      "redline_note": "",
+      "scoring_rule": "100=行业和经营范围高度匹配；70=基本匹配但业务证据少；40=经营范围宽泛或主营不清；0=明显不匹配或超范围经营。"
+    },
+    {
+      "improvement_suggestion": "维护官方电话、邮箱、网站和注册地址；处理同电话异常和地址不一致。",
+      "indicator_code": "A1.5",
+      "indicator_name": "经营地区",
+      "low_score_diagnosis": "联系信息不可验证，影响尽调、售后和风险处置。",
+      "model_conflicts": [
+        {
+          "code": "MODEL_CONTENT_CONFLICT",
+          "message": "A1.5 new indicator name conflicts with scoring-rule name and API/output semantics."
+        }
+      ],
+      "redline_note": "",
+      "scoring_rule": "100=联系方式完整且电话匹配；70=基本完整但部分缺失；40=大量缺失或同电话企业异常；0=无法联系或地址电话严重不一致。"
+    },
+    {
+      "improvement_suggestion": "按年度补齐年报、社保、资产、股东、网站和担保信息；建立披露复核机制。",
+      "indicator_code": "A1.6",
+      "indicator_name": "年报连续性与工商公示完整性",
+      "low_score_diagnosis": "公示信息不完整，降低信用可解释性。",
+      "model_conflicts": [],
+      "redline_note": "",
+      "scoring_rule": "100=近3年年报连续且关键字段完整；70=连续但部分字段缺失；40=断档或关键字段为空；0=未年报导致经营异常。"
+    },
+    {
+      "improvement_suggestion": "补齐股东名册、出资凭证、股权结构图和历史变更说明。",
+      "indicator_code": "A2.1",
+      "indicator_name": "股东结构透明度",
+      "low_score_diagnosis": "股东责任和控制权不透明，影响合作信任。",
+      "model_conflicts": [],
+      "redline_note": "",
+      "scoring_rule": "100=股东及出资信息完整；70=主要股东清晰但明细不足；40=股东或出资字段缺失；0=无法识别股东结构。"
+    },
+    {
+      "improvement_suggestion": "建立穿透图，披露实控人、受益所有人、控制路径和关联企业。",
+      "indicator_code": "A2.2",
+      "indicator_name": "实控人/受益所有人穿透清晰度",
+      "low_score_diagnosis": "控制权不透明，关联交易和风险外溢难以识别。",
+      "model_conflicts": [],
+      "redline_note": "",
+      "scoring_rule": "100=实控/受益链条清晰；70=可识别但层级复杂；40=穿透不完整；0=无法识别或存在高风险隐名控制。"
+    },
+    {
+      "improvement_suggestion": "补齐主要人员、任职文件、组织架构和职责分工。",
+      "indicator_code": "A2.3",
+      "indicator_name": "董监高与主要人员完整度",
+      "low_score_diagnosis": "管理责任主体不清，治理可追溯性弱。",
+      "model_conflicts": [],
+      "redline_note": "",
+      "scoring_rule": "100=主要人员完整且结构合理；70=主要岗位基本完整；40=关键人员缺失；0=完全无主要人员信息或明显异常。"
+    },
+    {
+      "improvement_suggestion": "对重大变更出具说明，稳定核心治理结构，保持工商数据一致。",
+      "indicator_code": "A2.4",
+      "indicator_name": "历史变更稳定性",
+      "low_score_diagnosis": "治理或经营边界频繁变化，影响稳定合作。",
+      "model_conflicts": [],
+      "redline_note": "",
+      "scoring_rule": "100=无异常频繁变更；70=正常业务变更；40=法定代表人/股东/地址频繁变更；0=短期密集异常变更且无法解释。"
+    },
+    {
+      "improvement_suggestion": "梳理对外投资和分支机构，关闭异常主体，说明集团资源协同方式。",
+      "indicator_code": "A2.5",
+      "indicator_name": "对外投资与集团结构合理性",
+      "low_score_diagnosis": "组织边界和资源协同不清，可能带来外溢风险。",
+      "model_conflicts": [],
+      "redline_note": "",
+      "scoring_rule": "100=结构清晰且投资/分支与业务协同；70=结构清晰但协同一般；40=投资杂乱或分支异常；0=大量异常关联或空壳疑虑。"
+    },
+    {
+      "improvement_suggestion": "建立关联方风险清单，隔离高风险关联交易，披露治理措施。",
+      "indicator_code": "A2.6",
+      "indicator_name": "关联方风险隔离",
+      "low_score_diagnosis": "关联方风险可能传导到本企业信用。",
+      "model_conflicts": [],
+      "redline_note": "",
+      "scoring_rule": "100=关联方清晰且无重大风险；70=有关联但风险可控；40=关联复杂且部分风险；0=高风险关联企业或人员密集。"
+    },
+    {
+      "improvement_suggestion": "建立企业唯一ID，合并曾用名风险记录，统一对外名称。",
+      "indicator_code": "A2.7",
+      "indicator_name": "名称与历史身份清晰度",
+      "low_score_diagnosis": "历史身份混淆可能导致数据误配或风险漏检。",
+      "model_conflicts": [],
+      "redline_note": "",
+      "scoring_rule": "100=历史身份清晰且无混淆；70=有曾用名但可追溯；40=名称频繁变化；0=主体匹配混乱。"
+    },
+    {
+      "improvement_suggestion": "改善公共信用记录，补齐评级材料，定期跟踪评级变化。",
+      "indicator_code": "A3.1",
+      "indicator_name": "企业信用评级/主体评级",
+      "low_score_diagnosis": "外部信用评价偏弱，市场信任基础不足。",
+      "model_conflicts": [],
+      "redline_note": "",
+      "scoring_rule": "100=较高评级且展望稳定/正面；70=一般评级；40=评级低或展望负面；0=评级违约/撤销/严重负面。"
+    },
+    {
+      "improvement_suggestion": "规范纳税申报，处理欠税和非正常户，争取提升纳税信用等级。",
+      "indicator_code": "A3.2",
+      "indicator_name": "税务信用评级",
+      "low_score_diagnosis": "税务信用弱会影响公共信用和交易信任。",
+      "model_conflicts": [],
+      "redline_note": "",
+      "scoring_rule": "100=A级；80=B级；60=M级或无评级但无负面；40=C级；0=D级或非正常户。"
+    },
+    {
+      "improvement_suggestion": "建立证书台账，到期前90天预警复审，补齐证书详情。",
+      "indicator_code": "A3.3",
+      "indicator_name": "资质证书公开与有效披露",
+      "low_score_diagnosis": "资质披露不足会影响准入和信任。",
+      "model_conflicts": [],
+      "redline_note": "",
+      "scoring_rule": "100=关键证书有效且披露完整；70=证书有效但覆盖不足；40=证书过期/缺关键证书；0=资质失效或无法核验。"
+    },
+    {
+      "improvement_suggestion": "核查目标业务必要许可，及时续期并保持经营范围一致。",
+      "indicator_code": "A3.4",
+      "indicator_name": "行政许可一致性",
+      "low_score_diagnosis": "行政许可不足可能构成准入风险。",
+      "model_conflicts": [],
+      "redline_note": "",
+      "scoring_rule": "100=许可有效且与经营范围一致；70=许可有效但覆盖有限；40=许可临期/历史失效；0=无必要许可或许可失效。"
+    },
+    {
+      "improvement_suggestion": "申请/维护高新、专精特新、创新型中小企业等资质，沉淀荣誉材料。",
+      "indicator_code": "A3.5",
+      "indicator_name": "企业标签、荣誉与正向身份",
+      "low_score_diagnosis": "正向身份资产不足，难以证明成长性和信誉。",
+      "model_conflicts": [],
+      "redline_note": "",
+      "scoring_rule": "100=多个有效高价值标签；70=有基础正向标签；40=标签少或有效性待核验；0=无正向标签且缺少替代证明。"
+    },
+    {
+      "improvement_suggestion": "建立新闻披露、客户案例、荣誉案例和负面舆情回应机制。",
+      "indicator_code": "A3.6",
+      "indicator_name": "正面新闻与公共声誉",
+      "low_score_diagnosis": "公共声誉资产不足或负面舆情削弱企业形象。",
+      "model_conflicts": [],
+      "redline_note": "",
+      "scoring_rule": "100=持续正向新闻且无重大负面；70=少量正向或中性；40=无公开声誉资产；0=重大负面舆情。"
+    },
+    {
+      "improvement_suggestion": "建立主数据治理，统一外部平台信息，逐项修正冲突字段。",
+      "indicator_code": "A3.7",
+      "indicator_name": "多源数据一致性",
+      "low_score_diagnosis": "多源数据冲突会导致画像可信度下降。",
+      "model_conflicts": [],
+      "redline_note": "",
+      "scoring_rule": "100=多源字段一致；70=轻微差异可解释；40=多处差异；0=关键字段冲突或疑似失实。"
+    },
+    {
+      "improvement_suggestion": "完善投标记录、项目案例、报价参与台账，扩大目标客户覆盖。",
+      "indicator_code": "B1.1",
+      "indicator_name": "招投标参与活跃度",
+      "low_score_diagnosis": "市场交易活跃不足，业务拓展证据弱。",
+      "model_conflicts": [],
+      "redline_note": "",
+      "scoring_rule": "按近12/24个月招投标记录数和行业分位评分；无记录但非招投标行业按中性处理。"
+    },
+    {
+      "improvement_suggestion": "复盘低中标原因，优化报价、资质和案例材料。",
+      "indicator_code": "B1.2",
+      "indicator_name": "中标/成交能力",
+      "low_score_diagnosis": "订单转化能力不足，市场竞争力弱。",
+      "model_conflicts": [],
+      "redline_note": "",
+      "scoring_rule": "按中标次数、金额、成功率、采购方质量分位评分；低中标或无成交降分。"
+    },
+    {
+      "improvement_suggestion": "拓展客户组合，降低单一客户依赖，建立客户复购和回款台账。",
+      "indicator_code": "B1.3",
+      "indicator_name": "客户资源与客户集中度",
+      "low_score_diagnosis": "客户基础薄弱或过度集中，抗风险能力弱。",
+      "model_conflicts": [],
+      "redline_note": "",
+      "scoring_rule": "100=客户多元且复购稳定；70=客户清晰但集中度较高；40=客户少或数据缺失；0=严重单一客户依赖或客户异常。"
+    },
+    {
+      "improvement_suggestion": "建立供应商分级、备选供应商和采购集中度监控。",
+      "indicator_code": "B1.4",
+      "indicator_name": "供应商/生态伙伴稳定性",
+      "low_score_diagnosis": "供应链韧性不足，可能影响交付稳定性。",
+      "model_conflicts": [],
+      "redline_note": "",
+      "scoring_rule": "100=供应来源稳定多元；70=有核心供应商但可替代；40=供应商少或集中；0=关键供应商异常或断供风险。"
+    },
+    {
+      "improvement_suggestion": "维护进出口信用等级，补充区域服务网络和园区/分支资源。",
+      "indicator_code": "B1.5",
+      "indicator_name": "进出口与区域市场能力",
+      "low_score_diagnosis": "市场边界或外贸信用不足，限制业务增长。",
+      "model_conflicts": [],
+      "redline_note": "",
+      "scoring_rule": "按进出口信用等级、处罚情况、区域/分支覆盖评分；无进出口业务按行业适用性中性处理。"
+    },
+    {
+      "improvement_suggestion": "梳理行业准入清单，补齐核心资质，建立证书到期预警。",
+      "indicator_code": "B2.1",
+      "indicator_name": "经营资质与行业准入有效性",
+      "low_score_diagnosis": "关键资质不足，可能无法承接目标业务。",
+      "model_conflicts": [],
+      "redline_note": "",
+      "scoring_rule": "100=关键资质齐全有效；70=基本齐全；40=资质缺口/临期；0=核心资质缺失或失效。"
+    },
+    {
+      "improvement_suggestion": "完成质量体系认证/复审，建立内审、质量追溯和不合格闭环。",
+      "indicator_code": "B2.2",
+      "indicator_name": "质量管理体系有效性",
+      "low_score_diagnosis": "质量管理体系不足，交付和质量稳定性缺少保障。",
+      "model_conflicts": [],
+      "redline_note": "",
+      "scoring_rule": "100=质量体系有效且持续；70=有有效体系但覆盖有限；40=证书过期或仅历史记录；0=无质量体系且行业要求较高。"
+    },
+    {
+      "improvement_suggestion": "按产品线补齐强制/推荐认证、备案和许可证明。",
+      "indicator_code": "B2.3",
+      "indicator_name": "产品/信息安全/特殊许可认证",
+      "low_score_diagnosis": "产品或特殊许可不齐，影响准入和客户信任。",
+      "model_conflicts": [],
+      "redline_note": "",
+      "scoring_rule": "按目标行业必要认证覆盖率评分；无必要认证行业按中性处理。"
+    },
+    {
+      "improvement_suggestion": "建立环保合规台账，完成体系复审，闭环处罚整改。",
+      "indicator_code": "B2.4",
+      "indicator_name": "环保与绿色合规能力",
+      "low_score_diagnosis": "环保合规不足，可能形成监管和供应链准入风险。",
+      "model_conflicts": [],
+      "redline_note": "",
+      "scoring_rule": "100=环境体系有效且无处罚；70=无处罚但体系不足；40=轻微处罚已整改；0=重大环保处罚或多次处罚。"
+    },
+    {
+      "improvement_suggestion": "建立抽查问题整改台账，落实责任人和复查证明。",
+      "indicator_code": "B2.5",
+      "indicator_name": "抽查检查合格率",
+      "low_score_diagnosis": "监管抽查表现弱，说明过程合规存在问题。",
+      "model_conflicts": [],
+      "redline_note": "",
+      "scoring_rule": "按近24个月检查合格率评分；存在不合格且未整改降分。"
+    },
+    {
+      "improvement_suggestion": "维护有效专利，缴纳年费，围绕核心产品布局发明/实用新型。",
+      "indicator_code": "B3.1",
+      "indicator_name": "有效专利数量与质量",
+      "low_score_diagnosis": "有效技术资产不足，创新护城河弱。",
+      "model_conflicts": [],
+      "redline_note": "",
+      "scoring_rule": "按有效专利数、发明占比、主营相关性和行业分位评分；失效专利不计或低权重。"
+    },
+    {
+      "improvement_suggestion": "推进核心商标注册，清理无效商标，形成品牌资产台账。",
+      "indicator_code": "B3.2",
+      "indicator_name": "商标资产有效性",
+      "low_score_diagnosis": "品牌保护不足，影响市场识别和无形资产积累。",
+      "model_conflicts": [],
+      "redline_note": "",
+      "scoring_rule": "100=核心商标有效且覆盖主营；70=部分有效；40=待审/驳回较多；0=无商标或核心商标无效。"
+    },
+    {
+      "improvement_suggestion": "登记核心软件和作品，建立版本、源码、产品说明和应用案例证据。",
+      "indicator_code": "B3.3",
+      "indicator_name": "软件著作权/作品著作权",
+      "low_score_diagnosis": "数字化成果沉淀不足，产品技术可证明性弱。",
+      "model_conflicts": [],
+      "redline_note": "",
+      "scoring_rule": "按有效软著/作品数量、近三年新增、主营相关性评分。"
+    },
+    {
+      "improvement_suggestion": "参与标准制定、行业协会、技术白皮书和标准化项目。",
+      "indicator_code": "B3.4",
+      "indicator_name": "标准参与和行业影响力",
+      "low_score_diagnosis": "行业影响力和技术话语权不足。",
+      "model_conflicts": [],
+      "redline_note": "",
+      "scoring_rule": "100=参与国家/行业标准；70=参与团体/地方标准；40=仅内部标准或无公开记录；0=无标准化证据。"
+    },
+    {
+      "improvement_suggestion": "申请/维护高新、专精特新、创新型中小企业、研发中心等资质。",
+      "indicator_code": "B3.5",
+      "indicator_name": "科技型标签与创新资质",
+      "low_score_diagnosis": "创新资质不足，难以证明技术成长能力。",
+      "model_conflicts": [],
+      "redline_note": "",
+      "scoring_rule": "100=多个有效创新资质；70=有1项有效资质；40=历史资质或待核验；0=无创新资质。"
+    },
+    {
+      "improvement_suggestion": "补充社保、劳动合同、外包说明和核心岗位人员证明。",
+      "indicator_code": "B4.1",
+      "indicator_name": "员工规模与社保支撑",
+      "low_score_diagnosis": "组织交付能力不足，持续服务风险高。",
+      "model_conflicts": [],
+      "redline_note": "",
+      "scoring_rule": "按员工/社保规模、行业分位和业务匹配度评分；0人/0社保且无说明低分。"
+    },
+    {
+      "improvement_suggestion": "建立招聘计划、关键岗位地图和人员稳定性指标。",
+      "indicator_code": "B4.2",
+      "indicator_name": "招聘活跃与岗位结构",
+      "low_score_diagnosis": "人才补给不足或岗位结构不匹配。",
+      "model_conflicts": [],
+      "redline_note": "",
+      "scoring_rule": "按近12个月招聘活跃度、关键岗位覆盖和岗位结构评分；异常高流动需扣分。"
+    },
+    {
+      "improvement_suggestion": "补充直营网点、合作伙伴、服务半径和区域项目案例。",
+      "indicator_code": "B4.3",
+      "indicator_name": "分支机构与服务覆盖",
+      "low_score_diagnosis": "服务覆盖不足，跨区域交付能力弱。",
+      "model_conflicts": [],
+      "redline_note": "",
+      "scoring_rule": "按分支/区域覆盖、分支状态、园区等级评分；无分支但本地服务型按中性。"
+    },
+    {
+      "improvement_suggestion": "完成官网、域名、APP/小程序备案，统一企业主体信息。",
+      "indicator_code": "B4.4",
+      "indicator_name": "数字化触点与线上可达",
+      "low_score_diagnosis": "线上可信触点不足，影响客户获取和服务透明。",
+      "model_conflicts": [],
+      "redline_note": "",
+      "scoring_rule": "100=官网/APP备案有效且与企业匹配；70=有官网备案；40=线上触点弱；0=无有效线上触点或主体不一致。"
+    },
+    {
+      "improvement_suggestion": "补充产品目录、服务说明、应用场景、客户案例和技术参数。",
+      "indicator_code": "B4.5",
+      "indicator_name": "产品与业务清晰度",
+      "low_score_diagnosis": "企业提供什么、能交付什么不清楚。",
+      "model_conflicts": [],
+      "redline_note": "",
+      "scoring_rule": "100=产品/业务清晰且与资质客户匹配；70=基本清晰；40=描述薄弱；0=无产品/业务信息。"
+    },
+    {
+      "improvement_suggestion": "接入年报详情/上市财报；非上市企业补充授权财报和纳税申报。",
+      "indicator_code": "B5.1",
+      "indicator_name": "年报财务数据可获得性",
+      "low_score_diagnosis": "财务透明度不足，无法判断偿债和持续经营。",
+      "model_conflicts": [],
+      "redline_note": "",
+      "scoring_rule": "100=近3年财务字段完整；70=核心字段可得；40=大量缺失；0=关键财务不可得或疑似失实。"
+    },
+    {
+      "improvement_suggestion": "补齐实缴、规模证明和行业资质；分项目设置承接上限。",
+      "indicator_code": "B5.2",
+      "indicator_name": "资本实力与规模划型",
+      "low_score_diagnosis": "资本和规模支撑不足，影响承接大项目能力。",
+      "model_conflicts": [],
+      "redline_note": "",
+      "scoring_rule": "按资本实缴、规模划型、人员规模和行业分位评分。"
+    },
+    {
+      "improvement_suggestion": "补充银行授信、融资记录、投资人信息和资金用途说明。",
+      "indicator_code": "B5.3",
+      "indicator_name": "融资能力与投资事件",
+      "low_score_diagnosis": "外部资源动员能力不足。",
+      "model_conflicts": [],
+      "redline_note": "",
+      "scoring_rule": "100=融资/投资记录清晰且与成长匹配；70=有融资或投资事件；40=无记录但现金流可支撑；0=融资异常或高风险。"
+    },
+    {
+      "improvement_suggestion": "改善财务透明度和评级材料，处理债务风险。",
+      "indicator_code": "B5.4",
+      "indicator_name": "债券与公开融资信用",
+      "low_score_diagnosis": "公开融资信用弱，市场融资能力受限。",
+      "model_conflicts": [],
+      "redline_note": "",
+      "scoring_rule": "100=公开融资信用良好；70=有普通评级；40=评级弱或信息少；0=债券违约/评级严重负面。"
+    },
+    {
+      "improvement_suggestion": "降低质押/抵押比例，披露融资用途和解除计划。",
+      "indicator_code": "B5.5",
+      "indicator_name": "资产融资负担适度性",
+      "low_score_diagnosis": "资产受限高，降低融资弹性和抗风险能力。",
+      "model_conflicts": [],
+      "redline_note": "",
+      "scoring_rule": "100=无高比例受限资产；70=适度且有偿债安排；40=比例较高；0=高比例质押/抵押且叠加司法风险。"
+    },
+    {
+      "improvement_suggestion": "履行生效文书，取得结案/履行证明，完成信用修复并持续监控。",
+      "indicator_code": "C1.1",
+      "indicator_name": "失信被执行人记录",
+      "low_score_diagnosis": "严重红线，会显著降低信用等级和交易准入。",
+      "model_conflicts": [],
+      "redline_note": "风险项；必要时触发等级上限",
+      "scoring_rule": "100=无记录；70=历史记录已修复；40=历史未完全闭环；0=有效失信或全部未履行。"
+    },
+    {
+      "improvement_suggestion": "建立执行案件清偿计划，逐案跟踪履行状态和结案证明。",
+      "indicator_code": "C1.2",
+      "indicator_name": "被执行人及执行标的",
+      "low_score_diagnosis": "付款和履约信用弱，合作方回款风险高。",
+      "model_conflicts": [],
+      "redline_note": "风险项；必要时触发等级上限",
+      "scoring_rule": "按近24个月案件数、执行标的/注册资本、是否履行评分；多条大额未履行低分。"
+    },
+    {
+      "improvement_suggestion": "优先处理终本案件，恢复履行或达成执行和解。",
+      "indicator_code": "C1.3",
+      "indicator_name": "终本案件与未履行金额",
+      "low_score_diagnosis": "偿付能力或可执行资产存在重大疑虑。",
+      "model_conflicts": [],
+      "redline_note": "风险项；必要时触发等级上限",
+      "scoring_rule": "100=无终本；70=历史终本已履行；40=小额终本；0=多条/大额终本未履行。"
+    },
+    {
+      "improvement_suggestion": "处理关联执行案件，申请解除限制，并披露解除证明。",
+      "indicator_code": "C1.4",
+      "indicator_name": "限制高消费/限制出境",
+      "low_score_diagnosis": "司法限制影响企业信誉和管理层履职。",
+      "model_conflicts": [],
+      "redline_note": "风险项；必要时触发等级上限",
+      "scoring_rule": "100=无记录；70=历史解除；40=少量未解除；0=当前限制或多条限制。"
+    },
+    {
+      "improvement_suggestion": "建立诉讼台账，分类处理高频案由，优化合同审批和争议解决机制。",
+      "indicator_code": "C1.5",
+      "indicator_name": "诉讼/开庭/法院公告密度",
+      "low_score_diagnosis": "交易纠纷较多，说明合同管理或付款履约存在问题。",
+      "model_conflicts": [],
+      "redline_note": "风险项；必要时触发等级上限",
+      "scoring_rule": "按案件数量、金额、案由、企业角色、近因性评分；合同/货款纠纷高频扣分。"
+    },
+    {
+      "improvement_suggestion": "形成处罚整改闭环，复盘违法类型，建立合规培训和审批流程。",
+      "indicator_code": "C2.1",
+      "indicator_name": "行政处罚记录",
+      "low_score_diagnosis": "行政合规存在缺陷，影响监管信用。",
+      "model_conflicts": [],
+      "redline_note": "风险项；必要时触发等级上限",
+      "scoring_rule": "100=无处罚；70=轻微且已整改；40=多次或较大金额；0=重大/重复处罚未整改。"
+    },
+    {
+      "improvement_suggestion": "及时年报、修正地址/公示问题，申请移出异常并保留证明。",
+      "indicator_code": "C2.2",
+      "indicator_name": "严重违法与经营异常",
+      "low_score_diagnosis": "工商监管风险高，可能影响投标和合作准入。",
+      "model_conflicts": [],
+      "redline_note": "风险项；必要时触发等级上限",
+      "scoring_rule": "100=无记录；70=历史已移出；40=历史多次异常；0=当前在列严重违法或经营异常。"
+    },
+    {
+      "improvement_suggestion": "补缴欠税、解除非正常户，规范申报，提升纳税信用等级。",
+      "indicator_code": "C2.3",
+      "indicator_name": "税务违法/欠税/非正常户",
+      "low_score_diagnosis": "税务信用风险会影响公共信用和交易方信任。",
+      "model_conflicts": [],
+      "redline_note": "风险项；必要时触发等级上限",
+      "scoring_rule": "100=无税务负面且评级好；70=无负面但评级一般；40=欠税已处理；0=重大税收违法/非正常户。"
+    },
+    {
+      "improvement_suggestion": "整改处罚事项，完善安全环保制度、培训、监测和应急预案。",
+      "indicator_code": "C2.4",
+      "indicator_name": "环保处罚与安全生产风险",
+      "low_score_diagnosis": "环保或安全风险可能触发准入限制和声誉损失。",
+      "model_conflicts": [],
+      "redline_note": "风险项；必要时触发等级上限",
+      "scoring_rule": "100=无处罚/事故；70=轻微已整改；40=多次或较大影响；0=重大环保/安全事故。"
+    },
+    {
+      "improvement_suggestion": "披露债务重组、清算或经营恢复方案；必要时暂停高风险合作。",
+      "indicator_code": "C2.5",
+      "indicator_name": "破产清算注销风险",
+      "low_score_diagnosis": "持续经营存在重大不确定性。",
+      "model_conflicts": [],
+      "redline_note": "风险项；必要时触发等级上限",
+      "scoring_rule": "100=无记录；70=历史已解除；40=进入风险程序但可解释；0=当前破产/清算/注销。"
+    },
+    {
+      "improvement_suggestion": "取得解除证明，降低受限比例，披露融资用途和还款安排。",
+      "indicator_code": "C3.1",
+      "indicator_name": "股权质押/动产抵押/司法冻结",
+      "low_score_diagnosis": "资产受限削弱偿债和融资弹性。",
+      "model_conflicts": [],
+      "redline_note": "",
+      "scoring_rule": "100=无高风险受限资产；70=适度受限；40=比例较高；0=冻结/司法协助有效且金额大。"
+    },
+    {
+      "improvement_suggestion": "核验关键人员风险，处理案件或调整岗位，建立任职风控门槛。",
+      "indicator_code": "C3.2",
+      "indicator_name": "关键人员司法/经营风险",
+      "low_score_diagnosis": "人员风险会外溢到企业治理和履约信用。",
+      "model_conflicts": [],
+      "redline_note": "",
+      "scoring_rule": "100=关键人员无重大风险；70=历史轻微已处理；40=部分人员风险；0=核心人员有效失信/限高/终本。"
+    },
+    {
+      "improvement_suggestion": "建立舆情监控、事实核查、回应机制和整改公开。",
+      "indicator_code": "C3.3",
+      "indicator_name": "负面新闻舆情",
+      "low_score_diagnosis": "声誉风险影响客户信任和采购准入。",
+      "model_conflicts": [],
+      "redline_note": "",
+      "scoring_rule": "100=无重大负面；70=轻微负面已回应；40=多条负面；0=重大负面且未处置。"
+    },
+    {
+      "improvement_suggestion": "建立证照许可到期预警、续期责任人和撤销风险复盘。",
+      "indicator_code": "C3.4",
+      "indicator_name": "资质撤销/许可失效预警",
+      "low_score_diagnosis": "资质状态不稳，可能突然丧失业务资格。",
+      "model_conflicts": [],
+      "redline_note": "",
+      "scoring_rule": "100=无临期/撤销；70=少量临期有续期计划；40=多项临期或历史撤销；0=核心资质失效/撤销。"
+    },
+    {
+      "improvement_suggestion": "降低集中度，建立备选供应商和客户信用评估机制。",
+      "indicator_code": "C3.5",
+      "indicator_name": "客户/供应商集中异常与供应链风险",
+      "low_score_diagnosis": "上下游集中可能放大经营波动和履约风险。",
+      "model_conflicts": [],
+      "redline_note": "",
+      "scoring_rule": "100=上下游多元稳定；70=集中但有替代；40=高度集中；0=核心上下游异常或断供/回款风险。"
+    }
+  ],
+  "schema_version": "evaluation-scoring-rules/1.0.0"
+}

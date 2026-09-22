@@ -1,0 +1,234 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "enterprise-task-requirements-submission/1.0.0",
+  "title": "Structured Project Task Requirements Submission",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "project_id",
+    "company_id",
+    "requirement_set_id",
+    "source_version",
+    "generated_at",
+    "requirements"
+  ],
+  "properties": {
+    "project_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "company_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "requirement_set_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "requirements": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/requirement"
+      }
+    }
+  },
+  "$defs": {
+    "requirement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "requirement_id",
+        "target_layer",
+        "target_code",
+        "operator",
+        "required_value",
+        "description",
+        "importance",
+        "evidence_source",
+        "manual_review_status"
+      ],
+      "properties": {
+        "requirement_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "target_layer": {
+          "enum": [
+            "fact",
+            "capability",
+            "decision"
+          ]
+        },
+        "target_code": {
+          "type": "string",
+          "minLength": 1
+        },
+        "operator": {
+          "enum": [
+            "EXISTS"
+          ]
+        },
+        "required_value": {
+          "type": [
+            "null",
+            "string",
+            "number",
+            "boolean",
+            "object",
+            "array"
+          ]
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "importance": {
+          "enum": [
+            "blocking",
+            "important",
+            "optional"
+          ]
+        },
+        "evidence_source": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "source_system",
+            "source_record_id",
+            "source_url"
+          ],
+          "properties": {
+            "source_system": {
+              "type": "string",
+              "minLength": 1
+            },
+            "source_record_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "source_url": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "format": "uri"
+            }
+          }
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "parsing_status": {
+          "enum": [
+            "PARSED",
+            "NEEDS_REVIEW",
+            "REJECTED"
+          ]
+        },
+        "manual_review_status": {
+          "enum": [
+            "NOT_REQUIRED",
+            "PENDING",
+            "APPROVED",
+            "REJECTED"
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "anyOf": [
+            {
+              "required": [
+                "confidence"
+              ]
+            },
+            {
+              "required": [
+                "parsing_status"
+              ]
+            }
+          ]
+        },
+        {
+          "oneOf": [
+            {
+              "properties": {
+                "target_layer": {
+                  "const": "fact"
+                },
+                "target_code": {
+                  "enum": [
+                    "bid_award",
+                    "bid_participation",
+                    "business_registration",
+                    "buyer_relationship",
+                    "enterprise_material",
+                    "fulfillment",
+                    "other_enterprise_fact",
+                    "performance",
+                    "personnel",
+                    "personnel_certificate",
+                    "qualification",
+                    "risk_penalty_credit"
+                  ]
+                }
+              }
+            },
+            {
+              "properties": {
+                "target_layer": {
+                  "const": "capability"
+                },
+                "target_code": {
+                  "enum": [
+                    "amount_experience_capability",
+                    "buyer_relationship_capability",
+                    "industry_capability",
+                    "personnel_resource_capability",
+                    "regional_delivery_capability",
+                    "similar_performance_capability",
+                    "technical_capability",
+                    "tender_performance_capability"
+                  ]
+                }
+              }
+            },
+            {
+              "properties": {
+                "target_layer": {
+                  "const": "decision"
+                },
+                "target_code": {
+                  "enum": [
+                    "budget_preference",
+                    "consortium_acceptance",
+                    "current_business_goals",
+                    "explicit_exclusions",
+                    "key_buyers",
+                    "max_concurrent_projects",
+                    "personnel_resource_constraints",
+                    "procurement_method_preferences",
+                    "risk_preference",
+                    "strategic_industries",
+                    "strategic_regions"
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

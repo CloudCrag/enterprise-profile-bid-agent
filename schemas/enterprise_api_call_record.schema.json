@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "enterprise-api-call-record/2.0.0",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "api_call_record_schema_version",
+    "api_call_id",
+    "run_id",
+    "company_id",
+    "provider_id",
+    "provider_version",
+    "api_id",
+    "cache_key",
+    "called_at",
+    "status",
+    "raw_response_ref",
+    "response_hash",
+    "retry_count",
+    "cache_hit"
+  ],
+  "properties": {
+    "api_call_record_schema_version": {
+      "const": "enterprise-api-call-record/2.0.0"
+    },
+    "api_call_id": {
+      "type": "string"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "company_id": {
+      "type": "string"
+    },
+    "provider_id": {
+      "type": "string"
+    },
+    "provider_version": {
+      "type": "string"
+    },
+    "api_id": {
+      "type": "string"
+    },
+    "cache_key": {
+      "type": "string"
+    },
+    "called_at": {
+      "type": "string"
+    },
+    "valid_until": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "ttl_policy_status": {
+      "enum": [
+        "CONFIGURED",
+        "TTL_POLICY_NOT_CONFIGURED"
+      ]
+    },
+    "status": {
+      "type": "string"
+    },
+    "raw_response_ref": {
+      "type": "string"
+    },
+    "response_hash": {
+      "type": "string"
+    },
+    "retry_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "error_code": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "cache_hit": {
+      "type": "boolean"
+    }
+  }
+}
